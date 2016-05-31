@@ -21,6 +21,7 @@ target
 .project
 
 # idea
+.idea
 *.iml
 *.ipr
 *.iws
