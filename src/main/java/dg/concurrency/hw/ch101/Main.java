@@ -4,12 +4,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-import dataguru.concurrency.hw.ch101.implementations.Adder;
-import dataguru.concurrency.hw.ch101.implementations.Atomic;
-import dataguru.concurrency.hw.ch101.implementations.Dirty;
-import dataguru.concurrency.hw.ch101.implementations.RWLock;
-import dataguru.concurrency.hw.ch101.implementations.Synchronized;
-import dataguru.concurrency.hw.ch101.implementations.Volatile;
+import dg.concurrency.hw.ch101.implementations.Adder;
+import dg.concurrency.hw.ch101.implementations.Atomic;
+import dg.concurrency.hw.ch101.implementations.Dirty;
+import dg.concurrency.hw.ch101.implementations.RWLock;
+import dg.concurrency.hw.ch101.implementations.Synchronized;
+import dg.concurrency.hw.ch101.implementations.Volatile;
 
 public class Main
 {

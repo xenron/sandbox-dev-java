@@ -1,6 +1,6 @@
 package dg.concurrency.hw.ch101.implementations;
 
-import dataguru.concurrency.hw.ch101.Counter;
+import dg.concurrency.hw.ch101.Counter;
 
 public class Dirty implements Counter
 {

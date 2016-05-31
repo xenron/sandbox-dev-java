@@ -2,7 +2,7 @@ package dg.concurrency.hw.ch101.implementations;
 
 import java.util.concurrent.atomic.AtomicLong;
 
-import dataguru.concurrency.hw.ch101.Counter;
+import dg.concurrency.hw.ch101.Counter;
 
 public class Atomic implements Counter
 {

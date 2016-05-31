@@ -1,4 +1,4 @@
-package dg.concurrency.hw.ch051;
+package dg.concurrency.hw.ch05;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 

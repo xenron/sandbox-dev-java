@@ -4,7 +4,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-import dataguru.concurrency.hw.ch101.Counter;
+import dg.concurrency.hw.ch101.Counter;
 
 public class RWLock implements Counter
 {

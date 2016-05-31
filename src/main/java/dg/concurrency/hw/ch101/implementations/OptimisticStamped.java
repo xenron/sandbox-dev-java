@@ -2,7 +2,7 @@ package dg.concurrency.hw.ch101.implementations;
 
 import java.util.concurrent.locks.StampedLock;
 
-import dataguru.concurrency.hw.ch101.Counter;
+import dg.concurrency.hw.ch101.Counter;
 
 public class OptimisticStamped implements Counter {
 

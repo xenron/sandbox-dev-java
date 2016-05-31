@@ -1,4 +1,4 @@
-package dg.concurrency.hw.ch061;
+package dg.concurrency.hw.ch06;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;

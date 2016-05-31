@@ -1,4 +1,4 @@
-package dg.concurrency.hw.ch051;
+package dg.concurrency.hw.ch05;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,10 +6,10 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.concurrent.*;
 
-public class LinkedBlockingQueueTest {
-    private static final Logger log = LoggerFactory.getLogger(LinkedBlockingQueueTest.class);
+public class BlockingQueueTest {
+    private static final Logger log = LoggerFactory.getLogger(BlockingQueueTest.class);
     public final static int size1 = 1000000;
-    public static LinkedBlockingQueue<Object> queue = new LinkedBlockingQueue<Object>(size1);
+    public static BlockingQueue<Object> queue = new ArrayBlockingQueue<Object>(size1);
     public final static int threadNumber = 10;
     public static boolean isOver = false;
 
@@ -73,7 +73,7 @@ public class LinkedBlockingQueueTest {
     }
 }
 
-class LinkedBlockingQueue_Push implements Callable<Long> {
+class BlockingQueue_Push implements Callable<Long> {
 
     @Override
     public Long call() throws Exception {
@@ -88,7 +88,7 @@ class LinkedBlockingQueue_Push implements Callable<Long> {
     }
 }
 
-class LinkedBlockingQueue_Pull implements Callable<Long> {
+class BlockingQueue_Pull implements Callable<Long> {
 
     @Override
     public Long call() throws Exception {
