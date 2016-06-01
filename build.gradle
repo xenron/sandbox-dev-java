@@ -4,6 +4,7 @@ apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'idea'
 apply plugin: 'jetty'
+apply plugin: 'jettyEclipse'
 
 // JDK 8
 sourceCompatibility = 1.8
@@ -15,24 +16,24 @@ compileScala.options.encoding = 'UTF-8'
 sourceSets {
     main {
         java {
-            srcDir 'src/main/java'
+            srcDir ['src/main/java']
         }
         scala {
-            srcDir 'src/main/scala'
+            srcDir ['src/main/scala']
         }
         resources {
-            srcDir 'src/main/resources'
+            srcDir ['src/main/resources']
         }
     }
     test {
         java {
-            srcDir 'src/test/java'
+            srcDir ['src/test/java']
         }
         scala {
-            srcDir 'src/test/scala'
+            srcDir ['src/test/scala']
         }
         resources {
-            srcDir 'src/test/resources'
+            srcDir ['src/test/resources']
         }
     }
 }
@@ -49,6 +50,7 @@ dependencies {
     compile 'org.slf4j:slf4j-log4j12:1.7.19'
 
     compile 'org.springframework:spring-webmvc:4.2.6.RELEASE'
+
     compile 'javax.servlet:jstl:1.2'
     compile 'org.apache.logging.log4j:log4j-core:2.5'
     compile 'joda-time:joda-time:2.9.3'
@@ -56,10 +58,10 @@ dependencies {
     compile 'org.hamcrest:hamcrest-all:1.1'
     compile 'junit:junit:4.8.1'
     compile 'org.mockito:mockito-all:1.8.5'
-    compile 'org.apache.hadoop:hadoop-common:2.7.2'
-    compile 'org.apache.hadoop:hadoop-core:1.2.1'
-    compile 'com.typesafe.akka:akka-actor_2.11:2.4.4'
-    compile 'com.typesafe.akka:akka-remote_2.11:2.4.4'
+    // compile 'org.apache.hadoop:hadoop-common:2.7.2'
+    // compile 'org.apache.hadoop:hadoop-core:1.2.1'
+    // compile 'com.typesafe.akka:akka-actor_2.11:2.4.4'
+    // compile 'com.typesafe.akka:akka-remote_2.11:2.4.4'
     // compile 'org.neuroph:neuroph-core:2.8'
 }
 
