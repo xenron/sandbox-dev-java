@@ -23,7 +23,7 @@ public class ReenterLockCondition implements Runnable{
 		Thread t1=new Thread(tl);
 		t1.start();
 		Thread.sleep(2000);
-		//֪ͨ�߳�t1����ִ��
+		//通知线程t1继续执行
 		lock.lock();
 		condition.signal();
 		lock.unlock();

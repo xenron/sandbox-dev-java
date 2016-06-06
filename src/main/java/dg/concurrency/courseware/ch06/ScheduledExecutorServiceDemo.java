@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 public class ScheduledExecutorServiceDemo {
     public static void main(String[] args) {
         ScheduledExecutorService ses=Executors.newScheduledThreadPool(10);
-        //���ǰ�������û����ɣ������Ҳ��������
+        //如果前面的任务没有完成，则调度也不会启动
         ses.scheduleWithFixedDelay(new Runnable() {
             @Override
             public void run() {
@@ -21,9 +21,9 @@ public class ScheduledExecutorServiceDemo {
 //                    }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                }                
+                }
             }
         }, 0, 2, TimeUnit.SECONDS);
-        
+
     }
 }
