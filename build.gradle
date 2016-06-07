@@ -87,6 +87,15 @@ dependencies {
     // compile 'com.typesafe.akka:akka-actor_2.11:2.4.4'
     // compile 'com.typesafe.akka:akka-remote_2.11:2.4.4'
     // compile 'org.neuroph:neuroph-core:2.8'
+
+    // graphics
+    compile group: 'org.jfree', name: 'jfreechart', version: '1.0.19'
+    compile group: 'org.apache.xmlgraphics', name: 'batik-svg-dom', version: '1.8'
+    compile group: 'org.apache.xmlgraphics', name: 'batik-util', version: '1.8'
+    compile group: 'org.apache.xmlgraphics', name: 'batik-dom', version: '1.8'
+    compile group: 'org.apache.xmlgraphics', name: 'batik-svggen', version: '1.8'
+    compile group: 'org.apache.xmlgraphics', name: 'batik-parser', version: '1.8'
+
 }
 
 // Embeded Jetty for testing
