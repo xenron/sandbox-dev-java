@@ -6,7 +6,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 
 /**
- * ʹ�ü��̳߳غ�ֱ�ӿ����̵߳Ĳ��
+ * 使用简单线程池和直接开启线程的差别
  * @author Administrator
  *
  */
@@ -33,12 +33,12 @@ public class TestThreadPool {
 		for(int i=0;i<1000;i++){
 			ThreadPool.getInstance().start(new MyThread("testThreadPool"+Integer.toString(i)));
 		}
-		
+
 		long endtime=System.currentTimeMillis();
 		System.out.println("testThreadPool"+": "+(endtime-starttime));
 		System.out.println("getCreatedThreadsCount:"+ThreadPool.getInstance().getCreatedThreadsCount());
 		Thread.sleep(1000);
 	}
-	
+
 
 }

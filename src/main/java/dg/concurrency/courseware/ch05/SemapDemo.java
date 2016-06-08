@@ -10,16 +10,16 @@ public class SemapDemo implements Runnable{
     public void run() {
         try {
             semp.acquire();
-            //ģ���ʱ����
+            //模拟耗时操作
             Thread.sleep(2000);
             System.out.println(Thread.currentThread().getId()+":done!");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }finally{
-        	semp.release();
+            semp.release();
         }
     }
-    
+
     public static void main(String[] args) {
         ExecutorService exec = Executors.newFixedThreadPool(20);
         final SemapDemo demo=new SemapDemo();

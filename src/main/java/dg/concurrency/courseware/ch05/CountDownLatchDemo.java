@@ -11,7 +11,7 @@ public class CountDownLatchDemo implements Runnable {
     @Override
     public void run() {
         try {
-            //ģ��������
+            //模拟检查任务
             Thread.sleep(new Random().nextInt(10)*1000);
             System.out.println("check complete");
             end.countDown();
@@ -24,11 +24,12 @@ public class CountDownLatchDemo implements Runnable {
         for(int i=0;i<10;i++){
             exec.submit(demo);
         }
-        //�ȴ����
+        //等待检查
         end.await();
-        //������
+        //发射火箭
         System.out.println("Fire!");
         exec.shutdown();
     }
 }
+
 

@@ -21,7 +21,7 @@ public class AIOEchoServer {
 
     public void start() throws InterruptedException, ExecutionException, TimeoutException {
         System.out.println("Server listen on " + PORT);
-        //ע���¼����¼���ɺ�Ĵ�����
+        //注册事件和事件完成后的处理器
         server.accept(null, new CompletionHandler<AsynchronousSocketChannel, Object>() {
             final ByteBuffer buffer = ByteBuffer.allocate(1024);
             public void completed(AsynchronousSocketChannel result, Object attachment) {
@@ -56,7 +56,7 @@ public class AIOEchoServer {
 
     public static void main(String args[]) throws Exception {
         new AIOEchoServer().start();
-        // ���߳̿��Լ����Լ�����Ϊ
+        // 主线程可以继续自己的行为
         while (true) {
             Thread.sleep(1000);
         }

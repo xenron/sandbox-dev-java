@@ -19,7 +19,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class MultiThreadNIOEchoServer {
-	public static Map<Socket,Long> geym_time_stat=new HashMap<Socket,Long>(10240);
+    public static Map<Socket,Long> geym_time_stat=new HashMap<Socket,Long>(10240);
     class EchoClient {
         private LinkedList<ByteBuffer> outq;
 
@@ -53,11 +53,11 @@ public class MultiThreadNIOEchoServer {
             // We've enqueued data to be written to the client, we must
             // not set interest in OP_WRITE.
             sk.interestOps(SelectionKey.OP_READ | SelectionKey.OP_WRITE);
-            //ǿ��selector��������
+            //强迫selector立即返回
             selector.wakeup();
         }
     }
-    
+
     private Selector selector;
     private ExecutorService  tp=Executors.newCachedThreadPool();
     /**
@@ -172,10 +172,10 @@ public class MultiThreadNIOEchoServer {
 
         // Register the socket for select events.
         SelectionKey acceptKey = ssc.register(selector, SelectionKey.OP_ACCEPT);
-        
+
         // Loop forever.
         for (;;) {
-             selector.select();
+            selector.select();
 //            if(selector.selectNow()==0){
 //                continue;
 //            }
@@ -185,14 +185,14 @@ public class MultiThreadNIOEchoServer {
             while (i.hasNext()) {
                 SelectionKey sk = (SelectionKey) i.next();
                 i.remove();
-                
+
                 if (sk.isAcceptable()) {
                     doAccept(sk);
                 }
                 else if (sk.isValid() && sk.isReadable()) {
-                	if(!geym_time_stat.containsKey(((SocketChannel)sk.channel()).socket()))
-                		geym_time_stat.put(((SocketChannel)sk.channel()).socket(), 
-                			System.currentTimeMillis());
+                    if(!geym_time_stat.containsKey(((SocketChannel)sk.channel()).socket()))
+                        geym_time_stat.put(((SocketChannel)sk.channel()).socket(),
+                                System.currentTimeMillis());
                     doRead(sk);
                 }
                 else if (sk.isValid() && sk.isWritable()) {
