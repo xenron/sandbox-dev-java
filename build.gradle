@@ -83,6 +83,7 @@ dependencies {
     compile 'org.hamcrest:hamcrest-all:1.1'
     compile 'junit:junit:4.8.1'
     compile 'org.mockito:mockito-all:1.8.5'
+    compile group: 'cglib', name: 'cglib', version: '3.2.3'
     // compile 'org.apache.hadoop:hadoop-common:2.7.2'
     // compile 'org.apache.hadoop:hadoop-core:1.2.1'
     // compile 'com.typesafe.akka:akka-actor_2.11:2.4.4'
