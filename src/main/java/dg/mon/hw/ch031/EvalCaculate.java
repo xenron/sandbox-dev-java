@@ -1,12 +1,14 @@
-package dg.mon.hw.ch03;
+package dg.mon.hw.ch031;
+
+import dg.mon.hw.ch03.StringToArithmetic;
 
 import java.io.IOException;
 import java.util.Stack;
 import java.util.regex.Pattern;
 
-public class StringToArithmetic {
+public class EvalCaculate {
 
-    private StringToArithmetic() {
+    private EvalCaculate() {
     }
 
     //方法：给出一个算术表达式（中缀表达式），得到计算结果。 例如 (5+8+10)*1，返回23
@@ -137,7 +139,7 @@ public class StringToArithmetic {
             return x / y;
         return 0;
     }
-    
+
     public static void main(String[] args) throws IOException {
         System.out.println("please input an infix expression: ");
         String input = "((1+2)*3-4)";
