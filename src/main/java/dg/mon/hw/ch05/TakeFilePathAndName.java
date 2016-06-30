@@ -2,6 +2,7 @@ package dg.mon.hw.ch05;
 
 import java.io.File;
 
+@Component("takeFilePathAndName")
 public class TakeFilePathAndName {
 
     public static void main(String[] args) {
