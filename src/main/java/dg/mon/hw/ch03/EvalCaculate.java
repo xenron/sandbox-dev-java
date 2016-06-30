@@ -1,6 +1,4 @@
-package dg.mon.hw.ch031;
-
-import dg.mon.hw.ch03.StringToArithmetic;
+package dg.mon.hw.ch03;
 
 import java.io.IOException;
 import java.util.Stack;
