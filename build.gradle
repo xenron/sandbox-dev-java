@@ -4,6 +4,7 @@ apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'idea'
 apply plugin: 'jetty'
+// apply plugin: 'android'
 // apply plugin: 'jettyEclipse'
 
 // JDK 8
@@ -13,6 +14,21 @@ targetCompatibility = 1.8
 compileJava.options.encoding = 'UTF-8'
 compileScala.options.encoding = 'UTF-8'
 compileScala.scalaCompileOptions.useAnt = false
+
+/*
+android {
+    compileSdkVersion 17
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.2'
+    }
+}
+*/
 
 ext {
   scalaVersion = "2.11"
@@ -138,6 +154,8 @@ dependencies {
     compile "org.scalatra:scalatra-jetty_$scalaVersion:$scalatraVersion"
     compile "org.scalatra:scalatra-json_$scalaVersion:$scalatraVersion"
     compile "org.json4s:json4s-jackson_$scalaVersion:3.3.0"
+
+    compile group: 'com.google.android', name: 'android', version: '4.1.1.4'
 
     compile 'javax.servlet:jstl:1.2'
     compile 'org.apache.logging.log4j:log4j-core:2.5'
