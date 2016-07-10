@@ -15,7 +15,7 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
-import hjapp.com.hjclass_mobile.b.d;
+import hjapp.com.hjclass_mobile.pkg_b.d;
 
 import java.util.List;
 import java.util.Map;
@@ -27,7 +27,7 @@ public class HJDownloadActivity extends BaseActivity
   private ListView b = null;
   private List c;
   private ay d = null;
-  private hjapp.com.hjclass_mobile.b.b e = null;
+  private hjapp.com.hjclass_mobile.pkg_b.b e = null;
   private ax f = null;
   private Handler g = null;
   private View h;
@@ -41,7 +41,7 @@ public class HJDownloadActivity extends BaseActivity
     int k = localMap.size();
     for (int m = 0; (m < k) && (localMap.size() != 0); m++)
     {
-      hjapp.com.hjclass_mobile.d.s locals = (hjapp.com.hjclass_mobile.d.s)localList.get(m);
+      hjapp.com.hjclass_mobile.pkg_d.s locals = (hjapp.com.hjclass_mobile.pkg_d.s)localList.get(m);
       if (localMap.containsKey(locals.i()))
       {
         d locald = (d)localMap.get(locals.i());
@@ -88,7 +88,7 @@ public class HJDownloadActivity extends BaseActivity
     }
     this.h = findViewById(2131361818);
     this.i = findViewById(2131361885);
-    this.e = new hjapp.com.hjclass_mobile.b.b(this);
+    this.e = new hjapp.com.hjclass_mobile.pkg_b.b(this);
     this.b = ((ListView)findViewById(2131361894));
     this.b.setCacheColorHint(0);
     this.b.setOnItemClickListener(this);

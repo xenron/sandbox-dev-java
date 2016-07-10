@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
-import hjapp.com.hjclass_mobile.c.t;
+import hjapp.com.hjclass_mobile.pkg_c.t;
 
 public final class c
   implements OnTouchListener

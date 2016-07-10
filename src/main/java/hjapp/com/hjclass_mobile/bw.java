@@ -8,7 +8,7 @@ import android.widget.Toast;
 final class bw
   implements OnClickListener
 {
-  bw(HJLessonListActivity paramHJLessonListActivity, int paramInt, d.s params, d.t paramt)
+  bw(HJLessonListActivity paramHJLessonListActivity, int paramInt, pkg_d.s params, pkg_d.t paramt)
   {
   }
 

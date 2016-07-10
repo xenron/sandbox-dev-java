@@ -3,7 +3,7 @@ package hjapp.com.hjclass_mobile;
 import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import hjapp.com.hjclass_mobile.f.c;
+import hjapp.com.hjclass_mobile.pkg_f.c;
 import hjapp.com.hjclass_mobile.questions.QuestionAskQuestionActivity;
 import hjapp.com.hjclass_mobile.questions.QuestionMyAnswerActivity;
 import hjapp.com.hjclass_mobile.questions.QuestionMyAskActivity;

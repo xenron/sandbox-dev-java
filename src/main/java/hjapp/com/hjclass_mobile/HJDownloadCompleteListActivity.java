@@ -14,7 +14,7 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
-import hjapp.com.hjclass_mobile.d.t;
+import hjapp.com.hjclass_mobile.pkg_d.t;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -26,7 +26,7 @@ public class HJDownloadCompleteListActivity extends BaseActivity
   private bd a = null;
   private ListView b = null;
   private List c;
-  private hjapp.com.hjclass_mobile.b.b d = null;
+  private hjapp.com.hjclass_mobile.pkg_b.b d = null;
   private bc e = null;
   private bb f = null;
   private ba g = null;
@@ -102,7 +102,7 @@ public class HJDownloadCompleteListActivity extends BaseActivity
     this.h = findViewById(2131361818);
     this.i = findViewById(2131361885);
     this.j = findViewById(2131361814);
-    this.d = new hjapp.com.hjclass_mobile.b.b(this);
+    this.d = new hjapp.com.hjclass_mobile.pkg_b.b(this);
     this.b = ((ListView)findViewById(2131361884));
     this.b.setCacheColorHint(0);
     this.b.setOnItemClickListener(this);

@@ -2,7 +2,7 @@ package hjapp.com.hjclass_mobile;
 
 import android.view.View;
 import android.view.View.OnClickListener;
-import hjapp.com.hjclass_mobile.d.t;
+import hjapp.com.hjclass_mobile.pkg_d.t;
 
 final class ak
   implements OnClickListener

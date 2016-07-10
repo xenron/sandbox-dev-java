@@ -9,9 +9,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
-import hjapp.com.hjclass_mobile.b.a;
-import hjapp.com.hjclass_mobile.c.k;
-import hjapp.com.hjclass_mobile.c.z;
+import hjapp.com.hjclass_mobile.pkg_b.a;
+import hjapp.com.hjclass_mobile.pkg_c.k;
+import hjapp.com.hjclass_mobile.pkg_c.z;
 
 import java.io.File;
 
@@ -24,7 +24,7 @@ public final class o extends RelativeLayout
   private a d = null;
   private String e = null;
   private RadioButton f = null;
-  private hjapp.com.hjclass_mobile.c.z g = null;
+  private hjapp.com.hjclass_mobile.pkg_c.z g = null;
   private int h = -1;
   private ImageView i = null;
 
@@ -57,7 +57,7 @@ public final class o extends RelativeLayout
     this.g = paramz;
   }
 
-  public final void a(hjapp.com.hjclass_mobile.d.z paramz)
+  public final void a(hjapp.com.hjclass_mobile.pkg_d.z paramz)
   {
     if (paramz.b().equals(this.e))
     {
@@ -83,7 +83,7 @@ public final class o extends RelativeLayout
 
   public final void b()
   {
-    hjapp.com.hjclass_mobile.h.u.b("图片题的INIT");
+    hjapp.com.hjclass_mobile.pkg_h.u.b("图片题的INIT");
     this.f.setEnabled(false);
     setEnabled(false);
   }
@@ -97,7 +97,7 @@ public final class o extends RelativeLayout
       new Options();
       localOptions = new Options();
       localOptions.inJustDecodeBounds = true;
-      localOptions.inSampleSize = hjapp.com.hjclass_mobile.h.z.a(localOptions, Math.min(246, 134), 32964);
+      localOptions.inSampleSize = hjapp.com.hjclass_mobile.pkg_h.z.a(localOptions, Math.min(246, 134), 32964);
       localOptions.inJustDecodeBounds = false;
       localOptions.inInputShareable = true;
       localOptions.inPurgeable = true;

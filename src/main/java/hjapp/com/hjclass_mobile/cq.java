@@ -1,7 +1,7 @@
 package hjapp.com.hjclass_mobile;
 
 import android.os.AsyncTask;
-import hjapp.com.hjclass_mobile.c.ad;
+import hjapp.com.hjclass_mobile.pkg_c.ad;
 
 final class cq extends AsyncTask
 {

@@ -10,8 +10,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ViewFlipper;
-import hjapp.com.hjclass_mobile.c.p;
-import hjapp.com.hjclass_mobile.d.y;
+import hjapp.com.hjclass_mobile.pkg_c.p;
+import hjapp.com.hjclass_mobile.pkg_d.y;
 import java.io.File;
 import java.util.List;
 

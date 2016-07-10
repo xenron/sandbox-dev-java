@@ -24,7 +24,7 @@ public class HJSettingActivity extends PreferenceActivity
   private Handler a = null;
   private AlertDialog c;
   private AlertDialog d;
-  private hjapp.com.hjclass_mobile.b.b e = null;
+  private hjapp.com.hjclass_mobile.pkg_b.b e = null;
 
   public static int a(Context paramContext)
   {
@@ -76,7 +76,7 @@ public class HJSettingActivity extends PreferenceActivity
     localPreferenceScreen.findPreference("line_select").setOnPreferenceClickListener(this);
     localPreferenceScreen.findPreference("delete_fail").setOnPreferenceClickListener(this);
     localPreferenceScreen.findPreference("orientation_select").setOnPreferenceClickListener(this);
-    this.e = new hjapp.com.hjclass_mobile.b.b(this);
+    this.e = new hjapp.com.hjclass_mobile.pkg_b.b(this);
     this.a = new Handler();
   }
 

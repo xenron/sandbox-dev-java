@@ -5,19 +5,19 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import hjapp.com.hjclass_mobile.b.a;
-import hjapp.com.hjclass_mobile.c.b;
-import hjapp.com.hjclass_mobile.d.l;
+import hjapp.com.hjclass_mobile.pkg_b.a;
+import hjapp.com.hjclass_mobile.pkg_c.b;
+import hjapp.com.hjclass_mobile.pkg_d.l;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class t extends ScrollView
-  implements b, hjapp.com.hjclass_mobile.c.e
+  implements b, hjapp.com.hjclass_mobile.pkg_c.e
 {
   private a a = null;
   private BaseTextView b = null;
-  private hjapp.com.hjclass_mobile.d.j c = null;
+  private hjapp.com.hjclass_mobile.pkg_d.j c = null;
   private Animation d = null;
   private Animation e = null;
   private Boolean f = Boolean.valueOf(false);

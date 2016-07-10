@@ -14,13 +14,13 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import hjapp.com.hjclass_mobile.d.q;
+import hjapp.com.hjclass_mobile.pkg_d.q;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HJSubCourseActivity extends BaseActivity
-  implements OnItemClickListener, hjapp.com.hjclass_mobile.c.o
+  implements OnItemClickListener, hjapp.com.hjclass_mobile.pkg_c.o
 {
   private dm a = null;
   private ListView b = null;
@@ -30,9 +30,9 @@ public class HJSubCourseActivity extends BaseActivity
   private dj f = null;
   private boolean g = false;
   private LinearLayout h = null;
-  private hjapp.com.hjclass_mobile.b.b i = null;
+  private hjapp.com.hjclass_mobile.pkg_b.b i = null;
   private View j = null;
-  private hjapp.com.hjclass_mobile.h.v k = null;
+  private hjapp.com.hjclass_mobile.pkg_h.v k = null;
   private Bitmap l = null;
   private String m = "en";
   private dn n = null;
@@ -84,8 +84,8 @@ public class HJSubCourseActivity extends BaseActivity
     this.b.setCacheColorHint(0);
     this.b.setTextFilterEnabled(true);
     this.b.setOnItemClickListener(this);
-    this.i = new hjapp.com.hjclass_mobile.b.b(this);
-    this.k = new h.v(20);
+    this.i = new hjapp.com.hjclass_mobile.pkg_b.b(this);
+    this.k = new pkg_h.v(20);
     this.l = BitmapFactory.decodeResource(getResources(), 2130837515);
     Bundle localBundle = getIntent().getExtras();
     if (localBundle != null)

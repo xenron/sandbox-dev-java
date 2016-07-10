@@ -20,7 +20,7 @@ final class v
       return;
     }
     int i = this.a.g() - u.b(this.a);
-    u.c(this.a).setText(hjapp.com.hjclass_mobile.h.z.a(i * 1000));
+    u.c(this.a).setText(hjapp.com.hjclass_mobile.pkg_h.z.a(i * 1000));
     u.e(this.a).postDelayed(u.d(this.a), 1000L);
   }
 }

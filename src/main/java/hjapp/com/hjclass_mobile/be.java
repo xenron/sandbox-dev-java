@@ -2,7 +2,7 @@ package hjapp.com.hjclass_mobile;
 
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
-import hjapp.com.hjclass_mobile.f.c;
+import hjapp.com.hjclass_mobile.pkg_f.c;
 
 final class be
   implements OnClickListener

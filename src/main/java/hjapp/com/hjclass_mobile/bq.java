@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import hjapp.com.hjclass_mobile.d.t;
+import hjapp.com.hjclass_mobile.pkg_d.t;
 
 public final class bq extends BaseAdapter
 {
@@ -55,7 +55,7 @@ public final class bq extends BaseAdapter
     if (localBitmap == null)
     {
       localbr2.a.setImageBitmap(HJFreeLessonListActivity.h(this.a));
-      hjapp.com.hjclass_mobile.b.n localn = new b.n(this.a, localbr2.a, localt.c());
+      hjapp.com.hjclass_mobile.pkg_b.n localn = new pkg_b.n(this.a, localbr2.a, localt.c());
       String[] arrayOfString = new String[1];
       arrayOfString[0] = localt.o();
       localn.execute(arrayOfString);

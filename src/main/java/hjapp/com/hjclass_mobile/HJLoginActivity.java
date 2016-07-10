@@ -12,8 +12,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import hjapp.com.hjclass_mobile.b.b;
-import hjapp.com.hjclass_mobile.d.r;
+import hjapp.com.hjclass_mobile.pkg_b.b;
+import hjapp.com.hjclass_mobile.pkg_d.r;
 
 public class HJLoginActivity extends BaseActivity
   implements OnClickListener

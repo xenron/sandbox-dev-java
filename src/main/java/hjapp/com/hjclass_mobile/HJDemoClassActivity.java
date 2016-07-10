@@ -18,14 +18,14 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import hjapp.com.hjclass_mobile.d.t;
+import hjapp.com.hjclass_mobile.pkg_d.t;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HJDemoClassActivity extends BaseActivity
-  implements OnClickListener, OnItemClickListener, hjapp.com.hjclass_mobile.c.o
+  implements OnClickListener, OnItemClickListener, hjapp.com.hjclass_mobile.pkg_c.o
 {
   private View a = null;
   private au b = null;
@@ -34,7 +34,7 @@ public class HJDemoClassActivity extends BaseActivity
   private boolean e = true;
   private List f;
   private LinearLayout g = null;
-  private hjapp.com.hjclass_mobile.b.b h = null;
+  private hjapp.com.hjclass_mobile.pkg_b.b h = null;
   private ar i = null;
   private at j = null;
   private TextView k;
@@ -42,13 +42,13 @@ public class HJDemoClassActivity extends BaseActivity
   private ImageView m;
   private HJApplication n = null;
 
-  private int a(hjapp.com.hjclass_mobile.d.s params)
+  private int a(hjapp.com.hjclass_mobile.pkg_d.s params)
   {
     List localList = this.n.b();
     int i1 = localList.size();
     for (int i2 = 0; i2 < i1; i2++)
     {
-      String str = ((hjapp.com.hjclass_mobile.d.s)localList.get(i2)).i();
+      String str = ((hjapp.com.hjclass_mobile.pkg_d.s)localList.get(i2)).i();
       if (TextUtils.isEmpty(str))
         return -1;
       if (str.equals(params.i()))
@@ -57,9 +57,9 @@ public class HJDemoClassActivity extends BaseActivity
     return -2;
   }
 
-  private static hjapp.com.hjclass_mobile.d.s a(t paramt)
+  private static hjapp.com.hjclass_mobile.pkg_d.s a(t paramt)
   {
-    hjapp.com.hjclass_mobile.d.s locals = new d.s();
+    hjapp.com.hjclass_mobile.pkg_d.s locals = new pkg_d.s();
     locals.a(paramt.d());
     locals.a(paramt.e());
     locals.d(paramt.m());
@@ -77,7 +77,7 @@ public class HJDemoClassActivity extends BaseActivity
     return locals;
   }
 
-  private int b(hjapp.com.hjclass_mobile.d.s params)
+  private int b(hjapp.com.hjclass_mobile.pkg_d.s params)
   {
     List localList = this.n.b();
     localList.add(params);
@@ -123,7 +123,7 @@ public class HJDemoClassActivity extends BaseActivity
     if ((hjapp.com.hjclass_mobile.h.z.h) && (!hjapp.com.hjclass_mobile.h.z.i))
       Toast.makeText(this, getString(2131492940), 1).show();
     ((Button)findViewById(2131361816)).setOnClickListener(this);
-    this.h = new hjapp.com.hjclass_mobile.b.b(this);
+    this.h = new hjapp.com.hjclass_mobile.pkg_b.b(this);
     this.g = ((LinearLayout)findViewById(2131361852));
     this.d = ((ListView)findViewById(2131361951));
     this.d.setCacheColorHint(0);
@@ -142,7 +142,7 @@ public class HJDemoClassActivity extends BaseActivity
     if (localBundle != null)
     {
       String str = localBundle.getString("iconUrl");
-      new hjapp.com.hjclass_mobile.b.n(this, this.m, 10022).execute(new String[] { str });
+      new hjapp.com.hjclass_mobile.pkg_b.n(this, this.m, 10022).execute(new String[] { str });
       this.k.setText(localBundle.getString("classname"));
       this.l.setText(localBundle.getInt("studyNum") + "/" + localBundle.getInt("lessonNum"));
     }
@@ -221,7 +221,7 @@ public class HJDemoClassActivity extends BaseActivity
             localIntent1.setClass(this, HJClassPlayerV3.class);
           }
         }
-        hjapp.com.hjclass_mobile.d.s locals = a(localt);
+        hjapp.com.hjclass_mobile.pkg_d.s locals = a(localt);
         int i5 = a(locals);
         if ((hjapp.com.hjclass_mobile.h.z.h) && (!hjapp.com.hjclass_mobile.h.z.i) && (i5 == -2))
         {

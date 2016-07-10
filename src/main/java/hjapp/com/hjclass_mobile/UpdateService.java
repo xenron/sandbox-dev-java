@@ -10,7 +10,7 @@ import android.os.Environment;
 import android.os.IBinder;
 import android.widget.RemoteViews;
 import android.widget.Toast;
-import hjapp.com.hjclass_mobile.c.ae;
+import hjapp.com.hjclass_mobile.pkg_c.ae;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class UpdateService extends Service
   private Notification b = null;
   private Intent c = null;
   private PendingIntent d = null;
-  private hjapp.com.hjclass_mobile.b.aa e = null;
+  private hjapp.com.hjclass_mobile.pkg_b.aa e = null;
 
   public final int a(int paramInt)
   {
@@ -103,8 +103,8 @@ public class UpdateService extends Service
   {
     if ("mounted".equals(Environment.getExternalStorageState()))
     {
-      this.e = new b.aa(this);
-      hjapp.com.hjclass_mobile.b.aa localaa = this.e;
+      this.e = new pkg_b.aa(this);
+      hjapp.com.hjclass_mobile.pkg_b.aa localaa = this.e;
       String[] arrayOfString = new String[1];
       arrayOfString[0] = h.z.f;
       localaa.execute(arrayOfString);

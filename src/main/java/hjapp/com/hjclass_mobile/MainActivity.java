@@ -8,12 +8,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.widget.ImageView;
-import hjapp.com.hjclass_mobile.d.r;
+import hjapp.com.hjclass_mobile.pkg_d.r;
 import hjapp.com.umeng.analytics.MobclickAgent;
 
 public class MainActivity extends BaseActivity
 {
-  private hjapp.com.hjclass_mobile.b.b a = null;
+  private hjapp.com.hjclass_mobile.pkg_b.b a = null;
   private r b = null;
   private dz c = null;
   private AnimationDrawable d;
@@ -58,7 +58,7 @@ public class MainActivity extends BaseActivity
     this.d = ((AnimationDrawable)this.e.getBackground());
     this.d.setOneShot(false);
     MobclickAgent.onError(this);
-    this.a = new hjapp.com.hjclass_mobile.b.b(this);
+    this.a = new hjapp.com.hjclass_mobile.pkg_b.b(this);
     this.f.a(this.a.e(1));
     this.b = this.a.b();
     if (this.b != null)
@@ -80,7 +80,7 @@ public class MainActivity extends BaseActivity
         localdz.execute(arrayOfString3);
         return;
       }
-      hjapp.com.hjclass_mobile.b.w localw2 = new hjapp.com.hjclass_mobile.b.w();
+      hjapp.com.hjclass_mobile.pkg_b.w localw2 = new hjapp.com.hjclass_mobile.pkg_b.w();
       String[] arrayOfString2 = new String[4];
       arrayOfString2[0] = this.b.e();
       arrayOfString2[1] = this.b.a();
@@ -90,7 +90,7 @@ public class MainActivity extends BaseActivity
       a(true);
       return;
     }
-    hjapp.com.hjclass_mobile.b.w localw1 = new hjapp.com.hjclass_mobile.b.w();
+    hjapp.com.hjclass_mobile.pkg_b.w localw1 = new hjapp.com.hjclass_mobile.pkg_b.w();
     String[] arrayOfString1 = new String[4];
     arrayOfString1[0] = null;
     arrayOfString1[1] = null;

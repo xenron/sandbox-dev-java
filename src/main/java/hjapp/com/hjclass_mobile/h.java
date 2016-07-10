@@ -4,9 +4,9 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.Html;
 import android.widget.TextView;
-import hjapp.com.hjclass_mobile.a.b;
-import hjapp.com.hjclass_mobile.a.n;
-import hjapp.com.hjclass_mobile.h.y;
+import hjapp.com.hjclass_mobile.pkg_a.b;
+import hjapp.com.hjclass_mobile.pkg_a.n;
+import hjapp.com.hjclass_mobile.pkg_h.y;
 
 final class h extends Handler
 {

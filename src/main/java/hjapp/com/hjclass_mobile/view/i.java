@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import hjapp.com.hjclass_mobile.h.z;
+import hjapp.com.hjclass_mobile.pkg_h.z;
 
 final class i extends BroadcastReceiver
 {

@@ -1,8 +1,8 @@
 package hjapp.com.hjclass_mobile;
 
-import hjapp.com.hjclass_mobile.c.aa;
-import hjapp.com.hjclass_mobile.d.ab;
-import hjapp.com.hjclass_mobile.d.z;
+import hjapp.com.hjclass_mobile.pkg_c.aa;
+import hjapp.com.hjclass_mobile.pkg_d.ab;
+import hjapp.com.hjclass_mobile.pkg_d.z;
 import hjapp.com.hjclass_mobile.view.page.HJPage;
 
 final class ae

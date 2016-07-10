@@ -6,9 +6,9 @@ import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
-import hjapp.com.hjclass_mobile.b.b;
-import hjapp.com.hjclass_mobile.b.w;
-import hjapp.com.hjclass_mobile.d.r;
+import hjapp.com.hjclass_mobile.pkg_b.b;
+import hjapp.com.hjclass_mobile.pkg_b.w;
+import hjapp.com.hjclass_mobile.pkg_d.r;
 
 public class HJUrlScheme extends BaseActivity
 {

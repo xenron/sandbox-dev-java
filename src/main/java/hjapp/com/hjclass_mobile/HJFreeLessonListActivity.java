@@ -21,17 +21,17 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.Toast;
-import hjapp.com.hjclass_mobile.b.b;
-import hjapp.com.hjclass_mobile.d.s;
-import hjapp.com.hjclass_mobile.d.t;
-import hjapp.com.hjclass_mobile.h.v;
+import hjapp.com.hjclass_mobile.pkg_b.b;
+import hjapp.com.hjclass_mobile.pkg_d.s;
+import hjapp.com.hjclass_mobile.pkg_d.t;
+import hjapp.com.hjclass_mobile.pkg_h.v;
 import hjapp.com.hjclass_mobile.view.HJGallery;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HJFreeLessonListActivity extends BaseActivity
-  implements OnClickListener, OnItemClickListener, OnItemSelectedListener, hjapp.com.hjclass_mobile.c.o
+  implements OnClickListener, OnItemClickListener, OnItemSelectedListener, hjapp.com.hjclass_mobile.pkg_c.o
 {
   private static v q = new v(10);
   private List a;

@@ -8,10 +8,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import hjapp.com.hjclass_mobile.HJApplication;
-import hjapp.com.hjclass_mobile.c.w;
+import hjapp.com.hjclass_mobile.pkg_c.w;
 
 public final class ag extends RelativeLayout
-  implements hjapp.com.hjclass_mobile.c.c
+  implements hjapp.com.hjclass_mobile.pkg_c.c
 {
   private Context a;
   private String b;
@@ -23,7 +23,7 @@ public final class ag extends RelativeLayout
   private TextView h;
   private TextView i;
   private TextView j;
-  private hjapp.com.hjclass_mobile.c.w k = null;
+  private hjapp.com.hjclass_mobile.pkg_c.w k = null;
 
   public ag(Context paramContext, HJApplication paramHJApplication)
   {
@@ -48,7 +48,7 @@ public final class ag extends RelativeLayout
     this.e = Boolean.valueOf(true);
   }
 
-  public final void a(hjapp.com.hjclass_mobile.c.w paramw)
+  public final void a(hjapp.com.hjclass_mobile.pkg_c.w paramw)
   {
     this.k = paramw;
   }
@@ -76,7 +76,7 @@ public final class ag extends RelativeLayout
         arrayOfObject[0] = String.valueOf(HJApplication.g());
         int m = HJApplication.g();
         arrayOfObject[1] = String.valueOf(m - HJApplication.f());
-        localTextView.setText(hjapp.com.hjclass_mobile.h.y.a(str, arrayOfObject));
+        localTextView.setText(hjapp.com.hjclass_mobile.pkg_h.y.a(str, arrayOfObject));
       }
     }
     else

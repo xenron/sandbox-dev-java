@@ -4,12 +4,12 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.widget.Toast;
-import hjapp.com.hjclass_mobile.d.t;
+import hjapp.com.hjclass_mobile.pkg_d.t;
 
 final class ap
   implements OnClickListener
 {
-  ap(HJDemoClassActivity paramHJDemoClassActivity, int paramInt, d.s params, t paramt)
+  ap(HJDemoClassActivity paramHJDemoClassActivity, int paramInt, pkg_d.s params, t paramt)
   {
   }
 

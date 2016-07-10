@@ -16,8 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
-import hjapp.com.hjclass_mobile.c.g;
-import hjapp.com.hjclass_mobile.h.z;
+import hjapp.com.hjclass_mobile.pkg_c.g;
+import hjapp.com.hjclass_mobile.pkg_h.z;
 
 public final class a extends LinearLayout
   implements OnClickListener, OnTouchListener, OnSeekBarChangeListener

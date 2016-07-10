@@ -7,7 +7,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import hjapp.com.hjclass_mobile.d.s;
+import hjapp.com.hjclass_mobile.pkg_d.s;
 
 final class ay extends BaseAdapter
 {

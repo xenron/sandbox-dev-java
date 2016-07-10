@@ -13,21 +13,21 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import hjapp.com.hjclass_mobile.c.aa;
-import hjapp.com.hjclass_mobile.d.ad;
-import hjapp.com.hjclass_mobile.d.l;
+import hjapp.com.hjclass_mobile.pkg_c.aa;
+import hjapp.com.hjclass_mobile.pkg_d.ad;
+import hjapp.com.hjclass_mobile.pkg_d.l;
 import hjapp.com.hjclass_mobile.view.HJLinearLayout;
-import hjapp.com.hjclass_mobile.d.c;
-import hjapp.com.hjclass_mobile.d.z;
+import hjapp.com.hjclass_mobile.pkg_d.c;
+import hjapp.com.hjclass_mobile.pkg_d.z;
 
 import java.io.File;
 import java.util.List;
 
 public final class h extends RelativeLayout
-  implements hjapp.com.hjclass_mobile.c.b, hjapp.com.hjclass_mobile.c.j
+  implements hjapp.com.hjclass_mobile.pkg_c.b, hjapp.com.hjclass_mobile.pkg_c.j
 {
   OnClickListener a = new hjapp.com.hjclass_mobile.view.ele.k(this);
-  private hjapp.com.hjclass_mobile.b.a b;
+  private hjapp.com.hjclass_mobile.pkg_b.a b;
   private HJLinearLayout c = null;
   private ImageView d = null;
   private TextView e = null;
@@ -37,12 +37,12 @@ public final class h extends RelativeLayout
   private int i = 0;
   private ImageView j = null;
   private String k = null;
-  private hjapp.com.hjclass_mobile.c.aa l = null;
+  private hjapp.com.hjclass_mobile.pkg_c.aa l = null;
   private float m;
   private float n;
   private float o;
 
-  public h(Context paramContext, hjapp.com.hjclass_mobile.b.a parama, boolean paramBoolean)
+  public h(Context paramContext, hjapp.com.hjclass_mobile.pkg_b.a parama, boolean paramBoolean)
   {
     super(paramContext);
     this.b = parama;
@@ -72,12 +72,12 @@ public final class h extends RelativeLayout
       {
         i2++;
         break;
-        ((hjapp.com.hjclass_mobile.c.k)localView).c();
+        ((hjapp.com.hjclass_mobile.pkg_c.k)localView).c();
       }
     }
   }
 
-  private void a(hjapp.com.hjclass_mobile.d.z paramz, View paramView)
+  private void a(hjapp.com.hjclass_mobile.pkg_d.z paramz, View paramView)
   {
     if (paramz != null)
     {
@@ -86,8 +86,8 @@ public final class h extends RelativeLayout
       if (i2 < i1)
       {
         View localView = ((ViewGroup)paramView).getChildAt(i2);
-        if ((localView instanceof hjapp.com.hjclass_mobile.c.k))
-          ((hjapp.com.hjclass_mobile.c.k)localView).a(paramz);
+        if ((localView instanceof hjapp.com.hjclass_mobile.pkg_c.k))
+          ((hjapp.com.hjclass_mobile.pkg_c.k)localView).a(paramz);
         while (true)
         {
           i2++;
@@ -112,7 +112,7 @@ public final class h extends RelativeLayout
     this.l = paramaa;
   }
 
-  public final void a(hjapp.com.hjclass_mobile.d.l paraml)
+  public final void a(hjapp.com.hjclass_mobile.pkg_d.l paraml)
   {
     Object localObject1 = null;
     ad localad = paraml.b();
@@ -120,7 +120,7 @@ public final class h extends RelativeLayout
       return;
     this.i = localad.k();
     if (localad.a() != null)
-      this.e.setText(hjapp.com.hjclass_mobile.h.c.a(localad.a().replace("\r\n", "<br/>")));
+      this.e.setText(hjapp.com.hjclass_mobile.pkg_h.c.a(localad.a().replace("\r\n", "<br/>")));
     String[] arrayOfString5;
     String[] arrayOfString6;
     if ((localad.c() != null) && (localad.c() != "") && (localad.c().length() > 0))
@@ -156,7 +156,7 @@ public final class h extends RelativeLayout
           {
             int i4 = arrayOfString1.length;
             if (localad.e().booleanValue());
-            for (List localList2 = hjapp.com.hjclass_mobile.h.z.f(i4); ; localList2 = hjapp.com.hjclass_mobile.h.z.e(i4))
+            for (List localList2 = hjapp.com.hjclass_mobile.pkg_h.z.f(i4); ; localList2 = hjapp.com.hjclass_mobile.pkg_h.z.e(i4))
             {
               for (int i5 = 0; i5 < i4; i5++)
               {
@@ -179,7 +179,7 @@ public final class h extends RelativeLayout
               break;
             }
           }
-          hjapp.com.hjclass_mobile.h.u.b("图片选择题");
+          hjapp.com.hjclass_mobile.pkg_h.u.b("图片选择题");
           int i1 = arrayOfString2.length;
           List localList1;
           int i2;
@@ -188,7 +188,7 @@ public final class h extends RelativeLayout
           Object localObject3;
           if (localad.e().booleanValue())
           {
-            localList1 = hjapp.com.hjclass_mobile.h.z.f(i1);
+            localList1 = hjapp.com.hjclass_mobile.pkg_h.z.f(i1);
             i2 = 0;
             if (i2 >= i1)
               break label639;
@@ -210,14 +210,14 @@ public final class h extends RelativeLayout
             i2++;
             localObject1 = localObject3;
             break label489;
-            localList1 = hjapp.com.hjclass_mobile.h.z.e(i1);
+            localList1 = hjapp.com.hjclass_mobile.pkg_h.z.e(i1);
             break;
             label639: if (localad.h() != null)
             {
               LinearLayout localLinearLayout = this.f;
               String str = localad.h();
-              hjapp.com.hjclass_mobile.d.l locall = new l();
-              hjapp.com.hjclass_mobile.d.c localc = new c();
+              hjapp.com.hjclass_mobile.pkg_d.l locall = new l();
+              hjapp.com.hjclass_mobile.pkg_d.c localc = new c();
               localc.a(str);
               localc.a(false);
               localc.d("TYPE_LONG");
@@ -236,7 +236,7 @@ public final class h extends RelativeLayout
               new Options();
               localOptions = new Options();
               localOptions.inJustDecodeBounds = true;
-              localOptions.inSampleSize = hjapp.com.hjclass_mobile.h.z.a(localOptions, Math.min(100, 75), 7500);
+              localOptions.inSampleSize = hjapp.com.hjclass_mobile.pkg_h.z.a(localOptions, Math.min(100, 75), 7500);
               localOptions.inJustDecodeBounds = false;
               localOptions.inInputShareable = true;
               localOptions.inPurgeable = true;
@@ -283,8 +283,8 @@ public final class h extends RelativeLayout
     for (int i2 = 0; i2 < i1; i2++)
     {
       View localView = this.c.getChildAt(i2);
-      if ((localView instanceof hjapp.com.hjclass_mobile.c.k))
-        ((hjapp.com.hjclass_mobile.c.k)localView).a();
+      if ((localView instanceof hjapp.com.hjclass_mobile.pkg_c.k))
+        ((hjapp.com.hjclass_mobile.pkg_c.k)localView).a();
     }
   }
 
@@ -323,7 +323,7 @@ public final class h extends RelativeLayout
       this.c.c();
       return bool;
       this.m = Math.abs(this.o - this.n);
-      hjapp.com.hjclass_mobile.h.u.b("yDistance" + this.m + ",optionsLayout.isIntecept()=" + this.c.b());
+      hjapp.com.hjclass_mobile.pkg_h.u.b("yDistance" + this.m + ",optionsLayout.isIntecept()=" + this.c.b());
     }
     while ((this.c.b()) || (this.m >= 5.0F));
     Intent localIntent = new Intent("show_cmd");
@@ -334,7 +334,7 @@ public final class h extends RelativeLayout
   public final boolean onTouchEvent(MotionEvent paramMotionEvent)
   {
     boolean bool = super.onTouchEvent(paramMotionEvent);
-    hjapp.com.hjclass_mobile.h.u.b("onTouchEvent 返回的是" + bool);
+    hjapp.com.hjclass_mobile.pkg_h.u.b("onTouchEvent 返回的是" + bool);
     return super.onTouchEvent(paramMotionEvent);
   }
 }

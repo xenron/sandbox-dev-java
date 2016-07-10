@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import hjapp.com.hjclass_mobile.d.p;
+import hjapp.com.hjclass_mobile.pkg_d.p;
 
 final class m extends BaseAdapter
 {
@@ -52,7 +52,7 @@ final class m extends BaseAdapter
       if (localBitmap != null)
         break;
       locall2.a.setImageBitmap(HJAppActivity.g(this.a));
-      b.n localn = new b.n(this.a, locall2.a, 9888888 + paramInt);
+      pkg_b.n localn = new pkg_b.n(this.a, locall2.a, 9888888 + paramInt);
       String[] arrayOfString = new String[1];
       arrayOfString[0] = localp.b();
       localn.execute(arrayOfString);

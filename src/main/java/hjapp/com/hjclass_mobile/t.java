@@ -22,15 +22,15 @@ final class t
     {
       if (paramInt == j)
       {
-        ((d.a)localList.get(j)).a(true);
-        HJClassListActivity.a(this.a, ((d.a)localList.get(j)).a());
-        HJClassListActivity.l(this.a).setText(((d.a)localList.get(j)).b());
+        ((pkg_d.a)localList.get(j)).a(true);
+        HJClassListActivity.a(this.a, ((pkg_d.a)localList.get(j)).a());
+        HJClassListActivity.l(this.a).setText(((pkg_d.a)localList.get(j)).b());
       }
       while (true)
       {
         j++;
         break;
-        ((d.a)localList.get(j)).a(false);
+        ((pkg_d.a)localList.get(j)).a(false);
       }
     }
     HJClassListActivity.k(this.a).a(localList);

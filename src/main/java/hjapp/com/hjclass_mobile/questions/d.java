@@ -2,7 +2,7 @@ package hjapp.com.hjclass_mobile.questions;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import hjapp.com.hjclass_mobile.h.u;
+import hjapp.com.hjclass_mobile.pkg_h.u;
 
 final class d
   implements TextWatcher

@@ -15,22 +15,22 @@ import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import hjapp.com.hjclass_mobile.d.l;
+import hjapp.com.hjclass_mobile.pkg_d.l;
 
 import java.io.File;
 
 public final class e extends ImageView
-  implements hjapp.com.hjclass_mobile.c.b, hjapp.com.hjclass_mobile.c.e
+  implements hjapp.com.hjclass_mobile.pkg_c.b, hjapp.com.hjclass_mobile.pkg_c.e
 {
-  private hjapp.com.hjclass_mobile.b.a a = null;
-  private hjapp.com.hjclass_mobile.d.d b = null;
+  private hjapp.com.hjclass_mobile.pkg_b.a a = null;
+  private hjapp.com.hjclass_mobile.pkg_d.d b = null;
   private Bitmap c = null;
   private Animation d = null;
   private Animation e = null;
   private Boolean f = Boolean.valueOf(false);
   private Boolean g = Boolean.valueOf(false);
 
-  public e(Context paramContext, hjapp.com.hjclass_mobile.b.a parama)
+  public e(Context paramContext, hjapp.com.hjclass_mobile.pkg_b.a parama)
   {
     super(paramContext);
     this.a = parama;
@@ -79,7 +79,7 @@ public final class e extends ImageView
     while (true)
     {
       localOptions2.inSampleSize = i2;
-      hjapp.com.hjclass_mobile.h.u.b("inSampleSize=" + i2);
+      hjapp.com.hjclass_mobile.pkg_h.u.b("inSampleSize=" + i2);
       localOptions2.inJustDecodeBounds = false;
       localOptions2.inInputShareable = true;
       localOptions2.inPurgeable = true;

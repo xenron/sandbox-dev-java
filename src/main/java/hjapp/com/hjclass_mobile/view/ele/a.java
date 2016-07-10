@@ -14,19 +14,19 @@ import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
-import hjapp.com.hjclass_mobile.c.e;
-import hjapp.com.hjclass_mobile.c.f;
-import hjapp.com.hjclass_mobile.c.s;
-import hjapp.com.hjclass_mobile.d.l;
-import hjapp.com.hjclass_mobile.h.z;
+import hjapp.com.hjclass_mobile.pkg_c.e;
+import hjapp.com.hjclass_mobile.pkg_c.f;
+import hjapp.com.hjclass_mobile.pkg_c.s;
+import hjapp.com.hjclass_mobile.pkg_d.l;
+import hjapp.com.hjclass_mobile.pkg_h.z;
 
 import java.io.File;
 
 public final class a extends RelativeLayout
-  implements OnCompletionListener, OnSeekBarChangeListener, hjapp.com.hjclass_mobile.c.b, e, f
+  implements OnCompletionListener, OnSeekBarChangeListener, hjapp.com.hjclass_mobile.pkg_c.b, e, f
 {
-  private hjapp.com.hjclass_mobile.b.a a = null;
-  private hjapp.com.hjclass_mobile.d.c b = null;
+  private hjapp.com.hjclass_mobile.pkg_b.a a = null;
+  private hjapp.com.hjclass_mobile.pkg_d.c b = null;
   private s c = null;
   private Button d = null;
   private Button e = null;
@@ -42,7 +42,7 @@ public final class a extends RelativeLayout
   private boolean o;
   private Handler p = new d(this);
 
-  public a(Context paramContext, hjapp.com.hjclass_mobile.b.a parama)
+  public a(Context paramContext, hjapp.com.hjclass_mobile.pkg_b.a parama)
   {
     super(paramContext);
     this.a = parama;
@@ -88,7 +88,7 @@ public final class a extends RelativeLayout
     localLayoutParams.topMargin = i2;
     setLayoutParams(localLayoutParams);
     File localFile = new File(this.a.c() + File.separator + this.b.c());
-    hjapp.com.hjclass_mobile.h.u.b("audio_url" + this.a.c() + File.separator + this.b.c());
+    hjapp.com.hjclass_mobile.pkg_h.u.b("audio_url" + this.a.c() + File.separator + this.b.c());
     if (localFile.exists())
       this.j.a(localFile);
     while (true)
@@ -103,7 +103,7 @@ public final class a extends RelativeLayout
       this.l.setVisibility(8);
       this.m.setBackgroundDrawable(null);
       return;
-      hjapp.com.hjclass_mobile.h.u.b("audio_url not exist=>>" + this.a.c() + File.separator + this.b.c());
+      hjapp.com.hjclass_mobile.pkg_h.u.b("audio_url not exist=>>" + this.a.c() + File.separator + this.b.c());
     }
   }
 
@@ -171,7 +171,7 @@ public final class a extends RelativeLayout
     setVisibility(0);
   }
 
-  public final hjapp.com.hjclass_mobile.d.c j()
+  public final hjapp.com.hjclass_mobile.pkg_d.c j()
   {
     return this.b;
   }

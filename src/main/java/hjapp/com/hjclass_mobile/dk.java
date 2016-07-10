@@ -11,7 +11,7 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
-import hjapp.com.hjclass_mobile.d.q;
+import hjapp.com.hjclass_mobile.pkg_d.q;
 
 final class dk extends BaseAdapter
   implements Filterable
@@ -61,7 +61,7 @@ final class dk extends BaseAdapter
       if (localBitmap != null)
         break label419;
       HJSubCourseActivity.h(this.a).d.setImageBitmap(HJSubCourseActivity.j(this.a));
-      hjapp.com.hjclass_mobile.b.n localn = new b.n(this.a, HJSubCourseActivity.h(this.a).d, localq.a());
+      hjapp.com.hjclass_mobile.pkg_b.n localn = new pkg_b.n(this.a, HJSubCourseActivity.h(this.a).d, localq.a());
       String[] arrayOfString = new String[1];
       arrayOfString[0] = localq.j();
       localn.execute(arrayOfString);

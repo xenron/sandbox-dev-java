@@ -13,18 +13,18 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.VideoView;
-import hjapp.com.hjclass_mobile.c.b;
-import hjapp.com.hjclass_mobile.c.s;
-import hjapp.com.hjclass_mobile.d.l;
+import hjapp.com.hjclass_mobile.pkg_c.b;
+import hjapp.com.hjclass_mobile.pkg_c.s;
+import hjapp.com.hjclass_mobile.pkg_d.l;
 
 import java.io.File;
 
 public final class y extends RelativeLayout
-  implements OnCompletionListener, OnGestureListener, b, hjapp.com.hjclass_mobile.c.e, hjapp.com.hjclass_mobile.c.f
+  implements OnCompletionListener, OnGestureListener, b, hjapp.com.hjclass_mobile.pkg_c.e, hjapp.com.hjclass_mobile.pkg_c.f
 {
-  private hjapp.com.hjclass_mobile.b.a a = null;
-  private hjapp.com.hjclass_mobile.d.e b = null;
-  private hjapp.com.hjclass_mobile.c.s c = null;
+  private hjapp.com.hjclass_mobile.pkg_b.a a = null;
+  private hjapp.com.hjclass_mobile.pkg_d.e b = null;
+  private hjapp.com.hjclass_mobile.pkg_c.s c = null;
   private Button d = null;
   private VideoView e = null;
   private Animation f = null;
@@ -36,7 +36,7 @@ public final class y extends RelativeLayout
   private Boolean l = Boolean.valueOf(false);
   private LayoutParams m = null;
 
-  public y(Context paramContext, hjapp.com.hjclass_mobile.b.a parama)
+  public y(Context paramContext, hjapp.com.hjclass_mobile.pkg_b.a parama)
   {
     super(paramContext);
     this.a = parama;

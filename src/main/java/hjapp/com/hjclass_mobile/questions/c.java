@@ -2,7 +2,7 @@ package hjapp.com.hjclass_mobile.questions;
 
 import android.os.Handler;
 import android.os.Message;
-import hjapp.com.hjclass_mobile.h.u;
+import hjapp.com.hjclass_mobile.pkg_h.u;
 
 final class c extends Handler
 {

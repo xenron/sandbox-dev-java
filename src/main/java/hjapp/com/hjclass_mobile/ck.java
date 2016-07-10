@@ -1,7 +1,7 @@
 package hjapp.com.hjclass_mobile;
 
 import android.app.Activity;
-import hjapp.com.hjclass_mobile.f.c;
+import hjapp.com.hjclass_mobile.pkg_f.c;
 import hjapp.com.umeng.fb.UMFeedbackService;
 import hjapp.com.umeng.fb.util.FeedBackListener;
 import java.util.HashMap;

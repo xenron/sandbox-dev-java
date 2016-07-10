@@ -4,10 +4,10 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
-import hjapp.com.hjclass_mobile.f.c;
-import hjapp.com.hjclass_mobile.h.t;
-import hjapp.com.hjclass_mobile.h.u;
-import hjapp.com.hjclass_mobile.h.z;
+import hjapp.com.hjclass_mobile.pkg_f.c;
+import hjapp.com.hjclass_mobile.pkg_h.t;
+import hjapp.com.hjclass_mobile.pkg_h.u;
+import hjapp.com.hjclass_mobile.pkg_h.z;
 
 import java.net.URLEncoder;
 import java.util.HashMap;

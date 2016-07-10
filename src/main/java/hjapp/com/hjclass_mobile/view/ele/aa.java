@@ -7,11 +7,11 @@ import android.graphics.BitmapFactory.Options;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import hjapp.com.hjclass_mobile.b.a;
-import hjapp.com.hjclass_mobile.c.b;
-import hjapp.com.hjclass_mobile.c.e;
-import hjapp.com.hjclass_mobile.d.l;
-import hjapp.com.hjclass_mobile.d.m;
+import hjapp.com.hjclass_mobile.pkg_b.a;
+import hjapp.com.hjclass_mobile.pkg_c.b;
+import hjapp.com.hjclass_mobile.pkg_c.e;
+import hjapp.com.hjclass_mobile.pkg_d.l;
+import hjapp.com.hjclass_mobile.pkg_d.m;
 
 import java.io.File;
 
@@ -58,7 +58,7 @@ public final class aa extends ImageView
     {
       localOptions = new Options();
       localOptions.inJustDecodeBounds = true;
-      localOptions.inSampleSize = hjapp.com.hjclass_mobile.h.z.a(localOptions, Math.min(k, m), k * m);
+      localOptions.inSampleSize = hjapp.com.hjclass_mobile.pkg_h.z.a(localOptions, Math.min(k, m), k * m);
       localOptions.inJustDecodeBounds = false;
       localOptions.inInputShareable = true;
       localOptions.inPurgeable = true;

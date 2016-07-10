@@ -12,16 +12,16 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
-import hjapp.com.hjclass_mobile.d.p;
+import hjapp.com.hjclass_mobile.pkg_d.p;
 
 import java.util.List;
 
 public class HJAppActivity extends BaseActivity
-  implements OnClickListener, OnItemClickListener, hjapp.com.hjclass_mobile.c.o
+  implements OnClickListener, OnItemClickListener, hjapp.com.hjclass_mobile.pkg_c.o
 {
   private List a;
   private m b = null;
-  private hjapp.com.hjclass_mobile.h.v c = null;
+  private hjapp.com.hjclass_mobile.pkg_h.v c = null;
   private Bitmap d = null;
   private ListView e = null;
   private n f = null;
@@ -54,7 +54,7 @@ public class HJAppActivity extends BaseActivity
     this.e = ((ListView)findViewById(2131361819));
     this.e.setCacheColorHint(0);
     this.e.setOnItemClickListener(this);
-    this.c = new h.v(20);
+    this.c = new pkg_h.v(20);
     this.f = new n(this, (byte)0);
     this.f.execute(new String[] { "android_hjclass_mobile" });
   }

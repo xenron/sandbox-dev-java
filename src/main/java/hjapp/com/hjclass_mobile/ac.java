@@ -1,7 +1,7 @@
 package hjapp.com.hjclass_mobile;
 
 import android.widget.Toast;
-import hjapp.com.hjclass_mobile.c.r;
+import hjapp.com.hjclass_mobile.pkg_c.r;
 
 final class ac
   implements r

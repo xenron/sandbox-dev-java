@@ -15,11 +15,11 @@ final class f extends BroadcastReceiver
   {
     String str = paramIntent.getAction();
     Bundle localBundle = paramIntent.getExtras();
-    d.s locals;
+    pkg_d.s locals;
     if (localBundle != null)
     {
       int i = localBundle.getInt("position");
-      locals = (d.s)DownloadService.a(this.a).b().get(i);
+      locals = (pkg_d.s)DownloadService.a(this.a).b().get(i);
       if (!str.equals("check_task"))
         break label68;
       DownloadService.a(this.a, locals, i);

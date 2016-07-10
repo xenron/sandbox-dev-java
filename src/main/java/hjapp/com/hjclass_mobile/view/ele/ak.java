@@ -21,7 +21,7 @@ public final class ak
     this.b.setOnCompletionListener(paramOnCompletionListener);
   }
 
-  public final int a(hjapp.com.hjclass_mobile.b.a parama)
+  public final int a(hjapp.com.hjclass_mobile.pkg_b.a parama)
   {
     if (this.e > 0)
       return this.e;

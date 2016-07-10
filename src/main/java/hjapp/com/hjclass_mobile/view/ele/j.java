@@ -1,9 +1,9 @@
 package hjapp.com.hjclass_mobile.view.ele;
 
-import hjapp.com.hjclass_mobile.d.ab;
+import hjapp.com.hjclass_mobile.pkg_d.ab;
 
 final class j
-  implements hjapp.com.hjclass_mobile.c.z
+  implements hjapp.com.hjclass_mobile.pkg_c.z
 {
   j(h paramh, o paramo)
   {

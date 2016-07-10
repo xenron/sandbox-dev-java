@@ -1,11 +1,11 @@
 package hjapp.com.hjclass_mobile;
 
-import hjapp.com.hjclass_mobile.c.i;
+import hjapp.com.hjclass_mobile.pkg_c.i;
 
 import java.io.File;
 
 final class e
-  implements c.h
+  implements pkg_c.h
 {
   e(DownloadService paramDownloadService, String paramString)
   {

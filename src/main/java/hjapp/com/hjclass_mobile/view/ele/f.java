@@ -12,10 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 public final class f extends RelativeLayout
-  implements OnGestureListener, hjapp.com.hjclass_mobile.c.b
+  implements OnGestureListener, hjapp.com.hjclass_mobile.pkg_c.b
 {
-  private hjapp.com.hjclass_mobile.b.a a = null;
-  private hjapp.com.hjclass_mobile.d.f b = null;
+  private hjapp.com.hjclass_mobile.pkg_b.a a = null;
+  private hjapp.com.hjclass_mobile.pkg_d.f b = null;
   private Button c = null;
   private Button d = null;
   private GestureDetector e = null;
@@ -25,7 +25,7 @@ public final class f extends RelativeLayout
   private int i;
   private int j = 0;
 
-  public f(Context paramContext, hjapp.com.hjclass_mobile.b.a parama)
+  public f(Context paramContext, hjapp.com.hjclass_mobile.pkg_b.a parama)
   {
     super(paramContext);
     this.a = parama;
@@ -45,7 +45,7 @@ public final class f extends RelativeLayout
   {
   }
 
-  public final void a(hjapp.com.hjclass_mobile.d.l paraml)
+  public final void a(hjapp.com.hjclass_mobile.pkg_d.l paraml)
   {
     this.b = paraml.d();
     if (!this.b.e().equals("fullscreen"))
@@ -60,7 +60,7 @@ public final class f extends RelativeLayout
     }
   }
 
-  public final void a(hjapp.com.hjclass_mobile.g.r paramr)
+  public final void a(hjapp.com.hjclass_mobile.pkg_g.r paramr)
   {
     if (this.h.getChildCount() == 0)
     {

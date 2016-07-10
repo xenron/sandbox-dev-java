@@ -15,15 +15,15 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
-import hjapp.com.hjclass_mobile.d.s;
-import hjapp.com.hjclass_mobile.d.t;
+import hjapp.com.hjclass_mobile.pkg_d.s;
+import hjapp.com.hjclass_mobile.pkg_d.t;
 import hjapp.com.hjclass_mobile.view.LessonButton;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class HJCoureseLessonActivity extends BaseActivity
-  implements OnClickListener, hjapp.com.hjclass_mobile.c.o
+  implements OnClickListener, hjapp.com.hjclass_mobile.pkg_c.o
 {
   private TextView A;
   private ImageView B;
@@ -36,7 +36,7 @@ public class HJCoureseLessonActivity extends BaseActivity
   private Button I = null;
   private OnClickListener J = new ak(this);
   private List a;
-  private hjapp.com.hjclass_mobile.b.b b = null;
+  private hjapp.com.hjclass_mobile.pkg_b.b b = null;
   private ao c = null;
   private boolean d = false;
   private LinearLayout e = null;
@@ -384,7 +384,7 @@ public class HJCoureseLessonActivity extends BaseActivity
     this.I = ((Button)findViewById(2131361857));
     this.I.setOnClickListener(this);
     Bundle localBundle = getIntent().getExtras();
-    this.b = new hjapp.com.hjclass_mobile.b.b(this);
+    this.b = new hjapp.com.hjclass_mobile.pkg_b.b(this);
     this.e = ((LinearLayout)findViewById(2131361852));
     this.o = ((TableLayout)findViewById(2131361855));
     this.p = ((TableLayout)findViewById(2131361856));
@@ -406,7 +406,7 @@ public class HJCoureseLessonActivity extends BaseActivity
       this.y.setText(localBundle.getString("opentime").replace("0:00:00", ""));
       this.z.setText(getString(2131492935) + "\n" + localBundle.getString("des"));
       String str = localBundle.getString("iconUrl");
-      new hjapp.com.hjclass_mobile.b.n(this, this.B, this.f).execute(new String[] { str });
+      new hjapp.com.hjclass_mobile.pkg_b.n(this, this.B, this.f).execute(new String[] { str });
       this.A.setText(localBundle.getString("classname"));
       this.c = new ao(this, (byte)0);
       if (this.a.size() > 0)

@@ -13,12 +13,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import hjapp.com.hjclass_mobile.c.aa;
-import hjapp.com.hjclass_mobile.c.b;
-import hjapp.com.hjclass_mobile.c.j;
-import hjapp.com.hjclass_mobile.c.k;
-import hjapp.com.hjclass_mobile.d.ad;
-import hjapp.com.hjclass_mobile.h.z;
+import hjapp.com.hjclass_mobile.pkg_c.aa;
+import hjapp.com.hjclass_mobile.pkg_c.b;
+import hjapp.com.hjclass_mobile.pkg_c.j;
+import hjapp.com.hjclass_mobile.pkg_c.k;
+import hjapp.com.hjclass_mobile.pkg_d.ad;
+import hjapp.com.hjclass_mobile.pkg_h.z;
 import hjapp.com.hjclass_mobile.view.HJLinearLayout;
 
 import java.io.File;
@@ -29,7 +29,7 @@ public final class l extends RelativeLayout
   implements b, j
 {
   OnClickListener a = new n(this);
-  private hjapp.com.hjclass_mobile.b.a b;
+  private hjapp.com.hjclass_mobile.pkg_b.a b;
   private HJLinearLayout c = null;
   private TextView d = null;
   private String e = null;
@@ -45,7 +45,7 @@ public final class l extends RelativeLayout
   private float o;
   private float p;
 
-  public l(Context paramContext, hjapp.com.hjclass_mobile.b.a parama)
+  public l(Context paramContext, hjapp.com.hjclass_mobile.pkg_b.a parama)
   {
     super(paramContext);
     this.b = parama;
@@ -96,7 +96,7 @@ public final class l extends RelativeLayout
     this.h = paramaa;
   }
 
-  public final void a(hjapp.com.hjclass_mobile.d.l paraml)
+  public final void a(hjapp.com.hjclass_mobile.pkg_d.l paraml)
   {
     LinearLayout localLinearLayout1 = null;
     ad localad = paraml.b();
@@ -104,7 +104,7 @@ public final class l extends RelativeLayout
       return;
     this.j = localad.k();
     if (localad.a() != null)
-      this.d.setText(hjapp.com.hjclass_mobile.h.c.a(localad.a()));
+      this.d.setText(hjapp.com.hjclass_mobile.pkg_h.c.a(localad.a()));
     if ((localad.f() != null) && (localad.f() != ""))
       this.e = localad.f();
     for (String[] arrayOfString = localad.f().split("\\|"); ; arrayOfString = null)
@@ -151,8 +151,8 @@ public final class l extends RelativeLayout
       {
         LinearLayout localLinearLayout3 = this.l;
         String str = localad.h();
-        hjapp.com.hjclass_mobile.d.l locall = new hjapp.com.hjclass_mobile.d.l();
-        hjapp.com.hjclass_mobile.d.c localc = new hjapp.com.hjclass_mobile.d.c();
+        hjapp.com.hjclass_mobile.pkg_d.l locall = new hjapp.com.hjclass_mobile.pkg_d.l();
+        hjapp.com.hjclass_mobile.pkg_d.c localc = new hjapp.com.hjclass_mobile.pkg_d.c();
         localc.a(str);
         localc.a(false);
         localc.d("TYPE_LONG");
@@ -171,7 +171,7 @@ public final class l extends RelativeLayout
     }
   }
 
-  public final void a(hjapp.com.hjclass_mobile.d.z paramz)
+  public final void a(hjapp.com.hjclass_mobile.pkg_d.z paramz)
   {
     if (paramz != null)
     {
@@ -226,7 +226,7 @@ public final class l extends RelativeLayout
       this.c.c();
       return bool;
       this.n = Math.abs(this.p - this.o);
-      hjapp.com.hjclass_mobile.h.u.b("yDistance" + this.n + ",optionsLayout.isIntecept()=" + this.c.b());
+      hjapp.com.hjclass_mobile.pkg_h.u.b("yDistance" + this.n + ",optionsLayout.isIntecept()=" + this.c.b());
     }
     while ((this.c.b()) || (this.n >= 5.0F));
     Intent localIntent = new Intent("show_cmd");

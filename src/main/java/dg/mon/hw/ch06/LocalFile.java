@@ -1,14 +1,15 @@
 package dg.mon.hw.ch06;
 
-import java.io.*;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.table.DefaultTableModel;
-import java.lang.Runtime;
-import java.lang.Process;
-import java.util.Date;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * 实现本地文件浏览，为继承JPanel的一个面板

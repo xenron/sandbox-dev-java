@@ -4,8 +4,8 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.widget.Toast;
-import hjapp.com.hjclass_mobile.d.s;
-import hjapp.com.hjclass_mobile.d.t;
+import hjapp.com.hjclass_mobile.pkg_d.s;
+import hjapp.com.hjclass_mobile.pkg_d.t;
 
 final class bm
   implements OnClickListener

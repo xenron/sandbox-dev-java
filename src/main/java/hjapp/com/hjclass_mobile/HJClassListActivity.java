@@ -15,14 +15,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import hjapp.com.hjclass_mobile.b.b;
-import hjapp.com.hjclass_mobile.d.a;
-import hjapp.com.hjclass_mobile.d.q;
+import hjapp.com.hjclass_mobile.pkg_b.b;
+import hjapp.com.hjclass_mobile.pkg_d.a;
+import hjapp.com.hjclass_mobile.pkg_d.q;
 import hjapp.com.hjclass_mobile.view.widget.k;
 import java.util.List;
 
 public class HJClassListActivity extends BaseActivity
-  implements OnClickListener, OnItemClickListener, hjapp.com.hjclass_mobile.c.o
+  implements OnClickListener, OnItemClickListener, hjapp.com.hjclass_mobile.pkg_c.o
 {
   OnItemClickListener a = new t(this);
   private w b = null;
@@ -35,7 +35,7 @@ public class HJClassListActivity extends BaseActivity
   private b i = null;
   private Button j = null;
   private View k = null;
-  private hjapp.com.hjclass_mobile.h.v l = null;
+  private hjapp.com.hjclass_mobile.pkg_h.v l = null;
   private Bitmap m = null;
   private int n = 0;
   private k o = null;
@@ -119,7 +119,7 @@ public class HJClassListActivity extends BaseActivity
     this.c.setOnItemClickListener(this);
     ((Button)findViewById(2131361850)).setOnClickListener(this);
     this.i = new b(this);
-    this.l = new h.v(20);
+    this.l = new pkg_h.v(20);
     this.m = BitmapFactory.decodeResource(getResources(), 2130837515);
     this.n = 0;
     Bundle localBundle = getIntent().getExtras();

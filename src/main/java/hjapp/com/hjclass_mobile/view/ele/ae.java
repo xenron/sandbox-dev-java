@@ -10,8 +10,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
-import hjapp.com.hjclass_mobile.b.a;
-import hjapp.com.hjclass_mobile.c.k;
+import hjapp.com.hjclass_mobile.pkg_b.a;
+import hjapp.com.hjclass_mobile.pkg_c.k;
 
 public final class ae extends RelativeLayout
   implements OnEditorActionListener, k
@@ -19,7 +19,7 @@ public final class ae extends RelativeLayout
   private ImageView a = null;
   private ImageView b = null;
   private a c = null;
-  private hjapp.com.hjclass_mobile.c.z d = null;
+  private hjapp.com.hjclass_mobile.pkg_c.z d = null;
   private String e = null;
   private EditText f = null;
 
@@ -45,7 +45,7 @@ public final class ae extends RelativeLayout
     this.b.setVisibility(4);
   }
 
-  public final void a(hjapp.com.hjclass_mobile.d.z paramz)
+  public final void a(hjapp.com.hjclass_mobile.pkg_d.z paramz)
   {
     if (paramz.b().equals(this.e))
     {

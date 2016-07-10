@@ -8,8 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import hjapp.com.hjclass_mobile.HJApplication;
-import hjapp.com.hjclass_mobile.c.c;
-import hjapp.com.hjclass_mobile.c.w;
+import hjapp.com.hjclass_mobile.pkg_c.c;
+import hjapp.com.hjclass_mobile.pkg_c.w;
 
 public final class ai extends RelativeLayout
   implements c

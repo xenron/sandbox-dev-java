@@ -22,7 +22,7 @@ final class p
     {
       if (this.a.e() != null)
       {
-        hjapp.com.hjclass_mobile.h.u.b(">>>>>>>>>myAnswer>>>>>>>=" + o.c(this.a));
+        hjapp.com.hjclass_mobile.pkg_h.u.b(">>>>>>>>>myAnswer>>>>>>>=" + o.c(this.a));
         this.a.e().a(o.c(this.a));
       }
       return;

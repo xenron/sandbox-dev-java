@@ -44,7 +44,7 @@ final class at extends BaseAdapter
     while (true)
     {
       paramView.setBackgroundResource(2130837740);
-      d.t localt = (d.t)HJDemoClassActivity.a(this.a).get(paramInt);
+      pkg_d.t localt = (pkg_d.t)HJDemoClassActivity.a(this.a).get(paramInt);
       HJDemoClassActivity.b(this.a).a.setText(localt.g());
       HJDemoClassActivity.b(this.a).b.setText(this.a.getString(2131492911));
       HJDemoClassActivity.b(this.a).c.setText(this.a.getString(2131492937));

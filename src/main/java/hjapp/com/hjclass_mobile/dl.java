@@ -2,7 +2,7 @@ package hjapp.com.hjclass_mobile;
 
 import android.text.TextUtils;
 import android.widget.Filter;
-import hjapp.com.hjclass_mobile.d.q;
+import hjapp.com.hjclass_mobile.pkg_d.q;
 import java.util.ArrayList;
 import java.util.List;
 

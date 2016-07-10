@@ -36,7 +36,7 @@ final class p extends BaseAdapter
 
   public final View getView(int paramInt, View paramView, ViewGroup paramViewGroup)
   {
-    d.q localq;
+    pkg_d.q localq;
     label200: Bitmap localBitmap;
     if (paramView == null)
     {
@@ -48,7 +48,7 @@ final class p extends BaseAdapter
       HJClassExpiredListActivity.h(this.a).b = ((TextView)paramView.findViewById(2131361841));
       HJClassExpiredListActivity.h(this.a).a = ((TextView)paramView.findViewById(2131361838));
       paramView.setTag(HJClassExpiredListActivity.h(this.a));
-      localq = (d.q)HJClassExpiredListActivity.d(this.a).get(paramInt);
+      localq = (pkg_d.q)HJClassExpiredListActivity.d(this.a).get(paramInt);
       if (localq.b() <= 0)
         break label479;
       HJClassExpiredListActivity.h(this.a).c.setProgress((int)(100.0D * (localq.c() / (1.0D * localq.b()))));
@@ -56,7 +56,7 @@ final class p extends BaseAdapter
       if (localBitmap != null)
         break label496;
       HJClassExpiredListActivity.h(this.a).e.setImageBitmap(HJClassExpiredListActivity.j(this.a));
-      hjapp.com.hjclass_mobile.b.n localn = new b.n(this.a, HJClassExpiredListActivity.h(this.a).e, localq.a());
+      hjapp.com.hjclass_mobile.pkg_b.n localn = new pkg_b.n(this.a, HJClassExpiredListActivity.h(this.a).e, localq.a());
       String[] arrayOfString = new String[1];
       arrayOfString[0] = localq.j();
       localn.execute(arrayOfString);

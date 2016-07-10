@@ -19,7 +19,7 @@ public class HJFeedActivity extends BaseActivity
   private View b;
   private View c;
   private ListView d;
-  private hjapp.com.hjclass_mobile.b.o e = null;
+  private hjapp.com.hjclass_mobile.pkg_b.o e = null;
   private int f = 0;
   private List g = null;
   private bk h = null;
@@ -73,7 +73,7 @@ public class HJFeedActivity extends BaseActivity
     arrayOfObject[1] = Integer.valueOf(this.j);
     localbk.execute(arrayOfObject);
     this.g = new ArrayList();
-    this.e = new b.o(this, this.g);
+    this.e = new pkg_b.o(this, this.g);
     this.d.setAdapter(this.e);
   }
 

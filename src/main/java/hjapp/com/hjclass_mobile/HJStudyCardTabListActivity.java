@@ -11,7 +11,7 @@ import android.widget.RadioButton;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
-import hjapp.com.hjclass_mobile.d.w;
+import hjapp.com.hjclass_mobile.pkg_d.w;
 
 import java.io.Serializable;
 import java.util.ArrayList;

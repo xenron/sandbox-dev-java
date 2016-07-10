@@ -8,12 +8,12 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.Toast;
 import hjapp.com.hjclass_mobile.HJClassPlayerV3.MyPagerAdapter;
-import hjapp.com.hjclass_mobile.c.ab;
-import hjapp.com.hjclass_mobile.c.ac;
-import hjapp.com.hjclass_mobile.c.q;
-import hjapp.com.hjclass_mobile.c.y;
-import hjapp.com.hjclass_mobile.h.u;
-import hjapp.com.hjclass_mobile.d.l;
+import hjapp.com.hjclass_mobile.pkg_c.ab;
+import hjapp.com.hjclass_mobile.pkg_c.ac;
+import hjapp.com.hjclass_mobile.pkg_c.q;
+import hjapp.com.hjclass_mobile.pkg_c.y;
+import hjapp.com.hjclass_mobile.pkg_h.u;
+import hjapp.com.hjclass_mobile.pkg_d.l;
 
 import java.util.List;
 

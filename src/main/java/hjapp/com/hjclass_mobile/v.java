@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import hjapp.com.hjclass_mobile.d.q;
+import hjapp.com.hjclass_mobile.pkg_d.q;
 
 final class v extends BaseAdapter
 {
@@ -57,7 +57,7 @@ final class v extends BaseAdapter
       if (localBitmap != null)
         break label496;
       HJClassListActivity.h(this.a).e.setImageBitmap(HJClassListActivity.j(this.a));
-      hjapp.com.hjclass_mobile.b.n localn = new b.n(this.a, HJClassListActivity.h(this.a).e, localq.a());
+      hjapp.com.hjclass_mobile.pkg_b.n localn = new pkg_b.n(this.a, HJClassListActivity.h(this.a).e, localq.a());
       String[] arrayOfString = new String[1];
       arrayOfString[0] = localq.j();
       localn.execute(arrayOfString);

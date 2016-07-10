@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import hjapp.com.hjclass_mobile.HJApplication;
-import hjapp.com.hjclass_mobile.c.b;
+import hjapp.com.hjclass_mobile.pkg_c.b;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
@@ -16,15 +16,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import hjapp.com.hjclass_mobile.d.z;
+import hjapp.com.hjclass_mobile.pkg_d.z;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 
 public final class q extends LinearLayout
-  implements b, hjapp.com.hjclass_mobile.c.l
+  implements b, hjapp.com.hjclass_mobile.pkg_c.l
 {
-  private hjapp.com.hjclass_mobile.d.h a = null;
+  private hjapp.com.hjclass_mobile.pkg_d.h a = null;
   private LinearLayout b = null;
   private Hashtable c = null;
   private Boolean d = Boolean.valueOf(false);
@@ -46,7 +46,7 @@ public final class q extends LinearLayout
     removeAllViews();
   }
 
-  public final void a(hjapp.com.hjclass_mobile.d.l paraml)
+  public final void a(hjapp.com.hjclass_mobile.pkg_d.l paraml)
   {
     if (paraml.j() != null)
     {
@@ -58,13 +58,13 @@ public final class q extends LinearLayout
         int j = 0;
         if (j < i)
         {
-          hjapp.com.hjclass_mobile.d.g localg = (hjapp.com.hjclass_mobile.d.g)localList.get(j);
+          hjapp.com.hjclass_mobile.pkg_d.g localg = (hjapp.com.hjclass_mobile.pkg_d.g)localList.get(j);
           af localaf = new af(getContext());
           localaf.a(localg.b());
           localaf.b(Integer.parseInt(localg.c()));
           StringBuilder localStringBuilder = new StringBuilder();
           if (localg.d() != null)
-            localStringBuilder.append(j + 1 + "、" + hjapp.com.hjclass_mobile.h.z.e(localg.d()) + "\n");
+            localStringBuilder.append(j + 1 + "、" + hjapp.com.hjclass_mobile.pkg_h.z.e(localg.d()) + "\n");
           if (localg.e() != null)
             localStringBuilder.append(localg.e());
           localaf.a(localStringBuilder.toString());

@@ -8,8 +8,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import hjapp.com.hjclass_mobile.BaseActivity;
-import hjapp.com.hjclass_mobile.h.t;
-import hjapp.com.hjclass_mobile.h.z;
+import hjapp.com.hjclass_mobile.pkg_h.t;
+import hjapp.com.hjclass_mobile.pkg_h.z;
 
 import java.net.URLEncoder;
 import java.util.HashMap;

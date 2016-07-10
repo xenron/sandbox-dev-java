@@ -30,14 +30,14 @@ final class l extends BaseAdapter
   public final View getView(int paramInt, View paramView, ViewGroup paramViewGroup)
   {
     m localm;
-    hjapp.com.hjclass_mobile.d.a locala;
+    hjapp.com.hjclass_mobile.pkg_d.a locala;
     if (paramView == null)
     {
       paramView = LayoutInflater.from(k.b(this.a)).inflate(2130903107, null);
       localm = new m(this, (byte)0);
       localm.a = ((TextView)paramView.findViewById(2131362028));
       paramView.setTag(localm);
-      locala = (hjapp.com.hjclass_mobile.d.a)k.a(this.a).get(paramInt);
+      locala = (hjapp.com.hjclass_mobile.pkg_d.a)k.a(this.a).get(paramInt);
       if (!locala.c())
         break label124;
       localm.a.setTextColor(-1);

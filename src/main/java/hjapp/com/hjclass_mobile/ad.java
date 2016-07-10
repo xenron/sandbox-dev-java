@@ -1,6 +1,6 @@
 package hjapp.com.hjclass_mobile;
 
-import hjapp.com.hjclass_mobile.c.s;
+import hjapp.com.hjclass_mobile.pkg_c.s;
 
 final class ad
   implements s

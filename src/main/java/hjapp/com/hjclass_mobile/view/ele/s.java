@@ -4,23 +4,23 @@ import android.content.Context;
 import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import hjapp.com.hjclass_mobile.c.b;
-import hjapp.com.hjclass_mobile.d.l;
+import hjapp.com.hjclass_mobile.pkg_c.b;
+import hjapp.com.hjclass_mobile.pkg_d.l;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public final class s extends BaseTextView
-  implements b, hjapp.com.hjclass_mobile.c.e
+  implements b, hjapp.com.hjclass_mobile.pkg_c.e
 {
-  private hjapp.com.hjclass_mobile.b.a a = null;
-  private hjapp.com.hjclass_mobile.d.j b = null;
+  private hjapp.com.hjclass_mobile.pkg_b.a a = null;
+  private hjapp.com.hjclass_mobile.pkg_d.j b = null;
   private Animation c = null;
   private Animation d = null;
   private Boolean e = Boolean.valueOf(false);
   private Boolean f = Boolean.valueOf(false);
 
-  public s(Context paramContext, hjapp.com.hjclass_mobile.b.a parama)
+  public s(Context paramContext, hjapp.com.hjclass_mobile.pkg_b.a parama)
   {
     super(paramContext);
     setSelectAllOnFocus(false);
@@ -39,7 +39,7 @@ public final class s extends BaseTextView
   public final void a(l paraml)
   {
     this.b = paraml.e();
-    String str1 = this.b.e().replace("{user}", hjapp.com.hjclass_mobile.f.c.c()).replace("<P", "<d").replace("</P>", "</d><br/>");
+    String str1 = this.b.e().replace("{user}", hjapp.com.hjclass_mobile.pkg_f.c.c()).replace("<P", "<d").replace("</P>", "</d><br/>");
     int i = this.a.a(this.b.a());
     int j = this.a.b(this.b.b());
     int k = this.a.c(20 + this.b.d());
@@ -52,8 +52,8 @@ public final class s extends BaseTextView
     if (localMatcher2.find())
       str2 = localMatcher2.group(1);
     setLineSpacing(f1, 1.0F);
-    setText(hjapp.com.hjclass_mobile.h.c.a(str1.replace("<FONT FACE=\"Microsoft Yahei,微软雅黑\" SIZE=\"24\" COLOR=\"#333333\" LETTERSPACING=\"0\" KERNING=\"0\">", "")));
-    hjapp.com.hjclass_mobile.h.u.b("align=" + str2);
+    setText(hjapp.com.hjclass_mobile.pkg_h.c.a(str1.replace("<FONT FACE=\"Microsoft Yahei,微软雅黑\" SIZE=\"24\" COLOR=\"#333333\" LETTERSPACING=\"0\" KERNING=\"0\">", "")));
+    hjapp.com.hjclass_mobile.pkg_h.u.b("align=" + str2);
     int m;
     if (str2.equals("LEFT"))
     {

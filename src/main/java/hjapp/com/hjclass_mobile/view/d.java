@@ -18,8 +18,8 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 import hjapp.com.hjclass_mobile.HJApplication;
-import hjapp.com.hjclass_mobile.d.aa;
-import hjapp.com.hjclass_mobile.h.z;
+import hjapp.com.hjclass_mobile.pkg_d.aa;
+import hjapp.com.hjclass_mobile.pkg_h.z;
 
 import java.util.List;
 
@@ -32,7 +32,7 @@ public final class d extends LinearLayout
   public SeekBar d = null;
   private long e = 0L;
   private View f;
-  private hjapp.com.hjclass_mobile.c.g g;
+  private hjapp.com.hjclass_mobile.pkg_c.g g;
   private Context h;
   private boolean i;
   private Button j;
@@ -168,7 +168,7 @@ public final class d extends LinearLayout
     }
   }
 
-  public final void a(hjapp.com.hjclass_mobile.c.g paramg)
+  public final void a(hjapp.com.hjclass_mobile.pkg_c.g paramg)
   {
     this.g = paramg;
     i();

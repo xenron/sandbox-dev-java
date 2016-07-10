@@ -5,8 +5,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
-import hjapp.com.hjclass_mobile.c.k;
-import hjapp.com.hjclass_mobile.h.u;
+import hjapp.com.hjclass_mobile.pkg_c.k;
+import hjapp.com.hjclass_mobile.pkg_h.u;
 
 public class HJLinearLayout extends LinearLayout
 {

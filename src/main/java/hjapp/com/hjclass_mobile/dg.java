@@ -35,7 +35,7 @@ final class dg extends BaseAdapter
 
   public final View getView(int paramInt, View paramView, ViewGroup paramViewGroup)
   {
-    d.w localw;
+    pkg_d.w localw;
     Bitmap localBitmap;
     if (paramView == null)
     {
@@ -46,12 +46,12 @@ final class dg extends BaseAdapter
       HJStudyCardSubCourseActivity.g(this.a).b = ((TextView)paramView.findViewById(2131361847));
       HJStudyCardSubCourseActivity.g(this.a).a = ((TextView)paramView.findViewById(2131361838));
       paramView.setTag(HJStudyCardSubCourseActivity.g(this.a));
-      localw = (d.w)HJStudyCardSubCourseActivity.a(this.a).get(paramInt);
+      localw = (pkg_d.w)HJStudyCardSubCourseActivity.a(this.a).get(paramInt);
       localBitmap = (Bitmap)HJStudyCardSubCourseActivity.h(this.a).a(Integer.valueOf(Integer.parseInt(localw.a())));
       if (localBitmap != null)
         break label396;
       HJStudyCardSubCourseActivity.g(this.a).d.setImageBitmap(HJStudyCardSubCourseActivity.i(this.a));
-      hjapp.com.hjclass_mobile.b.n localn = new b.n(this.a, HJStudyCardSubCourseActivity.g(this.a).d, Integer.parseInt(localw.a()));
+      hjapp.com.hjclass_mobile.pkg_b.n localn = new pkg_b.n(this.a, HJStudyCardSubCourseActivity.g(this.a).d, Integer.parseInt(localw.a()));
       String[] arrayOfString = new String[1];
       arrayOfString[0] = localw.c();
       localn.execute(arrayOfString);

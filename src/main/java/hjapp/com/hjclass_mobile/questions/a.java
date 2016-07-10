@@ -9,7 +9,7 @@ import android.os.Message;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import hjapp.com.hjclass_mobile.HJLoginActivity;
-import hjapp.com.hjclass_mobile.h.u;
+import hjapp.com.hjclass_mobile.pkg_h.u;
 
 public class a extends WebViewClient
 {

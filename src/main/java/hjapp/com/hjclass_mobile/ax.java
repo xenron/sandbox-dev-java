@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import hjapp.com.hjclass_mobile.d.s;
+import hjapp.com.hjclass_mobile.pkg_d.s;
 
 final class ax extends BroadcastReceiver
 {

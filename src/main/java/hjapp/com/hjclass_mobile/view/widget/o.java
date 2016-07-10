@@ -5,7 +5,7 @@ import android.content.Context;
 import android.os.Handler;
 
 public final class o
-  implements hjapp.com.hjclass_mobile.c.d
+  implements hjapp.com.hjclass_mobile.pkg_c.d
 {
   private Dialog a;
   private Handler b = new Handler();

@@ -10,12 +10,12 @@ import android.os.Environment;
 import android.os.IBinder;
 import android.util.Log;
 import android.widget.RemoteViews;
-import hjapp.com.hjclass_mobile.b.d;
-import hjapp.com.hjclass_mobile.c.a;
-import hjapp.com.hjclass_mobile.d.s;
-import hjapp.com.hjclass_mobile.d.t;
-import hjapp.com.hjclass_mobile.g.p;
-import hjapp.com.hjclass_mobile.g.q;
+import hjapp.com.hjclass_mobile.pkg_b.d;
+import hjapp.com.hjclass_mobile.pkg_c.a;
+import hjapp.com.hjclass_mobile.pkg_d.s;
+import hjapp.com.hjclass_mobile.pkg_d.t;
+import hjapp.com.hjclass_mobile.pkg_g.p;
+import hjapp.com.hjclass_mobile.pkg_g.q;
 
 import java.io.File;
 import java.util.List;
@@ -25,7 +25,7 @@ public class DownloadService extends Service
   implements a
 {
   private static int g = -1;
-  private hjapp.com.hjclass_mobile.b.b a = null;
+  private hjapp.com.hjclass_mobile.pkg_b.b a = null;
   private NotificationManager b = null;
   private Notification c = null;
   private Intent d = null;
@@ -366,7 +366,7 @@ public class DownloadService extends Service
     this.e = PendingIntent.getActivity(this, 0, this.d, 0);
     this.c.icon = 2130837695;
     this.c.contentIntent = this.e;
-    this.a = new hjapp.com.hjclass_mobile.b.b(this);
+    this.a = new hjapp.com.hjclass_mobile.pkg_b.b(this);
   }
 
   public void onDestroy()

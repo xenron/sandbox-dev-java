@@ -2,8 +2,8 @@ package hjapp.com.hjclass_mobile;
 
 import android.content.Intent;
 import android.widget.Toast;
-import hjapp.com.hjclass_mobile.b.e;
-import hjapp.com.hjclass_mobile.f.c;
+import hjapp.com.hjclass_mobile.pkg_b.e;
+import hjapp.com.hjclass_mobile.pkg_f.c;
 
 final class aw
   implements Runnable

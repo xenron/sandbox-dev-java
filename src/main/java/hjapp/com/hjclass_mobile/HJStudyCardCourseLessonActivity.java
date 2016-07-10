@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class HJStudyCardCourseLessonActivity extends BaseActivity
-  implements OnClickListener, hjapp.com.hjclass_mobile.c.o
+  implements OnClickListener, hjapp.com.hjclass_mobile.pkg_c.o
 {
   private boolean a = false;
   private LinearLayout b = null;
@@ -104,7 +104,7 @@ public class HJStudyCardCourseLessonActivity extends BaseActivity
       this.k.setText(localBundle.getString("opentime").replace("0:00:00", ""));
       this.l.setText(getString(2131492935) + "\n" + localBundle.getString("des"));
       String str = localBundle.getString("iconUrl");
-      new b.n(this, this.n, this.c).execute(new String[] { str });
+      new pkg_b.n(this, this.n, this.c).execute(new String[] { str });
       this.m.setText(localBundle.getString("classname"));
       this.a = false;
     }

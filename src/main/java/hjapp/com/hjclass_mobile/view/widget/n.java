@@ -4,7 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 
 public final class n
-  implements hjapp.com.hjclass_mobile.c.d
+  implements hjapp.com.hjclass_mobile.pkg_c.d
 {
   private Dialog a;
 

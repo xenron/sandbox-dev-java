@@ -1,8 +1,8 @@
 package hjapp.com.hjclass_mobile;
 
 import android.os.AsyncTask;
-import hjapp.com.hjclass_mobile.f.a;
-import hjapp.com.hjclass_mobile.f.c;
+import hjapp.com.hjclass_mobile.pkg_f.a;
+import hjapp.com.hjclass_mobile.pkg_f.c;
 
 import java.util.List;
 

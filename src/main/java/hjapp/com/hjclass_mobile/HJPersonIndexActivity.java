@@ -28,7 +28,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class HJPersonIndexActivity extends BaseActivity
-  implements OnClickListener, OnItemClickListener, hjapp.com.hjclass_mobile.c.ad, hjapp.com.hjclass_mobile.c.o
+  implements OnClickListener, OnItemClickListener, hjapp.com.hjclass_mobile.pkg_c.ad, hjapp.com.hjclass_mobile.pkg_c.o
 {
   private View A = null;
   private int B = 0;
@@ -38,7 +38,7 @@ public class HJPersonIndexActivity extends BaseActivity
   private TextView d = null;
   private Button e = null;
   private RelativeLayout f = null;
-  private hjapp.com.hjclass_mobile.d.u g = null;
+  private hjapp.com.hjclass_mobile.pkg_d.u g = null;
   private cu h = null;
   private ListView i = null;
   private List j;
@@ -47,7 +47,7 @@ public class HJPersonIndexActivity extends BaseActivity
   private boolean m = false;
   private View n = null;
   private Drawable o = null;
-  private hjapp.com.hjclass_mobile.b.b p = null;
+  private hjapp.com.hjclass_mobile.pkg_b.b p = null;
   private View q = null;
   private BroadcastReceiver r;
   private boolean s = true;
@@ -55,7 +55,7 @@ public class HJPersonIndexActivity extends BaseActivity
   private cs u = null;
   private Button v = null;
   private View w = null;
-  private hjapp.com.hjclass_mobile.h.v x = null;
+  private hjapp.com.hjclass_mobile.pkg_h.v x = null;
   private Bitmap y = null;
   private Drawable z = null;
 
@@ -297,8 +297,8 @@ public class HJPersonIndexActivity extends BaseActivity
     this.i.addHeaderView(this.q, null, false);
     this.a.setText(c.c());
     this.o = getResources().getDrawable(2130837531);
-    this.p = new hjapp.com.hjclass_mobile.b.b(this);
-    this.x = new h.v(20);
+    this.p = new hjapp.com.hjclass_mobile.pkg_b.b(this);
+    this.x = new pkg_h.v(20);
     this.y = BitmapFactory.decodeResource(getResources(), 2130837515);
     this.z = getResources().getDrawable(2130837532);
     b();
@@ -332,7 +332,7 @@ public class HJPersonIndexActivity extends BaseActivity
     int i1 = paramInt - 1;
     if (i1 <= 0)
       i1 = 0;
-    hjapp.com.hjclass_mobile.d.q localq = (hjapp.com.hjclass_mobile.d.q)this.j.get(i1);
+    hjapp.com.hjclass_mobile.pkg_d.q localq = (hjapp.com.hjclass_mobile.pkg_d.q)this.j.get(i1);
     Intent localIntent = new Intent();
     localIntent.putExtra("classname", localq.f());
     localIntent.putExtra("lessonNum", localq.b());

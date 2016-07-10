@@ -18,7 +18,7 @@ import android.widget.ListView;
 import java.util.List;
 
 public class HJClassExpiredListActivity extends BaseActivity
-  implements OnClickListener, OnItemClickListener, hjapp.com.hjclass_mobile.c.o
+  implements OnClickListener, OnItemClickListener, hjapp.com.hjclass_mobile.pkg_c.o
 {
   private q a = null;
   private ListView b = null;
@@ -27,10 +27,10 @@ public class HJClassExpiredListActivity extends BaseActivity
   private o e = null;
   private boolean f = false;
   private LinearLayout g = null;
-  private hjapp.com.hjclass_mobile.b.b h = null;
+  private hjapp.com.hjclass_mobile.pkg_b.b h = null;
   private Button i = null;
   private View j = null;
-  private hjapp.com.hjclass_mobile.h.v k = null;
+  private hjapp.com.hjclass_mobile.pkg_h.v k = null;
   private Bitmap l = null;
   private int m = 1;
 
@@ -92,8 +92,8 @@ public class HJClassExpiredListActivity extends BaseActivity
     this.b.setCacheColorHint(0);
     this.b.setOnItemClickListener(this);
     ((Button)findViewById(2131361850)).setOnClickListener(this);
-    this.h = new hjapp.com.hjclass_mobile.b.b(this);
-    this.k = new h.v(20);
+    this.h = new hjapp.com.hjclass_mobile.pkg_b.b(this);
+    this.k = new pkg_h.v(20);
     this.l = BitmapFactory.decodeResource(getResources(), 2130837515);
     a(this.m);
   }
@@ -112,7 +112,7 @@ public class HJClassExpiredListActivity extends BaseActivity
 
   public void onItemClick(AdapterView paramAdapterView, View paramView, int paramInt, long paramLong)
   {
-    hjapp.com.hjclass_mobile.d.q localq = (hjapp.com.hjclass_mobile.d.q)this.c.get(paramInt);
+    hjapp.com.hjclass_mobile.pkg_d.q localq = (hjapp.com.hjclass_mobile.pkg_d.q)this.c.get(paramInt);
     Intent localIntent = new Intent();
     localIntent.setClass(this, HJLessonListActivity.class);
     localIntent.putExtra("classid", localq.a());

@@ -15,10 +15,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-import hjapp.com.hjclass_mobile.c.q;
-import hjapp.com.hjclass_mobile.c.v;
-import hjapp.com.hjclass_mobile.d.l;
-import hjapp.com.hjclass_mobile.g.r;
+import hjapp.com.hjclass_mobile.pkg_c.q;
+import hjapp.com.hjclass_mobile.pkg_c.v;
+import hjapp.com.hjclass_mobile.pkg_d.l;
+import hjapp.com.hjclass_mobile.pkg_g.r;
 import hjapp.com.hjclass_mobile.view.ele.f;
 import hjapp.com.hjclass_mobile.view.page.HJPage;
 import hjapp.com.hjclass_mobile.view.page.PageViewer;
@@ -33,12 +33,12 @@ import java.util.Enumeration;
 import java.util.List;
 
 public class HJClassPlayerV3 extends BaseActivity
-  implements OnGestureListener, hjapp.com.hjclass_mobile.b.t, hjapp.com.hjclass_mobile.c.ab, hjapp.com.hjclass_mobile.c.g, q, v, hjapp.com.hjclass_mobile.c.x, hjapp.com.hjclass_mobile.c.y
+  implements OnGestureListener, hjapp.com.hjclass_mobile.pkg_b.t, hjapp.com.hjclass_mobile.pkg_c.ab, hjapp.com.hjclass_mobile.pkg_c.g, q, v, hjapp.com.hjclass_mobile.pkg_c.x, hjapp.com.hjclass_mobile.pkg_c.y
 {
   private static long r = 0L;
   private static long s = 0L;
-  private hjapp.com.hjclass_mobile.c.d A = null;
-  private hjapp.com.hjclass_mobile.c.d B = null;
+  private hjapp.com.hjclass_mobile.pkg_c.d A = null;
+  private hjapp.com.hjclass_mobile.pkg_c.d B = null;
   private Boolean C = Boolean.valueOf(false);
   private aj D = null;
   private Boolean E = Boolean.valueOf(false);
@@ -52,21 +52,21 @@ public class HJClassPlayerV3 extends BaseActivity
   String b = null;
   int c = 0;
   private hjapp.com.hjclass_mobile.view.d d;
-  private hjapp.com.hjclass_mobile.g.g e = null;
+  private hjapp.com.hjclass_mobile.pkg_g.g e = null;
   private LinearLayout f = null;
   private RelativeLayout g = null;
   private Button h = null;
-  private hjapp.com.hjclass_mobile.d.t i = null;
-  private hjapp.com.hjclass_mobile.b.s j;
+  private hjapp.com.hjclass_mobile.pkg_d.t i = null;
+  private hjapp.com.hjclass_mobile.pkg_b.s j;
   private GestureDetector k = null;
-  private hjapp.com.hjclass_mobile.b.a l = null;
+  private hjapp.com.hjclass_mobile.pkg_b.a l = null;
   private int m;
   private int n;
   private boolean o;
   private long p;
   private boolean q = false;
   private PageViewer t = null;
-  private hjapp.com.hjclass_mobile.b.b u = null;
+  private hjapp.com.hjclass_mobile.pkg_b.b u = null;
   private HJApplication v = null;
   private boolean w = false;
   private RelativeLayout x = null;
@@ -75,7 +75,7 @@ public class HJClassPlayerV3 extends BaseActivity
 
   private void A()
   {
-    hjapp.com.hjclass_mobile.d.ac localac = new d.ac();
+    hjapp.com.hjclass_mobile.pkg_d.ac localac = new pkg_d.ac();
     localac.a(this.i.d());
     localac.b(this.i.c());
     localac.c(this.i.a());
@@ -88,15 +88,15 @@ public class HJClassPlayerV3 extends BaseActivity
     hjapp.com.hjclass_mobile.h.z.a(this);
     if (paramBundle != null)
     {
-      this.u = new b.b(this);
-      this.i = ((hjapp.com.hjclass_mobile.d.t)paramBundle.getSerializable("lesson"));
+      this.u = new pkg_b.b(this);
+      this.i = ((hjapp.com.hjclass_mobile.pkg_d.t)paramBundle.getSerializable("lesson"));
       String str = paramBundle.getString("filePath");
       File localFile = new File(str);
       DisplayMetrics localDisplayMetrics = new DisplayMetrics();
       getWindowManager().getDefaultDisplay().getMetrics(localDisplayMetrics);
       this.m = localDisplayMetrics.widthPixels;
       this.n = localDisplayMetrics.heightPixels;
-      hjapp.com.hjclass_mobile.b.a locala = new b.a(this.m, this.n);
+      hjapp.com.hjclass_mobile.pkg_b.a locala = new pkg_b.a(this.m, this.n);
       if (this.i != null)
         locala.a(hjapp.com.hjclass_mobile.h.z.c + this.i.a() + File.separator + this.i.d() + File.separator + this.i.c());
       this.l = locala;
@@ -110,13 +110,13 @@ public class HJClassPlayerV3 extends BaseActivity
         int i1 = this.F.size();
         for (int i2 = 0; i2 < i1; i2++)
         {
-          hjapp.com.hjclass_mobile.d.z localz = (hjapp.com.hjclass_mobile.d.z)this.F.get(i2);
+          hjapp.com.hjclass_mobile.pkg_d.z localz = (hjapp.com.hjclass_mobile.pkg_d.z)this.F.get(i2);
           this.v.d().put(Integer.valueOf(localz.d()), localz);
         }
       }
       if (localFile.exists())
       {
-        this.j = new b.s(this);
+        this.j = new pkg_b.s(this);
         this.j.execute(new String[] { str, "true" });
         return;
       }
@@ -174,7 +174,7 @@ public class HJClassPlayerV3 extends BaseActivity
       this.e.a(paramInt);
   }
 
-  public final void a(hjapp.com.hjclass_mobile.d.b paramb)
+  public final void a(hjapp.com.hjclass_mobile.pkg_d.b paramb)
   {
     if (paramb == null)
     {
@@ -225,7 +225,7 @@ public class HJClassPlayerV3 extends BaseActivity
       String str3 = String.valueOf(i2);
       try
       {
-        hjapp.com.hjclass_mobile.g.a locala = new g.a(str2, this, str3, str1);
+        hjapp.com.hjclass_mobile.pkg_g.a locala = new pkg_g.a(str2, this, str3, str1);
         locala.a(this);
         this.e = locala;
         this.e.h();
@@ -248,7 +248,7 @@ public class HJClassPlayerV3 extends BaseActivity
 
   public final void a(String paramString)
   {
-    hjapp.com.hjclass_mobile.d.ac localac = new d.ac();
+    hjapp.com.hjclass_mobile.pkg_d.ac localac = new pkg_d.ac();
     localac.a(this.i.d());
     localac.b(this.i.c());
     localac.c(this.i.a());
@@ -296,7 +296,7 @@ public class HJClassPlayerV3 extends BaseActivity
       label271: if (i1 < 2)
         if (((this.p >= 180L) || (paramDouble >= 0.8D)) && (this.i.d() > 1))
         {
-          hjapp.com.hjclass_mobile.d.x localx = new d.x();
+          hjapp.com.hjclass_mobile.pkg_d.x localx = new pkg_d.x();
           localx.a(paramDouble);
           localx.b(this.i.c());
           localx.a(this.i.d());
@@ -322,7 +322,7 @@ public class HJClassPlayerV3 extends BaseActivity
       while (true)
       {
         int i2 = this.u.f(c.b(), this.i.d());
-        hjapp.com.hjclass_mobile.b.b localb = this.u;
+        hjapp.com.hjclass_mobile.pkg_b.b localb = this.u;
         this.i.d();
         localb.g(i2, c.b());
         return true;
@@ -358,7 +358,7 @@ public class HJClassPlayerV3 extends BaseActivity
     this.t.a(paramInt);
   }
 
-  public final void b(hjapp.com.hjclass_mobile.d.b paramb)
+  public final void b(hjapp.com.hjclass_mobile.pkg_d.b paramb)
   {
     int i3;
     int i4;
@@ -382,7 +382,7 @@ public class HJClassPlayerV3 extends BaseActivity
           localHJPage.a(new ac(this));
           localHJPage.a(new ad(this));
           localHJPage.a(new ae(this, localHJPage));
-          hjapp.com.hjclass_mobile.d.y localy1 = (hjapp.com.hjclass_mobile.d.y)localList.get(i2);
+          hjapp.com.hjclass_mobile.pkg_d.y localy1 = (hjapp.com.hjclass_mobile.pkg_d.y)localList.get(i2);
           localHJPage.a(localy1);
           if (i2 == 0)
           {
@@ -403,7 +403,7 @@ public class HJClassPlayerV3 extends BaseActivity
               localInteger = (Integer)localEnumeration.nextElement();
             }
             while (localInteger.intValue() != localHJPage.h());
-            hjapp.com.hjclass_mobile.d.z localz = (hjapp.com.hjclass_mobile.d.z)this.v.d().get(localInteger);
+            hjapp.com.hjclass_mobile.pkg_d.z localz = (hjapp.com.hjclass_mobile.pkg_d.z)this.v.d().get(localInteger);
             if (localz == null)
               break label629;
             localHJPage.a(localz);
@@ -411,7 +411,7 @@ public class HJClassPlayerV3 extends BaseActivity
             localHJPage.d(-1);
             if (localObject == null)
               break label629;
-            ((hjapp.com.hjclass_mobile.d.aa)localObject).a(true);
+            ((hjapp.com.hjclass_mobile.pkg_d.aa)localObject).a(true);
             i6 = i7;
             label325: if (localObject != null)
               this.v.e().add(localObject);
@@ -429,7 +429,7 @@ public class HJClassPlayerV3 extends BaseActivity
           }
           else
           {
-            hjapp.com.hjclass_mobile.d.y localy2 = (hjapp.com.hjclass_mobile.d.y)localList.get(i2 - 1);
+            hjapp.com.hjclass_mobile.pkg_d.y localy2 = (hjapp.com.hjclass_mobile.pkg_d.y)localList.get(i2 - 1);
             if (localy1.d().intValue() > 0)
               localHJPage.d(localy1.d().intValue());
             if (localy2.d().intValue() > 0)
@@ -445,11 +445,11 @@ public class HJClassPlayerV3 extends BaseActivity
     {
       if (localHJPage.g().equals("100"))
       {
-        localObject = new d.aa();
-        ((hjapp.com.hjclass_mobile.d.aa)localObject).a(i5);
+        localObject = new pkg_d.aa();
+        ((hjapp.com.hjclass_mobile.pkg_d.aa)localObject).a(i5);
         localHJPage.c(i5);
         localHJPage.d(i5 * 1000);
-        ((hjapp.com.hjclass_mobile.d.aa)localObject).a(false);
+        ((hjapp.com.hjclass_mobile.pkg_d.aa)localObject).a(false);
       }
       while (true)
       {
@@ -695,7 +695,7 @@ public class HJClassPlayerV3 extends BaseActivity
       if (this.e.a())
         this.i.i(this.e.d());
       this.f.setVisibility(0);
-      ((hjapp.com.hjclass_mobile.g.a)this.e).c();
+      ((hjapp.com.hjclass_mobile.pkg_g.a)this.e).c();
       this.z.postDelayed(this.H, 1100L);
     }
   }

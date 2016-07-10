@@ -17,7 +17,7 @@ import android.widget.TextView;
 import java.util.List;
 
 public class HJStudyCardSubCourseActivity extends BaseActivity
-  implements OnItemClickListener, hjapp.com.hjclass_mobile.c.o
+  implements OnItemClickListener, hjapp.com.hjclass_mobile.pkg_c.o
 {
   private dh a = null;
   private ListView b = null;
@@ -27,7 +27,7 @@ public class HJStudyCardSubCourseActivity extends BaseActivity
   private boolean f = false;
   private LinearLayout g = null;
   private View h = null;
-  private hjapp.com.hjclass_mobile.h.v i = null;
+  private hjapp.com.hjclass_mobile.pkg_h.v i = null;
   private Bitmap j = null;
 
   public final void a(Bitmap paramBitmap, int paramInt, ImageView paramImageView)
@@ -52,7 +52,7 @@ public class HJStudyCardSubCourseActivity extends BaseActivity
     this.b.setCacheColorHint(0);
     this.b.setTextFilterEnabled(true);
     this.b.setOnItemClickListener(this);
-    this.i = new h.v(20);
+    this.i = new pkg_h.v(20);
     this.j = BitmapFactory.decodeResource(getResources(), 2130837515);
     this.c = ((List)getIntent().getExtras().getSerializable("list"));
     if (!this.f)
@@ -81,7 +81,7 @@ public class HJStudyCardSubCourseActivity extends BaseActivity
 
   public void onItemClick(AdapterView paramAdapterView, View paramView, int paramInt, long paramLong)
   {
-    hjapp.com.hjclass_mobile.d.w localw = (hjapp.com.hjclass_mobile.d.w)this.c.get(paramInt);
+    hjapp.com.hjclass_mobile.pkg_d.w localw = (hjapp.com.hjclass_mobile.pkg_d.w)this.c.get(paramInt);
     Intent localIntent = new Intent();
     localIntent.setClass(this, HJStudyCardCourseLessonActivity.class);
     localIntent.putExtra("classname", localw.b());

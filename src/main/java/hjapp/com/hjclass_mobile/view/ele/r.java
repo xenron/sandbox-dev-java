@@ -5,12 +5,12 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.RelativeLayout;
 import hjapp.com.hjclass_mobile.HJApplication;
-import hjapp.com.hjclass_mobile.c.c;
-import hjapp.com.hjclass_mobile.c.m;
-import hjapp.com.hjclass_mobile.c.w;
+import hjapp.com.hjclass_mobile.pkg_c.c;
+import hjapp.com.hjclass_mobile.pkg_c.m;
+import hjapp.com.hjclass_mobile.pkg_c.w;
 
 public final class r extends RelativeLayout
-  implements hjapp.com.hjclass_mobile.c.b, m, w
+  implements hjapp.com.hjclass_mobile.pkg_c.b, m, w
 {
   private c a = null;
 
@@ -24,7 +24,7 @@ public final class r extends RelativeLayout
     removeAllViews();
   }
 
-  public final void a(hjapp.com.hjclass_mobile.d.l paraml)
+  public final void a(hjapp.com.hjclass_mobile.pkg_d.l paraml)
   {
     HJApplication localHJApplication = (HJApplication)getContext().getApplicationContext();
     switch (paraml.k().a())

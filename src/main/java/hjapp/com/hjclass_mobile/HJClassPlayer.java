@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import hjapp.com.hjclass_mobile.g.h;
+import hjapp.com.hjclass_mobile.pkg_g.h;
 import hjapp.com.hjclass_mobile.view.FlipperImagePlayer;
 import hjapp.com.hjclass_mobile.view.a;
 
@@ -21,19 +21,19 @@ import java.io.IOException;
 import java.util.Date;
 
 public class HJClassPlayer extends BaseActivity
-  implements OnClickListener, hjapp.com.hjclass_mobile.b.t, hjapp.com.hjclass_mobile.c.g, hjapp.com.hjclass_mobile.g.n
+  implements OnClickListener, hjapp.com.hjclass_mobile.pkg_b.t, hjapp.com.hjclass_mobile.pkg_c.g, hjapp.com.hjclass_mobile.pkg_g.n
 {
   private static long h = 0L;
   private static long i = 0L;
-  private hjapp.com.hjclass_mobile.g.g a = null;
+  private hjapp.com.hjclass_mobile.pkg_g.g a = null;
   private hjapp.com.hjclass_mobile.view.a b;
   private FlipperImagePlayer c;
-  private hjapp.com.hjclass_mobile.b.s d;
+  private hjapp.com.hjclass_mobile.pkg_b.s d;
   private LinearLayout e = null;
   private TextView f = null;
   private boolean g = false;
-  private hjapp.com.hjclass_mobile.b.b j = null;
-  private hjapp.com.hjclass_mobile.d.t k = null;
+  private hjapp.com.hjclass_mobile.pkg_b.b j = null;
+  private hjapp.com.hjclass_mobile.pkg_d.t k = null;
   private long l = 0L;
   private RelativeLayout m = null;
   private TextView n = null;
@@ -74,7 +74,7 @@ public class HJClassPlayer extends BaseActivity
     }
   }
 
-  public final void a(hjapp.com.hjclass_mobile.d.b paramb)
+  public final void a(hjapp.com.hjclass_mobile.pkg_d.b paramb)
   {
     if (paramb == null)
     {
@@ -117,7 +117,7 @@ public class HJClassPlayer extends BaseActivity
     this.c.a(paramInt);
   }
 
-  public final void b(hjapp.com.hjclass_mobile.d.b paramb)
+  public final void b(hjapp.com.hjclass_mobile.pkg_d.b paramb)
   {
   }
 
@@ -200,12 +200,12 @@ public class HJClassPlayer extends BaseActivity
           this.k.i(0);
           this.j.c(this.k);
           int i1 = this.j.f(c.b(), this.k.d());
-          hjapp.com.hjclass_mobile.b.b localb = this.j;
+          hjapp.com.hjclass_mobile.pkg_b.b localb = this.j;
           this.k.d();
           localb.g(i1, c.b());
           if (hjapp.com.hjclass_mobile.h.z.h)
           {
-            hjapp.com.hjclass_mobile.d.x localx = new d.x();
+            hjapp.com.hjclass_mobile.pkg_d.x localx = new pkg_d.x();
             localx.a(this.k.d());
             localx.b(this.k.c());
             localx.a(this.q);
@@ -295,15 +295,15 @@ public class HJClassPlayer extends BaseActivity
     Bundle localBundle = getIntent().getExtras();
     this.f = ((TextView)findViewById(2131362022));
     this.f.setText("0%");
-    this.j = new b.b(this);
+    this.j = new pkg_b.b(this);
     int i1;
     if (localBundle != null)
     {
       String str = localBundle.getString("filePath");
-      this.k = ((hjapp.com.hjclass_mobile.d.t)localBundle.getSerializable("lesson"));
+      this.k = ((hjapp.com.hjclass_mobile.pkg_d.t)localBundle.getSerializable("lesson"));
       if (new File(str).exists())
       {
-        this.d = new b.s(this);
+        this.d = new pkg_b.s(this);
         this.d.execute(new String[] { str, "false" });
         i1 = HJSettingActivity.b(this);
         if (i1 != 1)

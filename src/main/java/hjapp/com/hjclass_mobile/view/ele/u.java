@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import hjapp.com.hjclass_mobile.b.a;
-import hjapp.com.hjclass_mobile.c.b;
-import hjapp.com.hjclass_mobile.c.n;
-import hjapp.com.hjclass_mobile.c.r;
-import hjapp.com.hjclass_mobile.d.k;
-import hjapp.com.hjclass_mobile.d.l;
+import hjapp.com.hjclass_mobile.pkg_b.a;
+import hjapp.com.hjclass_mobile.pkg_c.b;
+import hjapp.com.hjclass_mobile.pkg_c.n;
+import hjapp.com.hjclass_mobile.pkg_c.r;
+import hjapp.com.hjclass_mobile.pkg_d.k;
+import hjapp.com.hjclass_mobile.pkg_d.l;
 
 public final class u extends RelativeLayout
   implements b, n

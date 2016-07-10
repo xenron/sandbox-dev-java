@@ -9,9 +9,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
-import hjapp.com.hjclass_mobile.c.k;
-import hjapp.com.hjclass_mobile.d.c;
-import hjapp.com.hjclass_mobile.d.l;
+import hjapp.com.hjclass_mobile.pkg_c.k;
+import hjapp.com.hjclass_mobile.pkg_d.c;
+import hjapp.com.hjclass_mobile.pkg_d.l;
 
 public final class ac extends RelativeLayout
   implements k
@@ -20,13 +20,13 @@ public final class ac extends RelativeLayout
   private ImageView b = null;
   private Boolean c = Boolean.valueOf(false);
   private LinearLayout d = null;
-  private hjapp.com.hjclass_mobile.b.a e = null;
+  private hjapp.com.hjclass_mobile.pkg_b.a e = null;
   private RadioButton f = null;
   private String g = null;
-  private hjapp.com.hjclass_mobile.c.z h = null;
+  private hjapp.com.hjclass_mobile.pkg_c.z h = null;
   private int i = -1;
 
-  public ac(Context paramContext, hjapp.com.hjclass_mobile.b.a parama)
+  public ac(Context paramContext, hjapp.com.hjclass_mobile.pkg_b.a parama)
   {
     super(paramContext);
     this.e = parama;
@@ -50,12 +50,12 @@ public final class ac extends RelativeLayout
     this.b.setVisibility(4);
   }
 
-  public final void a(hjapp.com.hjclass_mobile.c.z paramz)
+  public final void a(hjapp.com.hjclass_mobile.pkg_c.z paramz)
   {
     this.h = paramz;
   }
 
-  public final void a(hjapp.com.hjclass_mobile.d.z paramz)
+  public final void a(hjapp.com.hjclass_mobile.pkg_d.z paramz)
   {
     if (paramz.b().equals(this.g))
     {
@@ -124,7 +124,7 @@ public final class ac extends RelativeLayout
     return this.c;
   }
 
-  public final hjapp.com.hjclass_mobile.c.z e()
+  public final hjapp.com.hjclass_mobile.pkg_c.z e()
   {
     return this.h;
   }
@@ -137,14 +137,14 @@ public final class ac extends RelativeLayout
     default:
       return bool;
     case 0:
-      hjapp.com.hjclass_mobile.h.u.b("onInterceptTouchEvent_ACTION_DOWN 返回的是" + bool);
+      hjapp.com.hjclass_mobile.pkg_h.u.b("onInterceptTouchEvent_ACTION_DOWN 返回的是" + bool);
       return bool;
     case 2:
-      hjapp.com.hjclass_mobile.h.u.b("onInterceptTouchEvent_ACTION_MOVE 返回的是" + bool);
+      hjapp.com.hjclass_mobile.pkg_h.u.b("onInterceptTouchEvent_ACTION_MOVE 返回的是" + bool);
       return bool;
     case 1:
     }
-    hjapp.com.hjclass_mobile.h.u.b("onInterceptTouchEvent_ACTION_UP 返回的是" + bool);
+    hjapp.com.hjclass_mobile.pkg_h.u.b("onInterceptTouchEvent_ACTION_UP 返回的是" + bool);
     return bool;
   }
 }
