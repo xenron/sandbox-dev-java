@@ -19,7 +19,6 @@ public class Main extends javax.swing.JFrame{
 	public static void main(String[] args) {
 		Main main = new Main();
 		main.showUI();//显示界面
-
 	}
 
 	public void showUI(){
@@ -45,8 +44,6 @@ public class Main extends javax.swing.JFrame{
 
 		ResText = new javax.swing.JTextArea(20,45);
 
-//		javax.swing.JScrollPane jp=new javax.swing.JScrollPane(ResText);
-//		this.getContentPane().add(jp);
 		this.getContentPane().add(new LocalFile());
 
 		SearchClick SearchClick = new SearchClick(ResText,Searchfile,fileTextPath);
