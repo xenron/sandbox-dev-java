@@ -1,4 +1,4 @@
-package dg.mon.hw.ch06;
+package dg.mon.hw.ch07;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
