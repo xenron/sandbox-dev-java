@@ -36,7 +36,6 @@ class SearchFormMain extends javax.swing.JFrame {
 
         javax.swing.JButton jbOpen = new javax.swing.JButton("选择目录");
         this.add(jbOpen);
-
         SearchFormOpenClick openClick = new SearchFormOpenClick(searchPath, fileTextPath);
         jbOpen.addActionListener(openClick);
 
@@ -96,7 +95,7 @@ class SearchFormSearchClick implements ActionListener {
     private DefaultTableModel tableModel;
     private JTextField jt1, jt2;
 
-    public SearchFormSearchClick(JTable resultTable, DefaultTableModel tableModel, JTextField jt1, JTextField jt2) {//构造方法
+    public SearchFormSearchClick(JTable resultTable, DefaultTableModel tableModel, JTextField jt1, JTextField jt2) {
         this.resultTable = resultTable;
         this.tableModel = tableModel;
         this.jt1 = jt1;
@@ -105,8 +104,9 @@ class SearchFormSearchClick implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         String fileName = jt1.getText();
-        String Mulu = jt2.getText();
-        int result = search(fileName, Mulu);
+        String directory = jt2.getText();
+        tableModel.setRowCount(0);
+        int result = search(fileName, directory);
     }
 
     public int search(String str, String fileName) {
@@ -114,7 +114,6 @@ class SearchFormSearchClick implements ActionListener {
         int count = 0;
         java.io.File file = new java.io.File(fileName);
         java.io.File[] files = file.listFiles();
-        tableModel.setRowCount(0);
         for (File currentFile : files) {
             if (currentFile.isFile()) {
                 String spath = currentFile.getAbsolutePath();

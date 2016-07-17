@@ -7,18 +7,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.io.*;
 
 import dg.mon.hw.Utils;
 
-class SearchFormMain extends javax.swing.JFrame {
+class SearchFormMain extends JFrame {
 
     private String searchPath;
     private JTable resultTable;
-    private DefaultTableModel tablemodel;
+    private DefaultTableModel tableModel;
+    private JProgressBar processBar = new JProgressBar();;
 
     public static void main(String[] args) {
         SearchFormMain form = new SearchFormMain();
@@ -26,7 +24,7 @@ class SearchFormMain extends javax.swing.JFrame {
     }
 
     private void showUI() {
-        this.setTitle("文件搜索器");
+        this.setTitle("File Search");
         this.setSize(600, 500);
 
         this.setLayout(new java.awt.FlowLayout());
@@ -34,34 +32,36 @@ class SearchFormMain extends javax.swing.JFrame {
         javax.swing.JTextField fileTextPath = new javax.swing.JTextField(15);
         this.add(fileTextPath);
 
-        javax.swing.JButton jbOpen = new javax.swing.JButton("选择目录");
+        javax.swing.JButton jbOpen = new javax.swing.JButton("choose");
         this.add(jbOpen);
-
         SearchFormOpenClick openClick = new SearchFormOpenClick(searchPath, fileTextPath);
         jbOpen.addActionListener(openClick);
 
         javax.swing.JTextField searchfile = new javax.swing.JTextField(15);
         this.add(searchfile);
 
-        javax.swing.JButton jbSearch = new javax.swing.JButton("查询");
+        javax.swing.JButton jbSearch = new javax.swing.JButton("search");
         this.add(jbSearch);
 
-        tablemodel = new SearchFormTableModel();
-        tablemodel.addColumn("序号");
-        tablemodel.addColumn("名称");
-        tablemodel.addColumn("大小");
-        tablemodel.addColumn("类型");
-        tablemodel.addColumn("修改日期");
-        tablemodel.addColumn("全路径");
-        resultTable = new JTable(tablemodel);
+        tableModel = new SearchFormTableModel();
+        tableModel.addColumn("seq");
+        tableModel.addColumn("name");
+        tableModel.addColumn("size");
+        tableModel.addColumn("type");
+        tableModel.addColumn("modify");
+        tableModel.addColumn("fullpath");
+        resultTable = new JTable(tableModel);
         resultTable.setShowGrid(false);
-        SearchFormMouseClick mouseClick = new SearchFormMouseClick(resultTable, tablemodel);
+        SearchFormMouseClick mouseClick = new SearchFormMouseClick(resultTable, tableModel);
         resultTable.addMouseListener(mouseClick);
 
         this.add(new JScrollPane(resultTable));
 
-        SearchFormSearchClick searchClick = new SearchFormSearchClick(resultTable, tablemodel, searchfile, fileTextPath);
+        SearchFormSearchClick searchClick = new SearchFormSearchClick(resultTable, tableModel, searchfile, fileTextPath, processBar);
         jbSearch.addActionListener(searchClick);
+
+        processBar.setVisible(false);
+        this.add(processBar);
 
         this.setDefaultCloseOperation(3);
         this.setVisible(true);
@@ -88,25 +88,34 @@ class SearchFormOpenClick implements ActionListener {
             fileTextPath.setText(path);
         }
     }
+
 }
 
-class SearchFormSearchClick implements ActionListener {
+class SearchFormSearchClick implements ActionListener, Runnable {
 
     private JTable resultTable;
     private DefaultTableModel tableModel;
     private JTextField jt1, jt2;
+    private JProgressBar processBar;
 
-    public SearchFormSearchClick(JTable resultTable, DefaultTableModel tableModel, JTextField jt1, JTextField jt2) {//构造方法
+    public SearchFormSearchClick(JTable resultTable, DefaultTableModel tableModel, JTextField jt1, JTextField jt2, JProgressBar processBar) {
         this.resultTable = resultTable;
         this.tableModel = tableModel;
         this.jt1 = jt1;
         this.jt2 = jt2;
+        this.processBar = processBar;
     }
 
     public void actionPerformed(ActionEvent e) {
         String fileName = jt1.getText();
-        String Mulu = jt2.getText();
-        int result = search(fileName, Mulu);
+        String folder = jt2.getText();
+        tableModel.setRowCount(0);
+        Thread thread = new Thread(this);
+        thread.start();
+        processBar.setVisible(true);
+        int result = search(fileName, folder);
+        processBar.setVisible(false);
+        thread.interrupt();
     }
 
     public int search(String str, String fileName) {
@@ -114,7 +123,6 @@ class SearchFormSearchClick implements ActionListener {
         int count = 0;
         java.io.File file = new java.io.File(fileName);
         java.io.File[] files = file.listFiles();
-        tableModel.setRowCount(0);
         for (File currentFile : files) {
             if (currentFile.isFile()) {
                 String spath = currentFile.getAbsolutePath();
@@ -136,6 +144,22 @@ class SearchFormSearchClick implements ActionListener {
             }
         }
         return count;
+    }
+
+    @Override
+    public void run() {
+        processBar.setStringPainted(true);// 设置进度条上的字符串显示，false则不能显示
+        processBar.setBackground(Color.GREEN);
+        for (int i = 0; i < 101; i++) {
+            try {
+                Thread.sleep(100);  //   让当前线程休眠0.1ms
+            } catch (InterruptedException e) {
+                // TODO: handle exception
+                e.printStackTrace();
+            }
+            processBar.setValue(i); // 设置进度条数值
+        }
+        processBar.setString("ok");// 设置提示信息
     }
 }
 

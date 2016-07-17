@@ -20,7 +20,7 @@ public class BlockingQueueTest {
                 ExecutorService executorService = Executors.newFixedThreadPool(threadNumber);
                 ArrayList<Future<Long>> results = new ArrayList<Future<Long>>();
                 for (int i = 0; i < threadNumber; i++) {
-                    Future<Long> future = executorService.submit(new LinkedBlockingQueue_Push());
+                    Future<Long> future = executorService.submit(new BlockingQueue_Push());
                     results.add(future);
                 }
 
@@ -37,7 +37,7 @@ public class BlockingQueueTest {
                         executorService.shutdown();
                     }
                 }
-                LinkedBlockingQueueTest.isOver = true;
+                BlockingQueueTest.isOver = true;
                 log.info("入队列总共执行时间：" + allTime);
             }
         }).start();
@@ -48,7 +48,7 @@ public class BlockingQueueTest {
                 ExecutorService executorService2 = Executors.newFixedThreadPool(threadNumber);
                 ArrayList<Future<Long>> results_out = new ArrayList<Future<Long>>();
                 for (int i = 0; i < threadNumber; i++) {
-                    Future<Long> future = executorService2.submit(new LinkedBlockingQueue_Pull());
+                    Future<Long> future = executorService2.submit(new BlockingQueue_Pull());
                     results_out.add(future);
                 }
 
@@ -79,8 +79,8 @@ class BlockingQueue_Push implements Callable<Long> {
     public Long call() throws Exception {
         long time = System.currentTimeMillis();
 
-        for (int i = 0; i < LinkedBlockingQueueTest.size1; i++) {
-            LinkedBlockingQueueTest.queue.offer(i);
+        for (int i = 0; i < BlockingQueueTest.size1; i++) {
+            BlockingQueueTest.queue.offer(i);
         }
 
         long time2 = System.currentTimeMillis() - time;
@@ -94,8 +94,8 @@ class BlockingQueue_Pull implements Callable<Long> {
     public Long call() throws Exception {
         long time = System.currentTimeMillis();
 
-        while (!LinkedBlockingQueueTest.isOver) {
-            LinkedBlockingQueueTest.queue.poll();
+        while (!BlockingQueueTest.isOver) {
+            BlockingQueueTest.queue.poll();
         }
 
         long time2 = System.currentTimeMillis() - time;
