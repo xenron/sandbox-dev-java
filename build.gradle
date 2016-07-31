@@ -49,13 +49,13 @@ ext {
 sourceSets {
     main {
         java {
-            // srcDir 'src/main/java'
+            srcDir 'src/main/java'
             // exclude 'hjapp/'
             // exclude 'hjapp/**'
             // exclude '**/hjapp/**'
-            srcDir 'src/main/java/com'
-            srcDir 'src/main/java/dg'
-            srcDir 'src/main/java/org'
+            // srcDir 'src/main/java/com'
+            // srcDir 'src/main/java/dg'
+            // srcDir 'src/main/java/org'
         }
         scala {
             srcDir 'src/main/scala'
@@ -153,6 +153,7 @@ dependencies {
     compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-websocket', version: '8.0.33'
     
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.31'
+    compile group: 'org.xerial', name: 'sqlite-jdbc', version: '3.8.11.2'
 
     // scala
     compile "org.scala-lang:scala-library:$scalaFullVersion"
