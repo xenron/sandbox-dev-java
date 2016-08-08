@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- DataSource & Connection info. -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver.class">org.h2.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/chapter4</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+
+        <!-- General Hibernate settings. -->
+        <property name="show_sql">true</property>
+<!--         <property name="format_sql">true</property> -->
+        <property name="hbm2ddl.auto">update</property>
+
+		<!-- Mapping Classes -->
+		
+		<!-- Recipe: List -->
+<!--         <mapping class="com.sheeom.List.Employee" /> -->
+        
+        <!-- Recipe: List, There's more -->
+<!--         <mapping class="com.sheeom.List.ThereIsMore.Employee" /> -->
+<!--         <mapping class="com.sheeom.List.ThereIsMore.Degree" /> -->
+
+		<!-- Recipe: Set -->
+<!--         <mapping class="com.sheeom.Set.Employee" /> -->
+
+
+		<!-- Recipe: Map -->
+<!--         <mapping class="com.sheeom.Map.Employee" /> -->
+
+		<!-- Recipe: Array -->
+	        <mapping class="com.sheeom.Array.Employee" />
+        
+    </session-factory>
+</hibernate-configuration>

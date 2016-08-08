@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- DataSource & Connection info. -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver.class">org.h2.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/chapter5</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+
+        <!-- General Hibernate settings. -->
+        <property name="show_sql">true</property>
+<!--         <property name="format_sql">true</property> -->
+<!--         <property name="hbm2ddl.auto">create</property> -->
+
+		<!-- Mapping Classes -->
+		
+		<!-- Recipe: O_2_O_foriegn_key (One-to-one mapping using foreign key association) -->
+<!--         <mapping class="com.sheeom.O_2_O_foriegn_key.Person" /> -->
+<!--         <mapping class="com.sheeom.O_2_O_foriegn_key.PassportDetail" /> -->
+        
+        
+<!-- 		Recipe: O_2_O_foriegn_key -> There's More  (One-to-one mapping using foreign key association) -->
+<!--         <mapping class="com.sheeom.O_2_O_foriegn_key_there_is_more.Person" /> -->
+<!--         <mapping class="com.sheeom.O_2_O_foriegn_key_there_is_more.PassportDetail" /> -->
+        
+        <!-- Recipe:com.sheeom.O_2_O_common_join_table (One-to-one mapping using common join table) -->
+<!--              <mapping class="com.sheeom.O_2_O_common_join_table.Employee" /> -->
+<!--         	 <mapping class="com.sheeom.O_2_O_common_join_table.Detail" /> -->
+
+        <!-- Recipe:com.sheeom.O_2_O_common_primary_key (One-to-one mapping using common primary key) -->
+<!--              <mapping class="com.sheeom.O_2_O_common_primary_key.Person" /> -->
+<!--         	 <mapping class="com.sheeom.O_2_O_common_primary_key.PassportDetail" /> -->
+
+  <!-- Recipe:com.sheeom.O_2_M_OR_M_2_O (One-to-many mapping OR many-to-one mapping) -->
+<!--              <mapping class="com.sheeom.O_2_M_OR_M_2_O.Actor" /> -->
+<!--         	 <mapping class="com.sheeom.O_2_M_OR_M_2_O.Movie" /> -->
+        	         	 
+        	         	 
+<!-- Recipe:com.sheeom.M_2_M (Many-to-Many mapping) -->
+             <mapping class="com.sheeom.M_2_M.Developer" />
+        	 <mapping class="com.sheeom.M_2_M.Technology" />
+    </session-factory>
+</hibernate-configuration>

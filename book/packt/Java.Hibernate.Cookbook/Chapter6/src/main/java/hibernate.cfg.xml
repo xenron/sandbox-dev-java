@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- DataSource & Connection info. -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver.class">org.h2.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/chapter6</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">root</property>
+
+        <!-- General Hibernate settings. -->
+        <property name="show_sql">true</property>
+<!--         <property name="format_sql">true</property> -->
+<!--         <property name="hbm2ddl.auto">create</property> -->
+
+		<!-- Mapping Classes -->
+		
+		<!-- Recipe: com.sheeom.working_with_alias (Working with alias) -->
+<!--         <mapping class="com.sheeom.working_with_alias.Employee" /> -->
+<!--         <mapping class="com.sheeom.working_with_alias.Department" /> -->
+        
+        <!-- Recipe: There's more =-> com.sheeom.working_with_alias (Working with alias) -->
+<!--         <mapping class="com.sheeom.working_with_alias.Employee" /> -->
+<!--         <mapping class="com.sheeom.working_with_alias.Department" /> -->
+<!--         <mapping class="com.sheeom.working_with_alias.Location" /> -->
+        
+        <!-- Recipe:com.sheeom.performing_aggregate_operation (Performing agreegate operation) -->
+         <!-- Recipe:com.sheeom.execute_subquery_using_criteria (Executing a SubQuery using a criteria) -->
+         <!-- Recipe:com.sheeom.executing_sql_query (Executing a native SQL query) -->
+<!--         <mapping class="com.sheeom.performing_aggregate_operation.Product" /> -->
+<!--         <mapping class="com.sheeom.performing_aggregate_operation.Category" /> -->
+
+
+	<!-- Recipe:com.sheeom.using_formula (Using formula in Hibernate) -->
+	<!--         <mapping class="com.sheeom.using_formula.Product" /> -->
+	
+	<!-- Recipe: There's More -> com.sheeom.using_formula.thereismore (Using formula in Hibernate) -->
+	<!--         <mapping class="com.sheeom.using_formula_thereismore.Product" /> -->
+	
+	<!-- Recipe: com.sheeom.working_with_namedquery (Working with NamedQuery) -->
+	<!--         <mapping class="com.sheeom.working_with_namedquery." /> -->
+	
+	
+    </session-factory>
+</hibernate-configuration>

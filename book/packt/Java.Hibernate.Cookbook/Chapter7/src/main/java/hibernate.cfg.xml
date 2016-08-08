@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- DataSource & Connection info. -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.connection.driver.class">org.h2.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/chapter7</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+
+		
+		
+
+		<!-- General Hibernate settings. -->
+		<property name="show_sql">true</property>
+		<!-- <property name="format_sql">true</property> -->
+		<property name="hbm2ddl.auto">create</property>
+
+		<!-- Mapping Classes -->
+
+		<!-- Recipe: com.sheeom.first_level_cache (Working with first level cache) -->
+<!-- 		<mapping class="com.sheeom.first_level_cache.Employee" /> -->
+
+
+		<!-- Recipe: com.sheeom.second_level_cache (Working with second level cache) -->
+<!-- 		<mapping class="com.sheeom.second_level_cache.Employee" /> -->
+<!-- 		<property name="hibernate.cache.use_second_level_cache">true</property> -->
+<!-- 		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</property> -->
+		
+
+	<!-- Recipe: com.sheeom.working_with_query_cache (Working with query cache) -->
+<!-- 		<property name="hibernate.cache.use_query_cache">true</property> -->
+<!-- 			<property name="hibernate.cache.use_second_level_cache">true</property> -->
+<!-- 		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</property> -->
+<!-- 		<mapping class="com.sheeom.first_level_cache.Employee" /> -->
+
+	<!-- Recipe: com.sheeom.table_per_class (Working with table per class hierarchy of inheritance) -->
+<!-- 		<mapping class="com.sheeom.table_per_class.Employee" /> -->
+<!-- 		<mapping class="com.sheeom.table_per_class.ContractualEmployee" /> -->
+<!-- 		<mapping class="com.sheeom.table_per_class.PermanentEmployee" /> -->
+
+<!-- Recipe: com.sheeom.table_per_subclass (Working with table per subclass hierarchy of inheritance) -->
+<!-- 		<mapping class="com.sheeom.table_per_subclass.Employee" /> -->
+<!-- 		<mapping class="com.sheeom.table_per_subclass.ContractualEmployee" /> -->
+<!-- 		<mapping class="com.sheeom.table_per_subclass.PermanentEmployee" /> -->
+
+<!-- Recipe: com.sheeom.table_per_concreteclass (Working with table per concrete class hierarchy of inheritance) -->
+<!-- 		<mapping class="com.sheeom.table_per_concreteclass.Employee" /> -->
+<!-- 		<mapping class="com.sheeom.table_per_concreteclass.ContractualEmployee" /> -->
+<!-- 		<mapping class="com.sheeom.table_per_concreteclass.PermanentEmployee" /> -->
+
+
+<!-- Recipe: com.sheeom.versioning (Working with versioning of objects) -->
+<!-- 		<mapping class="com.sheeom.versioning.Employee" /> -->
+
+<!-- Recipe: com.sheeom.maintain_history (Maintain history  of objects) -->
+<!-- 		<mapping class="com.sheeom.maintain_history.Employee" /> -->
+<!-- <listener class="org.hibernate.envers.event.AuditEventListener" type="post-insert"/> -->
+<!-- <listener class="org.hibernate.envers.event.AuditEventListener" type="post-update"/> -->
+<!-- <listener class="org.hibernate.envers.event.AuditEventListener" type="post-delete"/> -->
+
+
+<!-- Recipe: com.sheeom.worrking_with_interceptor (Working with interceptor) -->
+<!-- 		<mapping class="com.sheeom.worrking_with_interceptor.Employee" /> -->
+
+
+<!-- Recipe: com.sheeom.batch_processing (Working with Batch Processing) -->
+		
+ <property name="hibernate.jdbc.batch_size">50</property>  
+ <property name="hibernate.cache.use_second_level_cache"> false </property>
+ <mapping class="com.sheeom.batch_processing.Employee" />  
+	</session-factory>
+</hibernate-configuration>
