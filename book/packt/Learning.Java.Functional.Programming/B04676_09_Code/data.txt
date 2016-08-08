@@ -1,0 +1,50 @@
+Location
+House
+You are standing outside a house sitting in the middle of a meadow. There is a path leading north to the woods and a path leading east to a lake.
+Direction
+North
+Woods
+Direction
+East
+Emerald Blue Lake
+Item
+Axe
+A shape wooden handle axe
+Item
+Stone
+A small round rock
+Location
+Woods
+You are standing in the middle of a dense woods. There is a path leading south to a meadow and a path leading east to some small hills.
+Direction
+South
+House
+Direction
+East
+Small Hills
+Location
+Small Hills
+You are standing on the top of a small hill. To the west you see a path leading to a vast forest. To the south is a path leading to an emerald blue lake.
+Direction
+West
+Woods
+Direction
+South
+Emerald Blue Lake
+Item
+Key
+A small bronze key
+Location
+Emerald Blue Lake
+You are standing on the shores of the lake you are impressed by it deep emerald blue color. There is a path leading north to some small hills and a path leading west to a meadow.
+Direction
+West
+House
+Direction
+North
+Small Hills
+NPC
+Orge
+A fierce ugly orge lurks a few meters away. He looks like he is about to attack.
+StartingLocation
+House
