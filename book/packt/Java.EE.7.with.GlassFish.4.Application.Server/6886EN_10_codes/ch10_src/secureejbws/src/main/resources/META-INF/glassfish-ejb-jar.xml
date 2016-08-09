@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE glassfish-ejb-jar PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 3.1 EJB 3.1//EN" "http://glassfish.org/dtds/glassfish-ejb-jar_3_1-1.dtd">
+<glassfish-ejb-jar>
+    <ejb>
+        <ejb-name>SecureDecToHexBean</ejb-name>
+        <webservice-endpoint>
+            <port-component-name>SecureDecToHexBean</port-component-name>
+            <login-config>
+                <auth-method>BASIC</auth-method>
+                <realm>file</realm>
+            </login-config>
+        </webservice-endpoint>
+    </ejb>
+</glassfish-ejb-jar>

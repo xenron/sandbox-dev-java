@@ -1,0 +1,10 @@
+<project name="calculatorserviceclient" default="wsimport" basedir=".">
+  <target name="wsimport">
+    <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+     <classpath path="/opt/glassfish/lib/webservices-tools.jar"/>
+     <classpath path="/opt/glassfish/lib/webservices-rt.jar"/>
+     <classpath path="/opt/glassfish/lib/javaee.jar"/>
+    </taskdef> 
+     <wsimport wsdl="http://localhost:8080/calculatorservice/CalculatorService?wsdl" />
+  </target> 
+</project>
