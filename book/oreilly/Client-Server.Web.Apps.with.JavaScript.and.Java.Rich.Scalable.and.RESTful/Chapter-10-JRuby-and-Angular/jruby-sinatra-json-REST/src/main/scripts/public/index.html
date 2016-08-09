@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>index</title>
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+	<link href="style/style.css" rel="stylesheet">
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+	<script src="/js/app.js"></script>	
+	<!--
+	http://d.yimg.com/autoc.finance.yahoo.com/autoc?query=AAPL&callback=YAHOO.Finance.SymbolSuggest.ssCallback
+	http://www.google.com/finance/info?infotype=infoquoteall&q=AAPL
+	-->
+</head>
+<body>
+	
+  <div class="container" ng-controller="StockPortfolioCtrl">
+
+	<div class="row">
+		<div class="row">
+		    <div class="span10"><h2>Stock Portfolio ({{v.CurrentTime | date:'MM/dd/yyyy'}})</h2></div>
+		</div>
+		
+		<div class="span10">
+			Filter: <input ng-model="query" class='small'><br/><br/>
+
+	<table class="table-condensed table-hover zebra-striped bordered-table">
+		<thead>
+			<tr>
+	        	<th ng-click="orderBy('t')">Symbol</th>
+	        	<th ng-click="orderBy('name')">Description</th>
+	        	<th ng-click="orderBy('l_cur')">Price</th>
+	        	<th ng-click="orderBy('lo52')">52 Week Low</th>
+	        	<th ng-click="orderBy('hi52')">52 Week High</th>	
+				<th><a ng-click="showAddForm()" class="btn small">Add Stock</a></th>
+	    	</tr>
+		</thead>
+		<tbody class="zebra-striped">
+			<tr ng-show="addFormIsVisible">                
+		        <td>
+			<input type="text" ng-model="t" ng-change="getStockData()" class="symbol" placeholder="Symbol">
+				</td>
+		      	<td ng-model="name">
+		        	<input type="hidden" name='{{name}}' class='desc'  placeholder="Description" enabled='false'>
+					{{name}}
+		      	</td>
+				<td>
+		        	<input type="text" ng-model="l_cur" class='price' readonly placeholder="Price">
+		      	</td>
+				<td>&nbsp;</td>					
+		      	<td>
+					<a ng-click="saveStock()" class="btn btn-primary save-button">Save</a>        
+		        	<a ng-click="hideAddForm()" class="btn">Cancel</a>
+		      	</td>
+		    </tr>
+	    	<tr ng-repeat="stock in stocks | filter:query | orderBy:orderProp">
+	        	<td>
+					<a href='https://www.google.com/finance?q={{stock.e}}%3A{{stock.t}}'>{{stock.t}}</a>
+				</td>
+	        	<td>{{stock.name}}</td>
+	        	<td style='text-align: right'>{{stock.l_cur}}</td>
+	        	<td style='text-align: right'>{{stock.lo52}}</td>	
+	        	<td style='text-align: right'>{{stock.hi52}}</td>	
+				<td class='buttons'>
+					<button class='btn small danger' ng-click="deleteStock(stock.t,$index)">x</button>
+				</td>	
+	    	</tr>
+		</tbody>
+	</table>
+  </div>                    
+</body>
+</html>

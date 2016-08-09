@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="GoogleFinance">
+	<head>
+		<link href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+	    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+		 <script src="http://code.angularjs.org/1.0.6/angular-resource.js"></script>
+		 <script>
+			angular.module('GoogleFinance', ['ngResource']);
+
+			function AppCtrl($scope, $resource) {
+				$scope.googleFinance = $resource('https://finance.google.com/finance/info', 
+			                                     {client:'ig', q: 'AAPL', callback:'JSON_CALLBACK'},
+			                                     {get: {method:'JSONP', isArray: true}});
+
+			    $scope.indexResult = $scope.googleFinance.get();
+			
+				$scope.doSearch = function () {
+					console.log($scope.searchTerm)
+		        	$scope.indexResult = $scope.googleFinance.get({q: $scope.searchTerm});
+		    	};
+			}
+	
+		 </script>
+	</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="span3">&nbsp;</div>
+  </div>	
+  <div class="row">
+    <div class="span3">
+      <div ng-controller="AppCtrl">
+
+  <div class="input-append">
+    <input class="span2" type="text" ng-model="searchTerm" />
+    <span class="add-on"><i class="icon-search"></i></span>
+    <button class="btn" ng-click="doSearch()">Search</button>
+  </div>
+	
+  Current Price: {{indexResult[0].l_cur}}<br/>
+  Change:        {{indexResult[0].c}}<br/>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
