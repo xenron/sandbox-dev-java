@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<TITLE>Checking Applet Status</TITLE>
+<SCRIPT>
+    function determineAppletState() {
+        if (sampleApplet.status == 1)  {
+            document.getElementById("statediv").innerHTML = "Applet loading ...";
+            sampleApplet.onLoad = onLoadHandler;
+        } else if (sampleApplet.status == 2) {
+            document.getElementById("statediv").innerHTML = "Applet already loaded";
+        } else {
+            document.getElementById("statediv").innerHTML = "Applet entered error while loading";
+        }
+    }
+ 
+    function onLoadHandler() {
+        document.getElementById("loadeddiv").innerHTML = "Applet has loaded";
+    }
+
+</SCRIPT>
+</HEAD>
+<BODY onload="determineAppletState()">
+<H3>Sample Applet</H3>
+<DIV ID="statediv">state</DIV>
+<DIV ID="loadeddiv"></DIV>
+<DIV>
+    <SCRIPT src="http://www.java.com/js/deployJava.js"></SCRIPT>
+    <SCRIPT>
+        var attributes = { id:'sampleApplet', code:'SampleApplet.class', archive:'SampleApplet.jar', width:200,  
+height:100} ;
+        var parameters = {java_status_events: 'true'} ;
+        deployJava.runApplet(attributes, parameters, '1.7');
+    </SCRIPT>
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp href="JNLPExample.jnlp">
+    <information>
+        <title>Embedded JNLP File</title>
+        <vendor>Sample Vendor</vendor>
+    </information>
+    <resources>
+        <j2se version="1.7" />
+        <jar href="JNLPAppletExample.jar" 
+             main="true" />
+    </resources>
+    <applet-desc 
+         name="Embedded JNLP Example"
+         main-class="packt.JNLPAppletExample"
+         width="500"
+         height="500">
+     </applet-desc>
+      <update check="background"/>
+</jnlp>

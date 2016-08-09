@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<TITLE>Embedded JNLP File Example</TITLE>
+</HEAD>
+<BODY>
+<H3>Embedded JNLP Applet</H3>
+<script src="http://www.java.com/js/deployJava.js"></script>
+<script>        
+    var jnlpFile = "JNLPExample.jnlp";
+    deployJava.createWebStartLaunchButtonEx(jnlpFile);
+</script>
+<script>
+    var attributes = {} ;
+    var parameters = {jnlp_href: 'JNLPExample.jnlp',
+        jnlp_embedded: 'PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxqbmxwIGhyZWY9IkpOTFBFeGFtcGxlLmpubHAiPg0KICAgIDxpbmZvcm1hdGlvbj4NCiAgICAgICAgPHRpdGxlPkVtYmVkZGVkIEpOTFAgRmlsZTwvdGl0bGU+DQogICAgICAgIDx2ZW5kb3I+U2FtcGxlIFZlbmRvcjwvdmVuZG9yPg0KICAgIDwvaW5mb3JtYXRpb24+DQogICAgPHJlc291cmNlcz4NCiAgICAgICAgPGoyc2UgdmVyc2lvbj0iMS43IiAvPg0KICAgICAgICA8amFyIGhyZWY9IkpOTFBBcHBsZXRFeGFtcGxlLmphciIgDQogICAgICAgICAgICAgbWFpbj0idHJ1ZSIgLz4NCiAgICA8L3Jlc291cmNlcz4NCiAgICA8YXBwbGV0LWRlc2MgDQogICAgICAgICBuYW1lPSJFbWJlZGRlZCBKTkxQIEV4YW1wbGUiDQogICAgICAgICBtYWluLWNsYXNzPSJwYWNrdC5KTkxQQXBwbGV0RXhhbXBsZSINCiAgICAgICAgIHdpZHRoPSI1MDAiDQogICAgICAgICBoZWlnaHQ9IjUwMCI+DQogICAgIDwvYXBwbGV0LWRlc2M+DQogICAgICA8dXBkYXRlIGNoZWNrPSJiYWNrZ3JvdW5kIi8+DQo8L2pubHA+DQo='};
+    deployJava.runApplet(attributes, parameters, '1.7');
+</script>
+</BODY>
+</HTML>
