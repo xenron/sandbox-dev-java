@@ -1,0 +1,40 @@
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+  version="1.2">
+
+  <managed-bean>
+    <managed-bean-name>CustomerController</managed-bean-name>
+    <managed-bean-class>
+      net.ensode.glassfishbook.jsfjpa.CustomerController
+    </managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+      <property-name>customer</property-name>
+      <property-class>
+        net.ensode.glassfishbook.jsfjpa.Customer
+      </property-class>
+      <value>#{Customer}</value>
+    </managed-property>
+  </managed-bean>
+
+  <managed-bean>
+    <managed-bean-name>Customer</managed-bean-name>
+    <managed-bean-class>
+      net.ensode.glassfishbook.jsfjpa.Customer
+    </managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+
+  <navigation-rule>
+    <from-view-id>/save_customer.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>success</from-outcome>
+      <to-view-id>/customer_saved.jsp</to-view-id>
+    </navigation-case>
+    <navigation-case>
+      <from-outcome>failure</from-outcome>
+      <to-view-id>/error_saving_customer.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+</faces-config>
