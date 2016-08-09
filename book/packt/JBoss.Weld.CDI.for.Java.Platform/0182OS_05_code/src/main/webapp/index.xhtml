@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <title>First Request</title>
+    <h:outputStylesheet>
+        table, td, th
+        {
+            border: 1px solid #32cd32;
+            padding: 10px;
+        }
+        th
+        {
+            background-color: #228b22;
+            color: white;
+        }
+    </h:outputStylesheet>
+</h:head>
+<h:body>
+    <h:panelGrid columns="2">
+        <f:facet name="header">
+            <h:outputText value="CDI Producer Example" />
+        </f:facet>
+        <h:outputText value="Request Scope" />
+        <h:outputText value="#{page.description}" />
+        <h:outputText value="Session Scope" />
+        <h:outputText value="#{page.sessionDescription}" />
+    </h:panelGrid>
+    <br />
+    <h:form>
+        <h:commandButton action="page2" value="Next Request" />
+    </h:form>
+</h:body>
+</html>

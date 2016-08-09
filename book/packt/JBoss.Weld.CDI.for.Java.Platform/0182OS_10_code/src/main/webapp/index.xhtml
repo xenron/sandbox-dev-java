@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich">
+
+<h:head>
+    <title>My Books Admin</title>
+</h:head>
+<h:body>
+    <h2>My Books Administration Homepage</h2>
+
+    <h:panelGroup rendered="#{!currentUser.loggedIn}">
+        <h4>Please log into the administration.</h4>
+        <br/>
+        <rich:panel>
+            <f:facet name="header">
+                <h:outputText value="Login" />
+            </f:facet>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="Email: " />
+                    <rich:inplaceInput defaultLabel="click to enter your email" value="#{login.email}" />
+                    <h:outputText value="Password: " />
+                    <rich:inplaceInput defaultLabel="click to enter your password" value="#{login.password}" />
+                </h:panelGrid>
+                <h:commandButton value="Login" action="#{login.submit}" />
+            </h:form>
+        </rich:panel>
+    </h:panelGroup>
+
+    <h:panelGroup rendered="#{currentUser.loggedIn}">
+        <rich:tabPanel switchType="client">
+            <rich:tab header="Users">
+                <rich:dataTable value="#{users.allUsers}" var="user">
+                    <rich:column>
+                        <f:facet name="header">Name</f:facet>
+                        <h:outputText value="#{user.name}" />
+                    </rich:column>
+                    <rich:column>
+                        <f:facet name="header">Email</f:facet>
+                        <h:outputText value="#{user.email}" />
+                    </rich:column>
+                </rich:dataTable>
+            </rich:tab>
+        </rich:tabPanel>
+    </h:panelGroup>
+</h:body>
+</html>

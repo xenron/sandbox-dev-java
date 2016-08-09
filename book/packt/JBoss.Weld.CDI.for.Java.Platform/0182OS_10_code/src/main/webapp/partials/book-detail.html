@@ -1,0 +1,49 @@
+<div class="bookDetail">
+
+    <section>
+        <hgroup class="clearfix">
+            <span class="contentHead">{{book.title}}</span>
+        </hgroup>
+
+        <br/>
+
+        <form class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label" for="price">Price</label>
+                <div class="controls">
+                    <span id="price" class="uneditable-input">{{book.price}}</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="isbn">ISBN</label>
+                <div class="controls">
+                    <span id="isbn" class="uneditable-input">{{book.isbnNumber}}</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="publisher">Publisher</label>
+                <div class="controls">
+                    <span id="publisher" class="uneditable-input">{{book.publisher}}</span>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="authors">Authors</label>
+                <div class="controls">
+                    <div id="authors" ng-repeat="author in book.authors">
+                        <span class="uneditable-input">{{author.name}}</span><br/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="description">Description</label>
+                <div class="controls">
+                    <textarea id="description" readonly rows="10">{{book.description}}</textarea>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>

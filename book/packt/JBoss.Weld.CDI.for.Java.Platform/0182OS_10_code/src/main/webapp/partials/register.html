@@ -1,0 +1,41 @@
+<div>
+    <div class="alert alert-block alert-success" ng-show="!user.loggedIn && registered">
+        <p>User registered!</p>
+        <p>
+            <a href="#loginModal" data-toggle="modal" class="btn">Login</a>
+        </p>
+    </div>
+
+    <form class="form-horizontal" ng-submit="register()" name="registerForm" ng-show="!registered && !user.loggedIn">
+
+        <div class="control-group">
+            <label class="control-label" for="name">Name</label>
+            <div class="controls">
+                <input type="text" id="name" ng-model="u.name" placeholder="Name">
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="email">Email</label>
+            <div class="controls">
+                <input type="email" id="email" ng-model="u.email" placeholder="Email" required>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="password">Password</label>
+            <div class="controls">
+                <input type="password" id="password" ng-model="u.password" placeholder="Password" required>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn btn-primary" id="registerButton">Register</button>
+            </div>
+        </div>
+
+    </form>
+</div>

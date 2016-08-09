@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en" ng-app="mybooks">
+
+<head>
+    <title>My Books</title>
+
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+
+<body ng-controller="UserCtrl">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#">My Books</a>
+            <ul class="nav">
+                <li class="active">
+                    <a href="#">Home</a>
+                </li>
+            </ul>
+            <ul class="nav pull-right">
+                <li class="pull-right" ng-show="!user.loggedIn">
+                    <a href="#loginModal" data-toggle="modal">Login</a>
+                </li>
+                <li class="pull-right" ng-show="!user.loggedIn">
+                    <a href="#/register">Register</a>
+                </li>
+                <li class="pull-right" ng-show="user.loggedIn">
+                    <a href="#/myaccount">My Account</a>
+                </li>
+                <li class="pull-right" ng-show="user.loggedIn">
+                    <a ng-click="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="categories" ng-controller="CategoryListCtrl">
+        <nav>
+            <ul class="side-nav">
+                <li ng-repeat="category in categories">
+                    <i class="icon-book"></i>
+                    <a href="#/books/{{category.id}}">{{category.name}}</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content">
+        <div ng-view></div>
+    </div>
+
+    <div ng-include src="'partials/login.html'"></div>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-resource.js"></script>
+    <script src="lib/jquery/jquery-1.9.0.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+</body>
+</html>

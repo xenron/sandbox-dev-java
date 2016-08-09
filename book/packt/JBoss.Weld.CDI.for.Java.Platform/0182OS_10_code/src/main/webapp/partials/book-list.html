@@ -1,0 +1,36 @@
+<div class="bookList">
+
+    <section>
+        <hgroup class="clearfix">
+            <span class="contentHead">Available Books</span>
+        </hgroup>
+
+        <div ng-show="books.length">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Price</td>
+                    <td>Authors</td>
+                    <td>Description</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="book in books" ng-click="loadDetail(book)">
+                    <td>{{book.title}}</td>
+                    <td>{{book.price}}</td>
+                    <td>
+                        <span ng-repeat="author in book.authors">
+                            {{author.name}}<br/>
+                        </span>
+                    </td>
+                    <td>{{book.description}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div ng-hide="books.length">
+            There are currently no books available in this cateogory.
+        </div>
+    </section>
+</div>

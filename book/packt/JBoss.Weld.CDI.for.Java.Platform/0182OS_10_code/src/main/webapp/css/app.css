@@ -1,0 +1,48 @@
+.side-nav {
+    padding: 10px 0;
+    position: fixed;
+    left: 0px;
+    top: 40px;
+    bottom: 0px;
+    width: 140px;
+    background-color: #f1f1f1;
+    border-right: 1px solid #bbc0c4;
+    text-align: left;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.content
+{
+    overflow: hidden;
+    position: absolute;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -khtml-border-radius: 20px;
+    border-radius: 20px;
+    top: 60px;
+    bottom: 0px;
+    left: 150px;
+    right: 0px;
+    padding: 0px 10px;
+    overflow: auto;
+}
+
+.contentHead {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+/* Clearfix */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
