@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" >
+
+    <ui:composition template="/basic_layout.xhtml">
+
+        <ui:define name="mainContent">
+
+            <h1> JSF Implicit Simple Flow</h1>
+
+            <p>
+                Welcome to a simple Faces Flow. This example demonstrates implicit navigation.
+            </p>
+
+            <div class="content-wrapper">
+                <h:form>
+                    <h:commandButton  styleClass="btn btn-primary btn-lg" action="digitalFlow" value="Enter Digital Flow" />
+                </h:form>
+            </div>
+
+            <hr class="subfeaturette-divider" />
+
+            <p>
+                Group = <span class="blau">uk.co.xenonique.digital.javaee</span> <br/>
+                ArtifactId = <span class="blau" >jsf-implicit-simple-flow</span> <br/>
+                Version = <span class="blau">1.0-SNAPSHOT</span> <br/>
+            </p>
+
+            <hr class="subfeaturette-divider" />
+
+        </ui:define> <!--name="mainContent" -->
+
+    </ui:composition>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" >
+
+    <ui:composition template="/basic_layout.xhtml">
+
+        <ui:define name="mainContent">
+
+            <f:metadata>
+                <f:event type="preRenderView" listener="#{loginViewAuthenticator.check}" />
+            </f:metadata>
+
+            <div class="login-username-box  pull-right">
+                <b>#{sessionScope['LOGIN_USERNAME']}</b>
+            </div>
+
+            <h1> Approvers View [Stage 02]</h1>
+
+            <p>Page view: <code>/approvers/index.xhtml</code></p>
+            <p>View is part of a flow scope? <code>#{null != facesContext.application.flowHandler.currentFlow}</code>.</p>
+
+            <p class="bg-primary">
+                You are in a <em>protected</em> view, which secured by a ServletFilter and LoginViewAuthenticator.
+            </p>
+
+            <div class="content-wrapper   center-block">
+                <h:form>
+                    <h:commandButton  styleClass="btn btn-primary btn-lg" action="campaign" value="Campaign (Flow)" />
+                </h:form>
+            </div><!-- content-wrapper  -->
+
+
+            <div class="content-wrapper">
+                <p>
+                    We will add the approvers part here.
+                </p>
+
+                <h:form prependId="false">
+                    <h:commandButton styleClass="btn btn-primary btn-lg" value="Logout" action="#{loginController.logout()}" />
+                    &#160;
+                    &#160;
+                    <h:commandButton  styleClass="btn btn-primary btn-lg" action="simple" value="Simple (Flow)" />
+                    &#160;
+                    &#160;
+                </h:form>
+            </div>
+
+            <div class="content-wrapper">
+                <h:form>
+                    <h:commandButton styleClass="btn btn-info btn-lg" action="/index?faces-redirect=true" value="Go Home"/>
+                </h:form>
+            </div>
+
+            <hr class="subfeaturette-divider" />
+
+            <p>
+                Group = <span class="blau">uk.co.xenonique.digital.javaee</span> <br/>
+                ArtifactId = <span class="blau" >jsf-product-flow</span> <br/>
+                Version = <span class="blau">1.0-SNAPSHOT</span> <br/>
+            </p>
+
+            <hr class="subfeaturette-divider" />
+
+        </ui:define> <!--name="mainContent" -->
+
+    </ui:composition>
+</html>

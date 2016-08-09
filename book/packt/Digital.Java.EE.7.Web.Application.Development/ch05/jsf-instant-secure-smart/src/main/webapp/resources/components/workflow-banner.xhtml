@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:cc="http://xmlns.jcp.org/jsf/composite" >
+
+    <cc:interface componentType="workerBannerComponent">
+        <cc:attribute name="sectionName" required="true"/>
+        <cc:attribute name="controller" required="true"/>
+    </cc:interface>
+
+    <cc:implementation>
+        <div class="workflow-wrapper">
+
+                <ui:repeat var="navElement" value="#{cc.attrs.controller.navigation.elements}" varStatus="myStatus">
+                    <div class="workflow-column">
+                        <div class="workflow-title  #{navElement.style}  pull-left" >
+                            #{navElement.title}
+                            <h:commandButton styleClass="btn"
+                                             action="#{lendingController.computeEditView(myStatus.index)}"
+                                             rendered="#{navElement.visited}"
+                                             immediate="true"
+                                             value="Edit" />
+                        </div>
+                        <div class="workflow-arrow-right   #{navElement.style}  pull-left"></div>
+                    </div>
+                </ui:repeat>
+
+        </div>
+    </cc:implementation>
+</html>

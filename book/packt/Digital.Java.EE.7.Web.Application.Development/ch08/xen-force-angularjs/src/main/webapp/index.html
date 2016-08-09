@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+	<title>
+	XeNoNiQUE :: 2015 :: Xen Nation Force :: Digital Java EE 7 Web Applications
+	</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="XeNoNiQUE">
+    <meta name="author" content="Peter Pilgrim">
+
+    <!-- Les Bootstrap styles -->
+    <link href="styles/bootstrap.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+  </head>
+
+  <body ng-controller="CaseRecordController">
+    <!-- NAVBAR
+    ================================================== -->
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img id="brandNavbarLogo" src="images/xen-national-force-emblem-128w.png" /></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Technology <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Digital Java EE 7</a></li>
+                            <li><a href="#">Java EE 7</a></li>
+                            <li><a href="#">AngularJS</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Peter Pilgrim Blob</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">RESTful Services</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="http://en.wikipedia.org/wiki/Digital_marketing">Digital</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Popular <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <script type="text/ng-template" id="newCaseRecordContent.html">
+        <div class="modal-header">
+            <img class="pull-right brand-logo" src="images/xen-national-force-emblem-128w.png" />
+            <h3>New Case Record </h3>
+        </div>
+        <div class="modal-body">
+            <form name="newCaseRecordForm" class="css-form" novalidate>
+                Sex:<br />
+                <select ng-model="caseRecord.sex" required>
+                    <option value="F" ng-option="selected caseRecord.sex === 'F'">Female</option>
+                    <option value="M" ng-option="selected caseRecord.sex === 'M'">Male</option>
+                </select>
+                <br/>
+                First Name:<br />
+                <input type="text" ng-model="caseRecord.firstName" required /><br />
+                Last Name:<br />
+                <input type="text" ng-model="caseRecord.lastName" required /><br />
+                Date of Birth:<br />
+                <input type="text" ng-model="caseRecord.dateOfBirth" datepicker-popup="yyyy-MM-dd" required /><br />
+                Country:<br />
+                <select ng-model="caseRecord.country" required ng-options="item.code as item.country for item in isoCountries.countryToCodeArrayMap">
+                </select>
+                <br />
+                Passport Number:<br />
+                <input type="text" ng-model="caseRecord.passportNo" required /><br />
+                Expiration Date:<br />
+                <input type="text" ng-model="caseRecord.expirationDate" datepicker-popup="yyyy-MM-dd" required /><br />
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()" ng-disabled="newCaseRecordForm.$invalid" >OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="editCaseRecordContent.html">
+        <div class="modal-header">
+            <img class="pull-right brand-logo" src="images/xen-national-force-emblem-128w.png" />
+            <h3>Edit Case Record</h3>
+        </div>
+        <div class="modal-body">
+            <form name="editCaseRecordForm" class="css-form" novalidate>
+                Sex:<br />
+                <select ng-model="caseRecord.sex" required>
+                    <option value="F" ng-option="selected caseRecord.sex === 'F'">Female</option>
+                    <option value="M" ng-option="selected caseRecord.sex === 'M'">Male</option>
+                </select>
+                <br/>
+                First Name:<br />
+                <input type="text" ng-model="caseRecord.firstName" required /><br />
+                Last Name:<br />
+                <input type="text" ng-model="caseRecord.lastName" required /><br />
+                Date of Birth:<br />
+                <input type="text" ng-model="caseRecord.dateOfBirth" datepicker-popup="yyyy-MM-dd" required /><br />
+                Country:<br />
+                <select ng-model="caseRecord.country" required ng-options="item.code as item.country for item in isoCountries.countryToCodeArrayMap">
+                </select>
+                <br />
+                Passport Number:<br />
+                <input type="text" ng-model="caseRecord.passportNo" required /><br />
+                Expiration Date:<br />
+                <input type="text" ng-model="caseRecord.expirationDate" datepicker-popup="yyyy-MM-dd" required /><br />
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()" ng-disabled="editCaseRecordForm.$invalid" >OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="changeStateCaseRecordContent.html">
+        <div class="modal-header">
+            <img class="pull-right brand-logo" src="images/xen-national-force-emblem-128w.png" />
+            <h3>Change State of Case Record</h3>
+        </div>
+        <div class="modal-body">
+            <p>
+                <table class="table table-bordered">
+                    <tr>
+                        <th> Field </th>
+                        <th> Value </th>
+                    </tr>
+                    <tr>
+                        <td> Case Record Id</td> <td> {{caseRecord.id }}</td>
+                    </tr>
+                    <tr>
+                        <td> Last Name</td> <td> {{caseRecord.lastName}}</td>
+                    </tr>
+                    <tr>
+                        <td> First Name</td> <td> {{caseRecord.firstName}}</td>
+                    </tr>
+                    <tr>
+                        <td> Date of Birth</td> <td> {{caseRecord.dateOfBirth}}</td>
+                    </tr>
+                    <tr>
+                        <td> Country </td> <td> {{caseRecord.country}}</td>
+                    </tr>
+                    <tr>
+                        <td> Passport No </td> <td> {{caseRecord.passportNo}}</td>
+                    </tr>
+                    <tr>
+                        <td> Expiration Date</td> <td> {{caseRecord.expirationDate}}</td>
+                    </tr>
+                </table>
+            </p>
+            <form name="moveStateCaseRecordForm" class="css-form" novalidate>
+                Next States:<br />
+                <select ng-model="caseRecord.currentState"
+                        ng-options="state for state in caseRecord.nextStates">
+                </select>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()" ng-disabled="moveStateCaseRecordForm.$invalid" >OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+
+
+    <script type="text/ng-template" id="newTaskContent.html">
+        <div class="modal-header">
+            <img class="pull-right brand-logo" src="images/xen-national-force-emblem-128w.png" />
+            <h3>New Task</h3>
+        </div>
+        <div class="modal-body">
+            <form name="newTaskForm" class="css-form" novalidate>
+                Task Name:<br />
+                <textarea ng-model="task.name" rows="3" required /><br />
+                Target Date:  <br />
+                <input type="text" datepicker-popup="yyyy-MM-dd" ng-model="task.targetDate" required /><br />
+                Task Completed: <br />
+                Done <input type="checkbox" ng-model="task.completed" /><br />
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()" ng-disabled="newTaskForm.$invalid" >OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="editTaskContent.html">
+        <div class="modal-header">
+            <img class="pull-right brand-logo" src="images/xen-national-force-emblem-128w.png" />
+            <h3>Edit Task</h3>
+        </div>
+        <div class="modal-body">
+            <form name="editTaskForm" class="css-form" novalidate>
+                Task Name:<br />
+                <textarea ng-model="task.name" rows="3" required /><br />
+                Target Date:  <br />
+                <input type="text" datepicker-popup="yyyy-MM-dd" ng-model="task.targetDate" required /><br />
+                Task Completed: <br />
+                Done <input type="checkbox" ng-model="task.completed" /><br />
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()" ng-disabled="editTaskForm.$invalid" >OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="deleteTaskContent.html">
+        <div class="modal-header">
+            <img class="pull-right brand-logo" src="images/xen-national-force-emblem-128w.png" />
+            <h3>Remove Task</h3>
+        </div>
+        <div class="modal-body">
+            <p>
+                Are you sure that you want to remove this task?
+            </p>
+            <p>
+                Task Name:  <strong>{{task.name}}</strong><br />
+                Target Date: <strong>{{task.targetDate}}</strong><br />
+                Task Completed: <strong>{{task.completed}}</strong><br />
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()" ng-disabled="newTaskForm.$invalid" >OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+	<div id="mainContent">
+
+		<div class="promo-signpost" >
+			<div class="promo-message" >
+				<img id="promoLogo"  src="images/XeNoNiQUe-Logo-2011-01-233x175-72dpi.png" width="100" />
+				<h2> Xen Nation Force </h2>
+				<p>
+					This is a Java web application to help you organize project groups and tasks. 
+					It is a demonstration of AngularJS client side programming and
+                    server side Java EE 7 technology features for JAX-RS, WebSocket and Servlets.
+				</p>
+				<button  class="btn btn-primary btn-large">Learn More</button>
+		    </div>
+		</div>
+
+
+		<div class="case-record-view" >
+            <p>
+                If you see nothing here, please <em>refresh</em> this page view. Thank you.
+            </p>
+
+			<div class="actionBar" ng-controller="NewCaseRecordModalController" >
+				<button class="btn btn-primary" ng-click="openCreateCaseRecordDialog()" >Add New Case Record</button>
+                <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+			</div>
+
+            <h2 class="case-record-headline">Case Records</h2>
+
+            <table class="table table-bordered" >
+                <tr>
+                    <th>Id</th>
+                    <th>Last Name</th>
+                    <th>First Name</th>
+                    <th>Sex</th>
+                    <th>Country</th>
+                    <th>Passport No</th>
+                    <th>D.o.B</th>
+                    <th>Expiration Date</th>
+                    <th>Status</th>
+                </tr>
+
+                <!-- http://stackoverflow.com/questions/17745802/angularjs-repeating-trs-in-a-table-but-dynamically-adding-more-rows-while-lo -->
+                <tr ng-repeat-start="caseRecord in caseRecords">
+                    <td>
+                        <div ng-controller="NewCaseRecordModalController" style="display: inline;">
+                            <a class="btn" href="#" ng-click="showOrHideTasks($parent.caseRecord)" title="{{caseRecord.id}}">
+                                <!--<i class="glyphicon" icon-expand-collapse-status="caseRecord.showStatus"></i>-->
+                                <!--<i class="glyphicon" ng-class="{true: 'glyphicon-minus', false: 'glyphicon-plus'}[caseRecord.showTasks]" ></i>-->
+                                <i class="glyphicon" ng-class="getIconClass($parent.caseRecord)" ></i>
+                            </a>
+                        </div>
+                    </td>
+                    <td>{{caseRecord.lastName}}</td>
+                    <td>{{caseRecord.firstName}}</td>
+                    <td>{{caseRecord.sex}}</td>
+                    <td>{{caseRecord.country}}</td>
+                    <td>{{caseRecord.passportNo}}</td>
+                    <td>{{caseRecord.dateOfBirth}}</td>
+                    <td>{{caseRecord.expirationDate}}</td>
+                    <td>{{caseRecord.currentState}}</td>
+                </tr>
+                <tr ng-repeat-end  ng-if="caseRecord.showTasks" >
+                    <td colspan="9">
+                        <div class="case-record-task-view">
+                            <div ng-controller="NewCaseRecordModalController">
+                                <button class="btn btn-info"
+                                ng-click="openEditCaseRecordDialog($parent.caseRecord)">Edit Case Record Details</button>
+                                <button class="btn btn-info"
+                                        ng-click="changeStateCaseRecordDialog($parent.caseRecord)">Change State</button>
+                            </div>
+                            <br />
+
+                            <div ng-controller="NewTaskModalController">
+                                <p>
+                                    <button class="btn btn-primary"
+                                            ng-click="openNewTaskDialog(caseRecord.id)">Add New Task</button>
+                                </p>
+                            </div>
+
+                            <table class="table case-record-task-table  table-bordered  table-responsive">
+                                <tr>
+                                    <td>
+                                        Item
+                                    </td>
+                                    <td>
+                                        Description
+                                    </td>
+                                    <td>
+                                        Completed
+                                    </td>
+                                    <td>
+                                        Due Date
+                                    </td>
+                                    <td>
+                                        Control
+                                    </td>
+                                </tr>
+
+                                <tr ng-repeat="task in caseRecord.tasks">
+                                    <td>
+                                        {{task.id}}
+                                    </td>
+                                    <td>
+                                        <span class="done-{{task.completed}}"> {{task.name}} </span>
+                                    </td>
+                                    <td>
+                                        <label class="checkbox">
+                                            <!-- change this code to a websocket invocation -->
+                                            <input type="checkbox" ng-model="task.completed" ng-change="updateProjectTaskCompleted(task)">
+                                            Done
+                                        </label>
+                                    </td>
+                                    <td>
+                                        {{task.targetDate}}
+                                    </td>
+                                    <td>
+                                        <div ng-controller="NewTaskModalController">
+                                            <a class="btn" href="#" ng-click="openEditTaskDialog($parent.task)"><i class="glyphicon glyphicon-edit"></i></a>
+                                            <a class="btn" href="#" ng-click="openDeleteTaskDialog($parent.task)"><i class="glyphicon glyphicon-trash"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </div>
+                    </td>
+                </tr><!-- ng-repeat-end ## caseRecord in caseRecords -->
+            </table>
+
+		</div>
+
+	</div>	
+	<!-- FOOTER -->
+	<div class="container fatbottom">
+
+	    <hr class="featurette-divider">
+		<footer>
+            <div class="row">
+                <div class="col-md-8  center-block" style="float: none;">
+                    <img class="center-block" src="images/xen-national-force-emblem-256w.png" />
+                </div>
+            </div>
+			<p class="pull-right"><a href="#">Back to top</a></p>
+
+			<p>&copy; 2013, 2014 XeNoNiQUe, UK &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+			<p class="slogan"> I can definitely help you.</p>
+			<p>
+				<a href="https://glassfish.java.net/"> <img src="images/glassfish_logo.jpg" width="128" height="65"/> </a>
+				<a href="http://twitter.com/peter_pilgrim"> <img src="images/twitter-bird-white-on-blue.png" width="64" height="64" /> </a>
+				<a href="https://plus.google.com/117513042687634436539/posts"> <img src="images/Google-Plus-Logo.png" width="64" height="64" /> </a>
+			</p>
+		</footer>
+	</div>	
+
+	<!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+    <!-- <script src="http://code.jquery.com/jquery-2.1.3js"></script> -->
+	<script src="javascripts/jquery-2.1.3.js"></script>
+    <script src="javascripts/angular.js"></script>
+    <script src="javascripts/bootstrap.js"></script>
+    <script src="javascripts/ui-bootstrap-tpls-0.12.1.js"></script>
+    <script src="app/controllers/main.js"></script>
+    <script src="app/controllers/newcaserecord-modal.js"></script>
+    <script src="app/controllers/newtask-modal.js"></script>
+    <script src="app/services/shared-service.js"></script>
+    <script src="app/services/iso-countries.js"></script>
+  </body>
+</html>
+
+<!-- 
+
+=========================================================================================
+=========================================================================================
+=========================================================================================
+
+Created by Peter Pilgrim (c) 2015 using some most excellent tools:
+ On the client side: Twitter Bootstrap, AngularJS and JQuery
+ On the server side: Java EE 7 GlassFish 4.1
+
+ Need Development Help? "I can definitely help you"
+
+=========================================================================================
+=========================================================================================
+=========================================================================================
+
+-->

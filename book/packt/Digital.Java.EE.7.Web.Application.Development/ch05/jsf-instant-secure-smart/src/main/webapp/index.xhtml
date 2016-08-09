@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" >
+
+    <ui:composition template="/basic_layout.xhtml">
+
+        <ui:define name="mainContent">
+
+            <h1> JSF Instant Secure Lending</h1>
+
+            <p>
+                Welcome to Duke Penny Loan where developers, designers and architect can secure
+                an instant loan. <em>You move. We move.</em>
+            </p>
+
+            <div class="content-wrapper   center-block">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"  data-interval="10000">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="#{request.contextPath}/resources/images/IMG_0679_1024x683.JPG" />
+                        </div>
+                        <div class="item">
+                            <img src="#{request.contextPath}/resources/images/IMG_0064_1024x683.JPG" />
+                        </div>
+                        <div class="item">
+                            <img src="#{request.contextPath}/resources/images/IMG_0525_1024x683.JPG" />
+                        </div>
+                        <div class="item">
+                            <img src="#{request.contextPath}/resources/images/IMG_0193_1024x683.JPG" />
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div><!-- content-wrapper  -->
+
+            <pre>
+            lendingController = #{lendingController}
+            lendingController.conversation = #{lendingController.conversation}
+            lendingController.conversation.id = #{lendingController.conversation.id}
+            lendingController.conversation.transient = #{lendingController.conversation.transient}
+            </pre>
+
+            <div class="content-wrapper">
+                <h:form>
+                    <h:commandButton styleClass="btn btn-primary btn-lg"
+                            action="#{lendingController.jumpGettingStarted()}" value="Apply Now!" />
+                </h:form>
+            </div>
+
+            <div class="content-wrapper">
+                <p>
+                    Apply for a Dukes Dollar loan.
+                    You borrow from
+                    <b>
+                        <h:outputText value="#{lendingController.minimumLoanAmount}" >
+                            <f:convertNumber currencyCode="GBP" type="currency" />
+                        </h:outputText>
+                    </b>
+                    to
+                    <b>
+                        <h:outputText value="#{lendingController.maximumLoanAmount}" >
+                            <f:convertNumber currencyCode="GBP" type="currency" />
+                        </h:outputText>
+                    </b>
+                    on a rate from
+                    <b>
+                        <h:outputText value="#{lendingController.minimumLoanRate}" >
+                            <f:convertNumber pattern="0.00" />
+                        </h:outputText>&#37;
+                    </b>
+                    to
+                    <b>
+                        <h:outputText value="#{lendingController.maximumLoanRate}" >
+                            <f:convertNumber pattern="0.00" />
+                        </h:outputText>&#37;
+                    </b>.
+                </p>
+            </div>
+
+
+            <hr class="subfeaturette-divider" />
+
+            <p>
+                Group = <span class="blau">uk.co.xenonique.digital.javaee</span> <br/>
+                ArtifactId = <span class="blau" >jsf-instant-secure-smart</span> <br/>
+                Version = <span class="blau">1.0-SNAPSHOT</span> <br/>
+            </p>
+
+            <h3>Project Notes</h3>
+
+            <p>
+                This example project demonstrates a modified lending controller that acts like a wizard where
+                the applicant has a change to go back and change information in the workflow.
+                This is an additional project that is not described in the <b>Digital Java EE 7</b> book, because
+                there is more than enough content for <i>Chapter 5: Conversations and Journeys</i>.
+                The keys to understanding the new functionality are the classes: <code>uk.co.xenonique.digital.instant.control.NavigatableController</code>
+                , <code>uk.co.xenonique.digital.instant.control.SmartNavigation</code> and <code>uk.co.xenonique.digital.instant.control.NavElement</code>.
+                It should be noted that <code>LendingController</code> is an implementation of <code>NavigatableController</code>, and the
+                custom composite component <code>WorkerBannerComponent</code> accepts a <code>NavigatableController</code>.
+            </p>
+
+            <hr class="subfeaturette-divider" />
+            <h3>H:FORM</h3>
+            <p>Use a JSF HTML Form and command buttons custom tags to ensure that the conversation scope is
+                retained as the user navigates between pages. The conversation id is passed implicitly as part of the JSF HTML Form</p>
+            <h:form>
+                <h:commandButton styleClass="btn btn-info" value="View Scoped" action="view-scoped.xhtml"/>
+                &#160;
+                &#160;
+                <h:commandButton styleClass="btn btn-info" value="Conversation" action="conversation.xhtml"/>
+            </h:form>
+
+            <hr class="subfeaturette-divider" />
+            <h3>H:LINK</h3>
+            <p>
+                Using JSF hyperlink outside of form. Conversational scope fails to work, because the implicit ID is not
+                passed as a request and therefore JSF believes that every submission is a brand new conversation!!!
+            </p>
+            <h:link styleClass="btn btn-info" outcome="view-scoped.xhtml"> View Scoped </h:link>
+            &#160;
+            &#160;
+            <h:link styleClass="btn btn-info" outcome="conversation.xhtml"> Conversational </h:link>
+        </ui:define> <!--name="mainContent" -->
+
+    </ui:composition>
+</html>

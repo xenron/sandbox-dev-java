@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Digital Java EE 7 - Sample JSF</title>
+        <style type="text/css">
+            body {
+                font-size: 16pt;
+                margin: 25px;
+            }
+
+            button, input, textarea {
+                font-size: 24pt;
+            }
+        </style>
+    </h:head>
+    <h:body>
+
+        <h1> Digital Java EE 7 - JSF Compositions</h1>
+
+        <p>
+        This is the simplest JSF example possible.
+        </p>
+
+        <h:form>
+            <h:commandButton action="#{basicFlow.serveResponse}"
+                             value="Invoke Action" />
+        </h:form>
+
+        <p>
+            Here follows the composition layout examples:
+        </p>
+
+        <ul>
+            <li>
+                <h:link outcome="composition1.xhtml">
+                    Composition 1
+                </h:link>
+            </li>
+        </ul>
+
+    </h:body>
+</html>
