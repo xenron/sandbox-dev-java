@@ -1,0 +1,55 @@
+
+
+@(pk: Int, customerrowForm: Form[CustomerRow])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Edit CustomerRow</h1>
+    
+    @form(routes.CustomerController.update(pk)) {
+    
+        <fieldset>
+          
+            @inputText(customerrowForm("customerId"), '_label -> "CustomerId")
+          
+            @inputText(customerrowForm("discountCode"), '_label -> "DiscountCode")
+          
+            @inputText(customerrowForm("zip"), '_label -> "Zip")
+          
+            @inputText(customerrowForm("name"), '_label -> "Name")
+          
+            @inputText(customerrowForm("addressline1"), '_label -> "Addressline1")
+          
+            @inputText(customerrowForm("addressline2"), '_label -> "Addressline2")
+          
+            @inputText(customerrowForm("city"), '_label -> "City")
+          
+            @inputText(customerrowForm("state"), '_label -> "State")
+          
+            @inputText(customerrowForm("phone"), '_label -> "Phone")
+          
+            @inputText(customerrowForm("fax"), '_label -> "Fax")
+          
+            @inputText(customerrowForm("email"), '_label -> "Email")
+          
+            @inputText(customerrowForm("creditLimit"), '_label -> "CreditLimit")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Save this CustomerRow" class="btn primary"> or 
+            <a href="@routes.CustomerController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+    @form(routes.CustomerController.delete(pk), 'class -> "topRight") {
+        <input type="submit" value="Delete this CustomerRow" class="btn danger">
+    }
+    
+}

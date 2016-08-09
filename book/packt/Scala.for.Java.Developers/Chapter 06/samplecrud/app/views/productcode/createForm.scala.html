@@ -1,0 +1,32 @@
+
+@(productcoderowForm: Form[ProductCodeRow])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) } 
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Add a ProductCodeRow</h1>
+    
+    @form(routes.ProductCodeController.save()) {
+        
+        <fieldset>
+          
+            @inputText(productcoderowForm("prodCode"), '_label -> "ProdCode")
+          
+            @inputText(productcoderowForm("discountCode"), '_label -> "DiscountCode")
+          
+            @inputText(productcoderowForm("description"), '_label -> "Description")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create this ProductCodeRow" class="btn primary"> or 
+            <a href="@routes.ProductCodeController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+}

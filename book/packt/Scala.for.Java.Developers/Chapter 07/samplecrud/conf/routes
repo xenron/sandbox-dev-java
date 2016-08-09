@@ -1,0 +1,145 @@
+
+
+
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page (still here since default creation of new play project
+# creates an Application controller)
+GET     /                            controllers.Application.controllerlist
+
+#GET     /marketplacesearch	    controllers.MarketplaceController.search(p:Int ?= 0, s:Int ?= 2, f ?= "*")
+GET     /marketplace			controllers.MarketplaceController.list(p:Int ?= 0, s:Int ?= 2, f ?= "*")
+
+GET     /mocksearch				controllers.MockMarketplaceController.mockSearch
+
+# Customer
+
+# 
+# Customer list (look at the default values for pagination parameters)
+GET     /customer               controllers.CustomerController.list(p:Int ?= 0, s:Int ?= 2, f ?= "")
+
+# Add customer
+GET     /customer/new           controllers.CustomerController.create
+POST    /customer               controllers.CustomerController.save
+
+# Edit existing customer
+GET     /customer/:pk           controllers.CustomerController.edit(pk:Int)
+POST    /customer/:pk           controllers.CustomerController.update(pk:Int)
+
+# Delete customer
+POST    /customer/:pk/delete    controllers.CustomerController.delete(pk:Int)
+
+
+# Manufacturer
+
+# 
+# Manufacturer list (look at the default values for pagination parameters)
+GET     /manufacturer               controllers.ManufacturerController.list(p:Int ?= 0, s:Int ?= 2, f ?= "")
+
+# Add manufacturer
+GET     /manufacturer/new           controllers.ManufacturerController.create
+POST    /manufacturer               controllers.ManufacturerController.save
+
+# Edit existing manufacturer
+GET     /manufacturer/:pk           controllers.ManufacturerController.edit(pk:Int)
+POST    /manufacturer/:pk           controllers.ManufacturerController.update(pk:Int)
+
+# Delete manufacturer
+POST    /manufacturer/:pk/delete    controllers.ManufacturerController.delete(pk:Int)
+
+
+# PurchaseOrder
+
+# 
+# PurchaseOrder list (look at the default values for pagination parameters)
+GET     /purchaseorder               controllers.PurchaseOrderController.list(p:Int ?= 0, s:Int ?= 2, f ?= "")
+
+# Add purchaseorder
+GET     /purchaseorder/new           controllers.PurchaseOrderController.create
+POST    /purchaseorder               controllers.PurchaseOrderController.save
+
+# Edit existing purchaseorder
+GET     /purchaseorder/:pk           controllers.PurchaseOrderController.edit(pk:Int)
+POST    /purchaseorder/:pk           controllers.PurchaseOrderController.update(pk:Int)
+
+# Delete purchaseorder
+POST    /purchaseorder/:pk/delete    controllers.PurchaseOrderController.delete(pk:Int)
+
+
+# MicroMarket
+
+# 
+# MicroMarket list (look at the default values for pagination parameters)
+GET     /micromarket               controllers.MicroMarketController.list(p:Int ?= 0, s:Int ?= 2, f ?= "")
+
+# Add micromarket
+GET     /micromarket/new           controllers.MicroMarketController.create
+POST    /micromarket               controllers.MicroMarketController.save
+
+# Edit existing micromarket
+GET     /micromarket/:pk           controllers.MicroMarketController.edit(pk:String)
+POST    /micromarket/:pk           controllers.MicroMarketController.update(pk:String)
+
+# Delete micromarket
+POST    /micromarket/:pk/delete    controllers.MicroMarketController.delete(pk:String)
+
+
+# DiscountCode
+
+# 
+# DiscountCode list (look at the default values for pagination parameters)
+GET     /discountcode               controllers.DiscountCodeController.list(p:Int ?= 0, s:Int ?= 2, f ?= "")
+
+# Add discountcode
+GET     /discountcode/new           controllers.DiscountCodeController.create
+POST    /discountcode               controllers.DiscountCodeController.save
+
+# Edit existing discountcode
+GET     /discountcode/:pk           controllers.DiscountCodeController.edit(pk:String)
+POST    /discountcode/:pk           controllers.DiscountCodeController.update(pk:String)
+
+# Delete discountcode
+POST    /discountcode/:pk/delete    controllers.DiscountCodeController.delete(pk:String)
+
+
+# ProductCode
+
+# 
+# ProductCode list (look at the default values for pagination parameters)
+GET     /productcode               controllers.ProductCodeController.list(p:Int ?= 0, s:Int ?= 2, f ?= "")
+
+# Add productcode
+GET     /productcode/new           controllers.ProductCodeController.create
+POST    /productcode               controllers.ProductCodeController.save
+
+# Edit existing productcode
+GET     /productcode/:pk           controllers.ProductCodeController.edit(pk:String)
+POST    /productcode/:pk           controllers.ProductCodeController.update(pk:String)
+
+# Delete productcode
+POST    /productcode/:pk/delete    controllers.ProductCodeController.delete(pk:String)
+
+
+# Product
+
+# 
+# Product list (look at the default values for pagination parameters)
+GET     /product               controllers.ProductController.list(p:Int ?= 0, s:Int ?= 2, f ?= "")
+
+# Add product
+GET     /product/new           controllers.ProductController.create
+POST    /product               controllers.ProductController.save
+
+# Edit existing product
+GET     /product/:pk           controllers.ProductController.edit(pk:Int)
+POST    /product/:pk           controllers.ProductController.update(pk:Int)
+
+# Delete product
+POST    /product/:pk/delete    controllers.ProductController.delete(pk:Int)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                        controllers.Assets.at(path="/public", file)

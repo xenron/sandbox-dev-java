@@ -1,0 +1,18 @@
+
+# Messages
+
+product.list.title={0,choice,0#No product|1#One item|1<{0,number,integer} product} found
+
+purchaseorder.list.title={0,choice,0#No purchaseorder|1#One item|1<{0,number,integer} purchaseorder} found
+
+customer.list.title={0,choice,0#No customer|1#One item|1<{0,number,integer} customer} found
+
+language.list.title={0,choice,0#No language|1#One item|1<{0,number,integer} language} found
+
+discountcode.list.title={0,choice,0#No discountcode|1#One item|1<{0,number,integer} discountcode} found
+
+manufacturer.list.title={0,choice,0#No manufacturer|1#One item|1<{0,number,integer} manufacturer} found
+
+productcode.list.title={0,choice,0#No productcode|1#One item|1<{0,number,integer} productcode} found
+
+micromarket.list.title={0,choice,0#No micromarket|1#One item|1<{0,number,integer} micromarket} found

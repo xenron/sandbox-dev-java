@@ -1,0 +1,55 @@
+
+
+@(pk: Int, customeForm: Form[Custome])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Edit Custome</h1>
+    
+    @form(routes.CustomerController.update(pk)) {
+    
+        <fieldset>
+          
+            @inputText(customeForm("customerId"), '_label -> "CustomerId")
+          
+            @inputText(customeForm("discountCode"), '_label -> "DiscountCode")
+          
+            @inputText(customeForm("zip"), '_label -> "Zip")
+          
+            @inputText(customeForm("name"), '_label -> "Name")
+          
+            @inputText(customeForm("addressline1"), '_label -> "Addressline1")
+          
+            @inputText(customeForm("addressline2"), '_label -> "Addressline2")
+          
+            @inputText(customeForm("city"), '_label -> "City")
+          
+            @inputText(customeForm("state"), '_label -> "State")
+          
+            @inputText(customeForm("phone"), '_label -> "Phone")
+          
+            @inputText(customeForm("fax"), '_label -> "Fax")
+          
+            @inputText(customeForm("email"), '_label -> "Email")
+          
+            @inputText(customeForm("creditLimit"), '_label -> "CreditLimit")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Save this Custome" class="btn primary"> or 
+            <a href="@routes.CustomerController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+    @form(routes.CustomerController.delete(pk), 'class -> "topRight") {
+        <input type="submit" value="Delete this Custome" class="btn danger">
+    }
+    
+}

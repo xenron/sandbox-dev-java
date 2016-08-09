@@ -1,0 +1,51 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        
+        <script type="text/javascript">
+		function WebSocketTest()
+		{
+		  if ("WebSocket" in window)
+		  {
+		     alert("WebSocket is supported by your Browser!");
+		     // Let us open a web socket
+		     var ws = new WebSocket("ws://localhost:9000/connect");
+		     ws.onopen = function()
+		     {
+		        // Web Socket is connected, send data using send()
+		        var msg = "Hello Websocket!"
+		        ws.send(msg);
+		        alert("Message is sent..."+msg);
+		     };
+		     ws.onmessage = function (evt) 
+		     { 
+		        var received_msg = evt.data;
+		        alert("Message is received..."+received_msg);
+		     };
+		     ws.onclose = function()
+		     { 
+		        // websocket is closed.
+		        alert("Connection is closed..."); 
+		     };
+		  }
+		  else
+		  {
+		     // The browser doesn't support WebSocket
+		     alert("WebSocket NOT supported by your Browser!");
+		  }
+		}
+		</script>
+	</head>
+    <body>
+    	<div id="sse">
+   			<a href="javascript:WebSocketTest()">Run WebSocket</a>
+   		</div>
+    </body>
+</html>

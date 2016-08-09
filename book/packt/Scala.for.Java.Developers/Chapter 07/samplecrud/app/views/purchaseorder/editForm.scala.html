@@ -1,0 +1,47 @@
+
+
+@(pk: Int, purchaseordeForm: Form[PurchaseOrde])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Edit PurchaseOrde</h1>
+    
+    @form(routes.PurchaseOrderController.update(pk)) {
+    
+        <fieldset>
+          
+            @inputText(purchaseordeForm("orderNum"), '_label -> "OrderNum")
+          
+            @inputText(purchaseordeForm("customerId"), '_label -> "CustomerId")
+          
+            @inputText(purchaseordeForm("productId"), '_label -> "ProductId")
+          
+            @inputText(purchaseordeForm("quantity"), '_label -> "Quantity")
+          
+            @inputText(purchaseordeForm("shippingCost"), '_label -> "ShippingCost")
+          
+            @inputText(purchaseordeForm("salesDate"), '_label -> "SalesDate")
+          
+            @inputText(purchaseordeForm("shippingDate"), '_label -> "ShippingDate")
+          
+            @inputText(purchaseordeForm("freightCompany"), '_label -> "FreightCompany")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Save this PurchaseOrde" class="btn primary"> or 
+            <a href="@routes.PurchaseOrderController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+    @form(routes.PurchaseOrderController.delete(pk), 'class -> "topRight") {
+        <input type="submit" value="Delete this PurchaseOrde" class="btn danger">
+    }
+    
+}

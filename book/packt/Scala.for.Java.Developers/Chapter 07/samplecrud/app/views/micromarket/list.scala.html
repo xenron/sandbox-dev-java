@@ -1,0 +1,121 @@
+
+@(currentPage: Page[MicroMarke], currentOrderBy: Int, currentFilter: String)(implicit flash: play.api.mvc.Flash)
+
+@****************************************
+* Helper generating navigation links    *
+****************************************@
+@link(newPage: Int, newOrderBy: Option[Int] = None) = @{
+    routes.MicroMarketController.list(
+    newPage, 
+    newOrderBy.map { orderBy =>
+        if(orderBy == scala.math.abs(currentOrderBy)) -currentOrderBy else orderBy
+    }.getOrElse(currentOrderBy),
+    currentFilter)
+    
+}
+
+@**********************************
+* Helper generating table headers *
+***********************************@
+@header(orderBy: Int, title: String) = {
+    <th class="col@orderBy header @if(scala.math.abs(currentOrderBy) == orderBy) @{if(currentOrderBy < 0) "headerSortDown" else "headerSortUp"}">
+        <a href="@link(0, Some(orderBy))">@title</a>
+    </th>
+}
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>@Messages("micro_market.list.title", currentPage.total)</h1>
+
+    @flash.get("success").map { message =>
+        <div class="alert-message warning">
+            <strong>Done!</strong> @message
+        </div>
+    }
+
+    <div id="actions">
+        
+        @helper.form(action=routes.MicroMarketController.list()) {
+            <input type="search" id="searchbox" name="f" value="@currentFilter" placeholder="Filter by name...">
+            <input type="submit" id="searchsubmit" value="Filter by name" class="btn primary">
+        }
+        
+        <a class="btn success" id="add" href="@routes.MicroMarketController.create()">Add a new MicroMarke</a>
+        
+    </div>
+
+    @Option(currentPage.items).filterNot(_.isEmpty).map { entities =>
+        
+        <table class="computers zebra-striped">
+            <thead>
+                <tr>
+                     
+                    @header(1, "ZipCode") 
+                    @header(2, "Radius") 
+                    @header(3, "AreaLength") 
+                    @header(4, "AreaWidth")            
+                </tr>              
+            </thead>
+            <tbody>
+                @entities.map{  entity =>
+                        <tr>
+                            
+                            <td>
+                            <a href="@routes.MicroMarketController.edit(entity.zipCode.get)">@entity.zipCode</a> 
+                            </td> 
+                            
+                            <td>
+                            @entity.radius 
+                            </td> 
+                            
+                            <td>
+                            @entity.areaLength 
+                            </td> 
+                            
+                            <td>
+                            @entity.areaWidth 
+                            </td> 
+                            
+                        </tr>
+                     
+                }
+
+            </tbody>
+        </table>
+
+        <div id="pagination" class="pagination">
+            <ul>
+                @currentPage.prev.map { page =>
+                    <li class="prev">
+                        <a href="@link(page)">&larr; Previous</a>
+                    </li> 
+                }.getOrElse {
+                    <li class="prev disabled">
+                        <a>&larr; Previous</a>
+                    </li>
+                }
+                <li class="current">
+                    <a>Displaying @(currentPage.offset + 1) to @(currentPage.offset + entities.size) of @currentPage.total</a>
+                </li>
+                @currentPage.next.map { page =>
+                    <li class="next">
+                        <a href="@link(page)">Next &rarr;</a>
+                    </li> 
+                }.getOrElse {
+                    <li class="next disabled">
+                        <a>Next &rarr;</a>
+                    </li>
+                }
+            </ul>
+        </div>
+        
+    }.getOrElse {
+        
+        <div class="well">
+            <em>Nothing to display</em>
+        </div>
+        
+    }
+    
+
+}

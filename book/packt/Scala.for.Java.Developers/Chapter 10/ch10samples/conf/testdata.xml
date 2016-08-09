@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <AMT month="2004-12" company="AUDI AG" cur="SEK" acct="A" dim1="CAR" dim2="NOR" amt="12"/>
+  <AMT month="2004-12" company="AUDI AG" cur="SEK" acct="A" dim1="CAR" dim2="SWE" amt="24"/>
+  <AMT month="2004-12" company="AUDI AG" cur="EUR" acct="A" dim1="CAR" dim2="FRA" amt="36"/>
+  <AMT month="2004-12" company="AUDI AG" cur="SEK" acct="A" dim1="ENG" dim2="SWE" amt="48"/>
+  <AMT month="2004-12" company="LAMBORGHINI" cur="EUR" acct="B" dim1="CAR" dim2="EUROPE" amt="10"/>
+  <AMT month="2004-12" company="LAMBORGHINI" cur="SEK" acct="B" dim1="CAR" dim2="SWE" amt="30"/>
+  <AMT month="2004-12" company="LAMBORGHINI" cur="SEK" acct="B" dim1="CAR" dim2="NOR" amt="50"/>
+  <AMT month="2004-12" company="LAMBORGHINI" cur="SEK" acct="B" dim1="CAR" dim2="SWE" amt="12"/>
+  <AMT month="2004-12" company="SCANIA" cur="EUR" acct="B" dim1="TRUCK" dim2="NORDIC" amt="50"/>
+  <AMT month="2004-12" company="SCANIA" cur="SEK" acct="B" dim1="TRUCK" dim2="SWE" amt="36"/>
+  <AMT month="2004-12" company="SCANIA" cur="SEK" acct="B" dim1="ENGINE" dim2="NOR" amt="3"/>
+  <AMT month="2004-12" company="SCANIA" cur="EUR" acct="B" dim1="ENGINE" dim2="FRA" amt="10"/>
+  <AMT month="2004-12" company="SEAT" cur="SEK" acct="B" dim1="CAR" dim2="NOR" amt="2"/>
+  <AMT month="2004-12" company="SEAT" cur="EUR" acct="B" dim1="CAR" dim2="FRA" amt="16"/>
+  <AMT month="2004-12" company="SUZUKI" cur="SEK" acct="B" dim1="ENGINE" dim2="NOR" amt="4"/>
+  <AMT month="2004-12" company="SUZUKI" cur="SEK" acct="B" dim1="CAR" dim2="SWE" amt="20"/>
+</dataset>
+
+

@@ -1,0 +1,161 @@
+
+@(currentPage: Page[Custome], currentOrderBy: Int, currentFilter: String)(implicit flash: play.api.mvc.Flash)
+
+@****************************************
+* Helper generating navigation links    *
+****************************************@
+@link(newPage: Int, newOrderBy: Option[Int] = None) = @{
+    routes.CustomerController.list(
+    newPage, 
+    newOrderBy.map { orderBy =>
+        if(orderBy == scala.math.abs(currentOrderBy)) -currentOrderBy else orderBy
+    }.getOrElse(currentOrderBy),
+    currentFilter)
+    
+}
+
+@**********************************
+* Helper generating table headers *
+***********************************@
+@header(orderBy: Int, title: String) = {
+    <th class="col@orderBy header @if(scala.math.abs(currentOrderBy) == orderBy) @{if(currentOrderBy < 0) "headerSortDown" else "headerSortUp"}">
+        <a href="@link(0, Some(orderBy))">@title</a>
+    </th>
+}
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>@Messages("customer.list.title", currentPage.total)</h1>
+
+    @flash.get("success").map { message =>
+        <div class="alert-message warning">
+            <strong>Done!</strong> @message
+        </div>
+    }
+
+    <div id="actions">
+        
+        @helper.form(action=routes.CustomerController.list()) {
+            <input type="search" id="searchbox" name="f" value="@currentFilter" placeholder="Filter by name...">
+            <input type="submit" id="searchsubmit" value="Filter by name" class="btn primary">
+        }
+        
+        <a class="btn success" id="add" href="@routes.CustomerController.create()">Add a new Custome</a>
+        
+    </div>
+
+    @Option(currentPage.items).filterNot(_.isEmpty).map { entities =>
+        
+        <table class="computers zebra-striped">
+            <thead>
+                <tr>
+                     
+                    @header(1, "CustomerId") 
+                    @header(2, "DiscountCode") 
+                    @header(3, "Zip") 
+                    @header(4, "Name") 
+                    @header(5, "Addressline1") 
+                    @header(6, "Addressline2") 
+                    @header(7, "City") 
+                    @header(8, "State") 
+                    @header(9, "Phone") 
+                    @header(10, "Fax") 
+                    @header(11, "Email") 
+                    @header(12, "CreditLimit")            
+                </tr>              
+            </thead>
+            <tbody>
+                @entities.map{  entity =>
+                        <tr>
+                            
+                            <td>
+                            <a href="@routes.CustomerController.edit(entity.customerId.get)">@entity.customerId</a> 
+                            </td> 
+                            
+                            <td>
+                            @entity.discountCode 
+                            </td> 
+                            
+                            <td>
+                            @entity.zip 
+                            </td> 
+                            
+                            <td>
+                            @entity.name 
+                            </td> 
+                            
+                            <td>
+                            @entity.addressline1 
+                            </td> 
+                            
+                            <td>
+                            @entity.addressline2 
+                            </td> 
+                            
+                            <td>
+                            @entity.city 
+                            </td> 
+                            
+                            <td>
+                            @entity.state 
+                            </td> 
+                            
+                            <td>
+                            @entity.phone 
+                            </td> 
+                            
+                            <td>
+                            @entity.fax 
+                            </td> 
+                            
+                            <td>
+                            @entity.email 
+                            </td> 
+                            
+                            <td>
+                            @entity.creditLimit 
+                            </td> 
+                            
+                        </tr>
+                     
+                }
+
+            </tbody>
+        </table>
+
+        <div id="pagination" class="pagination">
+            <ul>
+                @currentPage.prev.map { page =>
+                    <li class="prev">
+                        <a href="@link(page)">&larr; Previous</a>
+                    </li> 
+                }.getOrElse {
+                    <li class="prev disabled">
+                        <a>&larr; Previous</a>
+                    </li>
+                }
+                <li class="current">
+                    <a>Displaying @(currentPage.offset + 1) to @(currentPage.offset + entities.size) of @currentPage.total</a>
+                </li>
+                @currentPage.next.map { page =>
+                    <li class="next">
+                        <a href="@link(page)">Next &rarr;</a>
+                    </li> 
+                }.getOrElse {
+                    <li class="next disabled">
+                        <a>Next &rarr;</a>
+                    </li>
+                }
+            </ul>
+        </div>
+        
+    }.getOrElse {
+        
+        <div class="well">
+            <em>Nothing to display</em>
+        </div>
+        
+    }
+    
+
+}

@@ -1,0 +1,156 @@
+
+@(currentPage: Page[ManufacturerRow], currentOrderBy: Int, currentFilter: String)(implicit flash: play.api.mvc.Flash)
+
+@****************************************
+* Helper generating navigation links    *
+****************************************@
+@link(newPage: Int, newOrderBy: Option[Int] = None) = @{
+    routes.ManufacturerController.list(
+    newPage, 
+    newOrderBy.map { orderBy =>
+        if(orderBy == scala.math.abs(currentOrderBy)) -currentOrderBy else orderBy
+    }.getOrElse(currentOrderBy),
+    currentFilter)
+    
+}
+
+@**********************************
+* Helper generating table headers *
+***********************************@
+@header(orderBy: Int, title: String) = {
+    <th class="col@orderBy header @if(scala.math.abs(currentOrderBy) == orderBy) @{if(currentOrderBy < 0) "headerSortDown" else "headerSortUp"}">
+        <a href="@link(0, Some(orderBy))">@title</a>
+    </th>
+}
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>@Messages("manufacturer.list.title", currentPage.total)</h1>
+
+    @flash.get("success").map { message =>
+        <div class="alert-message warning">
+            <strong>Done!</strong> @message
+        </div>
+    }
+
+    <div id="actions">
+        
+        @helper.form(action=routes.ManufacturerController.list()) {
+            <input type="search" id="searchbox" name="f" value="@currentFilter" placeholder="Filter by name...">
+            <input type="submit" id="searchsubmit" value="Filter by name" class="btn primary">
+        }
+        
+        <a class="btn success" id="add" href="@routes.ManufacturerController.create()">Add a new ManufacturerRow</a>
+        
+    </div>
+
+    @Option(currentPage.items).filterNot(_.isEmpty).map { entities =>
+        
+        <table class="computers zebra-striped">
+            <thead>
+                <tr>
+                     
+                    @header(1, "ManufacturerId") 
+                    @header(2, "Name") 
+                    @header(3, "Addressline1") 
+                    @header(4, "Addressline2") 
+                    @header(5, "City") 
+                    @header(6, "State") 
+                    @header(7, "Zip") 
+                    @header(8, "Phone") 
+                    @header(9, "Fax") 
+                    @header(10, "Email") 
+                    @header(11, "Rep")            
+                </tr>              
+            </thead>
+            <tbody>
+                @entities.map{  entity =>
+                        <tr>
+                            
+                            <td>
+                            <a href="@routes.ManufacturerController.edit(entity.manufacturerId.get)">@entity.manufacturerId</a> 
+                            </td> 
+                            
+                            <td>
+                            @entity.name 
+                            </td> 
+                            
+                            <td>
+                            @entity.addressline1 
+                            </td> 
+                            
+                            <td>
+                            @entity.addressline2 
+                            </td> 
+                            
+                            <td>
+                            @entity.city 
+                            </td> 
+                            
+                            <td>
+                            @entity.state 
+                            </td> 
+                            
+                            <td>
+                            @entity.zip 
+                            </td> 
+                            
+                            <td>
+                            @entity.phone 
+                            </td> 
+                            
+                            <td>
+                            @entity.fax 
+                            </td> 
+                            
+                            <td>
+                            @entity.email 
+                            </td> 
+                            
+                            <td>
+                            @entity.rep 
+                            </td> 
+                            
+                        </tr>
+                     
+                }
+
+            </tbody>
+        </table>
+
+        <div id="pagination" class="pagination">
+            <ul>
+                @currentPage.prev.map { page =>
+                    <li class="prev">
+                        <a href="@link(page)">&larr; Previous</a>
+                    </li> 
+                }.getOrElse {
+                    <li class="prev disabled">
+                        <a>&larr; Previous</a>
+                    </li>
+                }
+                <li class="current">
+                    <a>Displaying @(currentPage.offset + 1) to @(currentPage.offset + entities.size) of @currentPage.total</a>
+                </li>
+                @currentPage.next.map { page =>
+                    <li class="next">
+                        <a href="@link(page)">Next &rarr;</a>
+                    </li> 
+                }.getOrElse {
+                    <li class="next disabled">
+                        <a>Next &rarr;</a>
+                    </li>
+                }
+            </ul>
+        </div>
+        
+    }.getOrElse {
+        
+        <div class="well">
+            <em>Nothing to display</em>
+        </div>
+        
+    }
+    
+
+}

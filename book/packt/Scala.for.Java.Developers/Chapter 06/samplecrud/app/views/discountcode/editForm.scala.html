@@ -1,0 +1,35 @@
+
+
+@(pk: String, discountcoderowForm: Form[DiscountCodeRow])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Edit DiscountCodeRow</h1>
+    
+    @form(routes.DiscountCodeController.update(pk)) {
+    
+        <fieldset>
+          
+            @inputText(discountcoderowForm("discountCode"), '_label -> "DiscountCode")
+          
+            @inputText(discountcoderowForm("rate"), '_label -> "Rate")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Save this DiscountCodeRow" class="btn primary"> or 
+            <a href="@routes.DiscountCodeController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+    @form(routes.DiscountCodeController.delete(pk), 'class -> "topRight") {
+        <input type="submit" value="Delete this DiscountCodeRow" class="btn danger">
+    }
+    
+}

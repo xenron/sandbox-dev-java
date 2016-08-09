@@ -1,0 +1,35 @@
+
+
+@(pk: Int, languagerowForm: Form[LanguageRow])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Edit LanguageRow</h1>
+    
+    @form(routes.LanguageController.update(pk)) {
+    
+        <fieldset>
+          
+            @inputText(languagerowForm("id"), '_label -> "Id")
+          
+            @inputText(languagerowForm("name"), '_label -> "Name")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Save this LanguageRow" class="btn primary"> or 
+            <a href="@routes.LanguageController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+    @form(routes.LanguageController.delete(pk), 'class -> "topRight") {
+        <input type="submit" value="Delete this LanguageRow" class="btn danger">
+    }
+    
+}

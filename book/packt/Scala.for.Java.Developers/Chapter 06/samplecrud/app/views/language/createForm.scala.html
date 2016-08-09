@@ -1,0 +1,30 @@
+
+@(languagerowForm: Form[LanguageRow])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) } 
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Add a LanguageRow</h1>
+    
+    @form(routes.LanguageController.save()) {
+        
+        <fieldset>
+          
+            @inputText(languagerowForm("id"), '_label -> "Id")
+          
+            @inputText(languagerowForm("name"), '_label -> "Name")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create this LanguageRow" class="btn primary"> or 
+            <a href="@routes.LanguageController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+}

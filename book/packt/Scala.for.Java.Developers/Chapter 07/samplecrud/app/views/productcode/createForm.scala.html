@@ -1,0 +1,32 @@
+
+@(productcodForm: Form[ProductCod])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) } 
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Add a ProductCod</h1>
+    
+    @form(routes.ProductCodeController.save()) {
+        
+        <fieldset>
+          
+            @inputText(productcodForm("prodCode"), '_label -> "ProdCode")
+          
+            @inputText(productcodForm("discountCode"), '_label -> "DiscountCode")
+          
+            @inputText(productcodForm("description"), '_label -> "Description")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create this ProductCod" class="btn primary"> or 
+            <a href="@routes.ProductCodeController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+}

@@ -1,0 +1,47 @@
+
+
+@(pk: Int, productrowForm: Form[ProductRow])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Edit ProductRow</h1>
+    
+    @form(routes.ProductController.update(pk)) {
+    
+        <fieldset>
+          
+            @inputText(productrowForm("productId"), '_label -> "ProductId")
+          
+            @inputText(productrowForm("manufacturerId"), '_label -> "ManufacturerId")
+          
+            @inputText(productrowForm("productCode"), '_label -> "ProductCode")
+          
+            @inputText(productrowForm("purchaseCost"), '_label -> "PurchaseCost")
+          
+            @inputText(productrowForm("quantityOnHand"), '_label -> "QuantityOnHand")
+          
+            @inputText(productrowForm("markup"), '_label -> "Markup")
+          
+            @inputText(productrowForm("available"), '_label -> "Available")
+          
+            @inputText(productrowForm("description"), '_label -> "Description")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Save this ProductRow" class="btn primary"> or 
+            <a href="@routes.ProductController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+    @form(routes.ProductController.delete(pk), 'class -> "topRight") {
+        <input type="submit" value="Delete this ProductRow" class="btn danger">
+    }
+    
+}

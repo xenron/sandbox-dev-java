@@ -1,0 +1,48 @@
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>List of Controllers</h1>
+        
+        <table class="computers zebra-striped">
+            <thead>
+                <tr>Controller Name</tr>
+            </thead>
+            <tbody>
+               
+                  <tr>
+                    <a class="btn success" href="@routes.CustomerController.list()">Customer</a>
+                  </tr>
+                
+                  <tr>
+                    <a class="btn success" href="@routes.ManufacturerController.list()">Manufacturer</a>
+                  </tr>
+                
+                  <tr>
+                    <a class="btn success" href="@routes.PurchaseOrderController.list()">PurchaseOrder</a>
+                  </tr>
+                
+                  <tr>
+                    <a class="btn success" href="@routes.LanguageController.list()">Language</a>
+                  </tr>
+                
+                  <tr>
+                    <a class="btn success" href="@routes.MicroMarketController.list()">MicroMarket</a>
+                  </tr>
+                
+                  <tr>
+                    <a class="btn success" href="@routes.DiscountCodeController.list()">DiscountCode</a>
+                  </tr>
+                
+                  <tr>
+                    <a class="btn success" href="@routes.ProductCodeController.list()">ProductCode</a>
+                  </tr>
+                
+                  <tr>
+                    <a class="btn success" href="@routes.ProductController.list()">Product</a>
+                  </tr>
+                
+            </tbody>
+        </table>
+    
+    
+}

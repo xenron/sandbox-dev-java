@@ -1,0 +1,30 @@
+
+@(discountcodForm: Form[DiscountCod])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) } 
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Add a DiscountCod</h1>
+    
+    @form(routes.DiscountCodeController.save()) {
+        
+        <fieldset>
+          
+            @inputText(discountcodForm("discountCode"), '_label -> "DiscountCode")
+          
+            @inputText(discountcodForm("rate"), '_label -> "Rate")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create this DiscountCod" class="btn primary"> or 
+            <a href="@routes.DiscountCodeController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+}

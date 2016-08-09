@@ -1,0 +1,34 @@
+
+@(micromarkeForm: Form[MicroMarke])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) } 
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Add a MicroMarke</h1>
+    
+    @form(routes.MicroMarketController.save()) {
+        
+        <fieldset>
+          
+            @inputText(micromarkeForm("zipCode"), '_label -> "ZipCode")
+          
+            @inputText(micromarkeForm("radius"), '_label -> "Radius")
+          
+            @inputText(micromarkeForm("areaLength"), '_label -> "AreaLength")
+          
+            @inputText(micromarkeForm("areaWidth"), '_label -> "AreaWidth")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create this MicroMarke" class="btn primary"> or 
+            <a href="@routes.MicroMarketController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+}

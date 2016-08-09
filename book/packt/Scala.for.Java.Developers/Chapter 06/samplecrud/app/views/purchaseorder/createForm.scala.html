@@ -1,0 +1,42 @@
+
+@(purchaseorderrowForm: Form[PurchaseOrderRow])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) } 
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Add a PurchaseOrderRow</h1>
+    
+    @form(routes.PurchaseOrderController.save()) {
+        
+        <fieldset>
+          
+            @inputText(purchaseorderrowForm("orderNum"), '_label -> "OrderNum")
+          
+            @inputText(purchaseorderrowForm("customerId"), '_label -> "CustomerId")
+          
+            @inputText(purchaseorderrowForm("productId"), '_label -> "ProductId")
+          
+            @inputText(purchaseorderrowForm("quantity"), '_label -> "Quantity")
+          
+            @inputText(purchaseorderrowForm("shippingCost"), '_label -> "ShippingCost")
+          
+            @inputText(purchaseorderrowForm("salesDate"), '_label -> "SalesDate")
+          
+            @inputText(purchaseorderrowForm("shippingDate"), '_label -> "ShippingDate")
+          
+            @inputText(purchaseorderrowForm("freightCompany"), '_label -> "FreightCompany")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create this PurchaseOrderRow" class="btn primary"> or 
+            <a href="@routes.PurchaseOrderController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+}

@@ -1,0 +1,48 @@
+
+@(manufactureForm: Form[Manufacture])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) } 
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Add a Manufacture</h1>
+    
+    @form(routes.ManufacturerController.save()) {
+        
+        <fieldset>
+          
+            @inputText(manufactureForm("manufacturerId"), '_label -> "ManufacturerId")
+          
+            @inputText(manufactureForm("name"), '_label -> "Name")
+          
+            @inputText(manufactureForm("addressline1"), '_label -> "Addressline1")
+          
+            @inputText(manufactureForm("addressline2"), '_label -> "Addressline2")
+          
+            @inputText(manufactureForm("city"), '_label -> "City")
+          
+            @inputText(manufactureForm("state"), '_label -> "State")
+          
+            @inputText(manufactureForm("zip"), '_label -> "Zip")
+          
+            @inputText(manufactureForm("phone"), '_label -> "Phone")
+          
+            @inputText(manufactureForm("fax"), '_label -> "Fax")
+          
+            @inputText(manufactureForm("email"), '_label -> "Email")
+          
+            @inputText(manufactureForm("rep"), '_label -> "Rep")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create this Manufacture" class="btn primary"> or 
+            <a href="@routes.ManufacturerController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+}

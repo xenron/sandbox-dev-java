@@ -1,0 +1,47 @@
+
+
+@(pk: Int, producForm: Form[Produc])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Edit Produc</h1>
+    
+    @form(routes.ProductController.update(pk)) {
+    
+        <fieldset>
+          
+            @inputText(producForm("productId"), '_label -> "ProductId")
+          
+            @inputText(producForm("manufacturerId"), '_label -> "ManufacturerId")
+          
+            @inputText(producForm("productCode"), '_label -> "ProductCode")
+          
+            @inputText(producForm("purchaseCost"), '_label -> "PurchaseCost")
+          
+            @inputText(producForm("quantityOnHand"), '_label -> "QuantityOnHand")
+          
+            @inputText(producForm("markup"), '_label -> "Markup")
+          
+            @inputText(producForm("available"), '_label -> "Available")
+          
+            @inputText(producForm("description"), '_label -> "Description")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Save this Produc" class="btn primary"> or 
+            <a href="@routes.ProductController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+    @form(routes.ProductController.delete(pk), 'class -> "topRight") {
+        <input type="submit" value="Delete this Produc" class="btn danger">
+    }
+    
+}

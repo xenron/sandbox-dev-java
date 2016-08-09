@@ -1,0 +1,141 @@
+
+@(currentPage: Page[PurchaseOrderRow], currentOrderBy: Int, currentFilter: String)(implicit flash: play.api.mvc.Flash)
+
+@****************************************
+* Helper generating navigation links    *
+****************************************@
+@link(newPage: Int, newOrderBy: Option[Int] = None) = @{
+    routes.PurchaseOrderController.list(
+    newPage, 
+    newOrderBy.map { orderBy =>
+        if(orderBy == scala.math.abs(currentOrderBy)) -currentOrderBy else orderBy
+    }.getOrElse(currentOrderBy),
+    currentFilter)
+    
+}
+
+@**********************************
+* Helper generating table headers *
+***********************************@
+@header(orderBy: Int, title: String) = {
+    <th class="col@orderBy header @if(scala.math.abs(currentOrderBy) == orderBy) @{if(currentOrderBy < 0) "headerSortDown" else "headerSortUp"}">
+        <a href="@link(0, Some(orderBy))">@title</a>
+    </th>
+}
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>@Messages("purchase_order.list.title", currentPage.total)</h1>
+
+    @flash.get("success").map { message =>
+        <div class="alert-message warning">
+            <strong>Done!</strong> @message
+        </div>
+    }
+
+    <div id="actions">
+        
+        @helper.form(action=routes.PurchaseOrderController.list()) {
+            <input type="search" id="searchbox" name="f" value="@currentFilter" placeholder="Filter by name...">
+            <input type="submit" id="searchsubmit" value="Filter by name" class="btn primary">
+        }
+        
+        <a class="btn success" id="add" href="@routes.PurchaseOrderController.create()">Add a new PurchaseOrderRow</a>
+        
+    </div>
+
+    @Option(currentPage.items).filterNot(_.isEmpty).map { entities =>
+        
+        <table class="computers zebra-striped">
+            <thead>
+                <tr>
+                     
+                    @header(1, "OrderNum") 
+                    @header(2, "CustomerId") 
+                    @header(3, "ProductId") 
+                    @header(4, "Quantity") 
+                    @header(5, "ShippingCost") 
+                    @header(6, "SalesDate") 
+                    @header(7, "ShippingDate") 
+                    @header(8, "FreightCompany")            
+                </tr>              
+            </thead>
+            <tbody>
+                @entities.map{  entity =>
+                        <tr>
+                            
+                            <td>
+                            <a href="@routes.PurchaseOrderController.edit(entity.orderNum.get)">@entity.orderNum</a> 
+                            </td> 
+                            
+                            <td>
+                            @entity.customerId 
+                            </td> 
+                            
+                            <td>
+                            @entity.productId 
+                            </td> 
+                            
+                            <td>
+                            @entity.quantity 
+                            </td> 
+                            
+                            <td>
+                            @entity.shippingCost 
+                            </td> 
+                            
+                            <td>
+                            @entity.salesDate 
+                            </td> 
+                            
+                            <td>
+                            @entity.shippingDate 
+                            </td> 
+                            
+                            <td>
+                            @entity.freightCompany 
+                            </td> 
+                            
+                        </tr>
+                     
+                }
+
+            </tbody>
+        </table>
+
+        <div id="pagination" class="pagination">
+            <ul>
+                @currentPage.prev.map { page =>
+                    <li class="prev">
+                        <a href="@link(page)">&larr; Previous</a>
+                    </li> 
+                }.getOrElse {
+                    <li class="prev disabled">
+                        <a>&larr; Previous</a>
+                    </li>
+                }
+                <li class="current">
+                    <a>Displaying @(currentPage.offset + 1) to @(currentPage.offset + entities.size) of @currentPage.total</a>
+                </li>
+                @currentPage.next.map { page =>
+                    <li class="next">
+                        <a href="@link(page)">Next &rarr;</a>
+                    </li> 
+                }.getOrElse {
+                    <li class="next disabled">
+                        <a>Next &rarr;</a>
+                    </li>
+                }
+            </ul>
+        </div>
+        
+    }.getOrElse {
+        
+        <div class="well">
+            <em>Nothing to display</em>
+        </div>
+        
+    }
+    
+
+}

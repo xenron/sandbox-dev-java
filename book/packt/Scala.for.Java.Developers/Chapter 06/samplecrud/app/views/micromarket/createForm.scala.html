@@ -1,0 +1,34 @@
+
+@(micromarketrowForm: Form[MicroMarketRow])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) } 
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Add a MicroMarketRow</h1>
+    
+    @form(routes.MicroMarketController.save()) {
+        
+        <fieldset>
+          
+            @inputText(micromarketrowForm("zipCode"), '_label -> "ZipCode")
+          
+            @inputText(micromarketrowForm("radius"), '_label -> "Radius")
+          
+            @inputText(micromarketrowForm("areaLength"), '_label -> "AreaLength")
+          
+            @inputText(micromarketrowForm("areaWidth"), '_label -> "AreaWidth")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create this MicroMarketRow" class="btn primary"> or 
+            <a href="@routes.MicroMarketController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+}

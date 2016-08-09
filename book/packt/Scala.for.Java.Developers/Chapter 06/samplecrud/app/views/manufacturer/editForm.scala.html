@@ -1,0 +1,53 @@
+
+
+@(pk: Int, manufacturerrowForm: Form[ManufacturerRow])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.f) }
+
+@main("Welcome to Play 2.0") {
+    
+    <h1>Edit ManufacturerRow</h1>
+    
+    @form(routes.ManufacturerController.update(pk)) {
+    
+        <fieldset>
+          
+            @inputText(manufacturerrowForm("manufacturerId"), '_label -> "ManufacturerId")
+          
+            @inputText(manufacturerrowForm("name"), '_label -> "Name")
+          
+            @inputText(manufacturerrowForm("addressline1"), '_label -> "Addressline1")
+          
+            @inputText(manufacturerrowForm("addressline2"), '_label -> "Addressline2")
+          
+            @inputText(manufacturerrowForm("city"), '_label -> "City")
+          
+            @inputText(manufacturerrowForm("state"), '_label -> "State")
+          
+            @inputText(manufacturerrowForm("zip"), '_label -> "Zip")
+          
+            @inputText(manufacturerrowForm("phone"), '_label -> "Phone")
+          
+            @inputText(manufacturerrowForm("fax"), '_label -> "Fax")
+          
+            @inputText(manufacturerrowForm("email"), '_label -> "Email")
+          
+            @inputText(manufacturerrowForm("rep"), '_label -> "Rep")
+           
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Save this ManufacturerRow" class="btn primary"> or 
+            <a href="@routes.ManufacturerController.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+    @form(routes.ManufacturerController.delete(pk), 'class -> "topRight") {
+        <input type="submit" value="Delete this ManufacturerRow" class="btn danger">
+    }
+    
+}
