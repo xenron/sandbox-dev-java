@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 21. JSON Support via Jackson</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL-NS Stylesheets V1.74.0"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="RESTEasy JAX-RS"/><link rel="up" href="index.html" title="RESTEasy JAX-RS"/><link rel="prev" href="Atom.html" title="Chapter 20. Resteasy Atom Support"/><link rel="next" href="json-p.html" title="Chapter 22. JSON Support via Java EE 7 JSON-P API"/></head><body><p xmlns:d="http://docbook.org/ns/docbook" id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="Atom.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="json-p.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="json"/>Chapter 21. JSON Support via Jackson</h2></div></div></div><div class="toc"><dl><dt><span class="sect1"><a href="json.html#d4e1039">21.1. Using Jackson 1.9.x Outside of JBoss AS7</a></span></dt><dt><span class="sect1"><a href="json.html#d4e1043">21.2. Using Jackson 1.9.x Inside of JBoss AS7</a></span></dt><dt><span class="sect1"><a href="json.html#d4e1046">21.3. Using Jackson 2.2.x Outside of JBoss AS7</a></span></dt><dt><span class="sect1"><a href="json.html#d4e1050">21.4. Using Jackson 2.2.x Inside of JBoss AS7</a></span></dt><dt><span class="sect1"><a href="json.html#d4e1054">21.5. Additional Resteasy Specifics</a></span></dt><dt><span class="sect1"><a href="json.html#Possible_Jackson_Problems">21.6. Possible Conflict With JAXB Provider</a></span></dt><dt><span class="sect1"><a href="json.html#JSONP_Support">21.7. JSONP Support</a></span></dt></dl></div>
+    
+    <p>Besides the Jettision JAXB adapter for JSON, Resteasy also support integration with the Jackson project.
+        Many users find the output from Jackson much much nicer than the Badger format or Mapped format provided by
+        Jettison.
+        Jackson lives at http://jackson.codehaus.org. It allows you to easily marshal Java objects to and from JSON.
+        It has a Java Bean based model as well as JAXB like APIs. Resteasy integrates with the JavaBean model as
+        described
+        at this url: http://jackson.codehaus.org/Tutorial.
+    </p>
+    <p>While Jackson does come with its own JAX-RS integration. Resteasy expanded it a little. To include
+        it within your project, just add this maven dependency to your build.  Resteasy supports both Jackson 1.9.x
+        and Jackson 2.2.x.  Read further on how to use each.
+    </p>
+    <div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d4e1039"/>21.1. Using Jackson 1.9.x Outside of JBoss AS7</h2></div></div></div>
+        
+        <p>If you're deploying Resteasy outside of JBoss AS7 add the resteasy jackson provder to your WAR
+        pom.xml build</p>
+        <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+    &lt;dependency&gt;
+       &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+       &lt;artifactId&gt;resteasy-jackson-provider&lt;/artifactId&gt;
+       &lt;version&gt;3.0.5.Final&lt;/version&gt;
+    &lt;/dependency&gt;
+ </pre>
+    </div>
+    <div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d4e1043"/>21.2. Using Jackson 1.9.x Inside of JBoss AS7</h2></div></div></div>
+        
+        <p>If you're deploying Resteasy with JBoss AS7, there's nothing you need to do except to make sure
+            you've updated your AS7 distribution with the latest and greatest Resteasy.  See the installation sectio
+            of this documentation for more details.</p>
+    </div>
+    <div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d4e1046"/>21.3. Using Jackson 2.2.x Outside of JBoss AS7</h2></div></div></div>
+        
+        <p>If you're deploying Resteasy outside of JBoss AS7 add the resteasy jackson provder to your WAR
+            pom.xml build</p>
+        <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+    &lt;dependency&gt;
+       &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+       &lt;artifactId&gt;resteasy-jackson2-provider&lt;/artifactId&gt;
+       &lt;version&gt;3.0.5.Final&lt;/version&gt;
+    &lt;/dependency&gt;
+ </pre>
+    </div>
+    <div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d4e1050"/>21.4. Using Jackson 2.2.x Inside of JBoss AS7</h2></div></div></div>
+        
+        <p>If you want to use Jackson 2.2.x inside of JBoss AS7 you'll have to create a jboss-deployment-structure.xml file
+        within your WEB-INF directory.  By default AS7 includes the Jackson 1.9.x JAX-RS integration, so you'll want
+        to exclude it from your dependencies, and add the jackson2 ones.</p>
+        <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+&lt;jboss-deployment-structure&gt;
+    &lt;deployment&gt;
+        &lt;exclusions&gt;
+           &lt;module name="org.jboss.resteasy.resteasy-jackson-provider"/&gt;
+        &lt;/exclusions&gt;
+        &lt;dependencies&gt;
+            &lt;module name="org.jboss.resteasy.resteasy-jackson2-provider" services="import"/&gt;
+        &lt;/dependencies&gt;
+    &lt;/deployment&gt;
+&lt;/jboss-deployment-structure&gt; </pre>
+    </div>
+    <div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d4e1054"/>21.5. Additional Resteasy Specifics</h2></div></div></div>
+        
+
+    <p>The first extra piece that Resteasy added to the integration was
+        to support "application/*+json". Jackson would only accept "application/json" and "text/json" as valid
+        media types. This allows you to create json-based media types and still
+        let Jackson marshal things for you. For example:
+    </p>
+    <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+        
+@Path("/customers")
+public class MyService {
+
+   @GET
+   @Produces("application/vnd.customer+json")
+   public Customer[] getCustomers() {}
+}
+
+    </pre>
+    <p>Another problem that occurs is when you are using the Resteasy JAXB providers alongside Jackson.
+        You may want to use Jettison and JAXB to output your JSON instead of Jackson. In this case, you must
+        either not install the Jackson provider, or use the annotation
+        @org.jboss.resteasy.annotations.providers.NoJackson
+        on your JAXB annotated classes. For example:
+    </p>
+    <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+        
+
+    @XmlRootElement
+    @NoJackson
+    public class Customer {...}
+
+    @Path("/customers")
+    public class MyService {
+
+       @GET
+       @Produces("application/vnd.customer+json")
+       public Customer[] getCustomers() {}
+    }
+    
+    </pre>
+    <p>
+        If you can't annotate the JAXB class with @NoJackson, then you can
+        use the annotation on a method parameter. For example:
+    </p>
+    <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+        
+
+        @XmlRootElement
+        public class Customer {...}
+
+        @Path("/customers")
+        public class MyService {
+
+           @GET
+           @Produces("application/vnd.customer+json")
+           @NoJackson
+           public Customer[] getCustomers() {}
+
+           @POST
+           @Consumes("application/vnd.customer+json")
+           public void createCustomer(@NoJackson Customer[] customers) {...}
+        }
+        
+    </pre>
+    </div>
+    <div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Possible_Jackson_Problems"/>21.6. Possible Conflict With JAXB Provider</h2></div></div></div>
+        
+        <p>
+            If your Jackson classes are annotated with JAXB annotations and you have the resteasy-jaxb-provider in your
+            classpath, you may trigger the Jettision JAXB marshalling code. To turn off the JAXB json marshaller
+            use the @org.jboss.resteasy.annotations.providers.jaxb.IgnoreMediaTypes("application/*+json") on your
+            classes.
+        </p>
+    </div>
+    <div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="JSONP_Support"/>21.7. JSONP Support</h2></div></div></div>
+        
+        <p>
+            If you're using Jackson, Resteasy has <a class="ulink" href="http://en.wikipedia.org/wiki/JSONP">JSONP</a> that you can turn on by adding
+            the provider <code class="literal">org.jboss.resteasy.plugins.providers.jackson.JacksonJsonpInterceptor</code> (Jackson2JsonpInterceptor if you're using the Jackson2 provider)
+            to your deployments.
+            If the media type of the response is json and a callback query parameter is given, the response will be a javascript snippet with
+            a method call of the method defined by the callback parameter.
+            For example:
+</p><pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+GET /resources/stuff?callback=processStuffResponse
+</pre><p>
+            will produce this response:
+</p><pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+processStuffResponse(&lt;nomal JSON body&gt;)
+</pre><p>
+            This supports the default behavior of <a class="ulink" href="http://api.jquery.com/jQuery.ajax/">jQuery</a>.
+        </p>
+        <p>
+            You can change the name of the callback parameter by setting the callbackQueryParameter property.
+        </p>
+    </div>
+</div><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="Atom.html"><strong>Prev</strong>Chapter 20. Resteasy Atom Support</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="json-p.html"><strong>Next</strong>Chapter 22. JSON Support via Java EE 7 JSON-P API</a></li></ul></body></html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 29. GZIP Compression/Decompression</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL-NS Stylesheets V1.74.0"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="RESTEasy JAX-RS"/><link rel="up" href="index.html" title="RESTEasy JAX-RS"/><link rel="prev" href="Configuring_Individual_JAX-RS_Resource_Beans.html" title="Chapter 28. Configuring Individual JAX-RS Resource Beans"/><link rel="next" href="ContentRange.html" title="Chapter 30. Content-Range Support"/></head><body><p xmlns:d="http://docbook.org/ns/docbook" id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="Configuring_Individual_JAX-RS_Resource_Beans.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="ContentRange.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="gzip"/>Chapter 29. GZIP Compression/Decompression</h2></div></div></div>
+   
+   <p>
+    Resteasy has automatic GZIP decompression support.  If the client framework or a JAX-RS
+    service receives a message body with a Content-Encoding of "gzip", it
+    will automatically decompress it.  The client framework automatically
+    sets the Accept-Encoding header to be "gzip, deflate".  So you do not
+    have to set this header yourself.
+    </p>
+    <p>Resteasy also supports automatic
+    compression.  If the client framework is sending a request
+    or the server is sending a response with the Content-Encoding header
+    set to "gzip", Resteasy will do the compression. So that you do not
+    have to set the Content-Encoding header directly, you can use the
+    @org.jboss.resteasy.annotation.GZIP annotation.
+   </p>
+<pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+@Path("/")
+public interface MyProxy {
+
+   @Consumes("application/xml")
+   @PUT
+   public void put(@GZIP Order order);
+}
+</pre>
+   <p>In the above example, we tag the outgoing message body, order, to
+   be gzip compressed.  You can use the same annotation to tag server responses
+   </p>
+<pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+@Path("/")
+public class MyService {
+
+   @GET
+   @Produces("application/xml")
+   @GZIP
+   public String getData() {...}
+}
+</pre>
+</div><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="Configuring_Individual_JAX-RS_Resource_Beans.html"><strong>Prev</strong>Chapter 28. Configuring Individual JAX-RS Resourc...</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="ContentRange.html"><strong>Next</strong>Chapter 30. Content-Range Support</a></li></ul></body></html>

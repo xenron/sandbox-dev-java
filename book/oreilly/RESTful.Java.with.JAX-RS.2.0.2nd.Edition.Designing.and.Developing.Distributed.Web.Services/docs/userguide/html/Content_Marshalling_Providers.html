@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 18. Content Marshalling/Providers</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL-NS Stylesheets V1.74.0"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="RESTEasy JAX-RS"/><link rel="up" href="index.html" title="RESTEasy JAX-RS"/><link rel="prev" href="JAX-RS_Content_Negotiation.html" title="Chapter 17. JAX-RS Content Negotiation"/><link rel="next" href="Built_in_JAXB_providers.html" title="Chapter 19. JAXB providers"/></head><body><p xmlns:d="http://docbook.org/ns/docbook" id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="JAX-RS_Content_Negotiation.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="Built_in_JAXB_providers.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Content_Marshalling_Providers"/>Chapter 18. Content Marshalling/Providers</h2></div></div></div><div class="toc"><dl><dt><span class="sect1"><a href="Content_Marshalling_Providers.html#Default_Providers_and_default_JAX-RS_Content_Marshalling">18.1. Default Providers and default JAX-RS Content Marshalling</a></span></dt><dt><span class="sect1"><a href="Content_Marshalling_Providers.html#Content_Marshalling_with__Provider_classes">18.2. Content Marshalling with @Provider classes</a></span></dt><dt><span class="sect1"><a href="Content_Marshalling_Providers.html#MessageBodyWorkers">18.3. Providers Utility Class</a></span></dt><dt><span class="sect1"><a href="Content_Marshalling_Providers.html#Configuring_Document_Marshalling">18.4. Configuring Document Marshalling</a></span></dt></dl></div>
+   
+   <div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Default_Providers_and_default_JAX-RS_Content_Marshalling"/>18.1. Default Providers and default JAX-RS Content Marshalling</h2></div></div></div>
+      
+
+      <p>
+
+         Resteasy can automatically marshal and unmarshal a few different message bodies.
+      </p>
+      <p>
+
+         </p><div class="table"><a id="d4e788"/><p class="title"><b>Table 18.1. </b></p><div class="table-contents">
+            <table border="1"><colgroup><col/><col/></colgroup><thead><tr><th>
+                        Media Types
+                     </th><th>
+                        Java Type
+                     </th></tr></thead><tbody><tr><td>
+                        application/*+xml, text/*+xml, application/*+json, application/*+fastinfoset, application/atom+*
+                     </td><td>
+                        JaxB annotated classes
+                     </td></tr><tr><td>
+                        application/*+xml, text/*+xml
+                     </td><td>
+                        org.w3c.dom.Document
+                     </td></tr><tr><td>
+                        */*
+                     </td><td>
+                        java.lang.String
+                     </td></tr><tr><td>
+                        */*
+                     </td><td>
+                        java.io.InputStream
+                     </td></tr><tr><td>
+                        text/plain
+                     </td><td>
+                        primtives, java.lang.String, or any type that has a String constructor, or static
+                        valueOf(String) method for input, toString() for output
+                     </td></tr><tr><td>
+                        */*
+                     </td><td>
+                        javax.activation.DataSource
+                     </td></tr><tr><td>
+                        */*
+                     </td><td>
+                        java.io.File
+                     </td></tr><tr><td>
+                        */*
+                     </td><td>
+                        byte[]
+                     </td></tr><tr><td>
+                        application/x-www-form-urlencoded
+                     </td><td>
+                        javax.ws.rs.core.MultivaluedMap
+                     </td></tr></tbody></table>
+         </div></div><p><br class="table-break"/>
+
+      </p>
+      <p>
+
+      </p>
+      <p>
+
+      </p>
+      <p>
+
+
+      </p>
+   </div>
+   <div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Content_Marshalling_with__Provider_classes"/>18.2. Content Marshalling with @Provider classes</h2></div></div></div>
+      
+
+      <p>
+
+         The JAX-RS specification allows you to plug in your own request/response body reader and writers. To do this,
+         you annotate a class
+         with @Provider and specify the @Produces types for a writer and @Consumes types for a reader. You must
+         also implement
+         a MessageBodyReader/Writer interface respectively. Here is an example.
+      </p>
+      <p>
+
+
+         The Resteasy ServletContextLoader will automatically scan your WEB-INF/lib and classes directories for classes
+         annotated with @Provider or you can manually configure them in web.xml. See Installation/Configuration
+      </p>
+      <p>
+
+
+      </p>
+   </div>
+   <div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="MessageBodyWorkers"/>18.3. Providers Utility Class</h2></div></div></div>
+      
+
+      <p>
+
+         javax.ws.rs.ext.Providers is a simple injectable interface that allows you to look up MessageBodyReaders,
+          Writers, ContextResolvers, and ExceptionMappers. It is very useful, for instance, for implementing
+          multipart providers. Content types that embed
+         other random content types.
+      </p>
+      <p>
+
+         </p><pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+
+public interface Providers
+{
+
+   /**
+    * Get a message body reader that matches a set of criteria. The set of
+    * readers is first filtered by comparing the supplied value of
+    * {@code mediaType} with the value of each reader's
+    * {@link javax.ws.rs.Consumes}, ensuring the supplied value of
+    * {@code type} is assignable to the generic type of the reader, and
+    * eliminating those that do not match.
+    * The list of matching readers is then ordered with those with the best
+    * matching values of {@link javax.ws.rs.Consumes} (x/y &gt; x&amp;#47;* &gt; *&amp;#47;*)
+    * sorted first. Finally, the
+    * {@link MessageBodyReader#isReadable}
+    * method is called on each reader in order using the supplied criteria and
+    * the first reader that returns {@code true} is selected and returned.
+    *
+    * @param type        the class of object that is to be written.
+    * @param mediaType   the media type of the data that will be read.
+    * @param genericType the type of object to be produced. E.g. if the
+    *                    message body is to be converted into a method parameter, this will be
+    *                    the formal type of the method parameter as returned by
+    *                    &lt;code&gt;Class.getGenericParameterTypes&lt;/code&gt;.
+    * @param annotations an array of the annotations on the declaration of the
+    *                    artifact that will be initialized with the produced instance. E.g. if the
+    *                    message body is to be converted into a method parameter, this will be
+    *                    the annotations on that parameter returned by
+    *                    &lt;code&gt;Class.getParameterAnnotations&lt;/code&gt;.
+    * @return a MessageBodyReader that matches the supplied criteria or null
+    *         if none is found.
+    */
+   &lt;T&gt; MessageBodyReader&lt;T&gt; getMessageBodyReader(Class&lt;T&gt; type,
+                                                 Type genericType, Annotation annotations[], MediaType mediaType);
+
+   /**
+    * Get a message body writer that matches a set of criteria. The set of
+    * writers is first filtered by comparing the supplied value of
+    * {@code mediaType} with the value of each writer's
+    * {@link javax.ws.rs.Produces}, ensuring the supplied value of
+    * {@code type} is assignable to the generic type of the reader, and
+    * eliminating those that do not match.
+    * The list of matching writers is then ordered with those with the best
+    * matching values of {@link javax.ws.rs.Produces} (x/y &gt; x&amp;#47;* &gt; *&amp;#47;*)
+    * sorted first. Finally, the
+    * {@link MessageBodyWriter#isWriteable}
+    * method is called on each writer in order using the supplied criteria and
+    * the first writer that returns {@code true} is selected and returned.
+    *
+    * @param mediaType   the media type of the data that will be written.
+    * @param type        the class of object that is to be written.
+    * @param genericType the type of object to be written. E.g. if the
+    *                    message body is to be produced from a field, this will be
+    *                    the declared type of the field as returned by
+    *                    &lt;code&gt;Field.getGenericType&lt;/code&gt;.
+    * @param annotations an array of the annotations on the declaration of the
+    *                    artifact that will be written. E.g. if the
+    *                    message body is to be produced from a field, this will be
+    *                    the annotations on that field returned by
+    *                    &lt;code&gt;Field.getDeclaredAnnotations&lt;/code&gt;.
+    * @return a MessageBodyReader that matches the supplied criteria or null
+    *         if none is found.
+    */
+   &lt;T&gt; MessageBodyWriter&lt;T&gt; getMessageBodyWriter(Class&lt;T&gt; type,
+                                                 Type genericType, Annotation annotations[], MediaType mediaType);
+
+   /**
+    * Get an exception mapping provider for a particular class of exception.
+    * Returns the provider whose generic type is the nearest superclass of
+    * {@code type}.
+    *
+    * @param type the class of exception
+    * @return an {@link ExceptionMapper} for the supplied type or null if none
+    *         is found.
+    */
+   &lt;T extends Throwable&gt; ExceptionMapper&lt;T&gt; getExceptionMapper(Class&lt;T&gt; type);
+
+   /**
+    * Get a context resolver for a particular type of context and media type.
+    * The set of resolvers is first filtered by comparing the supplied value of
+    * {@code mediaType} with the value of each resolver's
+    * {@link javax.ws.rs.Produces}, ensuring the generic type of the context
+    * resolver is assignable to the supplied value of {@code contextType}, and
+    * eliminating those that do not match. If only one resolver matches the
+    * criteria then it is returned. If more than one resolver matches then the
+    * list of matching resolvers is ordered with those with the best
+    * matching values of {@link javax.ws.rs.Produces} (x/y &gt; x&amp;#47;* &gt; *&amp;#47;*)
+    * sorted first. A proxy is returned that delegates calls to
+    * {@link ContextResolver#getContext(java.lang.Class)} to each matching context
+    * resolver in order and returns the first non-null value it obtains or null
+    * if all matching context resolvers return null.
+    *
+    * @param contextType the class of context desired
+    * @param mediaType   the media type of data for which a context is required.
+    * @return a matching context resolver instance or null if no matching
+    *         context providers are found.
+    */
+   &lt;T&gt; ContextResolver&lt;T&gt; getContextResolver(Class&lt;T&gt; contextType,
+                                             MediaType mediaType);
+}
+
+         </pre><p>
+      </p>
+      <p>
+
+
+      </p>
+      <p>
+
+         A Providers instance is injectable into MessageBodyReader or Writers:
+      </p>
+      <p>
+
+         </p><pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+            @Provider
+            @Consumes("multipart/fixed")
+            public class MultipartProvider implements MessageBodyReader {
+
+            private @Context Providers providers;
+
+            ...
+
+            }
+         </pre><p>
+      </p>
+      <p>
+
+
+      </p>
+   </div>
+   
+   <div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Configuring_Document_Marshalling"/>18.4. Configuring Document Marshalling</h2></div></div></div>
+      
+
+      <p>
+   
+         XML document parsers are subject to a form of attack known as the XXE (Xml eXternal Entity) Attack
+         (<a class="ulink" href="http://www.securiteam.com/securitynews/6D0100A5PU.html">http://www.securiteam.com/securitynews/6D0100A5PU.html</a>),
+         in which expanding an external entity causes an unsafe file to be loaded. For example, the document
+      </p>
+      
+      <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+      &lt;?xml version="1.0"?&gt;
+      &lt;!DOCTYPE foo
+      [&lt;!ENTITY xxe SYSTEM "file:///etc/passwd"&gt;]&gt;
+      &lt;search&gt;
+         &lt;user&gt;bill&lt;/user&gt;
+         &lt;file&gt;&amp;xxe;&lt;file&gt;
+      &lt;/search&gt;
+      </pre>
+      
+      <p>
+      
+      could cause the passwd file to be loaded.
+      </p>
+      
+      <p>
+      
+         Resteasy's built-in unmarshaller for org.w3c.dom.Document files will expand external entities by default, but it can be configured to replace them by the empty string by setting the context parameter "resteasy.document.expand.entity.references" to "false" in the web.xml file:
+   
+      </p>
+      
+      <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+         &lt;context-param&gt;
+            &lt;param-name&gt;resteasy.document.expand.entity.references&lt;/param-name&gt;
+            &lt;param-value&gt;false&lt;/param-value&gt;
+         &lt;/context-param&gt;
+      </pre>
+   </div>
+   
+</div><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="JAX-RS_Content_Negotiation.html"><strong>Prev</strong>Chapter 17. JAX-RS Content Negotiation</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="Built_in_JAXB_providers.html"><strong>Next</strong>Chapter 19. JAXB providers</a></li></ul></body></html>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 24. YAML Provider</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL-NS Stylesheets V1.74.0"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="RESTEasy JAX-RS"/><link rel="up" href="index.html" title="RESTEasy JAX-RS"/><link rel="prev" href="Multipart.html" title="Chapter 23. Multipart Providers"/><link rel="next" href="StringConverter.html" title="Chapter 25. String marshalling for String based @*Param"/></head><body><p xmlns:d="http://docbook.org/ns/docbook" id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="Multipart.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="StringConverter.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Built_in_YAML_Provider"/>Chapter 24. YAML Provider</h2></div></div></div>
+   
+
+   <p>
+
+      Since 3.0.5.Final  release, resteasy comes with built in support for YAML using the SnakeYAML library. To enable YAML support,
+      you need to drop in the SnakeYaml 1.8 jar and the resteasy-yaml-provider.jar (whatever the current version is) in RestEASY's classpath.
+   </p>
+   <p>
+
+
+   </p>
+   <p>
+
+      SnakeYaml jar file can either be downloaded from Google code at
+       http://code.google.com/p/snakeyaml/downloads/list
+   </p>
+   <p>
+
+      Or if you use maven, the SnakeYaml jar is available through SonaType public repositories and included using this
+      dependency:
+   </p>
+   <p>
+
+ </p><pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+ &lt;dependency&gt;
+&lt;groupId&gt;org.yaml&lt;/groupId&gt;
+&lt;artifactId&gt;snakeyaml&lt;/artifactId&gt;
+&lt;version&gt;1.8&lt;/version&gt;
+ &lt;/dependency&gt;
+      </pre><p>
+   </p>
+   <p>
+
+      When starting resteasy look out in the logs for a line stating that the YamlProvider has been added - this
+      indicates that resteasy has found the Jyaml jar:
+   </p>
+   <p>
+
+      2877 Main INFO org.jboss.resteasy.plugins.providers.RegisterBuiltin - Adding YamlProvider
+   </p>
+   <p>
+
+
+   </p>
+   <p>
+
+      The Yaml provider recognises three mime types:
+   </p>
+   <p>
+
+      </p><div class="itemizedlist"><ul><li>
+            text/x-yaml
+         </li><li>
+            text/yaml
+         </li><li>
+            application/x-yaml
+         </li></ul></div><p>
+
+   </p>
+   <p>
+
+
+   </p>
+   <p>
+
+      This is an example of how to use Yaml in a resource method.
+   </p>
+   <p>
+
+ </p><pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+ import javax.ws.rs.Consumes;
+ import javax.ws.rs.GET;
+ import javax.ws.rs.Path;
+ import javax.ws.rs.Produces;
+
+ @Path("/yaml")
+ public class YamlResource
+ {
+
+@GET
+@Produces("text/x-yaml")
+public MyObject getMyObject() {
+   return createMyObject();
+}
+...
+ }
+ </pre><p>
+   </p>
+   <p>
+
+   </p>
+   <p>
+
+   </p>
+   <p>
+
+
+   </p>
+</div><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="Multipart.html"><strong>Prev</strong>Chapter 23. Multipart Providers</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="StringConverter.html"><strong>Next</strong>Chapter 25. String marshalling for String based @...</a></li></ul></body></html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 36. Server-side Mock Framework</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL-NS Stylesheets V1.74.0"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="RESTEasy JAX-RS"/><link rel="up" href="index.html" title="RESTEasy JAX-RS"/><link rel="prev" href="RESTEasy_Embedded_Container.html" title="Chapter 35. Embedded Containers"/><link rel="next" href="Securing_JAX-RS_and_RESTeasy.html" title="Chapter 37. Securing JAX-RS and RESTeasy"/></head><body><p xmlns:d="http://docbook.org/ns/docbook" id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="RESTEasy_Embedded_Container.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="Securing_JAX-RS_and_RESTeasy.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="RESTEasy_Server-side_Mock_Framework"/>Chapter 36. Server-side Mock Framework</h2></div></div></div>
+
+
+<p>
+
+Although RESTEasy has an Embeddable Container, you may not be comfortable with the idea of starting and stopping a web server within unit tests (in reality, the embedded container starts in milli seconds), or you might not like the idea of using Apache HTTP Client or java.net.URL to test your code.  RESTEasy provides a mock framework so that you can invoke on your resource directly.
+</p>
+<p>
+
+</p><pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+import org.jboss.resteasy.mock.*;
+...
+
+      Dispatcher dispatcher = MockDispatcherFactory.createDispatcher();
+
+      POJOResourceFactory noDefaults = new POJOResourceFactory(LocatingResource.class);
+      dispatcher.getRegistry().addResourceFactory(noDefaults);
+
+      {
+         MockHttpRequest request = MockHttpRequest.get("/locating/basic");
+         MockHttpResponse response = new MockHttpResponse();
+
+         dispatcher.invoke(request, response);
+
+
+         Assert.assertEquals(HttpServletResponse.SC_OK, response.getStatus());
+         Assert.assertEquals("basic", response.getContentAsString());
+      }
+</pre><p>
+</p>
+<p>
+
+See the RESTEasy Javadoc for all the ease-of-use methods associated with MockHttpRequest, and MockHttpResponse.
+</p>
+<p>
+
+
+</p>
+</div><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="RESTEasy_Embedded_Container.html"><strong>Prev</strong>Chapter 35. Embedded Containers</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="Securing_JAX-RS_and_RESTeasy.html"><strong>Next</strong>Chapter 37. Securing JAX-RS and RESTeasy</a></li></ul></body></html>

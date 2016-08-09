@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 51. Maven and RESTEasy</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL-NS Stylesheets V1.74.0"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="RESTEasy JAX-RS"/><link rel="up" href="index.html" title="RESTEasy JAX-RS"/><link rel="prev" href="Validation.html" title="Chapter 50. Validation"/><link rel="next" href="JBoss5.html" title="Chapter 52. JBoss AS 5.x Integration"/></head><body><p xmlns:d="http://docbook.org/ns/docbook" id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="Validation.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="JBoss5.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Maven_and_RESTEasy"/>Chapter 51. Maven and RESTEasy</h2></div></div></div>
+   
+   <p>
+JBoss's Maven Repository is at:
+      http://repository.jboss.org/nexus/content/groups/public/
+   </p>
+   <p>
+
+      Here's the pom.xml fragment to use. Resteasy is modularized into various components.  Mix and max as you see fit.  Please replace 3.0.5.Final with the current Resteasy version you want to use.
+   </p>
+<pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+
+&lt;repositories&gt;
+   &lt;repository&gt;
+      &lt;id&gt;jboss&lt;/id&gt;
+      &lt;url&gt;http://repository.jboss.org/nexus/content/groups/public/&lt;/url&gt;
+   &lt;/repository&gt;
+&lt;/repositories&gt;
+&lt;dependencies&gt;
+   &lt;!-- core library --&gt;
+   &lt;dependency&gt;
+      &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+      &lt;artifactId&gt;resteasy-jaxrs&lt;/artifactId&gt;
+      &lt;version&gt;3.0.5.Final&lt;/version&gt;
+   &lt;/dependency&gt;
+   &lt;dependency&gt;
+      &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+      &lt;artifactId&gt;resteasy-client&lt;/artifactId&gt;
+      &lt;version&gt;3.0.5.Final&lt;/version&gt;
+   &lt;/dependency&gt;
+
+   &lt;!-- optional modules --&gt;
+
+   &lt;!-- JAXB support --&gt;
+   &lt;dependency&gt;
+      &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+      &lt;artifactId&gt;resteasy-jaxb-provider&lt;/artifactId&gt;
+      &lt;version&gt;3.0.5.Final&lt;/version&gt;
+   &lt;/dependency&gt;
+   &lt;!-- multipart/form-data and multipart/mixed support --&gt;
+   &lt;dependency&gt;
+      &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+      &lt;artifactId&gt;resteasy-multipart-provider&lt;/artifactId&gt;
+      &lt;version&gt;3.0.5.Final&lt;/version&gt;
+   &lt;/dependency&gt;
+   &lt;!-- Resteasy Server Cache --&gt;
+   &lt;dependency&gt;
+      &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+      &lt;artifactId&gt;resteasy-cache-core&lt;/artifactId&gt;
+      &lt;version&gt;3.0.5.Final&lt;/version&gt;
+   &lt;/dependency&gt;
+   &lt;!-- Ruby YAML support --&gt;
+   &lt;dependency&gt;
+      &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+      &lt;artifactId&gt;resteasy-yaml-provider&lt;/artifactId&gt;
+      &lt;version&gt;3.0.5.Final&lt;/version&gt;
+   &lt;/dependency&gt;
+   &lt;!-- JAXB + Atom support --&gt;
+   &lt;dependency&gt;
+      &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+      &lt;artifactId&gt;resteasy-atom-provider&lt;/artifactId&gt;
+      &lt;version&gt;3.0.5.Final&lt;/version&gt;
+   &lt;/dependency&gt;
+   &lt;!-- Spring integration --&gt;
+   &lt;dependency&gt;
+      &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+      &lt;artifactId&gt;resteasy-spring&lt;/artifactId&gt;
+      &lt;version&gt;3.0.5.Final&lt;/version&gt;
+   &lt;/dependency&gt;
+   &lt;!-- Guice integration --&gt;
+   &lt;dependency&gt;
+      &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+      &lt;artifactId&gt;resteasy-guice&lt;/artifactId&gt;
+      &lt;version&gt;3.0.5.Final&lt;/version&gt;
+   &lt;/dependency&gt;
+
+   &lt;!-- Asynchronous HTTP support with Servlet 3.0  --&gt;
+   &lt;dependency&gt;
+      &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+      &lt;artifactId&gt;async-http-servlet-3.0&lt;/artifactId&gt;
+      &lt;version&gt;3.0.5.Final&lt;/version&gt;
+   &lt;/dependency&gt;
+
+&lt;/dependencies&gt;
+
+</pre>
+    <p>
+        There is also a pom that can be imported so the versions of the individual modules do not have to be specified. Note that maven 2.0.9 is required for this.
+    </p>
+    <pre xmlns="" xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="">
+
+    &lt;dependencyManagement&gt;
+        &lt;dependencies&gt;
+            &lt;dependency&gt;
+                &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+                &lt;artifactId&gt;resteasy-bom&lt;/artifactId&gt;
+                &lt;version&gt;3.0.5.Final&lt;/version&gt;
+                &lt;type&gt;pom&lt;/type&gt;
+                &lt;scope&gt;import&lt;/scope&gt;
+            &lt;/dependency&gt;
+        &lt;/dependencies&gt;
+    &lt;/dependencyManagement&gt;
+
+    </pre>
+</div><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="Validation.html"><strong>Prev</strong>Chapter 50. Validation</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="JBoss5.html"><strong>Next</strong>Chapter 52. JBoss AS 5.x Integration</a></li></ul></body></html>

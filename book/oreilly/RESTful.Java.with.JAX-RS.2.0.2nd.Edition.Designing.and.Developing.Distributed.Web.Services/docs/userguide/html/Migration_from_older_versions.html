@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory">Chapter 55. Migration from older versions</title><link rel="stylesheet" href="css/jbossorg.css" type="text/css"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" name="generator" content="DocBook XSL-NS Stylesheets V1.74.0"/><meta xmlns:d="http://docbook.org/ns/docbook" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="home" href="index.html" title="RESTEasy JAX-RS"/><link rel="up" href="index.html" title="RESTEasy JAX-RS"/><link rel="prev" href="doc.html" title="Chapter 54. Documentation Support"/><link rel="next" href="REST_BOOKS.html" title="Chapter 56. Books You Can Read"/></head><body><p xmlns:d="http://docbook.org/ns/docbook" id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="doc.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="REST_BOOKS.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Migration_from_older_versions"/>Chapter 55. Migration from older versions</h2></div></div></div><div class="toc"><dl><dt><span class="sect1"><a href="Migration_from_older_versions.html#d4e2504">55.1. Migrating from 3.0 to 3.0.4</a></span></dt><dt><span class="sect1"><a href="Migration_from_older_versions.html#d4e2509">55.2. Migrating from 3.0-beta-6 and 3.0-rc-1</a></span></dt><dt><span class="sect1"><a href="Migration_from_older_versions.html#d4e2516">55.3. Migrating from 3.0-beta-5 and 3.0-beta-6</a></span></dt><dt><span class="sect1"><a href="Migration_from_older_versions.html#d4e2523">55.4. Migrating from 3.0-beta-4 and 3.0-beta-5</a></span></dt><dt><span class="sect1"><a href="Migration_from_older_versions.html#d4e2528">55.5. Migrating from 3.0-beta-2 and 3.0-beta-4</a></span></dt><dt><span class="sect1"><a href="Migration_from_older_versions.html#d4e2533">55.6. Migrating from 3.0-beta-1 and 3.0-beta-2</a></span></dt><dt><span class="sect1"><a href="Migration_from_older_versions.html#d4e2537">55.7. Migrating from 2.x to 3.0-beta-1</a></span></dt><dt><span class="sect1"><a href="Migration_from_older_versions.html#d4e2549">55.8. Migrating from 2.3.2 to 2.3.3</a></span></dt><dt><span class="sect1"><a href="Migration_from_older_versions.html#d4e2553">55.9. Migrating from 2.3.0 to 2.3.1</a></span></dt><dt><span class="sect1"><a href="Migration_from_older_versions.html#d4e2557">55.10. Migrating from 2.2.x to 2.3</a></span></dt><dt><span class="sect1"><a href="Migration_from_older_versions.html#22_221">55.11. Migrating from 2.2.0 to 2.2.1</a></span></dt><dt><span class="sect1"><a href="Migration_from_older_versions.html#21_22">55.12. Migrating from 2.1.x to 2.2</a></span></dt><dt><span class="sect1"><a href="Migration_from_older_versions.html#20_21">55.13. Migrating from 2.0.x to 2.1</a></span></dt><dt><span class="sect1"><a href="Migration_from_older_versions.html#Migrating_to_Resteasy_12_20">55.14. Migrating from 1.2.x to 2.0</a></span></dt><dt><span class="sect1"><a href="Migration_from_older_versions.html#migrating_1.2_1.2.1">55.15. Migrating from 1.2.GA to 1.2.1.GA</a></span></dt><dt><span class="sect1"><a href="Migration_from_older_versions.html#Migrating_to_Resteasy_1_1_1_2">55.16. Migrating from 1.1 to 1.2</a></span></dt></dl></div>
+
+<div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d4e2504"/>55.1. Migrating from 3.0 to 3.0.4</h2></div></div></div>
+    
+    <div class="itemizedlist"><ul><li>
+            Servlet 3.0 deployments within standalone Tomcat or Jetty can now use the Resteasy <code class="literal">ServletContainerInitializer</code>.
+            This allows tighter integration with Resteasy much like you have within JBoss/Wildfly.  Check out the
+            installation/configuration section of this document for more information.
+        </li></ul></div>
+</div>
+<div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d4e2509"/>55.2. Migrating from 3.0-beta-6 and 3.0-rc-1</h2></div></div></div>
+    
+    <div class="itemizedlist"><ul><li>
+            Form parameters are now read via a provider where earlier they were read from HttpServletRequest.getParameterMap().
+            This may break deployments that depend on that behavior, i.e. if you have a servlet filter that calls that very method.
+            For those situations I added the switch resteasy.use.container.form.params
+        </li><li>
+            The JAX-RS TCK has become very strict with a ton more tests.  I can't remember them all, but there are a number
+            of edge cases which earlier Resteasy releases misinterpreted.
+        </li><li>
+            Any Failure exceptions in the SPI now have a corresponding JAX-RS 2.0 exception, so they have been deprecated
+            Resteasy no longer uses these old SPI exceptions internally.  It now uses the JAX-RS 2.0 ones.
+        </li><li>
+            A number of SPIs have changed.  Shouldn't be an issue for those of you who use Restasy as-is.  Specifically
+            InjectorFactory and Registry have changed.
+        </li></ul></div>
+</div>
+<div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d4e2516"/>55.3. Migrating from 3.0-beta-5 and 3.0-beta-6</h2></div></div></div>
+    
+    <div class="itemizedlist"><ul><li>
+            The JAX-RS 2.0 TCK has become very very strict in terms of the matching algorithm.  Unfortunately, the matching
+            algorithm is quite poor so there are a number of resource schemes that will no longer match.
+            For example, resource classes are scanned for a best match, other are ignored in the match.
+            Resource locators are not visited unless they are a best match over resource methods.  There is one config switch
+            I added so that Resteasy will ignore the Spec defined class expression filtering step and instead match
+            base on the full expressions of each JAX-RS method.  resteasy.wider.request.matching.  Set that to true
+            and you will at least be able to avoid that.
+        </li><li>
+            The JAX-RS TCK has become very strict with a ton more tests.  I can't remember them all, but there are a number
+            of edge cases which earlier Resteasy releases misinterpreted.
+        </li><li>
+            Any Failure exceptions in the SPI now have a corresponding JAX-RS 2.0 exception, so they have been deprecated
+            Resteasy no longer uses these old SPI exceptions internally.  It now uses the JAX-RS 2.0 ones.
+        </li><li>
+            A number of SPIs have changed.  Shouldn't be an issue for those of you who use Restasy as-is.  Specifically
+            InjectorFactory and Registry have changed.
+        </li></ul></div>
+</div>
+<div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d4e2523"/>55.4. Migrating from 3.0-beta-4 and 3.0-beta-5</h2></div></div></div>
+    
+    <div class="itemizedlist"><ul><li>
+            JSONP support is no longer on by default.  A few users have complained that it is a security hole for their applications.
+        </li><li>
+            A number of SPIs have changed.  Shouldn't be an issue for those of you who use Restasy as-is.  Specifically
+            InjectorFactory and Registry have changed.
+        </li></ul></div>
+</div>
+    <div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d4e2528"/>55.5. Migrating from 3.0-beta-2 and 3.0-beta-4</h2></div></div></div>
+    
+    <div class="itemizedlist"><ul><li>
+            The JAX-RS 2.0 class ClientFactory no longer exists.  It has been replaced with ClientBuilder.  You can
+            still call newClient(), but there is now an additional builder interface.  Likewise, there is no
+            ResteasyClientFactory.  We also have an extension to ClientBuilder called ResteasyClientBuilder.  So docs
+            for more details.
+        </li><li>
+            Filter execution and exception handling now matches the JAX-RS 2.0 spec.  Exceptions thrown from filters/interceptors
+            can now be mapped if possible.  Responses returned from ExceptionMappers are now filtered.
+        </li></ul></div>
+</div>
+<div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d4e2533"/>55.6. Migrating from 3.0-beta-1 and 3.0-beta-2</h2></div></div></div>
+    
+    <div class="itemizedlist"><ul><li>
+            The constructors for ResteasyClient class are no longer public.  You need to use the new ResteasyClientBuilder
+            class.  One thing to note is that when a ResteasyClient is created by a builder, it no longer
+            uses ResteasyProviderFactory.getInstance(), but instead instantiates a new one.  This will probably
+            not effect most uses.
+        </li></ul></div>
+</div>
+<div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d4e2537"/>55.7. Migrating from 2.x to 3.0-beta-1</h2></div></div></div>
+    
+    <div class="itemizedlist"><ul><li>
+            Resteasy manual client API, interceptors, StringConverters, StringParamterConverters, and Async HTTP APIs have all been
+            deprecated and will be removed possibly in a later release.  There is now a JAX-RS 2.0 equivalent for each
+            of these things.
+        </li><li>
+            resteasy-crypto: SignedInput and SignedOutput must have a multipart/signed content type set either through
+            the request or response object, or by annotation @Consumes/@Produces
+        </li><li>
+            Server-side cache setup has been changed. Please see documentation for more details.
+        </li><li>
+            The security filters for @RolesAllowed, etc. now return 403, Forbidden instead of 401.
+        </li><li>
+            Most add() methods have been removed or made protected in ResteasyProviderFactory.  Use registerProvider() and registerProviderInstance() methods.
+        </li><li>
+            The new JAX-RS 2.0 client-side filters will not be bound and run when you are using Resteasy's old client api.
+        </li><li>
+            On server-side, all old Resteasy interceptors can run in parallel with the new JAX-RS 2.0 filter and interceptor
+            interfaces.
+        </li><li>
+            Some SPIs have changed.  This should not effect applications unless you are doing something you aren't supposed
+            to do.
+        </li><li>
+            The async tomcat and async jboss web modules have been removed.  If you are not running under Servlet 3.0,
+            async HTTP server-side, will be faked and run synchronously in same request thread.
+        </li></ul></div>
+</div>
+<div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d4e2549"/>55.8. Migrating from 2.3.2 to 2.3.3</h2></div></div></div>
+    
+    <div class="itemizedlist"><ul><li>
+            MultipartInput has a new close() method.  If you have a read body that is MultipartInput or one of
+            its subinterfaces, then you must call this method to clean up any temporary files created.  Otherwise,
+            these possible temporary files are deleted on GC or JDK shutdown.  Other multipart providers clean up
+            automatically.
+        </li></ul></div>
+</div>
+<div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d4e2553"/>55.9. Migrating from 2.3.0 to 2.3.1</h2></div></div></div>
+    
+    <div class="itemizedlist"><ul><li>
+            sjsxp has been removed as a dependency for the Resteasy JAXB provider
+        </li></ul></div>
+</div>
+<div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="d4e2557"/>55.10. Migrating from 2.2.x to 2.3</h2></div></div></div>
+    
+    <div class="itemizedlist"><ul><li>
+            The Apache Abdera integration has been removed as a project.  If you want the integration back, please
+            ping our dev lists or open a JIRA.
+        </li><li>
+            Apache Http Client 4.x is now the default underlying client HTTP mechanism.  If there are problems, you
+            can change the default mechanism by calling ClientRequest.setDefaultExecutorClass.
+        </li><li>
+            ClientRequest no longer supports a shared default executor.  The 
+            <code class="code">createPerRequestInstance</code> parameter has been removed from
+            <code class="methodname">ClientRequest.setDefaultExecutorClass()</code>.
+        </li><li>
+          resteasy-doseta module no longer exists.  It is now renamed to the resteasy-crypto module and also includes other things beyond doseta.
+        </li><li>
+          Doseta work has be refactored a bit and may have broken backward compatibility.
+        </li><li>
+          Jackson has been upgraded from 1.6.3 to 1.8.5.  Let me know if there are any issues.
+        </li><li>
+          Form parameter processing behavior was modified because of RESTEASY-574.  If you are having problems with form paramater processing on Tomcat after
+          this fix, please log a JIRA or contact the resteasy-developers email list.
+        </li><li>
+	  Some subtle changes were made to ExceptionMapper handling so that you can write ExceptionMappers for any exception thrown internally or within
+	  your application.  See JIRA Issue RESTEASY-595 for more details.  This may have an effect on existing applications that have an ExceptionMapper
+	  for RuntimeException in that you will start to see Resteasy internal exceptions being caught by this kind of ExceptionMapper.
+        </li><li>
+            The resteasy-cache (Server-side cache) will now invalidate the cache when a PUT, POST, or DELETE is done on a particular URI.
+        </li></ul></div>
+</div>
+<div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="22_221"/>55.11. Migrating from 2.2.0 to 2.2.1</h2></div></div></div>
+    
+    <div class="itemizedlist"><ul><li>
+	  Had to upgrade JAXB libs from 2.1.x to 2.2.4 as there was a concurrency bug in JAXB impl.
+        </li></ul></div>
+</div>
+<div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="21_22"/>55.12. Migrating from 2.1.x to 2.2</h2></div></div></div>
+    
+    <div class="itemizedlist"><ul><li>
+            ClientRequest.getHeaders() always returns a copy. It also converts the values within
+            ClientRequest.getHeadersAsObjects() to string. If you
+            add values to the map returned by getHeaders() nothing happen. Instead add values to the
+            getHeadersAsObjects() map. This allows non-string header objects
+            to propagate through the MessageBodyWriter interceptor and ClientExecutor interceptor chains.
+        </li></ul></div>
+</div>
+<div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="20_21"/>55.13. Migrating from 2.0.x to 2.1</h2></div></div></div>
+    
+    <div class="itemizedlist"><ul><li>
+            Slf4j is no longer the default logging mechanism for resteasy. Resteasy also no longer ships with SLF4J
+            libraries. Please read the logging
+            section in the Installation and Configuration chapter for more details.
+        </li><li>
+            The constructor used to instantiate resource and provider classes is now picked based on the requirements of
+            the JAX-RS specification.
+            Specifically, the public constructor with the most arguments is picked. This behavior varies from previous
+            versions where a no-arg
+            constructor is preferred.
+        </li></ul></div>
+</div>
+<div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Migrating_to_Resteasy_12_20"/>55.14. Migrating from 1.2.x to 2.0</h2></div></div></div>
+    
+
+    <p>
+
+        </p><div class="itemizedlist"><ul><li>
+                TJWS has been forked to fix some bugs. The new groupId is org.jboss.resteasy, the artifactId is
+                tjws. It will match the resteasy distribution version
+            </li><li>
+                Please check out the JBoss 6 integration. It makes things a lot easier if you are deploying in that
+                environment
+            </li><li>
+                There is a new Filter implementation that is the preferred deployment mechanism. Servlet-based
+                deployments are still supported, but it is suggested you use to using a FilterDispatcher. See
+                documentation for more details.
+            </li><li>
+                As per required by the spec List or array injection of empty values will return an empty collection
+                or array, not null. I.e.
+                (@QueryParam("name") List&lt;String&gt; param) param will be an empty List. Resteasy 1.2.x and
+                earlier would return null.
+            </li><li>
+                We have forked TJWS, the servlet container used for embedded testing into the group
+                org.jboss.resteasy, with the artifact id of tjws. You will need
+                to remove these dependencies from your maven builds if you are using any part of the resteasy
+                embeddable server. TJWS has a number of startup/shutdown
+                race conditions we had to fix in order to make unit testing viable.
+            </li><li>
+                Spring integration compiled against Spring 3.0.3. It may or may not still work with 2.5.6 and lower
+            </li></ul></div><p>
+    </p>
+</div>
+<div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="migrating_1.2_1.2.1"/>55.15. Migrating from 1.2.GA to 1.2.1.GA</h2></div></div></div>
+    
+    <p>
+        Methods @Deprecated within 1.2.GA have been removed. This is in the Client Framework and has to do with all
+        references to Apache HTTP Client. You must now create an ClientExecutor if you want to manage your Apache
+        HTTP Client
+        sessions.
+    </p>
+</div>
+<div class="sect1" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Migrating_to_Resteasy_1_1_1_2"/>55.16. Migrating from 1.1 to 1.2</h2></div></div></div>
+    
+
+    <p>
+
+        </p><div class="itemizedlist"><ul><li>
+                The resteasy-maven-import artifact has been renamed to resteasy-bom
+            </li><li>
+                Jettison and Fastinfoset have been broken out of the resteasy-jaxb-provider maven module. You will
+                now need to include resteasy-jettison-provider or resteasy-fastinfoset-provider if you use either
+                of these libraries.
+            </li><li>
+                The constructors for ClientRequest that have a HttpClient parameter (Apache Http Client 3.1 API) are
+                now deprecated. They will be removed in the final release of 1.2. You must create a Apache hTTP
+                Client Executor and pass it in as a parameter if you want to re-use existing Apache HttpClient
+                sessions or do any special configuration. The same is true for the ProxyFactoyr methods.
+            </li><li>
+                Apache HttpClient 4.0 support is available if you want to use it. I've had some trouble with it so
+                it is not the default implementation yet for the client framework.
+            </li><li>
+                It is no longer required to call RegisterBuiltin.register() to initialize the set of providers. Too
+                many users forgot to do this (include myself!). You can turn this off by calling the static method
+                ResteasyProviderFactory.setRegisterBuiltinByDefault(false)
+            </li><li>
+                The Embedded Container's API has changed to use org.jboss.resteasy.spi.ResteasyDeployment. Please
+                see embedded documentation for more details.
+            </li></ul></div><p>
+    </p>
+</div>
+</div><ul xmlns:d="http://docbook.org/ns/docbook" class="docnav"><li class="previous"><a accesskey="p" href="doc.html"><strong>Prev</strong>Chapter 54. Documentation Support</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="REST_BOOKS.html"><strong>Next</strong>Chapter 56. Books You Can Read</a></li></ul></body></html>
