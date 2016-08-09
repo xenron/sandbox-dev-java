@@ -1,0 +1,165 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package org.orielly.javaGoodParts.examples.impl;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.EnumSet;
+import java.util.Random;
+import org.orielly.javaGoodParts.examples.statistics.Batter;
+import org.orielly.javaGoodParts.examples.statistics.Catcher;
+import org.orielly.javaGoodParts.examples.statistics.Fielder;
+import org.orielly.javaGoodParts.examples.statistics.Player;
+import org.orielly.javaGoodParts.examples.statistics.Team;
+
+/**
+ *
+ * @author waldo
+ */
+public class PlayerImpl implements Player, Serializable {
+
+    private static long serialVersionUID = 1;
+    private int id;
+    private String name;
+    private Team team;
+    private Position pos = Position.Utility;
+    private EnumSet<Roles> roles;
+    private boolean changed = false;
+    static Random generator = new Random();
+
+    private BatterImpl batterStats;
+    private FielderImpl fielderStats;
+    private CatcherImpl catcherStats;
+
+    public PlayerImpl(String playerName) {
+        name = playerName;
+        id = generator.nextInt();
+        batterStats = null;
+        fielderStats = null;
+        catcherStats = null;
+    }
+
+    private String getFileRoot(){
+        String fileRoot = System.getProperty("Statistics.fileRoot");
+        if (fileRoot == null){
+            fileRoot = System.getProperty("user.dir");
+        }
+        fileRoot = fileRoot + System.getProperty("file.separator");
+        return fileRoot;
+    }
+
+    public PlayerImpl(int playerId, String teamName) {
+        id = playerId;
+        try {
+            Integer Id = new Integer(playerId);
+            ObjectInputStream readIn =
+                    new ObjectInputStream(new FileInputStream(
+                    getFileRoot() +  teamName +
+                    System.getProperty("file.separator") + Id.toString()));
+            PlayerImpl copy = (PlayerImpl) readIn.readObject();
+            readIn.close();
+            id = playerId;
+            name = copy.name;
+            team = copy.team;
+            pos = copy.pos;
+        } catch (IOException e) {
+            System.out.println("unable to open file for player, creating new player object");
+            name = "unknown";
+        } catch (ClassNotFoundException e) {
+            System.out.println("unable to read file for player");
+        }
+    }
+
+    protected void writeState() {
+        try {
+            Integer playerId = id;
+            ObjectOutputStream writeOut =
+                    new ObjectOutputStream(new FileOutputStream(
+                    getFileRoot() + team.getName() +
+                    System.getProperty("file.separator") + playerId.toString()));
+            writeOut.writeObject(this);
+            writeOut.close();
+            changed = false;
+        } catch (Exception e) {
+            System.out.println("unable to write object");
+        }
+    }
+
+    protected void finalize(){
+        if (changed){
+            writeState();
+        }
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team newTeam){
+        team = newTeam;
+    }
+
+    public Position getPosition() {
+        return pos;
+    }
+
+    public void setPosition(Position playPosition) {
+        if (playPosition != pos) {
+            pos = playPosition;
+            changed = true;
+        }
+    }
+
+    public boolean hasRole(Roles role){
+        return roles.contains(role);
+    }
+
+    public void addRole(Roles role){
+        if (roles.contains(role))
+            return;
+        switch (role){
+            case Batter:
+                batterStats = new BatterImpl();
+                break;
+            case Fielder:
+                fielderStats = new FielderImpl();
+                break;
+            case Catcher:
+                if (roles.contains(Roles.Fielder)){
+                    catcherStats = new CatcherImpl(fielderStats);
+                    fielderStats = catcherStats;
+                } else {
+                    catcherStats = new CatcherImpl();
+                    roles.add(Roles.Fielder);
+                }
+                break;
+        }
+        roles.add(role);
+    }
+
+    public Batter asBatter(){
+        return batterStats;
+    }
+
+    public Fielder asFielder(){
+        return fielderStats;
+    }
+
+    public Catcher asCatcher(){
+        return catcherStats;
+    }
+}

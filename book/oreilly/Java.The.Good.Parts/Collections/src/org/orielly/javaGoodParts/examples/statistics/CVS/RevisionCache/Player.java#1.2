@@ -1,0 +1,85 @@
+package org.orielly.javaGoodParts.examples.statistics;
+
+/**
+ *Basic interface for a player object.
+ * 
+ */
+public interface Player {
+
+    /**
+     * The roles that can be played by a player. These
+     * roles determine which statistics will be gathered
+     * on the player
+     */
+    public enum Stats {
+        Batter, Fielder, Catcher
+    }
+
+    /**
+     * The positions that can be played by a player
+     */
+    public enum Position {
+        Pitcher, Catcher, FirstBase, SecondBase,
+        ThirdBase, ShortStop, LeftField, CenterField,
+        RightField, DH, Utility
+    }
+
+      /**
+     * Return the identifier for the player. This is just
+     * an {@code int}, generated when the player object is
+     * first created, used to distinguish between players
+     * that might have the same name
+     */
+    public int getId();
+
+    /**
+     * Return the name of the player, as a {@code String}
+     */
+    public String getName();
+
+    /**
+     * Return a {@code String} that is the name of the
+     * team for this player
+     */
+    public Team getTeam();
+
+    /**
+     * Return the {@code Position} played by this player
+     * @return the {@code Position} of this player,
+     * which will be used to determine the roles that the
+     * player has
+     */
+    public Position getPosition();
+
+    public boolean hasStats(Stats stat);
+
+    public void addStats(Stats stat);
+
+    /**
+     * Set the {@code Position} of the player
+     * @param pos the {@code Position} played
+     * by this player
+     */
+    public void setPosition(Position pos);
+
+    /**
+     * Return a {@code Batter} object if this player has
+     * any at-bats registered. Otherwise, return
+     * {@code null}.
+     */
+    public Batter asBatter();
+
+    /**
+     * Return a {@code Fielder} object representing the
+     * Fielding statistics for this player, if the player
+     * has any such statistics. Otherwise, return null
+     */
+    public Fielder asFielder();
+
+    /**
+     * Return a {@code Catcher} object representing
+     * the catching statistics of this player, if the
+     * player is a catcher, otherwise return null
+     */
+    public Catcher asCatcher();
+}

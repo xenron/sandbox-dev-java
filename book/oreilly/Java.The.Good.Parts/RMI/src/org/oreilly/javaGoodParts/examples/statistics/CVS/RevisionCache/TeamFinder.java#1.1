@@ -1,0 +1,25 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package org.oreilly.javaGoodParts.examples.statistics;
+
+/**
+ * A simple interface that allows getting a {@link Team}
+ * object given the name of that team.
+ */
+public interface TeamFinder {
+    /**
+     * Return a {@link Team} object, given the name
+     * of the team. If there is no team with the given
+     * name, the function returns {@code null}
+     * @param name a {@link String} that is the name
+     * of this team
+     * @return a {@link Team} object if there is a 
+     * team with the indicated name, otherwise 
+     * {@code null}. 
+     */
+    public Team getTeam(String name);
+
+}

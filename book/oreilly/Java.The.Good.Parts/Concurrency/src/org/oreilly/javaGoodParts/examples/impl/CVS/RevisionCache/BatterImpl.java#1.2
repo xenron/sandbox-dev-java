@@ -1,0 +1,102 @@
+package org.oreilly.javaGoodParts.examples.impl;
+
+import java.io.Serializable;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.oreilly.javaGoodParts.examples.statistics.NotEnoughAtBatsException;
+import org.oreilly.javaGoodParts.examples.statistics.Batter;
+
+public class BatterImpl implements Batter, Serializable {
+    private static long serialVersionUID = 1;
+
+    private AtomicInteger atBats;
+    private AtomicInteger hits;
+    private AtomicInteger bases;
+    private AtomicInteger baseOnBalls;
+    private AtomicInteger sacrifices;
+    private String playerName;
+
+    public BatterImpl() {
+        atBats = new AtomicInteger();
+        hits = new AtomicInteger();
+        bases = new AtomicInteger();
+        baseOnBalls = new AtomicInteger();
+        sacrifices = new AtomicInteger();
+    }
+
+    @Override
+    public void atBat(AtBatResult what) {
+        switch (what) {
+            case strikeOut:
+                break;
+            case fieldOut:
+                break;
+            case base1:
+                hits.incrementAndGet();
+                bases.incrementAndGet();
+                break;
+            case base2:
+                hits.incrementAndGet();
+                bases.addAndGet(2);
+                break;
+            case base3:
+                hits.incrementAndGet();
+                bases.addAndGet(3);
+            case base4:
+                hits.incrementAndGet();
+                bases.addAndGet(4);
+            case sacrifice:
+                sacrifices.incrementAndGet();
+                return;
+            case walk:
+                baseOnBalls.incrementAndGet();
+                return;
+        }
+        atBats.incrementAndGet();
+    }
+
+    @Override
+    public int getAtBats() {
+        return atBats.intValue();
+    }
+
+    @Override
+    public float getAverage() throws NotEnoughAtBatsException {
+        if (atBats.intValue() < 10) {
+            throw new NotEnoughAtBatsException("Insufficient at bats",
+                    10 - atBats.intValue());
+        }
+        return (hits.intValue() / atBats.intValue());
+    }
+
+    @Override
+    public float getOBP() throws NotEnoughAtBatsException {
+        if ((atBats.intValue() +
+                sacrifices.intValue() +
+                baseOnBalls.intValue()) < 10) {
+            throw new NotEnoughAtBatsException("Insufficient plate appearances",
+                    10 - atBats.intValue());
+        }
+        float obp = (hits.intValue() + baseOnBalls.intValue())
+                / (atBats.intValue() + sacrifices.intValue() +
+                baseOnBalls.intValue());
+        return obp;
+    }
+
+    @Override
+    public float getSlugging() throws NotEnoughAtBatsException {
+        if (atBats.intValue() < 10) {
+            throw new NotEnoughAtBatsException("Insufficient plate appearances",
+                    10 - atBats.intValue());
+        }
+        return (bases.intValue() / atBats.intValue());
+    }
+
+    @Override
+    public int getTotalBases() throws NotEnoughAtBatsException {
+        if (atBats.intValue() < 10) {
+            throw new NotEnoughAtBatsException("Insufficient at bats",
+                    10 - atBats.intValue());
+        }
+        return bases.intValue();
+    }
+}

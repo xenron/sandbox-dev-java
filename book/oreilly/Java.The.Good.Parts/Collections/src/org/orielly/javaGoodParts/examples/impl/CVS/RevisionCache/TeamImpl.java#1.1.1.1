@@ -1,0 +1,53 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package org.orielly.javaGoodParts.examples.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+import org.orielly.javaGoodParts.examples.statistics.Player;
+import org.orielly.javaGoodParts.examples.statistics.Team;
+
+/**
+ * A first implementation of the Team interface, using
+ * an ArrayList as the backing store for the Players on
+ * the team
+ */
+public class TeamImpl implements Team{
+     private String name;
+    private ArrayList players; 
+
+  /**
+     * Return a <code>String</code> that is the name of
+     * this team
+     */
+    public String getName(){
+        return name;
+    }
+    /**
+     * Return a list of the players that are on this
+     * team
+     */
+    public List getPlayerList(){
+        return players;
+    }
+    /**
+     * Add a player to the team
+     */
+    public void addPlayer(Player toAdd){
+        if (players.contains(toAdd)){
+            return;
+        }
+       players.add(toAdd);
+    }
+    /**
+     * Remove a player from the team
+     */
+    public void removePlayer(Player toRemove){
+        while (players.contains(toRemove)){
+            players.remove(toRemove);
+        }
+    }
+}

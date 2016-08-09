@@ -1,0 +1,51 @@
+package org.orielly.javaGoodParts.examples.statistics;
+
+import java.util.UUID;
+
+/**
+ *Basic interface for a player object.
+ * 
+ */
+public interface Player {
+
+    public enum Position {
+        Pitcher, Catcher, FirstBase, SecondBase,
+        ThirdBase, ShortStop, LeftField, CenterField,
+        RightField, DH, Utility
+    }
+
+
+    /**
+     * Return the identifier for the player. This is just
+     * an <code>int</code>, generated when the player object is
+     * first created, used to distinguish between players
+     * that might have the same name
+     */
+    public UUID getId();
+
+    /**
+     * Return the name of the player, as a <code>String</code>
+     */
+    public String getName();
+
+    /**
+     * Return a <code>String</code> that is the name of the
+     * team for this player
+     */
+    public Team getTeam();
+
+    /**
+     * Return the <code>Position</code> played by this player
+     * @return the <code>Position</code> of this player,
+     * which will be used to determine the roles that the
+     * player has
+     */
+    public Position getPosition();
+
+    /**
+     * Set the <code>Position</code> of the player
+     * @param pos the <code>Position</code> played
+     * by this player
+     */
+    public void setPosition(Position pos);
+}

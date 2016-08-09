@@ -1,0 +1,42 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package org.orielly.javaGoodParts.examples.impl;
+
+/**
+ *
+ * @author waldo
+ */
+
+import java.util.Iterator;
+import org.orielly.javaGoodParts.examples.statistics.NotEnoughAtBatsException;
+import org.orielly.javaGoodParts.examples.statistics.Batter;
+import org.orielly.javaGoodParts.examples.statistics.Player;
+import org.orielly.javaGoodParts.examples.statistics.Team;
+
+public class Formatter {
+
+    public static void Format(Batter toFormat) {
+        System.out.print("\t");
+        try {
+            System.out.print(toFormat.getAverage());
+            System.out.print("\t" + toFormat.getOBP());
+            System.out.print("\t" + toFormat.getSlugging());
+            System.out.print("\t" + toFormat.getAtBats());
+            System.out.println("\t" + toFormat.getTotalBases());
+        } catch (NotEnoughAtBatsException e) {
+            System.out.println("\t" + "Not enough at-bats to be significant");
+        }
+    }
+
+    public static void FormatRoster(Team toFormat){
+        Player p;
+        System.out.println(toFormat.getName());
+        Iterator e = toFormat.getRoster().iterator();
+        while (e.hasNext()){
+            p = (Player)e.next();
+            System.out.println("\t" + p.getName());
+        }
+    }
+}

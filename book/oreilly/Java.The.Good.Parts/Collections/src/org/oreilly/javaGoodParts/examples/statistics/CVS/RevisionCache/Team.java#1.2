@@ -1,0 +1,35 @@
+package org.oreilly.javaGoodParts.examples.statistics;
+
+import java.util.Set;
+
+/**
+ * The {@code Team} interface, which defines
+ * the notion of a team for our statistics package. A
+ * team is, at first incarnation, simply a collection of
+ * players. All teams have a name. 
+ */
+public interface Team {
+
+    /**
+     * Return a {@code String} that is the name of
+     * this team
+     */
+    public String getName();
+
+    /**
+     * Return the players that are on this
+     * team. The set returned is a set of player
+     * objects.
+     */
+    public Set<Player> getRoster();
+
+    /**
+     * Add a player to the team
+     */
+    public void addPlayer(Player toAdd);
+
+    /**
+     * Remove a player from the team
+     */
+    public void removePlayer(Player toRemove);
+}

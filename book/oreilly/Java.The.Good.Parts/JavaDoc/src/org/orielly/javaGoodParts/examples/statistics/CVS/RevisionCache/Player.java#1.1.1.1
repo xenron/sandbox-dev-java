@@ -1,0 +1,74 @@
+package org.orielly.javaGoodParts.examples.statistics;
+
+/**
+ *Basic interface for a player object. An object implementing
+ * this interface can be made part of a {@link Team}. Different
+ * implementations of classes that implement this interface may
+ * also implement the interfaces that are used to gather statistics
+ * for the different roles that a Player can have, such as
+ * {@link Batter}, {@link Fielder}, or {@link Catcher}. Which
+ * of these roles will be had by a Player will in part be determined
+ * by the {@link Position} of the Player.
+ */
+public interface Player {
+
+    /**
+     * The position played by the player. The position can
+     * be used to determine what other interfaces will be
+     * implemented by an implementation of the object that
+     * also implements this interface. All objects that
+     * implement this interface that are not assigned a
+     * Position of <code> Pitcher</code> and are not on
+     * {@link Team} in the American League will implement
+     * the {@link Batter} interface. All objects that implement
+     * this interface will  implement the {@link Fielder}
+     * interface except for those that have a position of
+     * <code>DH</code>; only players on {@link Team}
+     * that are in the American League can be assigned
+     * that position. Only players assigned the position
+     * of <code> Catcher</code> will implement the
+     * {@link Catcher} interface.
+     */
+    public enum Position {
+
+        Pitcher, Catcher, FirstBase, SecondBase,
+        ThirdBase, ShortStop, LeftField, CenterField,
+        RightField, DH, Utility
+    }
+
+    /**
+     * Return the identifier for the player. This is just
+     * an <code>int</code>, generated when the player object is
+     * first created, used to distinguish between players
+     * that might have the same name. It is up to the
+     * implementation of the method to insure that the
+     * identifier is unique over the set of all players.
+     */
+    public int getId();
+
+    /**
+     * Return the name of the player, as a {@link java.lang.String}
+     */
+    public String getName();
+
+    /**
+     * Return a {@link Team} object that represents
+     * the team that this player is on.
+     */
+    public Team getTeam();
+
+    /**
+     * Return the {@link Position} played by this player,
+     * which can be used to determine the roles that
+     * the player has.
+     * @return the {@link Position} of this player
+     */
+    public Position getPosition();
+
+    /**
+     * Set the {@link Position} of the player
+     * @param pos the {@link Position} played
+     * by this player
+     */
+    public void setPosition(Position pos);
+}

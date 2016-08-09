@@ -1,0 +1,56 @@
+package org.orielly.javaGoodParts.examples.impl;
+
+import java.util.HashSet;
+import java.util.Set;
+import org.orielly.javaGoodParts.examples.statistics.Player;
+import org.orielly.javaGoodParts.examples.statistics.Team;
+
+/**
+ * A third implementation of the Team interface, using
+ * a HashSet as the backing store for the Players on
+ * the team, after the interface has been changed to
+ * return a Set from the getPlayers() method
+ */
+public class TeamImpl implements Team {
+
+    private String name;
+    private HashSet<Player> players;
+
+    /**
+     * Create a TeamImpl object, with the name
+     * supplied
+     */
+    public TeamImpl(String teamName) {
+        name = teamName;
+    }
+
+    /**
+     * Return a <code>String</code> that is the name of
+     * this team
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Return a list of the players that are on this
+     * team
+     */
+    public Set<Player>  getRoster() {
+        return players;
+    }
+
+    /**
+     * Add a player to the team
+     */
+    public void addPlayer(Player toAdd) {
+        players.add(toAdd);
+    }
+
+    /**
+     * Remove a player from the team
+     */
+    public void removePlayer(Player toRemove) {
+            players.remove(toRemove);
+    }
+}
