@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE web-app PUBLIC  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+  <context-param>
+    <param-name>ajaxTagsConfig</param-name>
+    <param-value>/WEB-INF/ajax_config.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>javawebparts.taglib.ajaxtags.AjaxInit</listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>JWPSelectServlet</servlet-name>
+    <servlet-class>com.oreilly.ajax.servlet.JWPSelectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JWPSelectServlet</servlet-name>
+    <url-pattern>/JWPSelectServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

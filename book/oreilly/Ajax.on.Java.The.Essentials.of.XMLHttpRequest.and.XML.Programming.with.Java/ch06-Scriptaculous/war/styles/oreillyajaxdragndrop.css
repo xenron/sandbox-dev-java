@@ -1,0 +1,113 @@
+.div{
+      margin:0;
+      margin-bottom:2px;
+      padding:1px;
+      border:1px solid #FFCCFF;
+}
+.logininput {
+    width : 100px;
+    font: ariel,san-serif;
+}
+
+div.login{
+    margin: 10px;
+    background-color:#99CCFF; 
+    text-align:center;
+    font: 15px/15px Georgia, serif;
+    color: #660099;
+    padding:5px;
+    border:1px solid #000066;
+}
+img.products {
+
+  width:50px;
+  height:50px;
+  float:left;
+  margin-right:10px;
+  z-index:2;
+  cursor:move;
+  border:3px solid #33CC66;
+}
+div.productlist{
+  float:top;
+  clear:left;
+  border:1px solid #CC3366;
+}
+div.productlist P{
+  font: 18px/18px Georgia, serif;
+  color: #660099;
+  font-weight: normal;
+  margin: 0px;
+  padding: 0px;
+  font-style: italic;
+  padding-bottom:1px;
+  border-bottom:1px dotted #C5DEA1;
+  clear: left;
+}
+div.cart P{
+  font: 18px/18px Georgia, serif;
+  color: #660099;
+  font-weight: normal;
+  margin: 0px;
+  padding: 0px;
+  font-style: italic;
+  padding-bottom:1px;
+  border-bottom:1px dotted #C5DEA1;
+  clear: left;
+    
+}
+div.cart div {
+  font-size:12px/14px;
+  font-weight:normal;
+  color:#444;
+  z-index:1;
+  background-color:#99CCFF; 
+  margin-top: 0px;
+  margin: 0px;
+}
+div.cart {
+  float:left;
+  clear:both;
+  z-index:1;
+  border:1px solid #E8A400;
+  background-color:white;
+  padding:2px;
+  margin: 0px;
+  margin-top: 0px;
+  width:500px;
+}
+div.cart img {
+  width:32px;
+  height:32px;
+  margin-top: 0px;
+  margin-right:10px;
+    border:2px solid #000066;
+}
+h1 {
+  font: 18px/18px Georgia, serif;
+  color: #660099;
+  font-weight: normal;
+  margin: 0px;
+  padding: 0px;
+  font-style: italic;
+  padding-bottom:4px;
+  border-bottom:1px dotted #C5DEA1;
+  clear: left;
+}
+body {
+  font: 11px Lucida Grande, Verdana, Arial, Helvetica, sans serif;
+  margin:0px;
+  margin-top: 0px;
+  margin-bottom: 70px;
+}
+h2 {
+  font: 15px/15px Georgia, serif;
+  color : #660099;
+  font-size:   15px;
+  font-weight: normal;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 20px;
+
+  font-style: italic;
+}

@@ -1,0 +1,21 @@
+<html>
+<head>
+<script>
+function hst() {
+   var i = location.href.indexOf('?');
+   var historyToken = '';
+   if (i != -1)
+      historyToken = location.href.substring(i+1);
+
+   document.getElementById('__historyToken').value = historyToken;
+   if (parent.__onHistoryChanged)
+      parent.__onHistoryChanged(historyToken);
+}
+
+</script></head>
+<body onload='hst()'>
+
+<input type='text' id='__historyToken'>
+
+</body>
+</html>

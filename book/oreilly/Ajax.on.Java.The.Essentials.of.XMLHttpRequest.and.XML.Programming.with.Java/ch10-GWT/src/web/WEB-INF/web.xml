@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app               xmlns="http://java.sun.com/xml/ns/j2ee"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+                              http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+                      version="2.4">
+
+  <!-- Display name for this application -->
+  <display-name>ResponseService</display-name>
+
+  <servlet>
+      <servlet-name>ResponseService</servlet-name>
+      <servlet-class>
+         com.oreilly.ajax.server.ResponseServiceImpl
+      </servlet-class>
+   </servlet>
+   <servlet-mapping>
+      <servlet-name>ResponseService</servlet-name>
+      <url-pattern>/responseService</url-pattern>
+   </servlet-mapping> 
+
+  <!-- Welcome File List -->
+  <welcome-file-list>
+    <welcome-file>Zipcodes.html</welcome-file>
+  </welcome-file-list>
+</web-app>

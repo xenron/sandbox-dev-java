@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+   <data-sources />
+    <form-beans>
+        <form-bean name="productForm"
+            type="com.oreilly.ajax.ProductForm" />
+            
+        <form-bean name="uploadForm"
+            type="com.oreilly.ajax.UploadForm"/> 
+        
+    </form-beans>
+   <global-exceptions />
+   <global-forwards />
+    <action-mappings>
+        <action path="/productAction"
+            type="com.oreilly.ajax.ProductAction"
+            name="productForm"
+            input="/productmanager.jsp" >
+         <forward name="success" path="/productmanager.jsp" />
+        </action>
+       <action path="/uploadAction"
+            type="com.oreilly.ajax.UploadAction"
+            name="uploadForm"
+            input="/productmanager.jsp" >
+         <forward name="success" path="/productmanager.jsp" />
+        </action>
+
+        <action path="/updateProjectList"
+            type="com.oreilly.ajax.ProductUpdateAction">
+        </action>
+
+    </action-mappings>
+   <controller bufferSize="4096" debug="0" />
+   <message-resources parameter="com.oreilly.ApplicationResources" />
+</struts-config>
+			
+

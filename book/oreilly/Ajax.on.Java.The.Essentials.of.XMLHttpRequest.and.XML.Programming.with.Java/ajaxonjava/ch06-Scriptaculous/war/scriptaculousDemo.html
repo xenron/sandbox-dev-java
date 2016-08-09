@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>script.aculo.us - web 2.0 javascript demos</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link href="styles/script.aculo.us.css" media="screen" rel="Stylesheet" type="text/css" />
+  <script src="scripts/prototype.js" type="text/javascript"></script>
+  <script src="scripts/scriptaculous.js" type="text/javascript"></script>
+  <style type="text/css">
+    div.auto_complete {
+      position:absolute;
+      width:250px;
+      background-color:white;
+      border:1px solid #888;
+      margin:0px;
+      padding:0px;
+    }
+    ul.contacts  {
+      list-style-type: none;
+      margin:0px;
+      padding:0px;
+    }
+    ul.contacts li.selected { background-color: #ffb; }
+    li.contact {
+      list-style-type: none;
+      display:block;
+      margin:0;
+      padding:2px;
+      height:32px;
+    }
+    li.contact div.image {
+      float:left;
+      width:32px;
+      height:32px;
+      margin-right:8px;
+    }
+    li.contact div.name {
+      font-weight:bold;
+      font-size:12px;
+      line-height:1.2em;
+    }
+    li.contact div.email {
+      font-size:10px;
+      color:#888;
+    }
+    #list {
+      margin:0;
+      margin-top:10px;
+      padding:0;
+      list-style-type: none;
+      width:250px;
+    }
+    #list li {
+      margin:0;
+      margin-bottom:4px;
+      padding:5px;
+      border:1px solid #888;
+      cursor:move;
+    }
+  </style>
+  <script type="text/javascript">
+  var shoppingCartDiv = null;
+  var itemListDiv = null;
+  var loginDiv = null;
+  var username_global = null;
+  function init(){
+    loginDiv = document.getElementById("loginDivId");
+    shoppingCartDiv = document.getElementById("cart");
+    shoppingCartDiv.style.visibility="hidden";
+    itemListDiv = document.getElementById("items");
+    itemListDiv.style.visibility="hidden";
+  }
+  window.onload = function () {
+    init();
+  }
+  function addToCart(item){
+        alert("sending via prototype" + item);
+        parameterString = "item="+item;
+        
+        new Ajax.Request("shoppingcart", {
+                asynchronous: true,
+                method: "get",
+                parameters: parameterString,
+                onSuccess: function(request) {
+                alert("dragndrop returns "+request.responseText);
+                },
+                onFailure: function(request) {
+                    alert('failed');
+                }
+        });
+    }
+  function login(){
+                var username = document.getElementById("username");
+                var password = document.getElementById('password');
+                parameterString = "username="+username.value+"&password="+password.value;
+                
+                new Ajax.Request("login", {
+                asynchronous: true,
+                method: "get",
+                parameters: parameterString,
+                onSuccess: function(request) {
+
+                    var result = request.responseText;
+                    
+                    if(result == username.value){
+                        username_global = username.value;
+                        //closeLoginDiv();
+                        itemListDiv.style.visibility = "visible";
+                        shoppingCartDiv.style.visibility = "visible";
+                        document.getElementById("loginDivId").innerHTML="logged in as: "+username_global;   
+                    }       
+                    else
+                        alert("invalid login: "+username.value + " is not a valid username or the password is invalid");
+                },
+                onFailure: function(request) {
+                    alert('failed to login. Ajax.Request failed.');
+                }
+        });
+    }
+  </script>
+</head>
+<body>
+    <div id="loginDivId">
+        <label for=username>Username:</label> 
+        <input  class="cm_label" type="text" id="username"><br /><br />   
+        <label class="cm_label" for="password">Password:</label>        
+        <input  class="cm_input" type="text" id="password" name="password"  onblur ="login();" >
+    </div>  
+  <div id="content">
+    <h1>Silly easy shopping</h1>
+
+<p>Drag products to the cart to fill it:</p>
+
+<div id="items" style="margin-bottom:20px;height:120px;">
+
+  <img alt="Mug" class="products" id="product-1" src="images/product-1.png" />
+  <script type="text/javascript">new Draggable('product-1', {revert:true})</script>
+
+  <img alt="T-Shirt" class="products" id="product-2" src="images/product-2.png" />
+  <script type="text/javascript">new Draggable('product-2', {revert:true})</script>
+
+</div>
+
+
+<div id="cart" class="cart" style="clear:left; height:132px;margin-top:10px;">  
+<h2>Your cart:</h2>
+    Drag your desired items here.    
+
+
+  <div style="clear:both;"></div>
+</div>
+
+
+<div style="height:40px;padding-top:10px;">
+<p id="indicator" style="display:none;margin-top:0px;">
+  <img alt="Indicator" src="/demos/images/indicator.gif" /> Updating cart...
+</p>
+</div>
+
+<script type="text/javascript">
+    Droppables.add('cart', 
+        {
+            onDrop:function(element){
+                    alert('dropped'+element.id);
+                    document.getElementById("cart").innerHTML+='<img src="images/'+element.id+'.png">';
+                    addToCart(element.id);
+                    }
+         }
+    )
+</script>
+     
+
+      
+     
+
+</body>
+</html>

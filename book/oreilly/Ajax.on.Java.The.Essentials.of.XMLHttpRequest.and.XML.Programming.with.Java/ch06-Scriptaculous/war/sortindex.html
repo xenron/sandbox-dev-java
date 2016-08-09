@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>script.aculo.us - web 2.0 javascript demos</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link href="/demos/styles/script.aculo.us.css" media="screen" rel="Stylesheet" type="text/css" />
+  <script src="/demos/scripts/prototype.js" type="text/javascript"></script>
+  <script src="/demos/scripts/effects.js" type="text/javascript"></script>
+  <script src="/demos/scripts/dragdrop.js" type="text/javascript"></script>
+
+  <script src="/demos/scripts/controls.js" type="text/javascript"></script>
+  <style type="text/css">
+    div.auto_complete {
+      position:absolute;
+      width:250px;
+      background-color:white;
+      border:1px solid #888;
+      margin:0px;
+      padding:0px;
+    }
+    ul.contacts  {
+      list-style-type: none;
+      margin:0px;
+      padding:0px;
+    }
+    ul.contacts li.selected { background-color: #ffb; }
+    li.contact {
+      list-style-type: none;
+      display:block;
+      margin:0;
+      padding:2px;
+      height:32px;
+    }
+    li.contact div.image {
+      float:left;
+      width:32px;
+      height:32px;
+      margin-right:8px;
+    }
+    li.contact div.name {
+      font-weight:bold;
+      font-size:12px;
+      line-height:1.2em;
+    }
+    li.contact div.email {
+      font-size:10px;
+      color:#888;
+    }
+    #list {
+      margin:0;
+      margin-top:10px;
+      padding:0;
+      list-style-type: none;
+      width:250px;
+    }
+    #list li {
+      margin:0;
+      margin-bottom:4px;
+      padding:5px;
+      border:1px solid #888;
+      cursor:move;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header">
+    <img id="logo" src="/demos/images/logo.gif" alt="script.aculo.us - web 2.0 javascript demos" />  
+  </div>
+  
+  <ul id="menu">
+      <li><a href="/">Back to site</a></li>
+
+      <li><a class="active" href="/demos/">Demos</a></li>
+  </ul>
+  
+  
+  <div id="tagline">
+      This site demonstrates the <b>Ruby on Rails 0.13</b> AJAX helpers, <br/> 
+      which use script.aculo.us effects, drag-and-drop and autocompletion. 
+  </div>
+  
+  <div id="sidebar-container">
+
+    
+    <div id="sidebar">
+      <h1>rails 0.13 Demos</h1>
+      <p>script.aculo.us helpers</p>
+      <ul>
+        <li><a href="/demos/ajax/autocompleter">Autocompleting text fields (basic)</a></li>
+        <li><a href="/demos/ajax/autocompleter_customized">Autocompleting text fields (customized)</a></li>
+        <li><a href="/demos/shop">Shopping cart</a></li>
+
+        <li><a href="/demos/ajax/sortable_elements">Sortable elements</a></li>
+      </ul>
+      <p>New AJAX features</p>
+      <ul>
+        <li><a href="/demos/ajax/error_handling">Error handling</a></li>
+        <li><a href="/demos/ajax/update_element">Update element helper</a></li>
+      </ul>
+
+    </div>  
+    
+    <div class="links">  
+      <a href="http://www.rubyonrails.org/"><img src="/images/rails.jpg" alt="Ruby on Rails" /></a>
+      <em>Rails is a full-stack, open-source web framework in Ruby for writing 
+      real-world applications with joy and less code than most frameworks 
+      spend doing XML sit-ups.</em> That quite sums it up. So, if you're still
+      working late hours writing definitions of what's in your database because
+      the framework you use works against and not for you -- 
+      do yourself a favour, and check out 
+      <a href="http://www.rubyonrails.org/">Ruby on Rails</a>.
+    </div>
+    
+    
+    
+  </div>
+  
+  <div id="content">
+    <h1>Silly easy shopping</h1>
+
+<p>Drag products to the cart to fill it:</p>
+
+<div style="margin-bottom:20px;height:120px;">
+
+  <img alt="Mug" class="products" id="product_1" src="/demos/images/products/product1.png" />
+  <script type="text/javascript">new Draggable('product_1', {revert:true})</script>
+
+  <img alt="T-Shirt" class="products" id="product_2" src="/demos/images/products/product2.png" />
+  <script type="text/javascript">new Draggable('product_2', {revert:true})</script>
+
+</div>
+
+<h2>Your cart:</h2>
+
+<div id="cart" class="cart" style="clear:left; height:132px;margin-top:10px;">  
+  <div id="items">
+    
+<div>
+  
+    <img alt="Product1" class="cart-items" id="item_1_0" src="/demos/images/products/product1.png" style="position:relative;" />
+    <script type="text/javascript">new Draggable('item_1_0', {revert:true})</script>
+  
+    <img alt="Product1" class="cart-items" id="item_1_1" src="/demos/images/products/product1.png" style="position:relative;" />
+
+    <script type="text/javascript">new Draggable('item_1_1', {revert:true})</script>
+  
+  <span class="title">Mug (2)</span>
+</div>
+
+<div>
+  
+    <img alt="Product2" class="cart-items" id="item_2_0" src="/demos/images/products/product2.png" style="position:relative;" />
+    <script type="text/javascript">new Draggable('item_2_0', {revert:true})</script>
+  
+    <img alt="Product2" class="cart-items" id="item_2_1" src="/demos/images/products/product2.png" style="position:relative;" />
+    <script type="text/javascript">new Draggable('item_2_1', {revert:true})</script>
+
+  
+  <span class="title">T-Shirt (2)</span>
+</div>
+
+
+  </div>
+  <div style="clear:both;"></div>
+</div>
+
+<div id="wastebin">
+  Drop items here to remove them from the cart.
+</div>
+
+<div style="height:40px;padding-top:10px;">
+<p id="indicator" style="display:none;margin-top:0px;">
+  <img alt="Indicator" src="/demos/images/indicator.gif" /> Updating cart...
+</p>
+</div>
+
+<script type="text/javascript">Droppables.add('cart', {accept:'products', onDrop:function(element){new Ajax.Updater('items', '/demos/shop/add', {onLoading:function(request){Element.show('indicator')}, onComplete:function(request){Element.hide('indicator')}, parameters:'id=' + encodeURIComponent(element.id), evalScripts:true, asynchronous:true})}, hoverclass:'cart-active'})</script>
+      
+<script type="text/javascript">Droppables.add('wastebin', {accept:'cart-items', onDrop:function(element){Element.hide(element); new Ajax.Updater('items', '/demos/shop/remove', {onLoading:function(request){Element.show('indicator')}, onComplete:function(request){Element.hide('indicator')}, parameters:'id=' + encodeURIComponent(element.id), evalScripts:true, asynchronous:true})}, hoverclass:'wastebin-active'})</script>
+      
+<p><a href="#" onclick="new Effect.SlideDown('source'); return false;">View source</a></p>
+<pre id="source" style="display:none;"><code>
+
+# view
+&lt;div style="margin-bottom:20px;height:120px;"&gt;
+&lt;% for product in @products %&gt;
+  &lt;%= image_tag "/images/products/product#{product.id}",
+        :id =&gt; "product_#{product.id}",
+        :alt =&gt; product.title, 
+        :class =&gt; "products"  %&gt;
+  &lt;%= draggable_element "product_#{product.id}", :revert =&gt; true %&gt;
+
+&lt;% end %&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;Your cart:&lt;/h2&gt;
+
+&lt;div id="cart" class="cart" style="clear:left; height:132px;margin-top:10px;"&gt;
+  &lt;div id="wastebin"&gt;
+    Drop items here to remove them from the cart.
+  &lt;/div&gt;
+
+  &lt;div id="items"&gt;
+    &lt;%= render :partial =&gt; "cart" %&gt;
+  &lt;/div&gt;
+  &lt;div style="clear:both;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style="height:40px;padding-top:10px;"&gt;
+&lt;p id="indicator" style="display:none;margin-top:0px;"&gt;
+  &lt;%= image_tag "indicator.gif" %&gt; Updating cart...
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;%= drop_receiving_element "cart", 
+      :update =&gt; "items", :url =&gt; { :action =&gt; "add" },
+      :accept =&gt; "products", :hoverclass =&gt; "cart-active",
+      :loading =&gt; "Element.show('indicator')",
+      :complete =&gt; "Element.hide('indicator')" %&gt;
+
+      
+&lt;%= drop_receiving_element "wastebin", 
+      :update =&gt; "items", :url =&gt; { :action =&gt; "remove" },
+      :accept =&gt; "cart-items", :hoverclass =&gt; "wastebin-active",
+      :before =&gt; "Element.hide(element)",
+      :loading =&gt; "Element.show('indicator')",
+      :complete =&gt; "Element.hide('indicator')" %&gt;
+
+    
+# controller
+class ShopController &lt; ApplicationController
+  
+  def index
+    session[:cart] ||= {}
+    @products = Product.find(:all)
+  end
+  
+  def add
+    product_id = params[:id].split("_")[1]
+    
+    session[:cart][product_id] = 
+      session[:cart].include?(product_id) ?  
+      session[:cart][product_id]+1 : 1
+  
+    render :partial =&gt; 'cart'
+  end
+  
+  def remove
+    product_id = params[:id].split("_")[1]
+    
+    if session[:cart][product_id] &gt; 1 
+      session[:cart][product_id] = session[:cart][product_id]-1
+    else
+      session[:cart].delete(product_id)
+    end
+    
+    render :partial =&gt; 'cart'
+  end
+  
+end
+
+
+# _cart.rhtml partial
+&lt;% session[:cart].each do |product,quantity| %&gt;
+&lt;div&gt;
+  &lt;% quantity.times do |i| %&gt;
+
+    &lt;%= image_tag "/images/products/product#{product}", 
+          :class =&gt; "cart-items", 
+          :id =&gt; "item_#{product}_#{i}", 
+          :style =&gt; "position:relative;" %&gt;
+    &lt;%= draggable_element "item_#{product}_#{i}", :revert =&gt; true %&gt;
+  &lt;% end %&gt;
+
+  &lt;span class="title"&gt;
+    &lt;%= Product.find(product).title + " (#{quantity})" %&gt;
+  &lt;/span&gt;
+&lt;/div&gt;
+&lt;% end %&gt;
+&lt;%= "Here's your shopping cart." if session[:cart].empty? %&gt;
+</code></pre>
+  </div>
+
+  
+  <div id="footer">
+    <p>&copy; 2005 Thomas Fuchs
+      <a href="#" onclick="new Effect.BlindDown('license'); return false;">License</a> 
+      <a href="http://validator.w3.org/check?uri=referer">validate</a> 
+      <a href="http://mir.aculo.us/">mir.aculo.us</a>
+    </p>
+    <p class="info">
+      <a href="http://script.aculo.us">script.aculo.us</a> demo site version <em>2005/07/04</em>
+
+    </p>
+    <div id="license" style="display:none;">
+      <pre>
+      script.aculo.us:
+      
+      Copyright (c) 2005 Thomas Fuchs (http://script.aculo.us, http://mir.aculo.us)
+      
+      Permission is hereby granted, free of charge, to any person obtaining
+      a copy of this software and associated documentation files (the
+      "Software"), to deal in the Software without restriction, including
+      without limitation the rights to use, copy, modify, merge, publish,
+      distribute, sublicense, and/or sell copies of the Software, and to
+      permit persons to whom the Software is furnished to do so, subject to
+      the following conditions:
+      
+      The above copyright notice and this permission notice shall be
+      included in all copies or substantial portions of the Software.
+      
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+      EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+      MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+      NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+      LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+      OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+      WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+      
+      <a href="#" onclick="new Effect.BlindUp('license'); return false;">Hide</a>
+      </pre>
+    </div>
+  </div>
+
+</body>
+</html>

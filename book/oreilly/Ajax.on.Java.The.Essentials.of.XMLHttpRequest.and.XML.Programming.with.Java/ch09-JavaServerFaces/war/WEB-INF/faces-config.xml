@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN" "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<faces-config>
+  <lifecycle>
+       <phase-listener>com.oreilly.ajax.ZipCodePhaseListener</phase-listener>
+  </lifecycle>
+
+  <render-kit>
+    <description>Renderkit implementation for the ajax jsf components</description>
+    <renderer>
+      <component-family>javax.faces.Input</component-family>
+      <renderer-type>ZipCode</renderer-type>
+      <renderer-class>com.oreilly.ajax.ZipCodeRenderer</renderer-class>
+    </renderer>
+  </render-kit>
+  <component>
+    <display-name>Oreilly Zip Code</display-name>
+    <component-type>oreilly.ajax.ZipCode</component-type>
+    <component-class>com.oreilly.ajax.ZipCode</component-class>
+  </component>
+</faces-config>

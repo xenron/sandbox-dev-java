@@ -1,0 +1,19 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN"
+    "http://www.getahead.ltd.uk/dwr/dwr10.dtd">
+<dwr>
+<allow>
+        <create creator="new" javascript="ProductManager" class="com.oreilly.ajax.ProductManager">
+            <include method="getProduct"/>
+            <include method="addProduct"/>
+            <include method="getJSONProducts"/>
+            <include method="updateProductById"/>
+            <include method="deleteRow"/>
+        </create>
+        <convert converter="bean" 
+              match="com.oreilly.ajax.Product">
+            <param name="include" 
+                value="productName,description,filename,price"/>
+        </convert>
+    </allow>
+</dwr>

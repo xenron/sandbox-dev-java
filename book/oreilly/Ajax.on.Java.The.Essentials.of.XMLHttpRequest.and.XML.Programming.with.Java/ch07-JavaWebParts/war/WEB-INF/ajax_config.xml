@@ -1,0 +1,15 @@
+<ajaxConfig>
+  <form ajaxRef="StateSelectForm">
+    <element ajaxRef="stateSelectionChange">
+      <event type="onchange">
+        <requestHandler type="std:QueryString" method="get">
+          <target>JWPSelectServlet</target>
+          <parameter>state=stateSelected</parameter>
+        </requestHandler>
+        <responseHandler type="std:InnerHTML">
+          <parameter>cities</parameter>
+        </responseHandler>
+      </event>
+    </element>
+  </form>
+</ajaxConfig>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+   <data-sources />
+    <form-beans>
+        <form-bean name="userForm"
+            type="com.oreilly.ajax.UserForm" />
+    </form-beans>
+   <global-exceptions />
+   <global-forwards />
+    <action-mappings>
+        <action path="/useraction"
+            type="com.oreilly.ajax.UserAction"
+            name="userForm"
+            input="/usermanager.jsp" >
+        <forward name="success" path = "/results.jsp" />
+        <forward name="failure" path="/usermanager.jsp" />
+        </action>
+
+        <action path="/getSuggestionList"
+            type="com.oreilly.ajax.UsernameSuggestAction">
+        </action>
+
+    </action-mappings>
+   <controller bufferSize="4096" debug="0" />
+   <message-resources parameter="com.oreilly.ApplicationResources" />
+</struts-config>
+			
+

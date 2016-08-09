@@ -1,0 +1,15 @@
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN"
+    "http://www.getahead.ltd.uk/dwr/dwr10.dtd">
+<dwr>
+<allow>
+        <create creator="new" javascript="ZipcodeManager" class="com.oreilly.ajax.ZipcodeManager">
+            <include method="getZipcode"/>
+        </create>
+        <convert converter="bean" 
+              match="com.oreilly.ajax.Zipcode">
+            <param name="include" 
+                value="city,state,zipcode"/>
+        </convert>
+    </allow>
+</dwr>

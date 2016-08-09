@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<project name="CH03 AJAX-CODECONVERTER" default="compile" basedir=".">
+
+   <property environment="env"/>
+   <property name="src.dir" value="src"/>
+   <property name="war.dir" value="war"/>
+   <property name="class.dir" value="${war.dir}/WEB-INF/classes"/>
+   <property name="lib.dir" value="${war.dir}/WEB-INF/lib"/>
+   <property name="webapp.dir" value="${env.TOMCAT_HOME}/webapps/ch03-ajaxcharacterconverter"/>
+
+	<path id="ajax.class.path">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+   <target name="init">
+      <mkdir dir="${class.dir}"/>
+   </target>
+
+   <target name="compile" depends="init"
+      description="Compiles all source code.">
+      <javac srcdir="${src.dir}" destdir="${class.dir}" debug="on"
+         classpathref="ajax.class.path"/>
+   </target>
+
+   <target name="clean" description="Erases contents of classes dir">
+      <delete dir="${class.dir}"/>
+   </target>
+
+   <target name="deploy" depends="compile"
+      description="Copies the contents of web-app to destination dir">
+      <copy todir="${webapp.dir}">
+         <fileset dir="${war.dir}"/>
+      </copy> 
+   </target>
+   <target name="buildwar" depends="compile">
+     <war destfile="ch03-CharacterDecoder.war" webxml="war/WEB-INF/web.xml">
+	   <fileset dir="war">
+	  	    <include name="*.js"/>
+	   	    <include name="*.html"/>
+	   	    <include name="*.css"/>
+	   </fileset>
+       <lib dir="war/WEB-INF/lib"/>
+   	   <classes dir="war/WEB-INF/classes"/>
+
+	</war>
+	</target>
+	  
+
+
+</project>

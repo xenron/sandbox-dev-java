@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<project name="CH04 AJAX-CODECONVERTER" default="compile" basedir=".">
+
+   <property environment="env"/>
+   <property name="src.dir" value="src"/>
+   <property name="war.dir" value="war"/>
+   <property name="db.dir" value="db"/>
+   <property name="class.dir" value="${war.dir}/WEB-INF/classes"/>
+   <property name="lib.dir" value="${war.dir}/WEB-INF/lib"/>
+   <property name="webapp.dir" value="${env.TOMCAT_HOME}/webapps/ch04-ajaxcodeconvertervariations"/>
+
+	<path id="ajax.class.path">
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="testenv">
+		<echo message="env.TomcatHome=${env.TOMCAT_HOME}"/>
+		<echo message="env.ANT_HOME=${env.ANT_HOME}"/>
+	</target>
+	
+
+   <target name="init">
+      <mkdir dir="${class.dir}"/>
+   </target>
+
+   <target name="compile" depends="init"
+      description="Compiles all source code.">
+      <javac srcdir="${src.dir}" destdir="${class.dir}" debug="on"
+         classpathref="ajax.class.path"/>
+   </target>
+
+   <target name="clean" description="Erases contents of classes dir">
+      <delete dir="${class.dir}"/>
+   </target>
+
+
+   <target name="deploy" depends="compile"
+      description="Copies the contents of web-app to destination dir">
+      <copy todir="${webapp.dir}">
+         <fileset dir="${war.dir}"/>
+      </copy> 
+   </target>
+
+</project>

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<project name="ZipCodes" default="deploy" basedir=".">
+	<property file="build.properties" />
+	<property environment="env" />
+	<property name="war.dir" value="war" />
+	<property name="build.dir" value="www" />
+
+	<property name="class.dir" value="${war.dir}/WEB-INF/classes" />
+	<property name="lib.dir" value="${war.dir}/WEB-INF/lib" />
+	<property name="webapp.dir" value="${env.TOMCAT_HOME}/webapps/ch10-GWT" />
+	<property name="gwt.sdk.location" value="D:/MyDocuments/apps/gwt-windows-1.0.21" />
+	<property name="src.dir" value="src" />
+	<!-- GWT Compile Classpath -->
+	<path id="gwt.compile.classpath">
+		<fileset dir="${gwt.sdk.location}">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement location="${src.dir}" />
+	</path>
+
+	<target name="init">
+		<echo message="---------- ${project.name} ${project.version} -----------" />
+		<filter token="implVendor" value="${project.vendor}" />
+		<filter token="implVendorId" value="${project.vendor.id}" />
+		<filter token="implVersion" value="${project.version}" />
+		<filter token="projectName" value="${project.name}" />
+		<filter token="projectPackage" value="${project.package}" />
+		<filter token="specVendor" value="${project.spec.vendor}" />
+		<filter token="specVersion" value="${project.spec.version}" />
+
+	</target>
+
+
+	<target name="prepare">
+		<mkdir dir="${class.dir}" />
+	</target>
+	<target name="gwtcompile" depends="init">
+		<echo> ${src.dir} </echo>
+		<echo> ${gwt.compile.classpath} </echo>
+
+		<java classpathref="gwt.compile.classpath" classname="com.google.gwt.dev.GWTCompiler" fork="true">
+			<arg value="-out" />
+			<arg value="${build.dir}" />
+			<arg value="${gwt.entrypoint.class}" />
+		</java>
+	</target>
+
+	<!-- compile files needed for RPC processing -->
+	<target name="java-compile" description="Compile application components" depends="prepare,gwtcompile">
+
+		<!-- Compile AJAX Java Sources -->
+		<javac srcdir="${src.dir}" destdir="${class.dir}" debug="${compile.debug}" deprecation="${compile.deprecation}" optimize="${compile.optimize}" source="${project.source}" target="${project.target}">
+			<classpath refid="gwt.compile.classpath" />
+		</javac>
+	</target>
+	<target name="deploy" depends="java-compile" description="Copies the contents of web-app to destination dir">
+		<echo message="deploy..." />
+		<echo message="copying contents of ${war.dir} to ${webapp.dir}" />
+		<copy todir="${war.dir}">
+			<fileset dir="www/${gwt.entrypoint.class}" />
+		</copy>
+		<copy todir="${webapp.dir}">
+			<fileset dir="${war.dir}" />
+		</copy>
+
+
+	</target>
+	<target name="clean-webserver">
+		<echo message="cleaning webserver" />
+		<delete>
+			<fileset dir="${webapp.dir}" includes="*.cache.*" />
+			<fileset dir="${webapp.dir}" includes="*.html" />
+		</delete>
+	</target>
+
+</project>

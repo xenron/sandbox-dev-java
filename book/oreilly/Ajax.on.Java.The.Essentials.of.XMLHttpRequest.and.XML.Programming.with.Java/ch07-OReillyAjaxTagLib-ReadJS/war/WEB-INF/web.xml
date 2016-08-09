@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+    
+<web-app>
+  <servlet>
+    <servlet-name>AjaxZipCodesServlet</servlet-name>
+    <servlet-class>
+      com.oreilly.ajax.servlet.AjaxZipCodesServlet
+    </servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AjaxZipCodesServlet</servlet-name>
+        <url-pattern>/zipcodes</url-pattern>
+  </servlet-mapping>
+  <!-- tag libs -->
+   <taglib>
+    <taglib-uri>/WEB-INF/oreillyAjax.tld</taglib-uri>
+    <taglib-location>/WEB-INF/oreillyAjax.tld</taglib-location>
+  </taglib>
+  <!-- The Welcome File List -->
+  <welcome-file-list>
+    <welcome-file>oreillyajaxtags.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
+
+

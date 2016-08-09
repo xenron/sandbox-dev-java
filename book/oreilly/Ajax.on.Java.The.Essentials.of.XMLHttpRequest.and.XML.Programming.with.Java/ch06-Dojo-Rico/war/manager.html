@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <LINK REL="stylesheet" TYPE="text/css" HREF="oreillyajax.css">
+    <title>AJAX On Java Customer Manager Page</title>
+    <script language="JavaScript" src="oreillySuggest.js"></script>
+    <script language="JavaScript">
+      window.onload = function () {
+          init("ajax_username");
+      }
+    </script>
+  </head>
+  <body >
+    <h1>AJAX CUSTOMER MANAGEMENT</h1>
+    
+    <form name="form1" action="/ajaxcustomer-lab6-1" method="get">
+ 
+    <label for="ajax_username">Username:</label>
+      <input  class="cm_label" type="text" id="ajax_username" autocomplete="off" ><br /><br />
+
+    <label class="cm_label" for="password">Password:</label>
+      <input  class="cm_input" type="text" id="password" name="password" ><br /><br />
+      
+    <label  class="cm_label" for="confirmpassword">Name:</label>
+      <input class="cm_input" type="text" id="name" name="name" ><br /><br />
+      
+    <label class="cm_label" for="email">Email:</label>
+      <input class="cm_input" type="text" id="email" name="email" ><br /><br />
+      
+    <label class="cm_label" for="address">address:</label>
+      <input class="cm_input" type="text" id="address" name="address" ><br /><br />
+      
+    <label class="cm_label" for="zipcode">Zip Code:</label>
+      <input class="cm_input" type="text" id="zipcode" name="zipcode" ><br /><br />
+
+    <label class="cm_label" for="state">State:</label>
+      <input class="cm_input" type="text"  id="state" name="state" ><br /><br />
+
+    <label class="cm_label" for="city">City:</label>
+      <input class="cm_input" type="text" id="city" name="city" ><br/><br />
+
+    <a href="index.html">Signup</a>
+
+  </body>
+</html>
+

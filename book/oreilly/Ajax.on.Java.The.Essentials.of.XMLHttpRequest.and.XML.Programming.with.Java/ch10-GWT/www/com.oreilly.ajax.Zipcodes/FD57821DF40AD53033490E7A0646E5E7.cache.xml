@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cache-entry>
+	<generated-type-hash class="com.oreilly.ajax.client.ResponseService_Proxy" hash="A01FB0FC1622CAC209FF178801E2869E"/>
+	<generated-type-hash class="com.google.gwt.user.client.rpc.SerializableException_FieldSerializer" hash="2BAB402B7C7DAC578FEEBEB437AA4176"/>
+	<generated-type-hash class="com.oreilly.ajax.client.ResponseService_TypeSerializer" hash="261899CA95A1730A1D2DEB5A556612CB"/>
+	<rebind-decision in="com.google.gwt.user.client.ui.impl.TextBoxImpl" out="com.google.gwt.user.client.ui.impl.TextBoxImpl"/>
+	<rebind-decision in="com.oreilly.ajax.client.ResponseService" out="com.oreilly.ajax.client.ResponseService_Proxy"/>
+	<rebind-decision in="com.oreilly.ajax.client.Zipcodes" out="com.oreilly.ajax.client.Zipcodes"/>
+	<rebind-decision in="com.google.gwt.user.client.impl.HTTPRequestImpl" out="com.google.gwt.user.client.impl.HTTPRequestImpl"/>
+	<rebind-decision in="com.google.gwt.user.client.impl.DOMImpl" out="com.google.gwt.user.client.impl.DOMImplSafari"/>
+</cache-entry>

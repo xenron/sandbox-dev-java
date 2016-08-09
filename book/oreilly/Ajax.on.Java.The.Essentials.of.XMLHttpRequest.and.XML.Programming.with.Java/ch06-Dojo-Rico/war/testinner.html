@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="generator" content="HTML Tidy, see www.w3.org">
+<LINK REL="stylesheet" TYPE="text/css" HREF="oreillyajax.css">
+
+<title>AJAX Customer Signup</title>
+<script language="JavaScript" src="scripts/prototype.js"></script>
+<script language="JavaScript" src="scripts/rico.js"></script>
+<SCRIPT language="JavaScript" type="text/javascript"> 
+    window.onload = function () {
+         	ajaxEngine.registerRequest('zipRequestHandle', 'rico');
+         	ajaxEngine.registerAjaxElement('city');
+         	ajaxEngine.registerAjaxElement('state');
+         	ajaxEngine.registerAjaxObject('testrico',
+      }
+function retrieveCityState() {
+   zip = document.getElementById("zipcode");
+   ajaxEngine.sendRequest( 'zipRequestHandle',"zip="+escape(zip.value));
+}
+function putFunky(){
+alert('put funky')
+   myelement = document.getElementById("testin");
+   myelement.innerHTML = 'funky';
+
+   }
+
+</script>
+ 
+</head>
+<body>
+
+Test <input type="text" id="testin" name="testin" onmouseover="this.value='how'"><br />
+Test <input type="text" id="test" name="test" >
+</form>
+<br />
+<P onmouseover="this.innerHTML='<B>Mouse out to change back.</B>'"; onmouseout="this.innerHTML='<I>Mouse over again to change.</I>'">
+    <I>Mouse over this text to change it.</I>
+</P>
+
+</body>
+</html>
+

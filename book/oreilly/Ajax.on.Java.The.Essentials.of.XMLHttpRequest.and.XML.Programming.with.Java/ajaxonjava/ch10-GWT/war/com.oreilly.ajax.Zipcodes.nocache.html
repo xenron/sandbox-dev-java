@@ -1,0 +1,76 @@
+<html><head><script>
+
+window["provider$user.agent"] = function() {
+  var ua = navigator.userAgent.toLowerCase();
+  if (ua.indexOf('opera') != -1) {
+    return 'opera';
+  }
+   else if (ua.indexOf('safari') != -1) {
+    return 'safari';
+  }
+   else if (ua.indexOf('msie 6.0') != -1 || ua.indexOf('msie 7.0') != -1) {
+    return 'ie6';
+  }
+   else if (ua.indexOf('mozilla') != -1) {
+    var geckoIdx = ua.indexOf('gecko/');
+    if (geckoIdx == -1) 
+      return 'oldmoz';
+    var spaceIdx = ua.indexOf(' ', geckoIdx);
+    if (spaceIdx == -1) 
+      spaceIdx = ua.length;
+    var version = parseInt(ua.substring(geckoIdx + 6, spaceIdx));
+    if (version < 20051107) 
+      return 'oldmoz';
+    return 'moz';
+  }
+  return 'unknown';
+}
+;
+
+window["prop$user.agent"] = function() {
+  var v = window["provider$user.agent"]();
+  switch (v) {
+    case "ie6":
+    case "moz":
+    case "oldmoz":
+    case "opera":
+    case "safari":
+      return v;
+    default:
+      parent.__gwt_onBadProperty("com.oreilly.ajax.Zipcodes", "user.agent", ['"ie6"', '"moz"', '"oldmoz"', '"opera"', '"safari"'], v);
+      throw null;
+  }
+};
+
+function O(a,v) {
+  var answer = O.answers;
+  var i = -1;
+  var n = a.length - 1;
+  while (++i < n) {
+    if (!(a[i] in answer)) {
+      answer[a[i]] = [];
+    }
+    answer = answer[a[i]];
+  }
+  answer[a[n]] = v;
+}
+O.answers = [];
+
+function selectScript() {
+  try {
+    var F;
+    var I = ["true", (F=window["prop$user.agent"],F())];
+
+    O(["true","opera"],"4B95BBB370A1259858DB05306D579FB3");
+    O(["true","oldmoz"],"67C1D1F8861F2266F8E9A4B8F26C3705");
+    O(["true","moz"],"67C1D1F8861F2266F8E9A4B8F26C3705");
+    O(["true","safari"],"9083CF7A333C2F31224A065D871BF4DB");
+    O(["true","ie6"],"BB2C3CCFE8E2353C59E3151FDBAE0BF0");
+
+    var strongName = O.answers[I[0]][I[1]];
+    location.replace(strongName + '.cache.html');
+  } catch (e) {
+    // intentionally silent on property failure
+  }
+}
+</script></head><body onload='if (parent && parent.__gwt_webModeFrameOnLoad) selectScript()'><font face='arial' size='-1'>This script is part of module</font> <code>com.oreilly.ajax.Zipcodes</code></body></html>
