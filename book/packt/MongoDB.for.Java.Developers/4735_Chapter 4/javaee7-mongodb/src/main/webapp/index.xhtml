@@ -1,0 +1,91 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+ 
+ <h:head>
+  <style type="text/css">
+ .default {
+  padding: 5px;
+  text-align: left;
+  font-family: Arial, Verdana, sans-serif;
+  border: 1px solid #000;
+  border-bottom: 1;
+ }
+ 
+ .buttons {
+  padding: 5px;
+  text-align: left;
+  font-family: Arial, Verdana, sans-serif;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+ }
+ 
+ .table-header {
+  text-align: center;
+  background: none repeat scroll 0 0 #E5E5E5;
+  border-bottom: 1px solid #BBBBBB;
+  padding: 16px;
+ }
+ 
+ .table-odd-row {
+  text-align: center;
+  background: none repeat scroll 0 0 #FFFFFFF;
+  border-top: 1px solid #BBBBBB;
+ }
+ 
+ .table-even-row {
+  text-align: center;
+  background: none repeat scroll 0 0 #E5E5E5;
+  border-top: 1px solid #BBBBBB;
+ }
+ </style>
+ </h:head>
+ 
+<h:body>
+
+	<h:form id="bookstore">
+		<h:panelGrid styleClass="default">
+			<h:outputLabel value="Filter title: " style="font-weight:bold" />
+			<h:inputText value="#{bookStore.filter}" />
+			<h:commandButton actionListener="#{bookStore.doQuery}" styleClass="buttons" value="Search" />
+			<h:dataTable value="#{bookStore.listBooks}" var="item" styleClass="table"
+				headerClass="table-header"
+				rowClasses="table-odd-row,table-even-row">
+				<h:column>
+					<f:facet name="header">Title</f:facet>
+					<h:outputText value="#{item.title}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Author</f:facet>
+					<h:outputText value="#{item.author}" />
+				</h:column>
+
+				<h:column>
+					<f:facet name="header">Price</f:facet>
+					<h:outputText value="#{item.price}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Type</f:facet>
+					<h:outputText value="#{item.type}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Copies</f:facet>
+					<h:outputText   value="#{item.copies}"/>
+				</h:column>						
+
+				<h:column>
+					<f:facet name="header">Buy</f:facet>
+				   <h:commandButton actionListener="#{bookStore.buy(item)}" rendered="#{item.copies > 0}"
+						styleClass="buttons" value="Buy" />
+				</h:column>							
+			</h:dataTable>		 
+		</h:panelGrid>
+
+	</h:form>
+
+
+</h:body>
+</html>

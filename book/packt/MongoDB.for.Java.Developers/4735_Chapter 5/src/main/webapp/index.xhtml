@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:head>
+       <style type="text/css">  
+            @import url("css/store.css");
+       </style>       <!-- Stylesheets not included for brevity -->
+         
+    </h:head>
+
+    <h:body>
+            <h:panelGrid columns="1" border="1" styleClass="tablestyle">  
+                <f:facet name="header">
+                    <h:outputText value="Order List"/>
+                </f:facet>
+                <h:form id="listOrdersForm">  
+                    <h:outputText value="Select Customer:" />  
+                    <h:selectOneMenu id="selectCustomer" valueChangeListener="#{manager.changeListener}"
+                                     onchange="submit()"    value="#{manager.customerId}" styleClass="buttons">  
+                        <f:selectItems 
+                            value="#{manager.listCustomers}" />
+
+                    </h:selectOneMenu>
+
+                    <h:dataTable value="#{manager.listOrders}" styleClass="tablestyle"
+                         var="orders" border="1"   >  
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Product" />
+                            </f:facet>
+                            <h:outputText value="#{orders.product}" />
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="Price" />
+                            </f:facet>
+                            <h:outputText value="#{orders.price}" />
+                        </h:column>
+                        <h:column>
+
+                            <f:facet name="header">
+                                <h:outputText value="Quantity" />
+                            </f:facet>
+                            <h:outputText value="#{orders.quantity}" />
+                        </h:column>
+                    </h:dataTable>
+                    <h:commandButton action="newCustomer" styleClass="myButton"
+                                     value="Insert Customer" />  
+                    <h:commandButton action="newOrder" styleClass="myButton"
+                                     value="Insert Order" /> 
+                </h:form>
+            </h:panelGrid>
+            <h:messages style="color:red;margin:8px;" />
+ 
+
+    </h:body>
+</html>
