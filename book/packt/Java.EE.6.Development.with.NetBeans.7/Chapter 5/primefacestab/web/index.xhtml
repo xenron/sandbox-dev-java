@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:composition template="./template.xhtml">
+        <ui:define name="top">
+            <h2>Customer Information Data Entry</h2>
+        </ui:define>
+
+        <ui:define name="content">
+            <h:form>
+                <p:messages/>
+                <h:panelGrid columns="1" style="width: 100%">
+                    <p:tabView>
+                        <p:tab title="Personal Information">
+                            <h:panelGrid columns="2">
+                                <h:outputLabel for="firstName" value="First Name" 
+                                               styleClass="requiredLbl"/>
+                                <h:inputText id="firstName" label="First Name" 
+                                             value="#{customer.firstName}" 
+                                             required="true"/>
+                                <h:outputLabel for="middleName" value="Middle Name" 
+                                               styleClass="optionalLbl"/>
+                                <h:inputText id="middleName" label="Middle Name" 
+                                             value="#{customer.middleName}"/>
+                                <h:outputLabel for="lastName" value="Last Name" 
+                                               styleClass="requiredLbl"/>
+                                <h:inputText id="lastName" label="Last Name" 
+                                             value="#{customer.lastName}" 
+                                             required="true"/>
+                                <h:outputLabel for="birthDate" 
+                                               value="Date of Birth" 
+                                               styleClass="optionalLbl"/>
+                                <p:calendar id="birthDate" 
+                                            value="#{customer.birthDate}" 
+                                            showOn="button" 
+                                            inputStyle="width:100px;" 
+                                            navigator="true"/>
+                            </h:panelGrid>
+                        </p:tab>
+                        <p:tab title="Address">
+                            <h:panelGrid columns="2">
+                                <h:outputLabel for="line1" value="Line 1" 
+                                               styleClass="requiredLbl"/>
+                                <h:inputText id="line1" 
+                                             value="#{customer.addrLine1}" 
+                                             required="true"/>
+
+                                <h:outputLabel for="line2" value="Line 2" 
+                                               styleClass="optionalLbl"/>
+                                <h:inputText id="line2" 
+                                             value="#{customer.addrLine2}"/>
+
+                                <h:outputLabel for="city" value="City" 
+                                               styleClass="requiredLbl"/>
+                                <h:inputText id="city" 
+                                             value="#{customer.addrCity}" 
+                                             required="true"/>
+
+                                <h:outputLabel for="state" value="State" styleClass="requiredLbl"/>
+                                <h:selectOneMenu id="state" required="true" value="#{customer.addrState}">
+                                    <f:selectItem itemValue="" itemLabel=""/>
+                                    <f:selectItem itemValue="AL" 
+                                                  itemLabel="Alabama"/>
+                                    <f:selectItem itemValue="AK" 
+                                                  itemLabel="Alaska"/>
+                                    <f:selectItem itemValue="AZ" 
+                                                  itemLabel="Arizona"/>
+                                    <f:selectItem itemValue="AR" 
+                                                  itemLabel="Arkansas"/>
+                                    <!-- other states omitted for brevity -->
+                                </h:selectOneMenu>
+
+                                <h:outputLabel for="zip" value="Zip" 
+                                               styleClass="requiredLbl"/>
+                                <h:inputText id="zip" 
+                                             value="#{customer.addrZip}" 
+                                             required="true"/>
+                            </h:panelGrid>
+                        </p:tab>
+
+                        <p:tab title="Phone Numbers">
+                            <h:panelGrid columns="2">
+                                <h:outputLabel for="homePhone" value="Home"/>
+                                <p:inputMask id="homePhone" 
+                                             mask="(999)-999-9999" 
+                                             value="#{customer.homePhone}" 
+                                             size="12" styleClass="optionalLbl"/>
+
+                                <h:outputLabel for="mobilePhone" value="Mobile"/>
+                                <p:inputMask id="mobilePhone" 
+                                             mask="(999)-999-9999" 
+                                             value="#{customer.mobilePhone}" 
+                                             size="12" styleClass="optionalLbl"/>
+
+                                <h:outputLabel for="workPhone" value="Work"/>
+                                <p:inputMask id="workPhone" 
+                                             mask="(999)-999-9999" 
+                                             value="#{customer.workPhone}" 
+                                             size="12" styleClass="optionalLbl"/>
+                            </h:panelGrid>
+                        </p:tab>
+                    </p:tabView>
+                    <p:commandButton 
+                        value="Submit" 
+                        action="#{customerController.saveCustomer}" 
+                        ajax="false"/>
+                </h:panelGrid>
+            </h:form>
+        </ui:define> 
+    </ui:composition>
+</html>

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <body>
+
+        <ui:composition template="./template.xhtml">
+            <ui:define name="top">
+                <h2>Customer Information Confirmation</h2>
+            </ui:define>
+
+            <ui:define name="content">
+                <p:panel header="Customer Information">
+                    <h:panelGrid columns="2">
+                        <h:outputText value="First Name" styleClass="optionalLbl"/>
+                        <h:outputText id="firstName" value="#{customer.firstName}" />
+                        <h:outputText value="Middle Name" styleClass="optionalLbl"/>
+                        <h:outputText id="middleName" value="#{customer.middleName}"/>
+                        <h:outputText  value="Last Name" styleClass="optionalLbl"/>
+                        <h:outputText id="lastName" value="#{customer.lastName}" />
+                        <h:outputText  value="Date of Birth" styleClass="optionalLbl"/>
+                        <h:outputText id="birthDate" value="#{customer.formattedBirthDate}" />
+                    </h:panelGrid>
+                </p:panel>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewUsStateTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewUsStateLabel_usStateId}"/>
+                    <h:outputText value="#{usStateController.selected.usStateId}" title="#{bundle.ViewUsStateTitle_usStateId}"/>
+                    <h:outputText value="#{bundle.ViewUsStateLabel_usStateCd}"/>
+                    <h:outputText value="#{usStateController.selected.usStateCd}" title="#{bundle.ViewUsStateTitle_usStateCd}"/>
+                    <h:outputText value="#{bundle.ViewUsStateLabel_usStateNm}"/>
+                    <h:outputText value="#{usStateController.selected.usStateNm}" title="#{bundle.ViewUsStateTitle_usStateNm}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{usStateController.destroyAndView}" value="#{bundle.ViewUsStateDestroyLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="Edit" value="#{bundle.ViewUsStateEditLink}"/>
+                <br />
+                <h:commandLink action="#{usStateController.prepareCreate}" value="#{bundle.ViewUsStateCreateLink}" />
+                <br />
+                <h:commandLink action="#{usStateController.prepareList}" value="#{bundle.ViewUsStateShowAllLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ViewUsStateIndexLink}" action="/index" immediate="true" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

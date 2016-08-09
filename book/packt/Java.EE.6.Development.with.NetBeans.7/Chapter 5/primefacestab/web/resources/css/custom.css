@@ -1,0 +1,27 @@
+/* 
+    Document   : custom
+    Created on : Oct 2, 2010, 10:31:39 AM
+    Author     : heffel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+
+.requiredLbl{
+    background-image:url(../resources/images/required-field.png);
+    background-position:top right;
+    background-repeat:no-repeat;
+    padding-right:10px;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+}
+
+.optionalLbl{
+    padding-right:10px;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+}
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditUserRoleTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditUserRoleLabel_roleId}" for="roleId" />
+                    <h:inputText id="roleId" value="#{userRoleController.selected.roleId}" title="#{bundle.EditUserRoleTitle_roleId}" required="true" requiredMessage="#{bundle.EditUserRoleRequiredMessage_roleId}"/>
+                    <h:outputLabel value="#{bundle.EditUserRoleLabel_roleName}" for="roleName" />
+                    <h:inputText id="roleName" value="#{userRoleController.selected.roleName}" title="#{bundle.EditUserRoleTitle_roleName}" />
+                </h:panelGrid>
+                <h:commandLink action="#{userRoleController.update}" value="#{bundle.EditUserRoleSaveLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="View" value="#{bundle.EditUserRoleViewLink}" immediate="true"/>
+                <br />
+                <h:commandLink action="#{userRoleController.prepareList}" value="#{bundle.EditUserRoleShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.EditUserRoleIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

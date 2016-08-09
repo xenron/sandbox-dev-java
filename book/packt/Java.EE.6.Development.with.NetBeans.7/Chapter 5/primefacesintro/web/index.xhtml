@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:composition template="./template.xhtml">
+        <ui:define name="top">
+            <h2>Customer Information Data Entry</h2>
+        </ui:define>
+
+        <ui:define name="content">
+            <h:form>
+                <p:messages/>
+                <p:panel header="Enter Customer Information">
+                    <h:panelGrid columns="2">
+                        <h:outputLabel for="firstName" value="First Name" 
+                                       styleClass="requiredLbl"/>
+                        <h:inputText id="firstName" label="First Name" 
+                                     value="#{customer.firstName}" 
+                                     required="true"/>
+                        <h:outputLabel for="middleName" value="Middle Name" 
+                                       styleClass="optionalLbl"/>
+                        <h:inputText id="middleName" label="Middle Name" 
+                                     value="#{customer.middleName}"/>
+                        <h:outputLabel for="lastName" value="Last Name" 
+                                       styleClass="requiredLbl"/>
+                        <h:inputText id="lastName" label="Last Name" 
+                                     value="#{customer.lastName}" 
+                                     required="true"/>
+                        <h:outputLabel for="birthDate" value="Date of Birth" 
+                                       styleClass="optionalLbl"/>
+                        <p:calendar id="birthDate" value="#{customer.birthDate}" 
+                                    showOn="button" inputStyle="width:100px;" 
+                                    navigator="true"/>
+
+                        <h:panelGroup/>
+                        <p:commandButton 
+                            value="Submit" 
+                                         action="#{customerController.saveCustomer}" 
+                                         ajax="false"/>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </ui:define> 
+    </ui:composition>
+</html>
+

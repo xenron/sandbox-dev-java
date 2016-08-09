@@ -1,0 +1,16 @@
+8
+
+dir
+205
+svn://new.ensode.net/opt/svnserve/ensode/ch02/securedsimplewebapp/web/admin
+svn://new.ensode.net/opt/svnserve/ensode
+
+
+
+2008-02-09T02:23:23.924091Z
+205
+dheffelfinger
+
+
+svn:special svn:externals svn:needs-lock
+

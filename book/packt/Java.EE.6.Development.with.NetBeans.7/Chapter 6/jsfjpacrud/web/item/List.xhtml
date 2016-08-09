@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListItemTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+        <h:form styleClass="jsfcrud_list_form">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:outputText escape="false" value="#{bundle.ListItemEmpty}" rendered="#{itemController.items.rowCount == 0}"/>
+            <h:panelGroup rendered="#{itemController.items.rowCount > 0}">
+                <h:outputText value="#{itemController.pagination.pageFirstItem + 1}..#{itemController.pagination.pageLastItem + 1}/#{itemController.pagination.itemsCount}"/>&nbsp;
+                <h:commandLink action="#{itemController.previous}" value="#{bundle.Previous} #{itemController.pagination.pageSize}" rendered="#{itemController.pagination.hasPreviousPage}"/>&nbsp;
+                <h:commandLink action="#{itemController.next}" value="#{bundle.Next} #{itemController.pagination.pageSize}" rendered="#{itemController.pagination.hasNextPage}"/>&nbsp;
+                <h:dataTable value="#{itemController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListItemTitle_itemId}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.itemId}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListItemTitle_itemNumber}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.itemNumber}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListItemTitle_itemShortDesc}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.itemShortDesc}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListItemTitle_itemLongDesc}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.itemLongDesc}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="&nbsp;"/>
+                        </f:facet>
+                        <h:commandLink action="#{itemController.prepareView}" value="#{bundle.ListItemViewLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{itemController.prepareEdit}" value="#{bundle.ListItemEditLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{itemController.destroy}" value="#{bundle.ListItemDestroyLink}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+            <br />
+            <h:commandLink action="#{itemController.prepareCreate}" value="#{bundle.ListItemCreateLink}"/>
+            <br />
+            <br />
+            <h:commandLink value="#{bundle.ListItemIndexLink}" action="/index" immediate="true" />
+        </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

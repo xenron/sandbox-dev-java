@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:composition template="./template.xhtml">
+        <ui:define name="top">
+            <h2>Customer Information Data Entry</h2>
+        </ui:define>
+
+        <ui:define name="content">
+            <h:form id="form">
+                <h:panelGrid columns="1" style="width: 100%">
+                    <p:wizard id="wizard">
+                        <p:tab title="Personal Information" id="personalInfo">
+                            <p:panel header="Personal Information">
+                                <p:messages/>
+                                <h:panelGrid columns="2">
+
+                                    <h:outputLabel for="firstName" 
+                                                   value="First Name" 
+                                                   styleClass="requiredLbl"/>
+                                    <h:inputText id="firstName" 
+                                                 label="First Name" 
+                                                 value="#{customer.firstName}" 
+                                                 required="true"/>
+                                    <h:outputLabel for="middleName" 
+                                                   value="Middle Name" 
+                                                   styleClass="optionalLbl"/>
+                                    <h:inputText id="middleName" 
+                                                 label="Middle Name" 
+                                                 value="#{customer.middleName}"
+                                                 />
+                                    <h:outputLabel for="lastName" 
+                                                   value="Last Name" 
+                                                   styleClass="requiredLbl"/>
+                                    <h:inputText id="lastName" label="Last Name" 
+                                                 value="#{customer.lastName}" 
+                                                 required="true"/>
+                                    <h:outputLabel for="birthDate" 
+                                                   value="Date of Birth" 
+                                                   styleClass="optionalLbl"/>
+                                    <p:calendar id="birthDate" 
+                                                value="#{customer.birthDate}" 
+                                                showOn="button" 
+                                                inputStyle="width:100px;" 
+                                                navigator="true"/>
+                                </h:panelGrid>
+                            </p:panel>
+                        </p:tab>
+                        <p:tab title="Phone Numbers" id="phone">
+                            <p:panel header="Phone Numbers">
+                                <p:messages/>
+                                <h:panelGrid columns="2">
+                                    <h:outputLabel for="homePhone" 
+                                                   value="Home"/>
+                                    <p:inputMask id="homePhone" 
+                                                 mask="(999)-999-9999" 
+                                                 value="#{customer.homePhone}" 
+                                                 size="12" 
+                                                 styleClass="optionalLbl"/>
+
+                                    <h:outputLabel for="mobilePhone" 
+                                                   value="Mobile"/>
+                                    <p:inputMask id="mobilePhone" 
+                                                 mask="(999)-999-9999" 
+                                                 value="#{customer.mobilePhone}" 
+                                                 size="12" 
+                                                 styleClass="optionalLbl"/>
+
+                                    <h:outputLabel for="workPhone" value="Work"/>
+                                    <p:inputMask id="workPhone" 
+                                                 mask="(999)-999-9999" 
+                                                 value="#{customer.workPhone}" 
+                                                 size="12" 
+                                                 styleClass="optionalLbl"/>
+
+                                </h:panelGrid>
+                            </p:panel>
+                        </p:tab>
+                        <p:tab title="Confirmation" id="confirmation">
+                            <p:messages/>
+                            <h:panelGrid columns="2">
+                                <h:outputText value="First Name" 
+                                              styleClass="optionalLbl"/>
+                                <h:outputText id="firstNameTxt" 
+                                              value="#{customer.firstName}" />
+                                <h:outputText value="Middle Name" 
+                                              styleClass="optionalLbl"/>
+                                <h:outputText id="middleNameTxt" 
+                                              value="#{customer.middleName}"/>
+                                <h:outputText  value="Last Name" 
+                                               styleClass="optionalLbl"/>
+                                <h:outputText id="lastNameTxt" 
+                                              value="#{customer.lastName}" />
+                                <h:outputText  value="Date of Birth" 
+                                               styleClass="optionalLbl"/>
+                                <h:outputText id="birthDateTxt" 
+                                              value="#{customer.
+                                                       formattedBirthDate}" />
+
+                                <h:outputText  value="Home Phone" 
+                                               styleClass="optionalLbl"/>
+                                <h:outputText id="homePhoneTxt" 
+                                              value="#{customer.homePhone}" />
+
+                                <h:outputText  value="Mobile Phone" 
+                                               styleClass="optionalLbl"/>
+                                <h:outputText id="mobilePhoneTxt" 
+                                              value="#{customer.mobilePhone}" />
+                                <h:outputText  value="Work Phone" 
+                                               styleClass="optionalLbl"/>
+                                <h:outputText id="workPhoneTxt" 
+                                              value="#{customer.workPhone}" />
+
+                                <h:panelGroup/>
+                                <h:inputHidden value="#{customer.addrState}"/>
+                                <p:commandButton id="submitButton"
+                                                 value="Submit" 
+                                                 actionListener=
+                                                 "#{customerController.saveCustomer}" 
+                                                 ajax="false"/>
+                            </h:panelGrid>
+                        </p:tab>
+                    </p:wizard>                   
+                </h:panelGrid>
+            </h:form>
+        </ui:define> 
+    </ui:composition>
+</html>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListTelephoneTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+        <h:form styleClass="jsfcrud_list_form">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:outputText escape="false" value="#{bundle.ListTelephoneEmpty}" rendered="#{telephoneController.items.rowCount == 0}"/>
+            <h:panelGroup rendered="#{telephoneController.items.rowCount > 0}">
+                <h:outputText value="#{telephoneController.pagination.pageFirstItem + 1}..#{telephoneController.pagination.pageLastItem + 1}/#{telephoneController.pagination.itemsCount}"/>&nbsp;
+                <h:commandLink action="#{telephoneController.previous}" value="#{bundle.Previous} #{telephoneController.pagination.pageSize}" rendered="#{telephoneController.pagination.hasPreviousPage}"/>&nbsp;
+                <h:commandLink action="#{telephoneController.next}" value="#{bundle.Next} #{telephoneController.pagination.pageSize}" rendered="#{telephoneController.pagination.hasNextPage}"/>&nbsp;
+                <h:dataTable value="#{telephoneController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTelephoneTitle_telephoneId}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.telephoneId}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTelephoneTitle_telephoneNumber}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.telephoneNumber}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTelephoneTitle_telephoneTypeId}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.telephoneTypeId}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListTelephoneTitle_customerId}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.customerId}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="&nbsp;"/>
+                        </f:facet>
+                        <h:commandLink action="#{telephoneController.prepareView}" value="#{bundle.ListTelephoneViewLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{telephoneController.prepareEdit}" value="#{bundle.ListTelephoneEditLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{telephoneController.destroy}" value="#{bundle.ListTelephoneDestroyLink}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+            <br />
+            <h:commandLink action="#{telephoneController.prepareCreate}" value="#{bundle.ListTelephoneCreateLink}"/>
+            <br />
+            <br />
+            <h:commandLink value="#{bundle.ListTelephoneIndexLink}" action="/index" immediate="true" />
+        </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

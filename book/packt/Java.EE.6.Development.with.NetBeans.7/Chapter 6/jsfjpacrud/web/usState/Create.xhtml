@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateUsStateTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateUsStateLabel_usStateId}" for="usStateId" />
+                    <h:inputText id="usStateId" value="#{usStateController.selected.usStateId}" title="#{bundle.CreateUsStateTitle_usStateId}" required="true" requiredMessage="#{bundle.CreateUsStateRequiredMessage_usStateId}"/>
+                    <h:outputLabel value="#{bundle.CreateUsStateLabel_usStateCd}" for="usStateCd" />
+                    <h:inputText id="usStateCd" value="#{usStateController.selected.usStateCd}" title="#{bundle.CreateUsStateTitle_usStateCd}" required="true" requiredMessage="#{bundle.CreateUsStateRequiredMessage_usStateCd}"/>
+                    <h:outputLabel value="#{bundle.CreateUsStateLabel_usStateNm}" for="usStateNm" />
+                    <h:inputText id="usStateNm" value="#{usStateController.selected.usStateNm}" title="#{bundle.CreateUsStateTitle_usStateNm}" required="true" requiredMessage="#{bundle.CreateUsStateRequiredMessage_usStateNm}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{usStateController.create}" value="#{bundle.CreateUsStateSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{usStateController.prepareList}" value="#{bundle.CreateUsStateShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateUsStateIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

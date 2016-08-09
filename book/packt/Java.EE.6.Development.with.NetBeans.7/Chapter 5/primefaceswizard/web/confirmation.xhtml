@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <body>
+
+        <ui:composition template="./template.xhtml">
+            <ui:define name="top">
+                <h2>Customer Information Confirmation</h2>
+            </ui:define>
+
+            <ui:define name="content">
+                <p:panel header="Customer Information">
+                    <h:panelGrid columns="2">
+                        <h:outputText value="First Name" styleClass="optionalLbl"/>
+                        <h:outputText id="firstName" value="#{customer.firstName}" />
+                        <h:outputText value="Middle Name" styleClass="optionalLbl"/>
+                        <h:outputText id="middleName" value="#{customer.middleName}"/>
+                        <h:outputText  value="Last Name" styleClass="optionalLbl"/>
+                        <h:outputText id="lastName" value="#{customer.lastName}" />
+                        <h:outputText  value="Date of Birth" styleClass="optionalLbl"/>
+                        <h:outputText id="birthDate" value="#{customer.formattedBirthDate}" />
+                        <h:outputText value="Address" styleClass="optionalLbl"/>
+                        <h:panelGroup>
+                            <h:outputText 
+                                value="#{customer.addrLine1}"/>
+                            <h:outputText value="," rendered="#{empty customer.addrLine2}"/>
+                            <br/>
+                            <h:outputText value="#{customer.addrLine2}," rendered="#{not empty customer.addrLine2}"/>
+                            <f:verbatim rendered="#{not empty customer.addrLine2}"><br/></f:verbatim>
+                            <h:outputText value="#{customer.addrCity}, #{customer.addrState} #{customer.addrZip}"  />    
+                        </h:panelGroup>
+
+                        <h:outputText  value="Home Phone" styleClass="optionalLbl"/>
+                        <h:outputText id="homePhone" value="#{customer.homePhone}" />
+
+                        <h:outputText  value="Mobile Phone" styleClass="optionalLbl"/>
+                        <h:outputText id="mobilePhone" value="#{customer.mobilePhone}" />
+                        <h:outputText  value="Work Phone" styleClass="optionalLbl"/>
+                        <h:outputText id="homePhone" value="#{customer.workPhone}" />
+                    </h:panelGrid>
+                </p:panel>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

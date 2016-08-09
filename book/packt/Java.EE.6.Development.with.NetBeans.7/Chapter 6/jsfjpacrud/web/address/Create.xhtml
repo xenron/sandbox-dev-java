@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateAddressTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateAddressLabel_addressId}" for="addressId" />
+                    <h:inputText id="addressId" value="#{addressController.selected.addressId}" title="#{bundle.CreateAddressTitle_addressId}" required="true" requiredMessage="#{bundle.CreateAddressRequiredMessage_addressId}"/>
+                    <h:outputLabel value="#{bundle.CreateAddressLabel_addrLine1}" for="addrLine1" />
+                    <h:inputText id="addrLine1" value="#{addressController.selected.addrLine1}" title="#{bundle.CreateAddressTitle_addrLine1}" />
+                    <h:outputLabel value="#{bundle.CreateAddressLabel_addrLine2}" for="addrLine2" />
+                    <h:inputText id="addrLine2" value="#{addressController.selected.addrLine2}" title="#{bundle.CreateAddressTitle_addrLine2}" />
+                    <h:outputLabel value="#{bundle.CreateAddressLabel_city}" for="city" />
+                    <h:inputText id="city" value="#{addressController.selected.city}" title="#{bundle.CreateAddressTitle_city}" />
+                    <h:outputLabel value="#{bundle.CreateAddressLabel_zip}" for="zip" />
+                    <h:inputText id="zip" value="#{addressController.selected.zip}" title="#{bundle.CreateAddressTitle_zip}" />
+                    <h:outputLabel value="#{bundle.CreateAddressLabel_usStateId}" for="usStateId" />
+                    <h:selectOneMenu id="usStateId" value="#{addressController.selected.usStateId}" title="#{bundle.CreateAddressTitle_usStateId}" >
+                        <f:selectItems value="#{usStateController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateAddressLabel_customerId}" for="customerId" />
+                    <h:selectOneMenu id="customerId" value="#{addressController.selected.customerId}" title="#{bundle.CreateAddressTitle_customerId}" >
+                        <f:selectItems value="#{customerController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateAddressLabel_addressTypeId}" for="addressTypeId" />
+                    <h:selectOneMenu id="addressTypeId" value="#{addressController.selected.addressTypeId}" title="#{bundle.CreateAddressTitle_addressTypeId}" >
+                        <f:selectItems value="#{addressTypeController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{addressController.create}" value="#{bundle.CreateAddressSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{addressController.prepareList}" value="#{bundle.CreateAddressShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateAddressIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

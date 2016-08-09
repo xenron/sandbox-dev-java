@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateUsCityTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateUsCityLabel_usCityId}" for="usCityId" />
+                    <h:inputText id="usCityId" value="#{usCityController.selected.usCityId}" title="#{bundle.CreateUsCityTitle_usCityId}" required="true" requiredMessage="#{bundle.CreateUsCityRequiredMessage_usCityId}"/>
+                    <h:outputLabel value="#{bundle.CreateUsCityLabel_usCityNm}" for="usCityNm" />
+                    <h:inputText id="usCityNm" value="#{usCityController.selected.usCityNm}" title="#{bundle.CreateUsCityTitle_usCityNm}" />
+                    <h:outputLabel value="#{bundle.CreateUsCityLabel_zip}" for="zip" />
+                    <h:inputText id="zip" value="#{usCityController.selected.zip}" title="#{bundle.CreateUsCityTitle_zip}" />
+                    <h:outputLabel value="#{bundle.CreateUsCityLabel_usStateId}" for="usStateId" />
+                    <h:selectOneMenu id="usStateId" value="#{usCityController.selected.usStateId}" title="#{bundle.CreateUsCityTitle_usStateId}" >
+                        <f:selectItems value="#{usStateController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{usCityController.create}" value="#{bundle.CreateUsCitySaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{usCityController.prepareList}" value="#{bundle.CreateUsCityShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateUsCityIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

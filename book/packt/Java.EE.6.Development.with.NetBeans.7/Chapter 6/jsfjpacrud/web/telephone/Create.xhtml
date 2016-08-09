@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTelephoneTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTelephoneLabel_telephoneId}" for="telephoneId" />
+                    <h:inputText id="telephoneId" value="#{telephoneController.selected.telephoneId}" title="#{bundle.CreateTelephoneTitle_telephoneId}" required="true" requiredMessage="#{bundle.CreateTelephoneRequiredMessage_telephoneId}"/>
+                    <h:outputLabel value="#{bundle.CreateTelephoneLabel_telephoneNumber}" for="telephoneNumber" />
+                    <h:inputText id="telephoneNumber" value="#{telephoneController.selected.telephoneNumber}" title="#{bundle.CreateTelephoneTitle_telephoneNumber}" />
+                    <h:outputLabel value="#{bundle.CreateTelephoneLabel_telephoneTypeId}" for="telephoneTypeId" />
+                    <h:selectOneMenu id="telephoneTypeId" value="#{telephoneController.selected.telephoneTypeId}" title="#{bundle.CreateTelephoneTitle_telephoneTypeId}" >
+                        <f:selectItems value="#{telephoneTypeController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateTelephoneLabel_customerId}" for="customerId" />
+                    <h:selectOneMenu id="customerId" value="#{telephoneController.selected.customerId}" title="#{bundle.CreateTelephoneTitle_customerId}" >
+                        <f:selectItems value="#{customerController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{telephoneController.create}" value="#{bundle.CreateTelephoneSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{telephoneController.prepareList}" value="#{bundle.CreateTelephoneShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.CreateTelephoneIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

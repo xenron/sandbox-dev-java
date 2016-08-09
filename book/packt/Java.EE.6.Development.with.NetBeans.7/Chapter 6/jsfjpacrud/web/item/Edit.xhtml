@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditItemTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditItemLabel_itemId}" for="itemId" />
+                    <h:inputText id="itemId" value="#{itemController.selected.itemId}" title="#{bundle.EditItemTitle_itemId}" required="true" requiredMessage="#{bundle.EditItemRequiredMessage_itemId}"/>
+                    <h:outputLabel value="#{bundle.EditItemLabel_itemNumber}" for="itemNumber" />
+                    <h:inputText id="itemNumber" value="#{itemController.selected.itemNumber}" title="#{bundle.EditItemTitle_itemNumber}" />
+                    <h:outputLabel value="#{bundle.EditItemLabel_itemShortDesc}" for="itemShortDesc" />
+                    <h:inputText id="itemShortDesc" value="#{itemController.selected.itemShortDesc}" title="#{bundle.EditItemTitle_itemShortDesc}" />
+                    <h:outputLabel value="#{bundle.EditItemLabel_itemLongDesc}" for="itemLongDesc" />
+                    <h:inputText id="itemLongDesc" value="#{itemController.selected.itemLongDesc}" title="#{bundle.EditItemTitle_itemLongDesc}" />
+                </h:panelGrid>
+                <h:commandLink action="#{itemController.update}" value="#{bundle.EditItemSaveLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="View" value="#{bundle.EditItemViewLink}" immediate="true"/>
+                <br />
+                <h:commandLink action="#{itemController.prepareList}" value="#{bundle.EditItemShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.EditItemIndexLink}" action="/index" immediate="true" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

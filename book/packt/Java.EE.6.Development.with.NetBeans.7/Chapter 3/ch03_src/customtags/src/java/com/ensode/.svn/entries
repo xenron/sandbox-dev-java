@@ -1,0 +1,19 @@
+8
+
+dir
+212
+svn://new.ensode.net/opt/svnserve/ensode/customtags/src/java/com/ensode
+svn://new.ensode.net/opt/svnserve/ensode
+
+
+
+2008-02-20T01:26:09.180121Z
+212
+dheffelfinger
+
+
+svn:special svn:externals svn:needs-lock
+
+netbeansbook
+dir
+

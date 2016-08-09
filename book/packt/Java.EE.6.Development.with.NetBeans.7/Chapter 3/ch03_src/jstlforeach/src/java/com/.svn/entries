@@ -1,0 +1,19 @@
+8
+
+dir
+209
+svn://new.ensode.net/opt/svnserve/ensode/jstlforeach/src/java/com
+svn://new.ensode.net/opt/svnserve/ensode
+
+
+
+2008-02-10T15:31:24.678562Z
+209
+dheffelfinger
+
+
+svn:special svn:externals svn:needs-lock
+
+ensode
+dir
+

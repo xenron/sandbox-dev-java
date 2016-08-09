@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListCustomerOrderTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+        <h:form styleClass="jsfcrud_list_form">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:outputText escape="false" value="#{bundle.ListCustomerOrderEmpty}" rendered="#{customerOrderController.items.rowCount == 0}"/>
+            <h:panelGroup rendered="#{customerOrderController.items.rowCount > 0}">
+                <h:outputText value="#{customerOrderController.pagination.pageFirstItem + 1}..#{customerOrderController.pagination.pageLastItem + 1}/#{customerOrderController.pagination.itemsCount}"/>&nbsp;
+                <h:commandLink action="#{customerOrderController.previous}" value="#{bundle.Previous} #{customerOrderController.pagination.pageSize}" rendered="#{customerOrderController.pagination.hasPreviousPage}"/>&nbsp;
+                <h:commandLink action="#{customerOrderController.next}" value="#{bundle.Next} #{customerOrderController.pagination.pageSize}" rendered="#{customerOrderController.pagination.hasNextPage}"/>&nbsp;
+                <h:dataTable value="#{customerOrderController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListCustomerOrderTitle_customerOrderId}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.customerOrderId}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListCustomerOrderTitle_orderNumber}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.orderNumber}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListCustomerOrderTitle_orderDescription}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.orderDescription}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="#{bundle.ListCustomerOrderTitle_customerId}"/>
+                        </f:facet>
+                        <h:outputText value="#{item.customerId}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="&nbsp;"/>
+                        </f:facet>
+                        <h:commandLink action="#{customerOrderController.prepareView}" value="#{bundle.ListCustomerOrderViewLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{customerOrderController.prepareEdit}" value="#{bundle.ListCustomerOrderEditLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{customerOrderController.destroy}" value="#{bundle.ListCustomerOrderDestroyLink}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:panelGroup>
+            <br />
+            <h:commandLink action="#{customerOrderController.prepareCreate}" value="#{bundle.ListCustomerOrderCreateLink}"/>
+            <br />
+            <br />
+            <h:commandLink value="#{bundle.ListCustomerOrderIndexLink}" action="/index" immediate="true" />
+        </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
