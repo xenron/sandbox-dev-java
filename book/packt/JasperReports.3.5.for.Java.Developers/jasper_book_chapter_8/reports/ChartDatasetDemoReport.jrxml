@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation=
+              "http://jasperreports.sourceforge.net/jasperreports
+              http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="ChartDatasetDemoReport" leftMargin="5" rightMargin="5">
+    <subDataset name="Aircraft_Registrations">
+        <parameter name="StateParam" class="java.lang.String" />
+        <queryString>
+			<![CDATA[select
+                     a.city, count(*) as aircraft_count
+                     from aircraft a
+                     where a.state=$P{StateParam}
+                     and a.city like 'A%'
+                     group by city]]>
+        </queryString>
+        <field name="aircraft_count" class="java.lang.Integer" />
+        <field name="city" class="java.lang.String" />
+    </subDataset>
+    <queryString>
+		<![CDATA[select distinct state from aircraft where state in ('MD', 'NY', 'VA') order by state]]>
+    </queryString>
+    <field name="state" class="java.lang.String" />
+    <detail>
+        <band height="200">
+            <textField>
+                <reportElement x="0" y="10" width="500" height="20" />
+                <textFieldExpression>
+					<![CDATA["Aircraft registered in " + $F{state}]]>
+                </textFieldExpression>
+            </textField>
+            <barChart>
+                <chart>
+                    <reportElement width="500" y="30" x="0"
+						height="170" />
+                </chart>
+                <categoryDataset>
+                    <dataset>
+                        <datasetRun subDataset="Aircraft_Registrations">
+                            <datasetParameter name="StateParam">
+                                <datasetParameterExpression>
+									<![CDATA[$F{state}]]>
+                                </datasetParameterExpression>
+                            </datasetParameter>
+                        </datasetRun>
+                    </dataset>
+                    <categorySeries>
+                        <seriesExpression>"City"</seriesExpression>
+                        <categoryExpression>
+							<![CDATA[$F{city}]]>
+                        </categoryExpression>
+                        <valueExpression>
+							<![CDATA[$F{aircraft_count}]]>
+                        </valueExpression>
+                    </categorySeries>
+                </categoryDataset>
+                <barPlot isShowTickMarks="true"
+					isShowTickLabels="true">
+                    <plot orientation="Horizontal"/>
+                </barPlot>
+            </barChart>
+        </band>
+    </detail>
+</jasperReport>

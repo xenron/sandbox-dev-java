@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page language="java" contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:useBean id="customer"
+                 class="net.ensode.glassfishbook.javabeanproperties.CustomerBean"
+                 scope="page"></jsp:useBean>
+    <jsp:setProperty name="customer" property="firstName"
+                     param="fNm" />
+    <jsp:setProperty name="customer" property="lastName"
+                     param="lNm" />
+    <html>
+        <head>
+            <title>JavaBean Properties</title>
+        </head>
+        <body>
+            <form>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr>
+                        <td align="right">First Name:&#160;</td>
+                        <td><input type="text" name="firstName"
+                                   value='${customer.firstName}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">Last Name:&#160;</td>
+                        <td><input type="text" name="lastName"
+                                   value='${customer.lastName}'/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Submit"/></td>
+                    </tr>
+                </table>
+            </form>
+        </body>
+    </html>
+</jsp:root>

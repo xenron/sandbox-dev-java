@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customers>
+  <customer>
+    <firstName>Karl</firstName>
+    <lastName>Smith</lastName>
+    <email>karls@nonexistent.org</email>
+  </customer>
+  <customer>
+    <firstName>Jenny</firstName>
+    <lastName>Conte</lastName>
+    <email>jenny@notreal.com</email>
+  </customer>
+  <customer>
+    <firstName>Rhonda</firstName>
+    <lastName>Benedict</lastName>
+  </customer>
+</customers>

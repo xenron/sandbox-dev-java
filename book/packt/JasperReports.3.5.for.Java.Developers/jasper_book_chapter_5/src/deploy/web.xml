@@ -1,0 +1,113 @@
+<!DOCTYPE web-app 
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" 
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+	<servlet>
+		<servlet-name>EmptyDSReportServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.EmptyDSReportServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ParameterReportServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.ParameterReportServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>MapArrayDSReportServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.MapArrayDSReportServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>MapCollectionDSReportServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.MapCollectionDSReportServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>BeanArrayDSReportServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.BeanArrayDSReportServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>BeanCollectionDSReportServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.BeanCollectionDSReportServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>XmlDSReportServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.XmlDSReportServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>CsvDSReportServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.CsvDSReportServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmptyDSReportServlet</servlet-name>
+		<url-pattern>/emptyDSReport</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ParameterReportServlet</servlet-name>
+		<url-pattern>/paramReport</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+		<servlet-name>CustomDataSourceReportServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.CustomDataSourceReportServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MapArrayDSReportServlet</servlet-name>
+		<url-pattern>/mapArrayDSReportServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>MapCollectionDSReportServlet</servlet-name>
+		<url-pattern>/mapCollectionDSReportServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>BeanArrayDSReportServlet</servlet-name>
+		<url-pattern>/beanArrayDSReportServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>BeanCollectionDSReportServlet</servlet-name>
+		<url-pattern>/beanCollectionDSReportServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>XmlDSReportServlet</servlet-name>
+		<url-pattern>/xmlDSReportServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>CsvDSReportServlet</servlet-name>
+		<url-pattern>/csvDSReportServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet-mapping>
+		<servlet-name>CustomDataSourceReportServlet</servlet-name>
+		<url-pattern>/customDSReportServlet</url-pattern>
+	</servlet-mapping>
+
+</web-app>

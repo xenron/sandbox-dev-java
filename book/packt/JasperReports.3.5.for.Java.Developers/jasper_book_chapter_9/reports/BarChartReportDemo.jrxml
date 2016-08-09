@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation=
+              "http://jasperreports.sourceforge.net/jasperreports
+              http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="BarChartReportDemo" leftMargin="5" rightMargin="5">
+    <queryString>
+		<![CDATA[(select a.city, am.model from aircraft a, aircraft_models am where city='NEW YORK' and state='NY' and a.aircraft_model_code = am.aircraft_model_code order by model)
+                 UNION ALL
+                 (select a.city, am.model from aircraft a, aircraft_models am where city='WASHINGTON' and state='DC' and a.aircraft_model_code = am.aircraft_model_code order by model)]]>
+    </queryString>
+    <field name="city" class="java.lang.String" />
+    <field name="model" class="java.lang.String" />
+    <variable name="totalAircraft" class="java.lang.Integer"
+		calculation="Count" resetType="Group" resetGroup="modelGroup">
+        <variableExpression>
+			<![CDATA[$F{model}]]>
+        </variableExpression>
+        <initialValueExpression>
+			<![CDATA[new java.lang.Integer(0)]]>
+        </initialValueExpression>
+    </variable>
+    <group name="modelGroup">
+        <groupExpression>
+			<![CDATA[$F{model}]]>
+        </groupExpression>
+    </group>
+    <summary>
+        <band height="750">
+			<!-- Start 2D Bar Chart -->
+            <barChart>
+                <chart evaluationTime="Report">
+                    <reportElement x="0" y="0" width="555" height="350" />
+                </chart>
+                <categoryDataset>
+                    <dataset incrementType="None" />
+                    <categorySeries>
+                        <seriesExpression>
+							<![CDATA[$F{model}]]>
+                        </seriesExpression>
+                        <categoryExpression>
+							<![CDATA[$F{city}]]>
+                        </categoryExpression>
+                        <valueExpression>
+							<![CDATA[$V{totalAircraft}]]>
+                        </valueExpression>
+                    </categorySeries>
+                </categoryDataset>
+                <barPlot isShowTickMarks="false">
+                    <plot />
+                </barPlot>
+            </barChart>
+			<!-- End 2D Bar Chart -->
+
+			<!-- Start 3D Bar Chart -->
+            <bar3DChart>
+                <chart evaluationTime="Report" isShowLegend="false">
+                    <reportElement x="0" y="375" width="555"
+						height="350" />
+                </chart>
+                <categoryDataset>
+                    <dataset incrementType="None" />
+                    <categorySeries>
+                        <seriesExpression>
+							<![CDATA[$F{model}]]>
+                        </seriesExpression>
+                        <categoryExpression>
+							<![CDATA[$F{city}]]>
+                        </categoryExpression>
+                        <valueExpression>
+							<![CDATA[$V{totalAircraft}]]>
+                        </valueExpression>
+                    </categorySeries>
+                </categoryDataset>
+                <bar3DPlot>
+                    <plot />
+                </bar3DPlot>
+            </bar3DChart>
+			<!-- End 3D Bar Chart -->
+        </band>
+    </summary>
+</jasperReport>

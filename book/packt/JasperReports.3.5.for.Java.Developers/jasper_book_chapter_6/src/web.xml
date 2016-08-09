@@ -1,0 +1,169 @@
+<!DOCTYPE web-app 
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" 
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+	<display-name>
+		Enterprise Reporting With JasperReports Examples
+	</display-name>
+
+	<description>
+		Each servlet generates a report and displays it on the browser.
+	</description>
+
+	<servlet>
+		<servlet-name>TextFieldStretchDemoServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.TextFieldStretchDemoServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>DataGroupingDemoServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.DataGroupingDemoServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>MultipleColumnDemoServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.MultipleColumnDemoServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ReportExpressionsDemoServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.ReportExpressionsDemoServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ReportVariablesDemoServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.ReportVariablesDemoServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>VariableCalculationDemoServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.VariableCalculationDemoServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>PositionTypeDemoServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.PositionTypeDemoServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>IsPrintRepeatedValuesDemoServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.IsPrintRepeatedValuesDemoServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>FrameDemoServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.FrameDemoServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>AircraftCityReportServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.AircraftCityReportServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>AircraftStateReportServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.AircraftStateReportServlet
+		</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>ReportStylesDemoServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.ReportStylesDemoServlet
+		</servlet-class>
+	</servlet>
+
+    <servlet>
+		<servlet-name>ReportTemplatesDemoServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.ReportTemplatesDemoServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>TextFieldStretchDemoServlet</servlet-name>
+		<url-pattern>/textFieldStretchDemoServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>DataGroupingDemoServlet</servlet-name>
+		<url-pattern>/dataGroupingDemoServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>MultipleColumnDemoServlet</servlet-name>
+		<url-pattern>/multipleColumnDemoServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ReportExpressionsDemoServlet</servlet-name>
+		<url-pattern>/reportExpressionsDemoServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ReportVariablesDemoServlet</servlet-name>
+		<url-pattern>/reportVariablesDemoServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>VariableCalculationDemoServlet</servlet-name>
+		<url-pattern>/variableCalculationDemoServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>PositionTypeDemoServlet</servlet-name>
+		<url-pattern>/positionTypeDemoServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>IsPrintRepeatedValuesDemoServlet</servlet-name>
+		<url-pattern>/isPrintRepeatedValuesDemoServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>FrameDemoServlet</servlet-name>
+		<url-pattern>/frameDemoServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AircraftCityReportServlet</servlet-name>
+		<url-pattern>/aircraftCityReportServlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AircraftStateReportServlet</servlet-name>
+		<url-pattern>/aircraftStateReportServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ReportStylesDemoServlet</servlet-name>
+		<url-pattern>/reportStylesDemoServlet</url-pattern>
+	</servlet-mapping>
+
+    <servlet-mapping>
+		<servlet-name>ReportTemplatesDemoServlet</servlet-name>
+		<url-pattern>/reportTemplatesDemoServlet</url-pattern>
+	</servlet-mapping>
+</web-app>

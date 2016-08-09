@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="BackgroundDemoReport" >
+    <style name="centeredText" hAlign="Center" vAlign="Middle" />
+    <style name="boldCentered" style="centeredText" isBold="true" />
+    <style name="backgroundStyle" style="boldCentered"
+		fontName="Helvetica" pdfFontName="Helvetica-Bold"
+		forecolor="lightGray" fontSize="90"/>
+    <background>
+        <band height="782">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="782"
+					style="backgroundStyle" mode="Transparent" />
+                <textElement rotation="None"/>
+                <text>
+					<![CDATA[SAMPLE]]>
+                </text>
+            </staticText>
+        </band>
+    </background>
+    <title>
+        <band height="60">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="60"
+					style="boldCentered" />
+                <text>
+					<![CDATA[Report Background Demo]]>
+                </text>
+            </staticText>
+        </band>
+    </title>
+    <detail>
+        <band height="600">
+            <staticText>
+                <reportElement x="0" y="300" width="555" height="60"
+					mode="Transparent" style="centeredText" />
+                <text>
+					<![CDATA[This report demonstrates how to set the report background.]]>
+                </text>
+            </staticText>
+        </band>
+    </detail>
+</jasperReport>

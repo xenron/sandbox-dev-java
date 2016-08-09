@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AircraftData>
+	<aircraft>
+		<tail_num>N263Y</tail_num>
+		<aircraft_serial>T-11</aircraft_serial>
+		<aircraft_model>39 ROSCOE TRNR RACER</aircraft_model>
+		<engine_model>R1830 SERIES</engine_model>
+	</aircraft>
+	<aircraft>
+		<tail_num>N4087X</tail_num>
+		<aircraft_serial>BA100-163</aircraft_serial>
+		<aircraft_model>BRADLEY AEROBAT</aircraft_model>
+		<engine_model>R2800 SERIES</engine_model>
+	</aircraft>
+	<aircraft>
+		<tail_num>N43JE</tail_num>
+		<aircraft_serial>HAYABUSA 1</aircraft_serial>
+		<aircraft_model>NAKAJIMA KI-43 IIIA</aircraft_model>
+		<engine_model>R1830 SERIES</engine_model>
+	</aircraft>
+	<aircraft>
+		<tail_num>N912S</tail_num>
+		<aircraft_serial>9973CC</aircraft_serial>
+		<aircraft_model>PA18-150</aircraft_model>
+		<engine_model>R-1820 SER</engine_model>
+	</aircraft>
+</AircraftData>

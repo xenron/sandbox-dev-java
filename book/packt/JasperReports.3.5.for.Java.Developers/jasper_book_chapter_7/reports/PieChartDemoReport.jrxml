@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<jasperReport
+   xmlns="http://jasperreports.sourceforge.net/jasperreports"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
+                       http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+   name="PieChartDemoReport">
+    <queryString>
+		<![CDATA[select am.model from aircraft a, aircraft_models am 
+		         where city='WASHINGTON' and state='DC' and 
+		         a.aircraft_model_code = am.aircraft_model_code
+		         order by model]]>
+    </queryString>
+    <field name="model" class="java.lang.String" />
+    <variable name="totalAircraft" class="java.lang.Integer"
+		calculation="Count" resetType="Group" resetGroup="modelGroup">
+        <variableExpression>
+			<![CDATA[$F{model}]]>
+        </variableExpression>
+        <initialValueExpression>
+			<![CDATA[new java.lang.Integer(0)]]>
+        </initialValueExpression>
+    </variable>
+    <group name="modelGroup">
+        <groupExpression>
+			<![CDATA[$F{model}]]>
+        </groupExpression>
+    </group>
+    <summary>
+        <band height="750">
+		    <!-- Start 2D Pie Chart -->
+            <pieChart>
+                <chart evaluationTime="Report">
+                    <reportElement x="135" y="0" width="270" height="350" />
+                </chart>
+                <pieDataset>
+                    <dataset incrementType="None" />
+                    <keyExpression>
+						<![CDATA[$F{model}]]>
+                    </keyExpression>
+                    <valueExpression>
+						<![CDATA[$V{totalAircraft}]]>
+                    </valueExpression>
+                </pieDataset>
+                <piePlot>
+                    <plot/>
+                </piePlot>
+            </pieChart>
+			<!-- End 2D Pie Chart -->
+			
+			<!-- Start 3D Pie Chart -->
+            <pie3DChart>
+                <chart evaluationTime="Report" isShowLegend="false">
+                    <reportElement x="125" y="375" width="300" height="200" />
+                </chart>
+                <pieDataset>
+                    <dataset incrementType="None" />
+                    <keyExpression>
+						<![CDATA[$F{model}]]>
+                    </keyExpression>
+                    <valueExpression>
+						<![CDATA[$V{totalAircraft}]]>
+                    </valueExpression>
+                </pieDataset>
+                <pie3DPlot>
+                    <plot/>
+                </pie3DPlot>
+            </pie3DChart>
+			<!-- End 3D Pie Chart -->
+        </band>
+    </summary>
+</jasperReport>

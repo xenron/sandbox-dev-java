@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
+              http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="ScriptletVariableModificationReport"
+              scriptletClass=
+              "net.ensode.jasperbook.ReportVariableModificationScriptlet">
+    <variable name="someVar" class="java.lang.String">
+        <initialValueExpression>
+			<![CDATA["This is the initial variable value."]]>
+        </initialValueExpression>
+    </variable>
+    <title>
+        <band height="30">
+            <textField>
+                <reportElement width="555" height="30" x="0" y="0" />
+                <textFieldExpression>
+					<![CDATA[$V{someVar}]]>
+                </textFieldExpression>
+            </textField>
+        </band>
+    </title>
+</jasperReport>

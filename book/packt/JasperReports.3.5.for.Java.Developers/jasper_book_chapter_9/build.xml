@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+
+<project name="JasperReports Chapter 9" default="compile" basedir=".">
+
+    <property environment="env" />
+    <property file="ant.properties" />
+
+    <path id="classpath">
+        <pathelement path="${jasperreports.lib.jar}" />
+        <pathelement path="${tomcat.lib.jar}" />
+        <fileset dir="${jasperreports.lib.dir}">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+
+    <target name="clean" description="Clears all generated files, including build directories, distributables, and documentation.">
+        <delete dir="${build.dir}" />
+        <delete dir="${war.dir}" />
+        <delete includeEmptyDirs="true">
+          <fileset dir="${reports.dir}" includes="**/*html*/**" />
+        </delete>
+        <delete>
+            <fileset dir="${reports.dir}">
+                <include name="**/*.jasper" />
+            </fileset>
+            <fileset dir="${reports.dir}">
+                <include name="**/*.jrprint" />
+            </fileset>
+            <fileset dir="${reports.dir}">
+                <include name="**/*.csv" />
+            </fileset>
+            <fileset dir="${reports.dir}">
+                <include name="**/*.jrpxml" />
+            </fileset>
+            <fileset dir="${reports.dir}">
+                <include name="**/*.ods" />
+            </fileset>
+            <fileset dir="${reports.dir}">
+                <include name="**/*.odt" />
+            </fileset>
+            <fileset dir="${reports.dir}">
+                <include name="**/*.pdf" />
+            </fileset>
+            <fileset dir="${reports.dir}">
+                <include name="**/*.rtf" />
+            </fileset>
+            <fileset dir="${reports.dir}">
+                <include name="**/*.txt" />
+            </fileset>
+            <fileset dir="${reports.dir}">
+                <include name="**/*.xls" />
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="compileReports" description="Compiles the JRXML templates into Jasper files.">
+        <taskdef name="jrc" classname="net.sf.jasperreports.ant.JRAntCompileTask">
+            <classpath refid="classpath" />
+        </taskdef>
+        <jrc>
+            <src>
+                <fileset dir="reports">
+                    <include name="**/*.jrxml" />
+                </fileset>
+            </src>
+            <classpath refid="classpath" />
+        </jrc>
+    </target>
+
+    <target name="viewDesignXML" description="Launches the design viewer to preview the XML report design.">
+        <java classname="net.sf.jasperreports.view.JasperDesignViewer" fork="true">
+            <arg value="-XML" />
+            <arg value="-F${reports.dir}/${rpt}.jrxml" />
+            <classpath refid="classpath" />
+        </java>
+    </target>
+
+    <target name="viewDesign" description="Launches the design viewer to preview the compiled report design.">
+        <java classname="net.sf.jasperreports.view.JasperDesignViewer" fork="true">
+            <arg value="-F${reports.dir}/${rpt}.jasper" />
+            <classpath refid="classpath" />
+        </java>
+    </target>
+
+    <target name="view" description="Launches the report viewer to preview the report stored in the .jrprint file.">
+        <java classname="net.sf.jasperreports.view.JasperViewer" fork="true">
+            <arg value="-F${compiled.reports.dir}/${rpt}.jrprint" />
+            <classpath refid="classpath" />
+        </java>
+    </target>
+
+    <target name="compile" depends="compileReports" description="Compiles the application and arranges resources into a web archive hierarchy.">
+        <mkdir dir="${build.dir}/classes" />
+
+        <javac srcdir="${src.dir}" destdir="${build.dir}/classes" debug="${debug}" deprecation="yes">
+            <classpath>
+                <pathelement path="${servlet.lib.jar}" />
+                <pathelement path="${jasperreports.lib.jar}" />
+                <pathelement path="${tomcat.lib.jar}" />
+            </classpath>
+        </javac>
+        <copy todir="${build.dir}/reports">
+            <fileset dir="${reports.dir}" includes="**/*.jasper" />
+        </copy>
+        <copy todir="${build.dir}/reports">
+            <fileset dir="${reports.dir}" includes="**/*.properties" />
+        </copy>
+    </target>
+    <target name="war" depends="compile" description="Builds a web archive of the application.">
+        <mkdir dir="${war.dir}" />
+        <mkdir dir="${war.dir}/WEB-INF/classes" />
+        <mkdir dir="${war.dir}/WEB-INF/lib" />
+		<!-- JasperReports library -->
+        <copy todir="${war.dir}/WEB-INF/lib" file="${jasperreports.lib.jar}" />
+        <copy todir="${war.dir}/WEB-INF/lib" file="${jasperreports.lib.dir}/jcommon-1.0.15.jar" />
+        <copy todir="${war.dir}/WEB-INF/lib" file="${jasperreports.lib.dir}/jfreechart-1.0.12.jar" />
+        <copy todir="${war.dir}/WEB-INF/lib" file="${jasperreports.lib.dir}/commons-logging-1.0.2.jar" />
+        <copy todir="${war.dir}/WEB-INF/lib" file="${jasperreports.lib.dir}/commons-collections-2.1.jar" />
+        <copy todir="${war.dir}/WEB-INF/classes/net/ensode/jasperbook" file="${build.dir}/classes/net/ensode/jasperbook/HtmlReportServlet.class" />
+        <copy todir="${war.dir}/reports" file="reports/BarChartReportDemo.jrprint"/>
+        <copy todir="${war.dir}/WEB-INF" file="${src.deploy.dir}/web.xml"/>
+        <jar jarfile="${warfile}" basedir="${war.dir}" />
+    </target>
+    <target name="fillReport" description="Fills reports that don't require a datasource.">
+        <java classname="net.ensode.jasperbook.EmptyDSReportFill" fork="true">
+            <arg value="${rpt}" />
+            <classpath refid="classpath" />
+            <classpath>
+                <pathelement path="${build.dir}/classes" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="fillDbReport" description="Fills reports that use the Flight Stats Database.">
+        <java classname="net.ensode.jasperbook.DbConnectionReportFill" fork="true">
+            <arg value="${rpt}" />
+            <classpath refid="classpath" />
+            <classpath>
+                <pathelement location="${mysql.jdbc.jar}"/>
+                <pathelement path="${build.dir}/classes" />
+            </classpath>
+        </java>
+    </target>
+    <target name="export" description="Exports Report to PDF, CSV, XLS, etc.">
+        <java classname="net.ensode.jasperbook.${class}" fork="true">
+            <arg value="${rpt}" />
+            <classpath refid="classpath" />
+            <classpath>
+                <pathelement location="${mysql.jdbc.jar}"/>
+                <pathelement path="${build.dir}/classes" />
+            </classpath>
+        </java>
+    </target>
+</project>

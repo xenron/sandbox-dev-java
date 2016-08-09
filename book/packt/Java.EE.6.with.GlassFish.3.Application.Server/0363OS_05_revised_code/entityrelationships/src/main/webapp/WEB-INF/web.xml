@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<servlet>
+		<servlet-name>OneToOneRelationshipDemoServlet</servlet-name>
+		<servlet-class>
+			net.ensode.glassfishbook.entityrelationships.OneToOneRelationshipDemoServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>OneToManyRelationshipDemoServlet</servlet-name>
+		<servlet-class>
+			net.ensode.glassfishbook.entityrelationships.OneToManyRelationshipDemoServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>ManyToManyRelationshipDemoServlet</servlet-name>
+		<servlet-class>
+			net.ensode.glassfishbook.entityrelationships.ManyToManyRelationshipDemoServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>OneToOneRelationshipDemoServlet</servlet-name>
+		<url-pattern>/onetoonerelationshipdemo</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>OneToManyRelationshipDemoServlet</servlet-name>
+		<url-pattern>/onetomanyrelationshipdemo</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ManyToManyRelationshipDemoServlet</servlet-name>
+		<url-pattern>/manytomanyrelationshipdemo</url-pattern>
+	</servlet-mapping>
+</web-app>

@@ -1,0 +1,10 @@
+<project name="calculatorserviceclient" default="wsimport" basedir=".">
+  <target name="wsimport">
+    <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+     <classpath path="/home/heffel/sges-v3/glassfish/modules/webservices-osgi.jar"/>
+     <classpath path="/home/heffel/sges-v3/glassfish/modules/jaxb-osgi.jar"/>
+     <classpath path="/home/heffel/sges-v3/glassfish/lib/javaee.jar"/>
+    </taskdef> 
+     <wsimport wsdl="http://localhost:8080/fileattachmentservice/FileAttachmentService?wsdl" xendorsed="true"/>
+  </target> 
+</project>

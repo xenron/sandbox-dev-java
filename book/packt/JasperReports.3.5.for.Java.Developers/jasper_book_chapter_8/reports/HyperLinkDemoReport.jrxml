@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation=
+              "http://jasperreports.sourceforge.net/jasperreports
+              http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="HyperLinkDemoReport" leftMargin="5" rightMargin="5">
+    <title>
+        <band height="60">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="30" />
+                <text>
+					<![CDATA[In a rush?]]>
+                </text>
+            </staticText>
+            <textField hyperlinkType="LocalAnchor">
+                <reportElement x="0" y="30" width="555" height="30" />
+                <textFieldExpression>
+					<![CDATA["Go to summary section."]]>
+                </textFieldExpression>
+                <hyperlinkAnchorExpression>
+					<![CDATA["summary_section"]]>
+                </hyperlinkAnchorExpression>
+            </textField>
+        </band>
+    </title>
+    <detail>
+        <band height="60">
+            <textField isStretchWithOverflow="true">
+                <reportElement x="0" y="0" width="555" height="30" />
+                <textFieldExpression>
+					<![CDATA["This is the main report area, if this area had " + 
+					         "a lot of text and the person reading " + 
+					         "the report did not have time to read it all, " + 
+					         "we can direct them to the summary section " + 
+					         "by using a hyperlink. Let's add some more text " +
+					         "to make this area look more realistic. Boy, " + 
+					         "if I was reading this report I would be bored " +
+					         "by now. Perhaps reading only the summary would " +
+					         "be a good idea? Why don't we do just that?"]]>
+                </textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+    <summary>
+        <band height="60">
+            <textField isStretchWithOverflow="true">
+                <reportElement x="0" y="0" width="555" height="30" />
+                <textFieldExpression>
+					<![CDATA["This is the summary section. It contains less text so that the person reading the report can get the gist of the report data."]]>
+                </textFieldExpression>
+                <anchorNameExpression>
+					<![CDATA["summary_section"]]>
+                </anchorNameExpression>
+            </textField>
+        </band>
+    </summary>
+</jasperReport>

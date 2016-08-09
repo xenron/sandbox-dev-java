@@ -1,0 +1,9 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <resource-ref>
+    <res-ref-name>jdbc/__CustomerDBPool</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+</web-app>

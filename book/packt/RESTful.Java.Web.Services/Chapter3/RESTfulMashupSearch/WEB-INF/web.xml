@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+  <!-- Semantic Parser -->
+  <servlet>
+    <description>Parse entry and get cloud tag.</description>
+    <display-name>MySemanticParse</display-name>
+    <servlet-name>MySemanticParse</servlet-name>
+    <servlet-class>MySemanticParse</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>MySemanticParse</servlet-name>
+    <url-pattern>/servlet/MySemanticParse</url-pattern>
+  </servlet-mapping>
+
+  <!-- Search Twitter -->
+  <servlet>
+    <description>Search Twitter.</description>
+    <display-name>MyTwitterSearch</display-name>
+    <servlet-name>MyTwitterSearch</servlet-name>
+    <servlet-class>MyTwitterSearch</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>MyTwitterSearch</servlet-name>
+    <url-pattern>/servlet/MyTwitterSearch</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Search Yahoo -->
+  <servlet>
+    <description>Search Yahoo.</description>
+    <display-name>MyYahooSearch</display-name>
+    <servlet-name>MyYahooSearch</servlet-name>
+    <servlet-class>MyYahooSearch</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>MyYahooSearch</servlet-name>
+    <url-pattern>/servlet/MyYahooSearch</url-pattern>
+  </servlet-mapping>  
+  
+  <!-- Search Yahoo Images -->
+  <servlet>
+    <description>Search Yahoo Images.</description>
+    <display-name>MyYahooImageSearch</display-name>
+    <servlet-name>MyYahooImageSearch</servlet-name>
+    <servlet-class>MyYahooImageSearch</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>MyYahooImageSearch</servlet-name>
+    <url-pattern>/servlet/MyYahooImageSearch</url-pattern>
+  </servlet-mapping>    
+
+  <!-- Search Google -->
+  <servlet>
+    <description>Search Google.</description>
+    <display-name>MyGoogleSearch</display-name>
+    <servlet-name>MyGoogleSearch</servlet-name>
+    <servlet-class>MyGoogleSearch</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>MyGoogleSearch</servlet-name>
+    <url-pattern>/servlet/MyGoogleSearch</url-pattern>
+  </servlet-mapping>  
+ 
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+</web-app>

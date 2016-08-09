@@ -1,0 +1,187 @@
+<html>
+
+<head>
+<title>RESTful Java Web Services - RESTful Mashup Search</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="prototype.js"></script>
+<script type="text/javascript">
+function doClear() {
+    // Clear form
+    document.searchForm.title.value = "";
+    document.searchForm.entry.value = "";
+    
+    // Clear result pannels
+    document.getElementById("myCloudResult").innerHTML = "&nbsp;";
+    document.getElementById("myYahooResult").innerHTML = "";
+    document.getElementById("myGoogleResult").innerHTML = "";
+    document.getElementById("myTwitterResult").innerHTML = "";
+    document.getElementById("myImageResult").innerHTML = "";
+}
+
+function doSemanticParse() {
+    // Validate input first
+    if (document.searchForm.entry.value == "") {
+        alert("Entry can't be empty.");
+        return;
+    }
+    
+    // Clear result pannels
+    document.getElementById("myGoogleResult").innerHTML = "";
+    document.getElementById("myTwitterResult").innerHTML = "";
+    
+    // Semantic parse          
+    var entry = escape(document.searchForm.entry.value);  
+    var params = "entry="  + entry;
+    new Ajax.Updater(myCloudResult, '/RESTfulMashupSearch/servlet/MySemanticParse', {method: 'post', parameters: params, asynchronous:false});
+       
+    // Note that MySemanticParse sets a value in the session
+    // for these services to search for top cloud
+    doGoogleSearch();
+    doTwitterSearch();   
+}
+
+function handleOnTitleBlur() { 
+    var title = escape(document.searchForm.title.value);
+    if (title != "") { 
+        doYahooSearch(title);
+        doYahooImageSearch(title);
+    }
+}    
+    
+function doGoogleSearch() {      
+    // new Ajax.Updater(myGoogleResult, '/RESTfulMashupSearch/servlet/MyGoogleSearch', {method: 'get'});
+    new Ajax.Request('/RESTfulMashupSearch/servlet/MyGoogleSearch', {
+        method: 'get',
+        onSuccess: function(transport) {
+            // eval() is used to parse the response
+            var googleObject = eval('(' + transport.responseText + ')');
+            
+            // Update panel
+            var html = "<a href=" + googleObject.responseData.results[0].unescapedUrl + " target=_gSearch>" + googleObject.responseData.results[0].titleNoFormatting + "</a><br/>" + googleObject.responseData.results[0].content + "<hr size=1 noshade color=#CFCFCF>";
+            html = html + "<a href=" + googleObject.responseData.results[1].unescapedUrl + " target=_gSearch>" + googleObject.responseData.results[1].titleNoFormatting + "</a><br/>" + googleObject.responseData.results[1].content + "<hr size=1 noshade color=#CFCFCF>";
+            html = html + "<a href=" + googleObject.responseData.results[2].unescapedUrl + " target=_gSearch>" + googleObject.responseData.results[2].titleNoFormatting + "</a><br/>" + googleObject.responseData.results[2].content;            
+            
+            document.getElementById("myGoogleResult").innerHTML = html; 
+        }
+    });
+}
+
+function doYahooSearch(value) {
+    // Clear result pannel
+    document.getElementById("myYahooResult").innerHTML = "";           
+    
+    // Search    
+    // new Ajax.Updater(myYahooResult, '/RESTfulMashupSearch/servlet/MyYahooSearch', {method: 'get', parameters: params});
+    new Ajax.Request('/RESTfulMashupSearch/servlet/MyYahooSearch?query=' + value, {
+        method: 'get',        
+        onSuccess: function(transport) {               
+            var yahooObject = eval('(' + transport.responseText + ')');            
+              
+            // Update panel
+            var html = "<a href=" + yahooObject.ResultSet.Result[0].Url + " target=_yahoo>" + yahooObject.ResultSet.Result[0].Title + "</a><br/>" + yahooObject.ResultSet.Result[0].Summary + "<hr size=1 noshade color=#CFCFCF>";
+            html = html + "<a href=" + yahooObject.ResultSet.Result[1].Url + " target=_yahoo>" + yahooObject.ResultSet.Result[1].Title + "</a><br/>" + yahooObject.ResultSet.Result[1].Summary + "<hr size=1 noshade color=#CFCFCF>"; 
+            html = html + "<a href=" + yahooObject.ResultSet.Result[2].Url + " target=_yaoo>" + yahooObject.ResultSet.Result[2].Title + "</a><br/>" + yahooObject.ResultSet.Result[2].Summary;
+            
+            document.getElementById("myYahooResult").innerHTML = html;           
+        }
+    });
+}
+
+function doYahooImageSearch(value) {
+    // Clear result pannel
+    document.getElementById("myImageResult").innerHTML = "";           
+    
+    // Search    
+    new Ajax.Request('/RESTfulMashupSearch/servlet/MyYahooImageSearch?query=' + value, {
+        method: 'get',
+        onSuccess: function(transport) {                          
+            var yahooObject = eval('(' + transport.responseText + ')');            
+
+            // Update panel
+            var html = "";
+            for (i = 0; i<10; i++) {
+                html = html + "<a href=" + yahooObject.ResultSet.Result[i].Url + " target=_yahoo><img src=" + yahooObject.ResultSet.Result[i].Thumbnail.Url + "></a>";
+            }
+                //html = html + "<a href=" + yahooObject.ResultSet.Result[1].Url + " target=_yahoo><img src=" + yahooObject.ResultSet.Result[1].Thumbnail.Url + "></a><br/>" + yahooObject.ResultSet.Result[1].Summary + "<hr size=1 noshade color=#CFCFCF>"; 
+                //html = html + "<a href=" + yahooObject.ResultSet.Result[2].Url + " target=_yaoo><img src=" + yahooObject.ResultSet.Result[2].Thumbnail.Url + "></a><br/>" + yahooObject.ResultSet.Result[2].Summary;
+            
+            document.getElementById("myImageResult").innerHTML = html;
+        }
+    });
+}
+
+function doTwitterSearch() {
+    // LOOK: http://www.prototypejs.org/api/ajax/request
+    // http://search.twitter.com/search.atom?q=java%20development
+    // new Ajax.Updater(myTwitterResult, '/RESTfulMashupSearch/servlet/MyTwitterSearch', {method: 'get'});
+    new Ajax.Request('/RESTfulMashupSearch/servlet/MyTwitterSearch', {
+        method: 'get',
+        onSuccess: function(transport) {                        
+            var twitterObject = eval('(' + transport.responseText + ')');
+            
+            // Update panel
+            var html = "<a href=http://twitter.com/" + twitterObject.results[0].from_user + " target=_twitter>" + twitterObject.results[0].from_user + "</a>: " + twitterObject.results[0].text + "<hr size=1 noshade color=#CFCFCF>";
+            html = html + "<a href=http://twitter.com/" + twitterObject.results[1].from_user + " target=_twitter>" + twitterObject.results[1].from_user + "</a>: " + twitterObject.results[1].text + "<hr size=1 noshade color=#CFCFCF>";
+            html = html + "<a href=http://twitter.com/" + twitterObject.results[2].from_user + " target=_twitter>" + twitterObject.results[2].from_user + "</a>: " +  twitterObject.results[2].text;
+            
+            document.getElementById("myTwitterResult").innerHTML = html;       
+        }
+    });
+}
+</script>
+</head>
+
+<body class="content">
+<div class="semanticJournal">
+<h1>RESTful Mashup: Semantic Search</h1>
+
+<table border="0" cellpadding="4" cellspacing="0" width="440" class="content">
+<form name="searchForm" method="GET">
+<tr><td>
+<b>Title</b><br />
+<input type="text" name="title" class="formTextField" onBlur="handleOnTitleBlur(); return false;"></td></tr>
+<tr><td width="80%">
+<b>Entry</b><br />
+<textarea name="entry" class="formTextArea" rows="4"></textarea></td></tr>
+<tr><td align="right">
+<input type="button" value="Parse Entry" onClick="doSemanticParse();">
+<!--  <input type="button" value="Save Entry" onClick="doSearch()"> -->
+<input type="button" value="Clear" onClick="doClear()"> 
+</td></tr>
+</form>
+</table>
+
+<br />
+<b>Tag Cloud (links open delicious.com bookmarks)</b>
+<div class="cloud">
+<div id="myCloudResult">&nbsp;</div>
+</div>
+
+<p>&nbsp;</p>
+<b>Image search for top <cite>cloud</cite> tag.</b>
+<div class="imageResult">
+<div id="myImageResult"></div>
+</div>
+
+</div>
+
+<div class="mainResult">
+<b>Yahoo search for <cite>Title</cite></b><br/>
+<div class="yahooResult">
+<div id="myYahooResult"></div>
+</div>
+
+<p>&nbsp;</p>
+<b>Google search for top <cite>cloud</cite> tag.</b><br/>
+<div class="googleResult">
+<div id="myGoogleResult"></div>
+</div>
+
+<p>&nbsp;</p>
+<b>Twitter search for top <cite>cloud</cite> tag.</b>
+<div class="twitterResult">
+<div id="myTwitterResult"></div>
+</div>
+</div>
+</body>
+</html>

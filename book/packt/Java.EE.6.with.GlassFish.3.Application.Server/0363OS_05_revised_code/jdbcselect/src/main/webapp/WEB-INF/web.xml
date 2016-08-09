@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<servlet>
+		<servlet-name>JDBCSelectServlet</servlet-name>
+		<servlet-class>
+			net.ensode.glassfishbook.jdbcselect.JDBCSelectServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>JDBCSelectServlet2</servlet-name>
+		<servlet-class>
+			net.ensode.glassfishbook.jdbcselect.JDBCSelectServlet2
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>JDBCSelectServlet</servlet-name>
+		<url-pattern>/jdbcselectservlet</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>JDBCSelectServlet2</servlet-name>
+		<url-pattern>/jdbcselectservlet2</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>jdbcselectservlet</welcome-file>
+	</welcome-file-list>
+</web-app>

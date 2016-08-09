@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+
+<project name="JasperReports For Java Developers Chapter 3" default="war" basedir="."  >
+    <property file="ant.properties" />
+    <property name="class.name" value="net.ensode.jasperbook.FirstReportFill"/>
+    <property name="rpt" value="FirstReport" />
+    <path id="classpath">
+        <pathelement location="build/WEB-INF/classes"/>
+        <pathelement path="${jasperreports.lib.jar}" />
+        <fileset dir="${jasperreports.lib.dir}">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+
+    <target name="clean" description="Clears all generated files, including build directories, distributables, and documentation.">
+        <delete dir="${build.dir}" />
+        <delete dir="${war.dir}" />
+        <delete>
+            <fileset dir="${reports.dir}">
+                <include name="**/*.jasper" />
+            </fileset>
+            <fileset dir="${reports.dir}">
+                <include name="**/*.jrprint" />
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="compileReports" description="Compiles the JRXML templates into Jasper files." >
+        <taskdef name="jrc" classname="net.sf.jasperreports.ant.JRAntCompileTask">
+            <classpath refid="classpath" />
+        </taskdef>
+        
+
+        <jrc>
+            <src>
+                <fileset dir="${reports.dir}">
+                    <include name="**/*.jrxml" />
+                </fileset>
+            </src>
+            <classpath refid="classpath" />
+        </jrc>
+    </target>
+
+    <target name="viewDesignXML" description="Launches the design viewer to preview the XML report design." >
+        <java classname="net.sf.jasperreports.view.JasperDesignViewer" fork="true">
+            <arg value="-XML" />
+            <arg value="-F${reports.dir}/${rpt}.jrxml" />
+            <classpath refid="classpath" />
+        </java>
+    </target>
+
+    <target name="viewDesign" description="Launches the design viewer to preview the compiled report design." >
+        <java classname="net.sf.jasperreports.view.JasperDesignViewer" fork="true">
+            <arg value="-F${reports.dir}/${rpt}.jasper" />
+            <classpath refid="classpath" />
+        </java>
+    </target>
+
+    <target name="fill" description="Fills the compiled report design with data and produces the .jrprint file.">
+        <java classname="${class.name}">
+            <arg value="fill"/>
+            <classpath refid="classpath"/>
+        </java>
+    </target>
+
+
+    <target name="view" description="Launches the report viewer to preview the report stored in the .jrprint file." >
+        <java classname="net.sf.jasperreports.view.JasperViewer" fork="true">
+            <arg value="-F${reports.dir}/${rpt}.jrprint" />
+            <classpath refid="classpath" />
+        </java>
+    </target>
+
+    <target name="compile" depends="compileReports" description="Compiles the application and arranges resources into a web archive hierarchy." >
+        <mkdir dir="${build.dir}/WEB-INF/classes" />
+        <mkdir dir="${build.dir}/WEB-INF/lib" />
+		<!-- JasperReports library -->
+        <copy todir="${build.dir}/WEB-INF/lib" file="${jasperreports.lib.jar}" />
+		<!-- iText is needed when exporting to PDF -->
+        <copy todir="${build.dir}/WEB-INF/lib" file="${itext.lib.jar}" />
+		<!-- BeanUtils and Collections are  needed when using Bean (POJO) datasources -->
+        <copy todir="${build.dir}/WEB-INF/lib" file="${beanutils.lib.jar}"/>
+        <copy todir="${build.dir}/WEB-INF/lib" file="${collections.lib.jar}"/>
+		<!-- xalan is needed when using XML datasources -->
+        <copy todir="${build.dir}/WEB-INF/lib" file="${xalan.lib.jar}"/>
+        <copy todir="${build.dir}/WEB-INF/lib" file="${commons-logging.lib.jar}"/>
+        <copy todir="${build.dir}/WEB-INF/lib" file="${digester.lib.jar}"/>
+        <copy todir="${build.dir}/WEB-INF">
+            <fileset dir="${src.deploy.dir}" />
+        </copy>
+
+        <javac srcdir="${src.dir}" destdir="${build.dir}/WEB-INF/classes" debug="${debug}" deprecation="yes">
+            <classpath refid="classpath"/>
+        </javac>
+        <copy todir="${build.dir}/reports">
+            <fileset dir="${reports.dir}" includes="**/*.jasper" />
+        </copy>
+        <copy todir="${build.dir}/reports">
+            <fileset dir="${reports.dir}" includes="**/*.xml" />
+        </copy>
+        <copy todir="${build.dir}/reports">
+            <fileset dir="${reports.dir}" includes="**/*.csv" />
+        </copy>
+    </target>
+
+    <target name="war" depends="compile" description="Builds a web archive of the application.">
+        <mkdir dir="${war.dir}" />
+        <jar jarfile="${war.dir}/${warfile}" basedir="${build.dir}" />
+    </target>
+
+    <target name="deploy" depends="war">
+        <echo message=" deploying ${war.dir}/${warfile} to ${deploy.dir}"/>
+        <copy file="${war.dir}/${warfile}" todir="${deploy.dir}" overwrite="true"/>
+    </target>
+
+</project>

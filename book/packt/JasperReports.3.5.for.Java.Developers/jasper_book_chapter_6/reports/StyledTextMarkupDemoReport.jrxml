@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StyledTextMarkupDemoReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30">
+    <detail>
+        <band height="50">
+            <staticText>
+                <reportElement x="0" y="0" width="500" height="48"/>
+                <textElement markup="styled" textAlignment="Left">
+                    <font size="10" fontName="Courier"/>
+                </textElement>
+                <text><![CDATA[This text is <style isBold="true">styled</style> using the value of <style isItalic="true">styled</style> forthe <style forecolor="blue">markup</style> attribute.]]>
+                </text>
+            </staticText>            
+        </band>
+    </detail>
+</jasperReport>

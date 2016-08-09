@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="AircraftStateReport">
+	<parameter name="state" class="java.lang.String" />
+	<queryString>
+		<![CDATA[select city from aircraft where state = $P{state}]]>
+	</queryString>
+	<field name="city" class="java.lang.String" />
+	<title>
+		<band height="30">
+			<textField>
+				<reportElement x="0" y="0" width="300" height="24" />
+				<textElement markup="styled" />
+				<textFieldExpression>
+					<![CDATA["<style isBold=\"true\" pdfFontName=\"Helvetica-Bold\">Aircraft Registered in " +  $P{state} + "</style>"]]>
+				</textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="10">
+			<subreport>
+				<reportElement x="0" y="0" height="10" width="500"
+					isPrintWhenDetailOverflows="true" />
+				<subreportParameter name="state">
+					<subreportParameterExpression>
+						<![CDATA[$P{state}]]>
+					</subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="city">
+					<subreportParameterExpression>
+						<![CDATA[$F{city}]]>
+					</subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression>
+					<![CDATA[$P{REPORT_CONNECTION}]]>
+				</connectionExpression>
+				<subreportExpression class="java.lang.String">
+					<![CDATA["http://localhost:8080/jasperbookch6/reports/AircraftCityReport.jasper"]]>
+				</subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>
