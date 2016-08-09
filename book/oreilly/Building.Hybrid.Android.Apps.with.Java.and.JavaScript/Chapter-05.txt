@@ -1,0 +1,183 @@
+
+==================================
+class MyLocationProvider {
+	Location getLocation();
+}
+
+ WebView.addJavaScriptInterface(myLocationProvider, "nativeLocProvider");
+==================================
+
+==================================
+var location = nativeLocProvider.getLocation();
+==================================
+
+==================================
+var deferred = $.Deferred();
+// var deferred =  new Deferred();
+// var deferred = jQuery.Deferred();
+==================================
+
+==================================
+deferred.done(function(data) {
+	console.log("Success callback: " + data);
+});
+==================================
+
+==================================
+deferred.fail(function(errCode, errMsg) {
+	console.log("Failure callback: " + errCode + " - " + errMsg);
+});
+==================================
+
+==================================
+deferred.progress(function(percentage) {
+	console.log("Progress callback: " + percentage);
+});
+==================================
+
+==================================
+deferred.then(successCallback, failCallback, progressCallback);
+==================================
+
+==================================
+deferred.then(function() {
+	console.log("Success callback");
+}, function(errCode, errMsg) {
+	console.log("Failure callback: " + errCode + " - " + errMsg);
+}, function() {
+	console.log("Progress callback");
+});
+==================================
+
+==================================
+function doThis() {
+   return $.get('this.html');
+}
+
+function doThat() {
+   return $.get('that.html');
+}
+
+$.when(doThis(), doThat()).then(function(data) {
+	console.log("Both events are successful.");
+}).fail(function(errCode, errMsg) {
+	console.log("One or more events are failed.");
+});
+==================================
+
+==================================
+var deferred =  new Deferred();
+
+// register the success callback with two args
+deferred.done(function(arg1, arg2) {
+	alert("Success callback with two artifacts");
+};
+// Do some processing resulting in artifact1 and artifact2
+	.
+	.
+	.
+// Calling the resolve function on the Deferred Object with two artifacts as
+// arguments will trigger the success callback to be called with the same.
+deferred.resolve(artifact1, artifact2);
+==================================
+
+==================================
+var deferred =  new Deferred();
+
+// register the failure callback with the errorCode and errorMsg args
+deferred.fail(function(errorCode, errorMsg) {
+	alert("Failure callback: " +errorCode+ " & message" + errorMsg);
+};
+// Do some processing resulting in an error with errCode and corresponding
+// error message errMsg
+	.
+	.
+// Calling the reject function on the Deferred Object with the error code
+// and err message would be passed back to the callback function(s) that
+// have been registered.
+deferred.reject(errCode, errMsg);
+==================================
+
+==================================
+function ajaxRequest(url) {
+	var deferred =  new Deferred();
+
+	// Initiate the request to download url and pass the
+	// Deferred Object to enable the downstream downloader
+	// to call resolve() or reject() and progress() as necessary
+	download(url, deferred);
+
+	// Return the Deferred Promise Object to enable the
+	// callbacks to be set by the caller
+	return deferred.promise();
+}
+
+function caller() {
+	ajaxRequest("http://oreilly.com")then(function() {
+		alert("Page successfully downloaded");
+	}, function(errCode, errorMsg) {
+		alert("Failure Callback: " + errCode + " - " + errorMsg);
+	}, function() {
+		console.log("Progress update called");
+	});
+}
+==================================
+
+==================================
+function progressBar() {
+    var deferred = $.Deferred();
+
+    var i = 0;
+    var intervalId = setInterval(function() {
+        deferred.notify(++i);
+        if (i == 99) {
+			clearInterval(intervalId);
+		}
+    }, 1000);
+
+    return deferred.promise();
+};
+
+var promise = progressBar();
+
+promise.progress(function(percentage) {
+	console.log(percentage + "% completed");
+});
+==================================
+
+==================================
+function requestDB() {
+	// 1 - create the Deferred
+	var deferred = $.Deferred();
+
+	XMLHttpRequest xhr = new XMLHttpRequest();
+	xhr.open("GET", "/api/contact", true);
+	xhr.addEventListener('load', function() {
+		if (xhr.readyState == 4) {
+			if ((xhr.status >= 200 && xhr.status <= 300)
+				|| xhr.status == 304) {
+				// 3a - triggers the .then() or
+				// .done() callbacks
+				var response = { name: "O'reilly" };
+				deferred.resolve(response);
+			} else {
+				// 3b - triggers the .fail() callback with
+				// an error code and a message
+				deferred.reject(404, "File not found.");
+			}
+		}
+	}, false);
+	xhr.send();
+
+	// 2 - return the promise right away
+	return deferred.promise();
+}
+
+$.when(RequestDB()).then(function(response) {
+	// 3a1 - access to returned parameters
+	console.log(data.name);
+}).fail(function(errCode, errMsg) {
+	// 3b1 - access to fail messages
+	console.log("Failure callback: " + errCode + " - " + errMsg);
+});
+==================================

@@ -1,0 +1,335 @@
+
+==================================
+<?xml version="1.0" encoding="utf-8"?>
+<manifest ... >
+    <uses-permission android:name="android.permission.INTERNET" />
+	<application> ... </application>
+    ...
+</manifest>
+==================================
+
+==================================
+<WebView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/WebView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" />
+==================================
+
+==================================
+WebView webView = (WebView) findViewById(R.id.WebView);
+==================================
+
+==================================
+WebView WebView = new WebView(this);
+contentView.addView(webView);
+==================================
+
+==================================
+// load index.html from the assets folder
+WebView.loadUrl("file:///android_asset/index.html");
+
+// load logo.png from the res folder
+WebView.loadUrl("file:///android_res/drawable/logo.png");
+
+// load a web based URL, Oreilly's homepage in this case
+WebView.loadUrl("http://www.oreilly.com");
+==================================
+
+==================================
+loadData(String data, String mimeType, String encoding)
+==================================
+
+==================================
+String data = "<!DOCTYPE html>";
+data += "<head><title>Hello World</title></head>";
+data += "<body>Welcome to the WebView</body>";
+data += "</html>";
+// args: data, mimeType, encoding
+WebView.loadData(data, "text/html", "UTF-8");
+==================================
+
+==================================
+// Bad example
+String data = "<!DOCTYPE html>";
+data += "<head><title>THIS WILL NOT WORK</title></head>";
+data += "<body><img src=\"file:///android_res/drawable/logo.png\" /></body>";
+data += "</html>";
+WebView.loadData(data, "text/html", "UTF-8");
+==================================
+
+==================================
+webView.setWebViewClient(new WebViewClient(webView) {
+  // override all the methods
+});
+================================== 
+
+==================================
+webView.setWebChromeClient(new WebChromeClient(webView){
+  // override all the methods
+});
+================================== 
+
+==================================
+String html = "<!DOCTYPE html>";
+html += "<head><title>Loading files from res/drawable directory</title></head>";
+html += "<body><img src=\"logo.png\" />/body>";
+html += "</html>";
+WebView.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "UTF-8", null);
+==================================
+
+==================================
+String base = Environment.getExternalStorageDirectory().getAbsolutePath()
+	.toString();
+String imagePath = "file://"+ base + "/logo.png";
+String html = "<!DOCTYPE html>";
+html += "<head><title>Loading files from SDCard</title></head>";
+html += "<body><img src=\""+ imagePath + "\" />/body>";
+html += "</html>";
+WebView.loadDataWithBaseURL("", html, "text/html","UTF-8", null);
+==================================
+
+==================================
+// Load an html file
+String html = loadFileFromSDCard("file:///sdcard/oreilly/book/logo.png");
+WebView.loadDataWithBaseURL("", html, "text/html", "UTF-8", null);
+==================================
+
+==================================
+// Load an image file
+String pngData = loadFileFromAssets("file:///android_asset/images/logo.png");
+WebView.loadData(pngData, "image/png", "UTF-8"); 
+==================================
+
+==================================
+<!-- flash.html -->
+<html>
+  <head>
+    <title>Playing Flash movie</title>
+  </head>
+  <body>
+    <object width="200" height="200">
+      <param name="movie" value="hybrid.swf">
+      <embed src="file:///sdcard/hybrid.swf" width="200" height="200"></embed>
+    </object>
+  </body>
+</html>
+==================================
+
+==================================
+String base = Environment.getExternalStorageDirectory().getAbsolutePath().toString();
+String html = "file://" + base + "/flash.html";
+if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+	WebView.loadUrl(html);
+}
+==================================
+
+==================================
+WebView.loadData(getRawFileFromResource(R.raw.home), "text/html", "UTF-8");
+
+private String getRawFileFromResource(int resourceId) {
+	StringBuilder sb = new StringBuilder();
+	Scanner s = new Scanner(getResources().openRawResource(resourceId));
+	while (s.hasNextLine()) {
+		sb.append(s.nextLine() + "\n");
+	}
+	return sb.toString();
+}
+==================================
+
+==================================
+String js = "alert('Alert from Java');";
+WebView.loadUrl("JavaScript:" + js);
+==================================
+
+==================================
+<?xml version="1.0" encoding="utf-8"?>
+<manifest ... >
+	<activity
+	    android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+	    ...
+	</activity>
+</manifest>
+==================================
+
+==================================
+@Override
+public void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	requestWindowFeature(Window.FEATURE_NO_TITLE); 
+	getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 		
+		WindowManager.LayoutParams.FLAG_FULLSCREEN);
+	setContentView(R.layout.main);
+	...
+}
+==================================
+
+==================================
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme" parent="android:Theme.Light">
+        <item name="android:textViewStyle">@style/Theme.TextView</item>
+        <item name="android:windowTitleStyle">@style/WindowTitle</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="WindowTitle" parent="@android:style/Theme">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Theme.TextView" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+</resources>
+==================================
+
+==================================
+<application
+        android:icon="@drawable/icon"
+        android:label="Demo"
+        android:theme="@style/Theme" > ... </application>
+==================================
+
+==================================
+$(window).bind('resize', function() {
+	console.error('onResize');
+});
+==================================
+
+==================================
+JavaScriptInterface JavaScriptInterface = new JavaScriptInterface(this);
+myWebView = new MyWebView(this);
+myWebView.addJavaScriptInterface(JavaScriptInterface, "HybridNote");
+==================================
+
+==================================
+import android.WebKit.javaScriptInterface;
+
+// SDK version 17 or above.
+@JavaScriptInterface
+public void showToast(String toast)  {
+	// show toast...
+}
+==================================
+
+==================================
+@Override
+public boolean onJsPrompt(WebView view, String url, String message, 
+	String defaultValue, JsPromptResult result) {
+
+	// Check the url to ensure that the request originated from 
+	// whitelisted source
+
+	// Check to see if message or defaultValue contain JavaScript request. 
+	if (defaultValue.startsWith("karura:")) {
+		// process the request
+	} else{
+		// display the confirmation dialog to the user if required
+	}
+
+	return trueOrFalse; // based on whether you handled the notification
+}
+==================================
+
+==================================
+function execute(cmdArgs) {
+	boundObj.getClass().forName("Java.lang.Runtime").getMethod("getRuntime", 
+		null).invoke(null,null).exec(cmdArgs);
+}
+
+var p = execute(["/data/data/com.yourapp/malicious-app"]);
+document.write(getContents(p.getInputStream()));
+==================================
+
+==================================
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Set-Cookie: id=cdb6352b48e62e0691efe552e3e4cecb; path=/; HttpOnly
+==================================
+
+==================================
+document.cookie = "name=value; expires=date; path=path; domain=domain; secure";
+==================================
+
+==================================
+@Override
+public boolean shouldOverrideUrlLoading(WebView view, String url) {
+	if (!Uri.parse(url).getHost().equals("www.oreilly.com")) {
+		return false;
+	}
+	view.loadUrl(url);
+	return true;
+}
+==================================
+
+==================================
+@Override
+public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
+	if (url.contains(".js")) {
+		String str = "alert('This is a replaced JavaScript code.')";
+		InputStream is = null;
+		try {
+			is = new ByteArrayInputStream(str.getBytes("UTF8"));
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		String type = "application/JavaScript";
+		return new WebResourceResponse(type, "UTF-8", is);
+	}
+	return super.shouldInterceptRequest(view, url);
+}
+==================================
+
+==================================
+WebView WebView = new WebView(this);
+WebSettings settings = WebView.getSettings();
+==================================
+
+==================================
+settings.setAllowFileAccess(false);
+==================================
+
+==================================
+settings.setJavaScriptEnabled(true);
+==================================
+
+==================================
+WebView WebView = new WebView(this);
+WebSettings settings = WebView.getSettings();
+settings.setPluginState(PluginState.OFF);
+==================================
+
+==================================
+WebView WebView = new WebView(this);
+WebSettings settings = WebView.getSettings();
+settings.setDefaultFontSize(20);
+==================================
+
+==================================
+WebView WebView = new WebView(this);
+WebSettings settings = WebView.getSettings();
+settings.setBuiltInZoomControls(false);
+settings.setDefaultZoom(ZoomDensity.FAR);
+settings.setSupportZoom(false);
+==================================
+
+==================================
+// enable hardware acceleration using code (>= level 11)
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+    WebView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+}
+settings.setRenderPriority(WebSettings.RenderPriority.HIGH);
+settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+==================================
+
+==================================
+// selectively disable hardware acceleration for WebView
+// honeycomb (3.0) and higher
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+	WebView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+}
+==================================

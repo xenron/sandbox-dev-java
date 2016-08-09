@@ -1,0 +1,14 @@
+
+==================================
+<uses-feature android:name="android.hardware.bluetooth"
+	android:required="false" />
+==================================
+
+==================================
+boolean hasBluetooth =
+	getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH);
+==================================
+
+==================================
+proguard.config=proguard-project.txt
+==================================

@@ -1,0 +1,229 @@
+
+==================================
+<div id="wrapper">
+    <div id="scroller">
+        <ul id="thelist">
+			<li>row 1</li>
+			<li>row 2</li>
+			<li>row 3</li>
+			<li>row 4</li>
+		</ul>
+	</div>
+</div>
+==================================
+
+==================================
+var myScroll = new iScroll('wrapper');
+==================================
+
+==================================
+$(document).ready(function(){
+	$.preloadCssImages();
+});
+==================================
+
+==================================
+/*
+Sample CSS Reset
+*/
+html, body, div, form, fieldset, legend, label {
+	margin: 0;
+	padding: 0; 
+	border: 0px;
+	outline: 0px;
+	font-size: 100%;
+}
+==================================
+
+==================================
+<link rel="stylesheet" 
+	media="screen and (-webkit-min-device-pixel-ratio: 0.75)" 
+	href="ldpi.css" />
+<link rel="stylesheet" 
+	media="screen and (-webkit-min-device-pixel-ratio: 1.0)" 
+	href="mdpi.css" />
+<link rel="stylesheet" 
+	media="screen and (-webkit-min-device-pixel-ratio: 1.5)" 
+	href="hdpi.css" />
+<link rel="stylesheet" 
+	media="screen and (-webkit-min-device-pixel-ratio: 2.0)" 
+	href="xhdpi.css" />
+==================================
+
+==================================
+function loadCSS() {
+	switch(window.devicePixelRatio) {
+		case 2.0:
+			$('#dpr-css').attr('href', 'css/xhdpi.css'); <1>
+			break;
+		case 1.5:
+			$('#dpr-css').attr('href', 'css/hdpi.css');
+			break;
+		case 0.75:
+			$('#dpr-css').attr('href', 'css/ldpi.css');
+			break;
+		default: // 1
+			$('#dpr-css').attr('href', 'css/mdpi.css');
+	}
+}
+==================================
+
+==================================
+<link id="dpr-css" rel="stylesheet" 
+      href="css/default.css" 
+      type="text/css" 
+      media="screen" />
+==================================
+
+==================================
+$('HEAD').append($('<link rel="stylesheet" href="xhdpi.css" type="text/css" 
+	media="screen and (-webkit-min-device-pixel-ratio: 2.0)" />'));
+==================================
+
+==================================
+<script type="text/x-tmpl" id="tmpl_contacts_item">
+<div class="contact item" data-id="<%= id %>">
+	<div class="edit">Edit</div>
+    <div class="profile">
+        <img data-id="<%= id %>" class="avatar" src="<%= avatar %>" />
+        <div class="full_name"><%= name.givenName %> <%= name.familyName %></div>
+    </div>
+    <% if (emails.length > 0) { %>
+    <div class="details">
+        <div class="caption emails">Emails</div>
+        <% _.each(emails, function(email) { %> 
+		<div class="comm"><span><%= email.type %></span> : 
+		<a href="mailto:<%= email.value %>"><%= email.value %></a></div>
+		<% }); %>
+    </div>
+    <% } %>
+    <% if (phoneNumbers.length > 0) { %>
+    <div class="details">
+        <div class="caption phones">Phones</div>
+		<% _.each(phoneNumbers, function(phone) { %>
+		<div class="comm"><span><%= phone.type %></span> : 
+		<a href="tel:<%= phone.value %>"><%= phone.value %></a></div>
+		<% }); %>
+    </div>
+    <% } %>
+    <% if (note != '') { %>
+    <div class="details">
+        <div class="caption notes">Notes</div>
+        <div class="note"><%= note %></div>
+    </div>
+    <% } %>
+</div>
+</script>
+==================================
+
+==================================
+<meta name="viewport" content="width=320">
+==================================
+
+==================================
+<meta name="viewport" content="width=device-width">
+==================================
+
+==================================
+<meta name="viewport" content="width=device-width, 
+	minimum-scale=1, 
+	initial-scale=1, 
+	maximum-scale=1, 
+	user-scalable=no" />
+==================================
+
+==================================
+<style type="text/css">
+	@media only screen and (-webkit-min-device-pixel-ratio: 1.0) {
+		/* some CSS definitions here */
+	}
+	@media only screen and (orientation: portrait){
+		/* some CSS definitions here */
+	}
+	@media only screen and (orientation: landscape){
+		/* some CSS definitions here */
+	}
+</style>
+==================================
+
+==================================
+<link rel="stylesheet" 
+	type="text/css" href="small_screen.css" 
+	media="only screen and (max-width: 320px)" />
+==================================
+
+==================================
+@import "small_screen.css" only screen and (max-width: 320px);
+==================================
+
+==================================
+header { 
+    font-size: 2em;
+	/*font-size: 200%;*/
+}
+span { 
+    font-size: 0.5em;
+	/*font-size: 50%;*/
+}
+==================================
+
+==================================
+<header>This is a large header without any nested tag</header>
+<header>This is a large header with <span>a span tag</span></header>
+<span>This is a span tag</span>
+==================================
+
+==================================
+-webkit-opacity: 0.5;
+==================================
+
+==================================
+background: rgba(255, 0, 0, 0.5);
+==================================
+
+==================================
+function updateContact(e, data) {
+	switch(e.type) {
+		case 'NAME_UPDATE':
+			// update the name
+			// data.name
+			break;
+		case 'PHONE_UPDATE':
+			// update the phone number
+			// data.phone_number
+			break;
+		default:
+			// default action
+	}
+}
+==================================
+
+==================================
+function subscribeEvents(eventName, callback) {
+	$(document).bind(eventName, callback);
+}
+
+subscribeEvents('NAME_UPDATE PHONE_UPDATE', function(e, data) {
+	updateContact.apply(null, [e, data]);
+});
+==================================
+
+==================================
+function triggerEvent(eventName, args, delay) {
+	setTimeout(function() {
+		$(document).trigger(eventName, args);
+	}, delay || 0);
+}
+==================================
+
+==================================
+// from HTML
+<input type="text" name="full_name" 
+  onKeyUp="triggerEvent('NAME_UPDATE', { name : $(this).val().trim() }, 100);" />
+
+// from URL location (Android WebView can trigger this)
+JavaScript: triggerEvent('NAME_UPDATE', { name : 'Karura' }, 100)
+
+// or from JavaScript code
+triggerEvent('NAME_UPDATE', { name : 'Karura' }, 100);
+==================================

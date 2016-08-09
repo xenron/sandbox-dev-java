@@ -1,0 +1,154 @@
+
+==================================
+function removeImage(image) {
+	image.src = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
+	setTimeout(function () {
+		delete image.src;
+		image = null;
+	}, 0);
+}
+==================================
+
+==================================
+openssl base64 -in image.png
+==================================
+
+==================================
+function loadImage(src) {
+	var image = new Image();
+	image.src = src;
+	image.onerror = function() {
+		debug.error('Missing image source: ' + this.src);
+	};
+	return image;
+}
+
+var image = loadImage('path/to/image');
+image.onload = function() {
+	// do something
+};
+
+==================================
+
+==================================
+-webkit-transition: width 1s;
+==================================
+
+==================================
+var $box = $('#box'), len = $box.length;
+for(var i=0; i < len; i++) {
+	$box[i].show();
+}
+==================================
+
+==================================
+$('input.username') selector is faster than $('.username')
+input[type="..."] selector is faster than [type="..."]
+==================================
+
+==================================
+var fragment = document.createDocumentFragment();
+==================================
+
+==================================
+// non-ui.js
+self.onmessage = function(event) {
+	self.postMessage(event.data);
+}
+
+var worker = new Worker('non-ui.js');
+worker.onmessage = function(event){
+	console.log('result: ' + event.data);
+}
+worker.postMessage("O'Reilly books");
+==================================
+
+==================================
+-webkit-transform: translate3d(0, 0, 0);
+==================================
+
+==================================
+// 1
+var element = document.getElementById('id');
+element.style.backgroundColor = 'red';
+
+// 2 - this is faster
+var style = document.getElementById('id').style;
+style.backgroundColor = 'red';
+==================================
+
+==================================
+var devices = {
+	isMobile : (navigator.userAgent.indexOf('Mobile') > -1),
+	isAndroid : (/android/gi).test(navigator.appVersion),
+	isIDevice : (/iPhone|iPad//iPod/gi).test(navigator.appVersion)
+}
+==================================
+
+==================================
+var isTouch = !!('ontouchstart' in window);
+var touchEvents = {
+    CANCEL : (window.ontouchcancel !== undefined ? 
+				'touchcancel' : 'mouseup'),
+	START  : (window.ontouchstart !== undefined ? 
+				'touchstart' : 'mousedown'),
+	MOVE   : (window.ontouchmove !== undefined ? 
+				'touchmove' : 'mousemove'),
+	END    : (window.ontouchend !== undefined ? 
+				'touchend' : 'mouseup')
+
+// usage 1
+$('BODY').bind(touchEvents.START, function() { 
+	// do something
+});
+       
+// usage 2
+$(document).on(touchEvents.START + ' ' + touchEvents.END, 
+			  '.inactive', 
+			  function() {
+			  		$(this).toggleClass('active');
+				});
+==================================
+
+==================================
+$(window).bind('load', function() {
+	setTimeout(function() {
+		window.scrollTo(0, 1);
+	}, 0);
+});
+==================================		
+
+==================================
+$(document).bind(touchEvents.MOVE, function(e) {
+	e.preventDefault();
+});
+==================================
+
+==================================
+$(window).bind('orientationchange', function() {
+	switch (window.orientation) {
+		case 0: 
+			// portrait (normal)
+			break; 
+		case 180:  
+			// portrait (upside-down)
+			break; 
+		case -90:  
+			// landscape (clockwise)
+			break;  
+		case 90:  
+			// landscape (counter-clockwise)
+			break;
+		default:
+			//
+	}
+});
+==================================
+
+==================================
+var heightBefore = $('body').css('height');
+$(window).bind('resize', function() {
+	var heightAfter = $('body').css('height');
+	console.info('onResize: ' + heightBefore + '-' + heightAfter);
+});
+==================================
