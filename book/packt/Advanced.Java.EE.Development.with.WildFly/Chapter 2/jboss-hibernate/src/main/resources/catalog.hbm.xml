@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+    <class name="org.jboss.hibernate.model.Catalog" table="CATALOG">
+        <id name="id" type="int" column="ID">
+            <generator class="native" />
+        </id>
+        <property name="journal" column="JOURNAL" type="string" />
+        <property name="publisher" column="PUBLISHER" type="string" />
+        <property name="edition" column="EDITION" type="string" />
+        <property name="title" column="TITLE" type="string" />
+        <property name="author" column="AUTHOR" type="string" />
+    </class>
+</hibernate-mapping>

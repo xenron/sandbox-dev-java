@@ -1,0 +1,2 @@
+# Module org.jboss.gwt.CatalogForm
+# RPC service class, partial path of RPC policy file
