@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="net.ensode.jasperbook.dbaccess">
+	<class
+		name="AircraftModels"
+		table="aircraft_models"
+	>
+		<id
+			name="Id"
+			type="string"
+			column="aircraft_model_code"
+		>
+			<!--generator class="sequence"/-->
+		</id>
+
+		<property
+			name="Manufacturer"
+			column="manufacturer"
+			type="string"
+			not-null="true"
+			length="30"
+		/>
+		<property
+			name="Model"
+			column="model"
+			type="string"
+			not-null="true"
+			length="20"
+		/>
+		<property
+			name="AircraftTypeId"
+			column="aircraft_type_id"
+			type="java.lang.String"
+			not-null="true"
+			length="3"
+		/>
+		<property
+			name="AircraftEngineTypeId"
+			column="aircraft_engine_type_id"
+			type="java.lang.String"
+			not-null="true"
+			length="3"
+		/>
+		<property
+			name="AircraftCategoryId"
+			column="aircraft_category_id"
+			type="java.lang.String"
+			not-null="true"
+			length="3"
+		/>
+		<property
+			name="Amateur"
+			column="amateur"
+			type="java.lang.String"
+			not-null="true"
+			length="3"
+		/>
+		<property
+			name="Engines"
+			column="engines"
+			type="java.lang.Byte"
+			not-null="true"
+			length="4"
+		/>
+		<property
+			name="Seats"
+			column="seats"
+			type="java.lang.Short"
+			not-null="true"
+			length="6"
+		/>
+		<property
+			name="Weight"
+			column="weight"
+			type="integer"
+			not-null="true"
+			length="11"
+		/>
+		<property
+			name="Speed"
+			column="speed"
+			type="java.lang.Short"
+			not-null="true"
+			length="6"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

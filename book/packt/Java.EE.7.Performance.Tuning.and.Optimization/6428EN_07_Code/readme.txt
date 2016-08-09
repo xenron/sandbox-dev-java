@@ -1,0 +1,1 @@
+These text files are thread dumps that can be open by any text editor, you can also open them using Thread Dump Analyzer tool in much more readible way.

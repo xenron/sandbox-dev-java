@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport name="RectangleDemoReport">
+	<detail>
+		<band height="100">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="30" />
+			</rectangle>
+			<rectangle radius="5">			    
+				<reportElement x="0" y="70" width="555" height="30" forecolor="lightGray"/>
+				<graphicElement pen="4Point"/>
+			</rectangle>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<project name="JSF Report App" default="war" basedir=".">
+
+	<property environment="env" />
+	<property file="ant.properties" />
+
+	<path id="classpath">
+		<pathelement path="${jasperreports.lib.jar}" />
+		<fileset dir="${jasperreports.lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="clean" description="Clears all generated files, including build directories, distributables, and documentation.">
+		<delete dir="${build.dir}" />
+		<delete dir="${war.dir}" />
+		<delete>
+			<fileset dir="${reports.dir}">
+				<include name="**/*.jasper" />
+			</fileset>
+			<fileset dir="${reports.dir}">
+				<include name="**/*.jrprint" />
+			</fileset>
+		</delete>
+	</target>
+
+	<target name="compile" description="Compiles the application and arranges resources into a web archive hierarchy.">
+
+		<javac srcdir="${src.dir}" destdir="${build.dir}" debug="${debug}" deprecation="yes">
+			<classpath>
+				<pathelement path="${servlet.lib.jar}" />
+				<pathelement path="${jasperreports.lib.jar}" />
+				<pathelement path="${jsf.lib.jar}" />
+			</classpath>
+		</javac>
+	</target>
+	<target name="war" depends="compile" description="Builds a web archive of the application.">
+         <jar jarfile="./${warfile}" basedir="${war.dir}" />
+	</target>
+</project>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport name="PlainTextExportDemoReport" >
+	<title>
+		<band height="30">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="30" />
+				<text>
+					<![CDATA[Text Heavy Report]]>
+				</text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="100">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="100" />
+				<text>
+					<![CDATA[
+Exporting to plain text makes more sense when the report is completely (or mostly) text.
+Since tables and graphical elements don't translate to plain text very well.
+We created this report template to demonstrate exporting to plain text.
+Exciting, isn't it?]]>
+				</text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

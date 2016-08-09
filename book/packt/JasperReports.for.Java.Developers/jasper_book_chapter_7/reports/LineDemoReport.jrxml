@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport name="LineDemoReport">
+	<detail>
+		<band height="100">
+			<line>
+				<reportElement x="0" y="0" width="555" height="25" />
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="0" y="26" width="555" height="25" />
+			</line>
+			<line>
+				<reportElement x="0" y="50" width="1" height="25" />
+			</line>
+			<line>
+				<reportElement x="0" y="75" width="555" height="0" />
+			</line>
+		</band>
+	</detail>
+</jasperReport>

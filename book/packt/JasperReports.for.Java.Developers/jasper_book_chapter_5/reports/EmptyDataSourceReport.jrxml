@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE jasperReport
+  PUBLIC "-//JasperReports//DTD Report Design//EN"
+  "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport name="EmptyDataSourceReport">
+ <detail>
+    <band height="20">
+      <staticText>
+        <reportElement x="20" y="0" width="300" height="20"/>
+        <text><![CDATA[This simple report contains only static data.]]></text>
+      </staticText>
+    </band>
+  </detail>
+</jasperReport>

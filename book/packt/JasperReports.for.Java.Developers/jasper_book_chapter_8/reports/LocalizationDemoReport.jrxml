@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport name="LocalizationDemoReport"
+	resourceBundle="localizationdemo">
+	<summary>
+		<band height="60">
+			<textField>
+				<reportElement x="0" y="0" width="200" height="30" />
+				<textFieldExpression>
+					<![CDATA[$R{localization.text1}]]>
+				</textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

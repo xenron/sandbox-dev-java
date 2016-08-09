@@ -1,0 +1,1288 @@
+2014-01-12 12:31:24
+Full thread dump Java HotSpot(TM) Client VM (19.0-b09 mixed mode, sharing):
+
+"pool-1-thread-40" prio=6 tid=0x047f2c00 nid=0x1f7c waiting for monitor entry [0x04c6f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:38)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-39" prio=6 tid=0x047f2800 nid=0x250c waiting for monitor entry [0x04c1f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-38" prio=6 tid=0x047f2000 nid=0x2f04 waiting for monitor entry [0x04bcf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-37" prio=6 tid=0x047f1c00 nid=0x2f60 waiting for monitor entry [0x04b7f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-36" prio=6 tid=0x047f1400 nid=0xa44 waiting for monitor entry [0x04b2f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:38)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-35" prio=6 tid=0x047f1000 nid=0x2574 waiting for monitor entry [0x04adf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-34" prio=6 tid=0x047f0800 nid=0x2e48 waiting for monitor entry [0x04a8f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-33" prio=6 tid=0x047f0400 nid=0x17a4 waiting for monitor entry [0x04a3f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-32" prio=6 tid=0x019f3c00 nid=0x2348 waiting for monitor entry [0x047ef000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-31" prio=6 tid=0x019f3400 nid=0x18dc waiting for monitor entry [0x0479f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-30" prio=6 tid=0x019f3000 nid=0x1338 waiting for monitor entry [0x0474f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-29" prio=6 tid=0x019f2800 nid=0x2d0c waiting for monitor entry [0x046ff000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-28" prio=6 tid=0x019f2400 nid=0x1e90 waiting for monitor entry [0x046af000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-27" prio=6 tid=0x019f1c00 nid=0x2350 waiting for monitor entry [0x0465f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-26" prio=6 tid=0x019f1800 nid=0x14fc runnable [0x0460f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Random.next(Random.java:139)
+	at java.util.Random.nextInt(Random.java:257)
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-25" prio=6 tid=0x019f1000 nid=0x143c waiting for monitor entry [0x045bf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-24" prio=6 tid=0x019f0c00 nid=0x28d4 waiting for monitor entry [0x0456f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-23" prio=6 tid=0x019f0400 nid=0x20bc waiting for monitor entry [0x0451f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-22" prio=6 tid=0x019f0000 nid=0x25d4 waiting for monitor entry [0x044cf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-21" prio=6 tid=0x019ef800 nid=0x2608 waiting for monitor entry [0x0447f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-20" prio=6 tid=0x019ef400 nid=0x22e4 waiting for monitor entry [0x0442f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-19" prio=6 tid=0x019eec00 nid=0xa20 runnable [0x043df000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Arrays.sort1(Arrays.java:595)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort(Arrays.java:96)
+	at osa.ora.MyThread.run(HighCPU.java:46)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-18" prio=6 tid=0x019ee800 nid=0x2e44 runnable [0x0438f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Random.next(Random.java:139)
+	at java.util.Random.nextInt(Random.java:257)
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-17" prio=6 tid=0x019ee000 nid=0x2c38 waiting for monitor entry [0x0433f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-16" prio=6 tid=0x019edc00 nid=0x238c waiting for monitor entry [0x042ef000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-15" prio=6 tid=0x019ed400 nid=0x15d0 waiting for monitor entry [0x0429f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-14" prio=6 tid=0x019ed000 nid=0x2ce0 waiting for monitor entry [0x0424f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-13" prio=6 tid=0x019ec800 nid=0x2fc8 runnable [0x041ff000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Random.next(Random.java:139)
+	at java.util.Random.nextInt(Random.java:257)
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-12" prio=6 tid=0x019ec400 nid=0x1e9c waiting for monitor entry [0x041af000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-11" prio=6 tid=0x019e7c00 nid=0x20b4 runnable [0x0415f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Random.next(Random.java:139)
+	at java.util.Random.nextInt(Random.java:257)
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-10" prio=6 tid=0x019e6800 nid=0x2d3c waiting for monitor entry [0x0410f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-9" prio=6 tid=0x019da400 nid=0x28e8 waiting for monitor entry [0x03fbf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-8" prio=6 tid=0x019d6800 nid=0x2400 waiting for monitor entry [0x03f6f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-7" prio=6 tid=0x019d6000 nid=0x2a70 waiting for monitor entry [0x03f1f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-6" prio=6 tid=0x019d3800 nid=0x22dc runnable [0x03ece000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Arrays.sort1(Arrays.java:591)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort(Arrays.java:96)
+	at osa.ora.MyThread.run(HighCPU.java:46)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-5" prio=6 tid=0x019d3400 nid=0x21e4 waiting for monitor entry [0x03e7f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-4" prio=6 tid=0x019d2c00 nid=0x1434 waiting for monitor entry [0x03e2f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- locked <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-3" prio=6 tid=0x019d2400 nid=0x2f78 waiting for monitor entry [0x03ddf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-2" prio=6 tid=0x019d1c00 nid=0x2c34 waiting for monitor entry [0x03d8f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-1" prio=6 tid=0x019d1400 nid=0x1cb4 waiting for monitor entry [0x03d3f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Low Memory Detector" daemon prio=6 tid=0x01969400 nid=0x1808 runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+"CompilerThread0" daemon prio=10 tid=0x01965800 nid=0x1590 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Attach Listener" daemon prio=10 tid=0x01963000 nid=0x1544 runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" daemon prio=10 tid=0x01962000 nid=0x2fd0 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" daemon prio=8 tid=0x01950800 nid=0x1a68 in Object.wait() [0x03b5f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x28e70878> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked <0x28e70878> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+"Reference Handler" daemon prio=10 tid=0x0194e800 nid=0x1dd0 in Object.wait() [0x03b0f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x28e700a0> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:485)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+	- locked <0x28e700a0> (a java.lang.ref.Reference$Lock)
+
+"main" prio=6 tid=0x00bf9000 nid=0x2ff0 waiting on condition [0x002ff000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at osa.ora.HighCPU.main(HighCPU.java:25)
+
+"VM Thread" prio=10 tid=0x0194d000 nid=0x2328 runnable 
+
+"VM Periodic Task Thread" prio=10 tid=0x0196ac00 nid=0x258c waiting on condition 
+
+JNI global references: 903
+
+Heap
+ def new generation   total 9152K, used 6583K [0x23920000, 0x24300000, 0x28e70000)
+  eden space 8192K,  70% used [0x23920000, 0x23ecaa10, 0x24120000)
+  from space 960K,  81% used [0x24210000, 0x242d3538, 0x24300000)
+  to   space 960K,   0% used [0x24120000, 0x24120000, 0x24210000)
+ tenured generation   total 19804K, used 18129K [0x28e70000, 0x2a1c7000, 0x33920000)
+   the space 19804K,  91% used [0x28e70000, 0x2a024588, 0x2a024600, 0x2a1c7000)
+ compacting perm gen  total 12288K, used 120K [0x33920000, 0x34520000, 0x37920000)
+   the space 12288K,   0% used [0x33920000, 0x3393e390, 0x3393e400, 0x34520000)
+    ro space 10240K,  54% used [0x37920000, 0x37e9c6b0, 0x37e9c800, 0x38320000)
+    rw space 12288K,  55% used [0x38320000, 0x389c01f0, 0x389c0200, 0x38f20000)
+
+2014-01-12 12:31:24
+Full thread dump Java HotSpot(TM) Client VM (19.0-b09 mixed mode, sharing):
+
+"pool-1-thread-40" prio=6 tid=0x047f2c00 nid=0x1f7c waiting for monitor entry [0x04c6f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-39" prio=6 tid=0x047f2800 nid=0x250c waiting for monitor entry [0x04c1f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-38" prio=6 tid=0x047f2000 nid=0x2f04 waiting for monitor entry [0x04bcf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-37" prio=6 tid=0x047f1c00 nid=0x2f60 waiting for monitor entry [0x04b7f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-36" prio=6 tid=0x047f1400 nid=0xa44 runnable [0x04b2f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Arrays.vecswap(Arrays.java:623)
+	at java.util.Arrays.sort1(Arrays.java:601)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort(Arrays.java:96)
+	at osa.ora.MyThread.run(HighCPU.java:46)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-35" prio=6 tid=0x047f1000 nid=0x2574 waiting for monitor entry [0x04adf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-34" prio=6 tid=0x047f0800 nid=0x2e48 waiting for monitor entry [0x04a8f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-33" prio=6 tid=0x047f0400 nid=0x17a4 waiting for monitor entry [0x04a3f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-32" prio=6 tid=0x019f3c00 nid=0x2348 runnable [0x047ef000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Random.next(Random.java:139)
+	at java.util.Random.nextInt(Random.java:257)
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-31" prio=6 tid=0x019f3400 nid=0x18dc waiting for monitor entry [0x0479f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-30" prio=6 tid=0x019f3000 nid=0x1338 runnable [0x0474f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Random.next(Random.java:139)
+	at java.util.Random.nextInt(Random.java:257)
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-29" prio=6 tid=0x019f2800 nid=0x2d0c runnable [0x046ff000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Random.next(Random.java:139)
+	at java.util.Random.nextInt(Random.java:257)
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-28" prio=6 tid=0x019f2400 nid=0x1e90 waiting for monitor entry [0x046af000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-27" prio=6 tid=0x019f1c00 nid=0x2350 waiting for monitor entry [0x0465f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-26" prio=6 tid=0x019f1800 nid=0x14fc waiting for monitor entry [0x0460f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-25" prio=6 tid=0x019f1000 nid=0x143c waiting for monitor entry [0x045bf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- locked <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-24" prio=6 tid=0x019f0c00 nid=0x28d4 runnable [0x0456f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Random.next(Random.java:139)
+	at java.util.Random.nextInt(Random.java:257)
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-23" prio=6 tid=0x019f0400 nid=0x20bc runnable [0x0451f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Random.next(Random.java:139)
+	at java.util.Random.nextInt(Random.java:257)
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-22" prio=6 tid=0x019f0000 nid=0x25d4 waiting for monitor entry [0x044cf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-21" prio=6 tid=0x019ef800 nid=0x2608 runnable [0x0447f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Random.next(Random.java:139)
+	at java.util.Random.nextInt(Random.java:257)
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-20" prio=6 tid=0x019ef400 nid=0x22e4 waiting for monitor entry [0x0442f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-19" prio=6 tid=0x019eec00 nid=0xa20 waiting for monitor entry [0x043df000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-18" prio=6 tid=0x019ee800 nid=0x2e44 waiting for monitor entry [0x0438f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-17" prio=6 tid=0x019ee000 nid=0x2c38 waiting for monitor entry [0x0433f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-16" prio=6 tid=0x019edc00 nid=0x238c waiting for monitor entry [0x042ef000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-15" prio=6 tid=0x019ed400 nid=0x15d0 waiting for monitor entry [0x0429f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-14" prio=6 tid=0x019ed000 nid=0x2ce0 waiting for monitor entry [0x0424f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-13" prio=6 tid=0x019ec800 nid=0x2fc8 waiting for monitor entry [0x041ff000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-12" prio=6 tid=0x019ec400 nid=0x1e9c waiting for monitor entry [0x041af000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-11" prio=6 tid=0x019e7c00 nid=0x20b4 waiting for monitor entry [0x0415f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-10" prio=6 tid=0x019e6800 nid=0x2d3c waiting for monitor entry [0x0410f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-9" prio=6 tid=0x019da400 nid=0x28e8 waiting for monitor entry [0x03fbf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-8" prio=6 tid=0x019d6800 nid=0x2400 waiting for monitor entry [0x03f6f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-7" prio=6 tid=0x019d6000 nid=0x2a70 waiting for monitor entry [0x03f1f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-6" prio=6 tid=0x019d3800 nid=0x22dc waiting for monitor entry [0x03ecf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-5" prio=6 tid=0x019d3400 nid=0x21e4 runnable [0x03e7f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Arrays.sort1(Arrays.java:591)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort(Arrays.java:96)
+	at osa.ora.MyThread.run(HighCPU.java:46)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-4" prio=6 tid=0x019d2c00 nid=0x1434 waiting for monitor entry [0x03e2f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-3" prio=6 tid=0x019d2400 nid=0x2f78 waiting for monitor entry [0x03ddf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-2" prio=6 tid=0x019d1c00 nid=0x2c34 waiting for monitor entry [0x03d8f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-1" prio=6 tid=0x019d1400 nid=0x1cb4 waiting for monitor entry [0x03d3f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Low Memory Detector" daemon prio=6 tid=0x01969400 nid=0x1808 runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+"CompilerThread0" daemon prio=10 tid=0x01965800 nid=0x1590 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Attach Listener" daemon prio=10 tid=0x01963000 nid=0x1544 runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" daemon prio=10 tid=0x01962000 nid=0x2fd0 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" daemon prio=8 tid=0x01950800 nid=0x1a68 in Object.wait() [0x03b5f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x28e70878> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked <0x28e70878> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+"Reference Handler" daemon prio=10 tid=0x0194e800 nid=0x1dd0 in Object.wait() [0x03b0f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x28e700a0> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:485)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+	- locked <0x28e700a0> (a java.lang.ref.Reference$Lock)
+
+"main" prio=6 tid=0x00bf9000 nid=0x2ff0 waiting on condition [0x002ff000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at osa.ora.HighCPU.main(HighCPU.java:25)
+
+"VM Thread" prio=10 tid=0x0194d000 nid=0x2328 runnable 
+
+"VM Periodic Task Thread" prio=10 tid=0x0196ac00 nid=0x258c waiting on condition 
+
+JNI global references: 908
+
+Heap
+ def new generation   total 9152K, used 5638K [0x23920000, 0x24300000, 0x28e70000)
+  eden space 8192K,  68% used [0x23920000, 0x23ea18a8, 0x24120000)
+  from space 960K,   0% used [0x24210000, 0x24210000, 0x24300000)
+  to   space 960K,   0% used [0x24120000, 0x24120000, 0x24210000)
+ tenured generation   total 19804K, used 7191K [0x28e70000, 0x2a1c7000, 0x33920000)
+   the space 19804K,  36% used [0x28e70000, 0x29575d98, 0x29575e00, 0x2a1c7000)
+ compacting perm gen  total 12288K, used 120K [0x33920000, 0x34520000, 0x37920000)
+   the space 12288K,   0% used [0x33920000, 0x3393e390, 0x3393e400, 0x34520000)
+    ro space 10240K,  54% used [0x37920000, 0x37e9c6b0, 0x37e9c800, 0x38320000)
+    rw space 12288K,  55% used [0x38320000, 0x389c01f0, 0x389c0200, 0x38f20000)
+
+
+2014-01-12 12:31:26
+Full thread dump Java HotSpot(TM) Client VM (19.0-b09 mixed mode, sharing):
+
+"pool-1-thread-40" prio=6 tid=0x047f2c00 nid=0x1f7c runnable [0x04c6f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Random.next(Random.java:139)
+	at java.util.Random.nextInt(Random.java:257)
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-39" prio=6 tid=0x047f2800 nid=0x250c waiting for monitor entry [0x04c1f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-38" prio=6 tid=0x047f2000 nid=0x2f04 runnable [0x04bcf000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Arrays.sort1(Arrays.java:595)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort1(Arrays.java:605)
+	at java.util.Arrays.sort1(Arrays.java:607)
+	at java.util.Arrays.sort(Arrays.java:96)
+	at osa.ora.MyThread.run(HighCPU.java:46)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-37" prio=6 tid=0x047f1c00 nid=0x2f60 waiting for monitor entry [0x04b7f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-36" prio=6 tid=0x047f1400 nid=0xa44 waiting for monitor entry [0x04b2f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-35" prio=6 tid=0x047f1000 nid=0x2574 waiting for monitor entry [0x04adf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-34" prio=6 tid=0x047f0800 nid=0x2e48 waiting for monitor entry [0x04a8f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-33" prio=6 tid=0x047f0400 nid=0x17a4 waiting for monitor entry [0x04a3f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:38)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-32" prio=6 tid=0x019f3c00 nid=0x2348 waiting for monitor entry [0x047ef000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-31" prio=6 tid=0x019f3400 nid=0x18dc waiting for monitor entry [0x0479f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-30" prio=6 tid=0x019f3000 nid=0x1338 waiting for monitor entry [0x0474f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:38)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-29" prio=6 tid=0x019f2800 nid=0x2d0c runnable [0x046ff000]
+   java.lang.Thread.State: RUNNABLE
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-28" prio=6 tid=0x019f2400 nid=0x1e90 waiting for monitor entry [0x046af000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-27" prio=6 tid=0x019f1c00 nid=0x2350 waiting for monitor entry [0x0465f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-26" prio=6 tid=0x019f1800 nid=0x14fc waiting for monitor entry [0x0460f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-25" prio=6 tid=0x019f1000 nid=0x143c waiting for monitor entry [0x045bf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-24" prio=6 tid=0x019f0c00 nid=0x28d4 runnable [0x0456f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Random.<init>(Random.java:79)
+	at java.util.Random.<init>(Random.java:62)
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-23" prio=6 tid=0x019f0400 nid=0x20bc waiting for monitor entry [0x0451f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:38)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-22" prio=6 tid=0x019f0000 nid=0x25d4 waiting for monitor entry [0x044cf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- locked <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-21" prio=6 tid=0x019ef800 nid=0x2608 runnable [0x0447f000]
+   java.lang.Thread.State: RUNNABLE
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-20" prio=6 tid=0x019ef400 nid=0x22e4 waiting for monitor entry [0x0442f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-19" prio=6 tid=0x019eec00 nid=0xa20 waiting for monitor entry [0x043df000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-18" prio=6 tid=0x019ee800 nid=0x2e44 waiting for monitor entry [0x0438f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-17" prio=6 tid=0x019ee000 nid=0x2c38 waiting for monitor entry [0x0433f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-16" prio=6 tid=0x019edc00 nid=0x238c waiting for monitor entry [0x042ef000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-15" prio=6 tid=0x019ed400 nid=0x15d0 waiting for monitor entry [0x0429f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-14" prio=6 tid=0x019ed000 nid=0x2ce0 waiting for monitor entry [0x0424f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-13" prio=6 tid=0x019ec800 nid=0x2fc8 waiting for monitor entry [0x041ff000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-12" prio=6 tid=0x019ec400 nid=0x1e9c runnable [0x041af000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Random.next(Random.java:139)
+	at java.util.Random.nextInt(Random.java:257)
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-11" prio=6 tid=0x019e7c00 nid=0x20b4 waiting for monitor entry [0x0415f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-10" prio=6 tid=0x019e6800 nid=0x2d3c waiting for monitor entry [0x0410f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-9" prio=6 tid=0x019da400 nid=0x28e8 waiting for monitor entry [0x03fbf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-8" prio=6 tid=0x019d6800 nid=0x2400 waiting for monitor entry [0x03f6f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-7" prio=6 tid=0x019d6000 nid=0x2a70 waiting for monitor entry [0x03f1f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-6" prio=6 tid=0x019d3800 nid=0x22dc waiting for monitor entry [0x03ecf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:38)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-5" prio=6 tid=0x019d3400 nid=0x21e4 runnable [0x03e7f000]
+   java.lang.Thread.State: RUNNABLE
+	at java.util.Random.next(Random.java:139)
+	at java.util.Random.nextInt(Random.java:257)
+	at osa.ora.MyThread.run(HighCPU.java:44)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-4" prio=6 tid=0x019d2c00 nid=0x1434 waiting for monitor entry [0x03e2f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-3" prio=6 tid=0x019d2400 nid=0x2f78 waiting for monitor entry [0x03ddf000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-2" prio=6 tid=0x019d1c00 nid=0x2c34 waiting for monitor entry [0x03d8f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"pool-1-thread-1" prio=6 tid=0x019d1400 nid=0x1cb4 waiting for monitor entry [0x03d3f000]
+   java.lang.Thread.State: BLOCKED (on object monitor)
+	at java.io.PrintStream.println(PrintStream.java:755)
+	- waiting to lock <0x28e70080> (a java.io.PrintStream)
+	at osa.ora.MyThread.run(HighCPU.java:47)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.runTask(ThreadPoolExecutor.java:886)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:908)
+	at java.lang.Thread.run(Thread.java:662)
+
+"Low Memory Detector" daemon prio=6 tid=0x01969400 nid=0x1808 runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+"CompilerThread0" daemon prio=10 tid=0x01965800 nid=0x1590 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Attach Listener" daemon prio=10 tid=0x01963000 nid=0x1544 runnable [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" daemon prio=10 tid=0x01962000 nid=0x2fd0 waiting on condition [0x00000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" daemon prio=8 tid=0x01950800 nid=0x1a68 in Object.wait() [0x03b5f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x28e70878> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:118)
+	- locked <0x28e70878> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:134)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:159)
+
+"Reference Handler" daemon prio=10 tid=0x0194e800 nid=0x1dd0 in Object.wait() [0x03b0f000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	- waiting on <0x28e700a0> (a java.lang.ref.Reference$Lock)
+	at java.lang.Object.wait(Object.java:485)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:116)
+	- locked <0x28e700a0> (a java.lang.ref.Reference$Lock)
+
+"main" prio=6 tid=0x00bf9000 nid=0x2ff0 waiting on condition [0x002ff000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at osa.ora.HighCPU.main(HighCPU.java:25)
+
+"VM Thread" prio=10 tid=0x0194d000 nid=0x2328 runnable 
+
+"VM Periodic Task Thread" prio=10 tid=0x0196ac00 nid=0x258c waiting on condition 
+
+JNI global references: 917
+
+Heap
+ def new generation   total 9152K, used 2625K [0x23920000, 0x24300000, 0x28e70000)
+  eden space 8192K,  22% used [0x23920000, 0x23aecf70, 0x24120000)
+  from space 960K,  81% used [0x24210000, 0x242d3578, 0x24300000)
+  to   space 960K,   0% used [0x24120000, 0x24120000, 0x24210000)
+ tenured generation   total 19804K, used 11095K [0x28e70000, 0x2a1c7000, 0x33920000)
+   the space 19804K,  56% used [0x28e70000, 0x29945f98, 0x29946000, 0x2a1c7000)
+ compacting perm gen  total 12288K, used 120K [0x33920000, 0x34520000, 0x37920000)
+   the space 12288K,   0% used [0x33920000, 0x3393e3b0, 0x3393e400, 0x34520000)
+    ro space 10240K,  54% used [0x37920000, 0x37e9c6b0, 0x37e9c800, 0x38320000)
+    rw space 12288K,  55% used [0x38320000, 0x389c01f0, 0x389c0200, 0x38f20000)
+
+

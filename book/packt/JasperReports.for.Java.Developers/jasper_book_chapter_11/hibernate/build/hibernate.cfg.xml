@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- local connection properties -->
+		<property name="hibernate.connection.url">
+			jdbc:mysql://localhost:3306/flightstats
+		</property>
+		<property name="hibernate.connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">password</property>
+		<!-- property name="hibernate.connection.pool_size"></property -->
+		<!-- dialect for MySQL -->
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="hibernate.show_sql">false</property>
+		<property name="hibernate.transaction.factory_class">
+			org.hibernate.transaction.JDBCTransactionFactory
+		</property>
+		<mapping resource="Aircraft.hbm.xml" />
+		<mapping resource="AircraftEngines.hbm.xml" />
+		<mapping resource="AircraftEngineTypes.hbm.xml" />
+		<mapping resource="AircraftModels.hbm.xml" />
+		<mapping resource="AircraftTypes.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

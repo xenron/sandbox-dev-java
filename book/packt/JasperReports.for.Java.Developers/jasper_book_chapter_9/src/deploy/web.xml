@@ -1,0 +1,30 @@
+<!DOCTYPE web-app 
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" 
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+	<servlet>
+		<servlet-name>HtmlReportServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.HtmlReportServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ImageServlet</servlet-name>
+		<servlet-class>
+			net.sf.jasperreports.j2ee.servlets.ImageServlet
+		</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>HtmlReportServlet</servlet-name>
+		<url-pattern>/htmlReport</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ImageServlet</servlet-name>
+		<url-pattern>/image</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>

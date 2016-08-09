@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="net.ensode.jasperbook.dbaccess">
+	<class
+		name="AircraftEngines"
+		table="aircraft_engines"
+	>
+		<id
+			name="Id"
+			type="string"
+			column="aircraft_engine_code"
+		>
+			<!--generator class="sequence"/-->
+		</id>
+
+		<property
+			name="Manufacturer"
+			column="manufacturer"
+			type="string"
+			not-null="true"
+			length="10"
+		/>
+		<property
+			name="Model"
+			column="model"
+			type="string"
+			not-null="true"
+			length="13"
+		/>
+		<property
+			name="AircraftEngineTypeId"
+			column="aircraft_engine_type_id"
+			type="java.lang.String"
+			not-null="true"
+			length="3"
+		/>
+		<property
+			name="Horsepower"
+			column="horsepower"
+			type="java.lang.String"
+			not-null="true"
+			length="8"
+		/>
+		<property
+			name="Thrust"
+			column="thrust"
+			type="java.lang.String"
+			not-null="true"
+			length="8"
+		/>
+		<property
+			name="FuelConsumed"
+			column="fuel_consumed"
+			type="big_decimal"
+			not-null="true"
+			length="10"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

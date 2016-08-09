@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport name="HibernateQueryDemoReport">
+	<parameter name="countryCode" class="java.lang.String" />
+	<queryString language="hql">
+		<![CDATA[from Aircraft aircraft where country = $P{countryCode} order by aircraft.id]]>
+	</queryString>
+	<field name="id" class="java.lang.String" />
+	<field name="aircraftSerial" class="java.lang.String" />
+	<field name="yearBuilt" class="java.lang.String" />
+	<title>
+		<band height="30">
+			<textField>
+				<reportElement width="555" height="30" x="0" y="0" />
+				<textFieldExpression>
+					<![CDATA["Aircraft Registered in Country Code: " + $P{countryCode}]]>
+				</textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30">
+			<staticText>
+				<reportElement width="100" height="30" x="0" y="0" />
+				<text>
+					<![CDATA[Tail Number]]>
+				</text>
+			</staticText>
+			<staticText>
+				<reportElement width="100" height="30" x="100" y="0" />
+				<text>
+					<![CDATA[Serial Number]]>
+				</text>
+			</staticText>
+			<staticText>
+				<reportElement width="100" height="30" x="200" y="0" />
+				<text>
+					<![CDATA[Year Built]]>
+				</text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="30">
+			<textField>
+				<reportElement width="100" height="30" x="0" y="0" />
+				<textFieldExpression>
+					<![CDATA[$F{id}]]>
+				</textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement width="100" height="30" x="100" y="0" />
+				<textFieldExpression>
+					<![CDATA[$F{aircraftSerial}]]>
+				</textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement width="100" height="30" x="200" y="0" />
+				<textFieldExpression>
+					<![CDATA[$F{yearBuilt}]]>
+				</textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

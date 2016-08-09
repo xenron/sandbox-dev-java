@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="net.ensode.jasperbook.dbaccess">
+	<class
+		name="AircraftEngineTypes"
+		table="aircraft_engine_types"
+	>
+		<id
+			name="Id"
+			type="java.lang.String"
+			column="aircraft_engine_type_id"
+		>
+			<!--generator class="sequence"/-->
+		</id>
+
+		<property
+			name="Description"
+			column="description"
+			type="string"
+			not-null="true"
+			length="30"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

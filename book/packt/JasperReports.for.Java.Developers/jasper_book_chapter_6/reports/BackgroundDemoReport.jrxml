@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport name="BackgroundDemoReport">
+	<style name="centeredText" hAlign="Center" vAlign="Middle" />
+	<style name="boldCentered" style="centeredText" isBold="true" />
+	<style name="backgroundStyle" style="boldCentered"
+		fontName="Helvetica" pdfFontName="Helvetica-Bold"
+		forecolor="lightGray" fontSize="90"/>
+	<background>
+		<band height="782">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="782"
+					style="backgroundStyle" mode="Transparent" />
+				<textElement rotation="None"/>
+				<text>
+					<![CDATA[SAMPLE]]>
+				</text>
+			</staticText>
+		</band>
+	</background>
+	<title>
+		<band height="60">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="60"
+					style="boldCentered" />
+				<text>
+					<![CDATA[Report Background Demo]]>
+				</text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="600">
+			<staticText>
+				<reportElement x="0" y="300" width="555" height="60"
+					mode="Transparent" style="centeredText" />
+				<text>
+					<![CDATA[This report demonstrates how to set the report background.]]>
+				</text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

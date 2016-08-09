@@ -1,0 +1,12 @@
+module tuning {
+  module distrib {
+    module corba {
+      interface ServerObject {
+        boolean getBoolean();
+        long getNumber();
+        string getString();
+        void setBoolean(in boolean flag);
+        void setNumber(in long i);
+        void setString(in string obj);
+        void setAll(in boolean flag, in long i, in string obj);
+}; }; }; };

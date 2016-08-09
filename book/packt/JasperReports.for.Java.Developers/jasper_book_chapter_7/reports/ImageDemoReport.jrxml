@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport name="ImageDemoReport">
+	<background>
+		<band height="391">
+			<image>
+				<reportElement x="65" y="0" width="391" height="391"/>
+				<imageExpression class="java.lang.String">
+					<![CDATA["reports/company_logo.gif"]]>
+				</imageExpression>
+			</image>
+		</band>
+	</background>
+</jasperReport>

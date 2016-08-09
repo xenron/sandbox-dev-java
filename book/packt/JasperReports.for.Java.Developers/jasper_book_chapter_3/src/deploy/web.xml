@@ -1,0 +1,25 @@
+<!DOCTYPE web-app 
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" 
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+	<display-name>
+		JasperReports Send Report to Browser Example
+	</display-name>
+	<description>
+		Demonstrates how to send a PDF report to a browser window.
+	</description>
+
+	<servlet>
+		<servlet-name>FirstReportSendToBrowserServlet</servlet-name>
+		<servlet-class>
+			net.ensode.jasperbook.FirstReportSendToBrowserServlet
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>FirstReportSendToBrowserServlet</servlet-name>
+		<url-pattern>/app</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
