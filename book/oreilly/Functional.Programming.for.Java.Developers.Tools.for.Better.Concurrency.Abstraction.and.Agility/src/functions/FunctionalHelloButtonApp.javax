@@ -1,0 +1,15 @@
+package functions;
+import java.fawt.*;
+import java.fawt.event.*;
+
+class FunctionalHelloButtonApp {
+  private final Button button = new Button();
+
+  public FunctionalHelloButtonApp() {
+    button.addActionListener(new Function1Void<ActionEvent>() {  // 1
+      public void apply(ActionEvent e) {                         // 2
+        System.out.println("Hello There: event received: "+e);
+      }
+    });
+  }
+}

@@ -1,0 +1,16 @@
+package datastructures;
+// Possible syntax extensions; won't compile for any version of Java.
+public class PatternMatchExample {
+  public static String match(Object obj) {
+    switch (obj) {
+      case EMPTY:               // Is it an empty list?
+        return "()";
+      case NonEmptyList(1, 2):  // A list with 1 and 2?
+        return "(1,(2,())";
+      case List<?> list(head,tail):  // Any other List? Create head, tail variables
+        return "("+head+match(tail)+")";
+      default:                  // Not a List!!
+        return "unrecognized object!";
+    }
+  }
+}

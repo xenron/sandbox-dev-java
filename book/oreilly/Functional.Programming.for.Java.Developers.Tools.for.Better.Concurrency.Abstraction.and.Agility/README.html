@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>README.markdown</title>
+</head>
+
+<body>
+
+<h1>Functional Programming for Java Developers</h1>
+
+<h2>README for the Code Examples</h2>
+
+<p>Dean Wampler, July 18, 2011</p>
+
+<p>This archive contains all the code examples found in <a href="http://oreilly.com/catalog/9781449311032/">Functional Programming for Java Developers</a>, with the exception of several code snippets in the text. </p>
+
+<p>All the source files are in the <code>src</code> directory and the corresponding <code>JUnit</code> tests are in the <code>test</code> directory. There is also a <code>lib</code> directory that includes several third-party libraries used for testing or as part of some of the examples. These libraries are subject to their individual license restrictions.</p>
+
+<ol>
+<li><code>junit-4.5.jar</code> for unit tests (<a href="http://www.junit.org">web site</a>, <a href="http://www.junit.org/license">license</a>).</li>
+<li>The Akka framework for the Actor and STM examples (<a href="http://akka.io">web site</a>, <a href="http://akka.io/docs/akka/1.1.1/project/licenses.html">license</a>).</li>
+<li>The Multiverse library, which is used by Akka for STM (<a href="http://multiverse.codehaus.org/overview.html">web site</a>, <a href="http://multiverse.codehaus.org/license.html">license</a>).</li>
+<li>The Scala language runtime library, which is used by Akka (<a href="http://scala-lang.org">web site</a>, <a href="http://www.scala-lang.org/node/146">license</a>).</li>
+</ol>
+
+<p>You'll notice that some of the <code>src</code> files have the extension <code>.javax</code>. These files do not compile with <code>javac</code>, either because they include hypothetical extensions to Java, as discussed in the book, or they assume the existence of libraries that don't actually exist, such as an updated, "functional" version of the AWT. </p>
+
+<h2>Building the Code Examples</h2>
+
+<p>You can load this directory as an Eclipse project. The required <code>.project</code> and <code>.classpath</code> files are included in this directory.</p>
+
+<p>While Java projects are typically built with <code>ant</code> or <code>maven</code>, I just used <code>Gnu Make</code>, with a conventional <code>Makefile</code>. This is the version of <code>make</code> on all Linux, MacOS X, and Cygwin systems.</p>
+
+<p>To build and run the examples, all you need is a recent of version of the Java SDK installed and set up on your system <code>PATH</code>. Required third-party libraries are in the <code>lib</code> directory.</p>
+
+<p>To build the examples and run the tests, open a terminal window and change to the <code>code-examples</code> directory. Then run the <code>make</code> command. This builds the default <code>all</code> target, which depends the <code>compile</code> and <code>tests</code> targets. You'll see output for the test runs, ending in <code>OK</code> if they were successful.</p>
+
+<h2>Feedback</h2>
+
+<p>I welcome feedback on the examples (and the book for that matter). You can post comments, corrections, etc. on the <a href="http://forums.oreilly.com/">O'Reilly forum</a>. The book's web site will provide access to the forum, too: <a href="http://oreilly.com/catalog/9781449311032/">http://oreilly.com/catalog/9781449311032/</a>.</p>
+
+</body>
+</html>

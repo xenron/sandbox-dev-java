@@ -1,0 +1,17 @@
+package functions;
+import java.awt.*;
+import java.awt.event.*;
+
+/**
+ * Example using the forthcoming Java 8 syntax for lambdas.
+ * Requires JDK 8 to compile.
+ */
+class FunctionalHelloButtonApp {
+  private final Button button = new Button();
+
+  public FunctionalHelloButtonApp() {
+    button.addActionListener(
+      #{ ActionEvent e -> System.out.println("Hello There: event received: "+e) }
+    );
+  }
+}
