@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd      
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	<bean id="catalogBean" class="spring.catalog.Catalog">
+		<!--
+			<property name="journal"> <value>Oracle Magazine</value> </property>
+			<property name="publisher"> <value>Oracle Publishing</value>
+			</property> <property name="edition"> <value>November-December
+			2010</value> </property> <property name="title"> <value>Agile
+			Enterprise Architecture</value> </property> <property name="author">
+			<value>Bob Rhubart</value> </property>
+		
+		<constructor-arg index="0" value="Oracle Magazine" />
+		<constructor-arg index="1" value="Oracle Publishing" />
+		<constructor-arg index="2" value="November-December 2010" />
+		<constructor-arg index="3" value="Agile Enterprise Architecture" />
+		<constructor-arg index="4" value="Bob Rhubart" />-->
+	</bean>
+
+	<bean id="catalogBeanAOP" class="spring.catalog.CatalogAOP"/>
+
+	<aop:aspectj-autoproxy />
+	<aop:config proxy-target-class="true">
+		<aop:pointcut expression="bean(catalogBean)" id="catalogBeanPc"></aop:pointcut>
+		<aop:aspect ref="catalogBeanAOP" id="catalogBeanAspect">
+			<aop:after-returning pointcut="execution(java.lang.StringBuffer getJournal(..))"
+				method="setJournal" returning="journal" arg-names="journal" />
+			<aop:after-returning pointcut="execution(java.lang.StringBuffer getPublisher(..))"
+				method="setPublisher" returning="publisher" arg-names="publisher" />
+			<aop:after-returning pointcut="execution(java.lang.StringBuffer getEdition(..))"
+				method="setEdition" returning="edition" arg-names="edition" />
+			<aop:after-returning pointcut="execution(java.lang.StringBuffer getTitle(..))"
+				method="setTitle" returning="title" arg-names="title" />
+			<aop:after-returning pointcut="execution(java.lang.StringBuffer getAuthor(..))"
+				method="setAuthor" returning="author" arg-names="author" />
+		</aop:aspect>
+
+	</aop:config>
+</beans>

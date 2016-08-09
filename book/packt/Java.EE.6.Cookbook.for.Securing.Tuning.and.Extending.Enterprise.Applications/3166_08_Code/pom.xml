@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.baselogic.javaeecookbook</groupId>
+    <artifactId>ch08</artifactId>
+    <version>1.0.2</version>
+    <packaging>jar</packaging>
+    <name>Chapter 08: JAXRS/JAXWS Pojos, Clients and Stubs.</name>
+
+    <!--<parent>
+        <groupId>com.baselogic</groupId>
+        <artifactId>root</artifactId>
+        <version>1.0.0</version>
+        <relativePath>../</relativePath>
+    </parent>-->
+
+    <properties>
+        <commons-lang-version>2.6</commons-lang-version>
+        <cxf-version>2.4.1</cxf-version>
+        <cxf-jetty-version>2.4.1</cxf-jetty-version>
+        <jaxb-version>2.1</jaxb-version>
+        <log4j-version>1.2.16</log4j-version>
+        <junit-version>4.8.1</junit-version>
+        <mockito.version>1.8.5</mockito.version>
+        <slf4j-version>1.6.0</slf4j-version>
+        <xbean-version>3.7</xbean-version>
+        <xerces-version>2.9.1</xerces-version>
+
+        <plugin-jar-version>2.3.1</plugin-jar-version>
+
+        <java-version>1.6</java-version>
+        <maxmem-version>384M</maxmem-version>
+
+        <!-- use utf-8 encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.baselogic.javaeecookbook</groupId>
+            <artifactId>ch01</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${commons-lang-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>${cxf-version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxrs</artifactId>
+            <version>${cxf-version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>

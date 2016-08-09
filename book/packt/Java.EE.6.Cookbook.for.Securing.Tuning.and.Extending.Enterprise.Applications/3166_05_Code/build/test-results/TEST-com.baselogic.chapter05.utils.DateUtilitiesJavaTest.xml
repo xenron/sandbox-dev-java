@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" hostname="PAGWKL-2P0P2R1" name="com.baselogic.chapter05.utils.DateUtilitiesJavaTest" tests="2" time="0.616" timestamp="2011-09-04T20:34:36">
+  <properties />
+  <testcase classname="com.baselogic.chapter05.utils.DateUtilitiesJavaTest" name="testGetYesterdayDate" time="0.377" />
+  <testcase classname="com.baselogic.chapter05.utils.DateUtilitiesJavaTest" name="testGetYesterdayDateScala" time="0.19" />
+  <system-out><![CDATA[*** SCALA ROCK ***********************************
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

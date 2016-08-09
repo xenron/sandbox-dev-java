@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job id="student-information-job" version="1.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee">
+    <properties>                    
+        <property name="MESSAGE" value="Dear student, please note that the payment deadline is set to 15 May" />
+     </properties>
+    <step id="informer">
+      <batchlet ref="StudentInformation" />
+      <end on="COMPLETED"/>
+  </step>
+</job>

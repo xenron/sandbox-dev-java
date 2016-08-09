@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+                        http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    
+    <navigation-rule>
+        <from-view-id>/jsfpages/connectionPage.xhtml</from-view-id>
+        <navigation-case>		
+		<from-outcome>connected</from-outcome>
+		<to-view-id>/jsfpages/welcomPage.xhtml</to-view-id>
+	</navigation-case>
+	<navigation-case>		
+		<from-outcome>failure</from-outcome>
+		<to-view-id>/jsfpages/connectionFailurePage.xhtml</to-view-id>
+	</navigation-case>
+    </navigation-rule>
+   <application>
+        <resource-library-contracts>
+            <contract-mapping>
+                <url-pattern>/templatepages/*</url-pattern>
+                <contracts>template1</contracts>
+            </contract-mapping>
+            <contract-mapping>
+                <url-pattern>*</url-pattern>
+                <contracts>template2</contracts>
+            </contract-mapping>
+        </resource-library-contracts>
+    </application>
+</faces-config>

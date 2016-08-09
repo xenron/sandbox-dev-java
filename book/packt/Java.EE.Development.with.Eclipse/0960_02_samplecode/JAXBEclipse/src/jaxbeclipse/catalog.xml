@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog xmlns="http://www.example.org/catalog" title="Oracle Magazine" publisher="Oracle Publishing">
+    <catalogid>1</catalogid>
+    <journal date="September-October 2008">
+        <article section="FEATURES">
+            <title>Share 2.0</title>
+            <author>Alan Joch</author>
+        </article>
+    </journal>
+    <journal date="March-April 2008">
+        <article section="ORACLE DEVELOPER">
+            <title>Declarative Data Filtering</title>
+            <author>Steve Muench</author>
+        </article>
+    </journal>
+</catalog>

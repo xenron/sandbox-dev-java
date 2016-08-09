@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.example.org/catalog" xmlns:catalog="http://www.example.org/catalog"
+	elementFormDefault="qualified">
+	<xsd:element name="catalog" type="catalog:catalogType" />
+	<xsd:element name="catalogid" type="xsd:int" />
+	<xsd:complexType name="catalogType">
+		<xsd:sequence>
+			<xsd:element ref="catalog:catalogid" minOccurs="0"
+				maxOccurs="1" />
+			<xsd:element name="journal" type="catalog:journalType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+		<xsd:attribute name="title" type="xsd:string" />
+		<xsd:attribute name="publisher" type="xsd:string" />
+	</xsd:complexType>
+
+	<xsd:complexType name="journalType">
+		<xsd:sequence>
+			<xsd:element name="article" type="catalog:articleType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+		<xsd:attribute name="date" type="xsd:string" />
+	</xsd:complexType>
+	<xsd:complexType name="articleType">
+		<xsd:sequence>
+			<xsd:element name="title" type="xsd:string" />
+			<xsd:element name="author" type="xsd:string" />
+		</xsd:sequence>
+		<xsd:attribute name="section" type="xsd:string" />
+	</xsd:complexType>
+
+</xsd:schema>

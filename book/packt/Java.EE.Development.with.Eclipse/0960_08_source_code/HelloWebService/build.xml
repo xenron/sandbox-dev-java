@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="webservices-hello" default="deploy">
+
+	<property name="src.dir" value="${basedir}/src" />
+	<property name="web.module" value="${basedir}/webContent" />
+	<property name="weblogic.home" value="C:/Oracle/Middleware/WLS12c" />
+	<property name="weblogic.server" value="${weblogic.home}/wlserver_12.1/server" />
+	<property name="build.dir" value="${basedir}/build" />
+	<property name="output.dir" value="${src.dir}/output" />
+	<property name="deploy.dir"
+		value="${weblogic.home}/user_projects/domains/base_domain/autodeploy" />
+	<property name="temp.dir"
+		value="${weblogic.home}/user_projects/domains/base_domain/servers/AdminServer/tmp" />
+	<path id="classpath">
+		<fileset dir="${weblogic.home}/modules">
+			<include name="ws.api_2.0.0.0.jar" />
+			<include name="javax.xml.ws_2.2.0.jar" />
+			<include name="javax.jws_2.0.1.jar" />
+			<include name="javax.xml.stream_1.1.2.0.jar" />
+			<include name="javax.xml.bind_2.2.3.jar" />
+		</fileset>
+
+		<fileset dir="${weblogic.server}/lib">
+			<include name="weblogic.jar" />
+		</fileset>
+		<pathelement location="${build.dir}" />
+	</path>
+	<property name="build.classpath" refid="classpath" />
+	<target name="prepare">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${output.dir}" />
+		<mkdir dir="${output.dir}/HelloWsEar" />
+		<mkdir dir="${output.dir}/compiledWsdl" />
+		<mkdir dir="${output.dir}/clientclass" />
+	</target>
+	<target name="build" depends="prepare">
+		<taskdef name="wsdlc" classname="weblogic.wsee.tools.anttasks.WsdlcTask">
+			<classpath refid="classpath" />
+		</taskdef>
+
+		<wsdlc failOnError="true"
+			srcWsdl="${src.dir}/hellowebservice/HelloWSService.wsdl" destImplDir="${src.dir}"
+			destJwsDir="${output.dir}/compiledWsdl" srcPortName="HelloWSPort"
+			type="JAXWS">
+
+
+
+			<classpath refid="classpath" />
+		</wsdlc>
+
+	</target>
+
+
+
+	<taskdef name="jwsc" classname="weblogic.wsee.tools.anttasks.JwscTask">
+		<classpath refid="classpath" />
+	</taskdef>
+	<target name="build-service" depends="build">
+
+		<jwsc srcdir="${src.dir}" destdir="${output.dir}/HelloWsEar">
+			<jws file="hellowebservice/HelloWSImpl.java" compiledWsdl="${output.dir}/compiledWsdl/HelloWSService_wsdl.jar"
+				type="JAXWS" />
+			<classpath refid="classpath" />
+		</jwsc>
+
+	</target>
+
+
+	<target name="assemble-app" depends="build-service">
+		<jar jarfile="${output.dir}/HelloWsEar/HelloWSService_wsdl.ear">
+			<metainf dir="${output.dir}/HelloWsEar/META-INF">
+				<include name="application.xml" />
+			</metainf>
+			<fileset dir="${output.dir}/HelloWsEar/hellowebservice"
+				includes="HelloWSImpl.war" />
+		</jar>
+	</target>
+
+	<target name="deploy" depends="assemble-app">
+		<copy file="${output.dir}/HelloWsEar/HelloWSService_wsdl.ear"
+			todir="${deploy.dir}" />
+	</target>
+
+
+	<target name="build-client" depends="deploy">
+
+
+		<taskdef name="clientgen" classname="weblogic.wsee.tools.anttasks.ClientGenTask">
+			<classpath refid="classpath" />
+		</taskdef>
+
+		<clientgen failonerror="true" type="JAXWS"
+			wsdl="http://localhost:7001/HelloWebService/HelloWSService?WSDL"
+			destDir="${output.dir}/clientclass" serviceName="HelloWSService"
+			copyWsdl="true" packageName="hellowebserviceclient">
+
+
+
+			<classpath refid="classpath" />
+		</clientgen>
+
+		<javac srcdir="${output.dir}/clientclass" destdir="${output.dir}/clientclass"
+			includes="**/*.java" />
+		<javac srcdir="${src.dir}" destdir="${output.dir}/clientclass"
+			includes="hellowebserviceclient/HelloWSClient.java" />
+
+	</target>
+
+
+	<path id="client.class.path">
+		<path refid="classpath" />
+		<pathelement path="${output.dir}/clientclass" />
+		<pathelement path="${java.class.path}" />
+	</path>
+
+	<target name="run" depends="build-client">
+		<java fork="true" classname="hellowebserviceclient.HelloWSClient"
+			failonerror="true">
+			<classpath refid="client.class.path" />
+		</java>
+	</target>
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<delete dir="${output.dir}" />
+		<delete file="${deploy.dir}/HelloWSService_wsdl.ear" />
+		<delete dir="${temp.dir}" />
+	</target>
+
+</project> 
+
+
+
+

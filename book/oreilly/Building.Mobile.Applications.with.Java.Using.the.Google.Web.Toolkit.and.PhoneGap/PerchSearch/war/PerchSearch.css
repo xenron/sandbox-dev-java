@@ -1,0 +1,60 @@
+/** Add css rules here for your application. */
+
+
+.header {
+    font-size: 200%;
+    text-align: center;
+}
+
+.nav .gwt-Button {
+    width: 100%;
+    margin: 3px 0px 3px 0px;
+    color: white;
+    background: none;
+    background-color: rgb(160,200,250);
+    border: 0px solid black;
+}
+
+
+.tweet {
+    color: black;
+    padding: 0.3em;
+    font-size: 130%;
+    margin: 2px;
+    border: 1px solid #e0e0e0;
+    background-color: #fafafa;
+}
+
+
+
+#header_container {
+}
+#nav_container {
+    position: absolute;
+    width: 10em;
+    left: 0px;
+    top: 4em;
+}
+#content_container {
+    position: absolute;
+    left: 11em;
+    top: 4em;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    #nav_container {
+        width: 100%;
+    }
+    #content_container {
+        top: 7em;
+        left: 0em;
+    }
+    .nav .gwt-Button {
+        width: auto;
+        margin: 0.1em 0.5em 0.1em 0.5em;
+    }
+
+}
+

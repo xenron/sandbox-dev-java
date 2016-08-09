@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+	version="1.2">
+	<application>
+		<message-bundle>resources.application</message-bundle>
+		<locale-config>
+			<default-locale>en</default-locale>
+		</locale-config>
+	</application>
+	<application>
+		<default-render-kit-id>org.apache.myfaces.trinidad.core</default-render-kit-id>
+	</application>
+	<managed-bean>
+		<managed-bean-name>managed_catalog</managed-bean-name>
+		<managed-bean-class>catalog.managed.Catalog</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+<navigation-rule>
+		<navigation-case>
+			<from-outcome>create</from-outcome>
+			<to-view-id>/create.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>catalogentry</from-outcome>
+			<to-view-id>/catalogentry.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>persisted</from-outcome>
+			<to-view-id>/index.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>error</from-outcome>
+			<to-view-id>/error.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>find</from-outcome>
+			<to-view-id>/find.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>
+

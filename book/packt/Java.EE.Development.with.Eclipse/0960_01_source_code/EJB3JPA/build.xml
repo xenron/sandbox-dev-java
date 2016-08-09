@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		WebLogic build file
+	-->
+<project name="EJB3" default="deploy" basedir=".">
+	<property environment="env" />
+	<property name="src.dir" value="${basedir}/ejbModule" />
+	<property name="web.module" value="${basedir}/webModule" />
+	<property name="weblogic.home" value="C:/Oracle/Middleware/" />
+	<property name="weblogic.server" value="${weblogic.home}/wlserver_12.1/server" />
+	<property name="build.dir" value="${basedir}/build" />
+
+	<property name="deploy.dir"
+		value="${weblogic.home}/user_projects/domains/base_domain/autodeploy" />
+	<path id="classpath">
+		<fileset dir="${weblogic.home}/modules">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${weblogic.server}/lib">
+			<include name="*.jar" />
+		</fileset>
+
+		<pathelement location="${build.dir}" />
+	</path>
+	<property name="build.classpath" refid="classpath" />
+	<target name="prepare">
+		<mkdir dir="${build.dir}" />
+	</target>
+	<target name="compile" depends="prepare">
+		<javac srcdir="${src.dir}" destdir="${build.dir}" debug="on"
+			includes="**/*.java">
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<target name="jar" depends="compile">
+		<jar destfile="${build.dir}/ejb3example.jar">
+			<fileset dir="${build.dir}">
+				<include name="**/*.class" />
+			</fileset>
+			<fileset dir="${src.dir}">
+				<include name="META-INF/*.xml" />
+			</fileset>
+		</jar>
+	</target>
+
+	<target name="war" depends="jar">
+		<war warfile="${build.dir}/weblogicexample.war">
+			<fileset dir="webModule">
+				<include name="*.jsp" />
+			</fileset>
+			<fileset dir="webModule">
+				<include name="WEB-INF/web.xml" />
+			</fileset>
+		</war>
+	</target>
+	<target name="assemble-app" depends="war">
+		<jar jarfile="${build.dir}/ejb3example.ear">
+			<metainf dir="META-INF">
+				<include name="application.xml" />
+			</metainf>
+			<fileset dir="${build.dir}" includes="*.jar,*.war" />
+		</jar>
+	</target>
+	
+	<target name="deploy" depends="assemble-app">
+		<copy file="${build.dir}/ejb3example.ear" todir="${deploy.dir}" />
+	</target>
+	<target name="clean">
+		<delete file="${build.dir}/ejb3example.ear" />
+		<delete file="${build.dir}/ejb3example.jar" />
+		<delete file="${build.dir}/weblogicexample.war" />
+	</target>
+
+</project>

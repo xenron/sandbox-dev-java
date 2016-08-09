@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <display-name></display-name>
+  <module>
+    <ejb>ejb3example.jar</ejb> 
+  </module>
+  <module>
+    <web>
+      <web-uri>weblogicexample.war</web-uri> 
+      <context-root>weblogic</context-root>
+    </web>
+  </module>
+</application>

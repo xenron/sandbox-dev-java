@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+        <h:form>
+			<h:dataTable  binding="#{catalog.dataTable1}" border="1" rows="5">
+			<h:column binding="#{catalog.column1}"></h:column>
+			<h:column binding="#{catalog.column2}"></h:column>
+			<h:column binding="#{catalog.column3}"></h:column>
+			<h:column binding="#{catalog.column4}"></h:column>
+			<h:column binding="#{catalog.column5}"></h:column>
+			<h:column binding="#{catalog.column6}"></h:column>
+		</h:dataTable>
+		</h:form>
+    </ui:define>
+</ui:composition>
+</html>

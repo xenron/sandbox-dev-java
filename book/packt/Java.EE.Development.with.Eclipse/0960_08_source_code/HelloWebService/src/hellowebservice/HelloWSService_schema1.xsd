@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:ns0="http://hellowebservice/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://hellowebservice/">
+   <xsd:complexType name="hello">
+      <xsd:sequence>
+         <xsd:element name="arg0" type="xsd:string" minOccurs="0"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:complexType name="helloResponse">
+      <xsd:sequence>
+         <xsd:element name="return" type="xsd:string" minOccurs="0"/>
+      </xsd:sequence>
+   </xsd:complexType>
+   <xsd:element name="hello" type="ns0:hello"/>
+   <xsd:element name="helloResponse" type="ns0:helloResponse"/>
+</xsd:schema>

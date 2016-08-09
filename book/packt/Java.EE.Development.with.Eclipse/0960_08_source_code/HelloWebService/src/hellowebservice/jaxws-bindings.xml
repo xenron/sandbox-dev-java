@@ -1,0 +1,7 @@
+<jaxws:bindings
+    wsdlLocation="HelloWSService.wsdl"
+    xmlns:jaxws="http://java.sun.com/xml/ns/jaxws"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/jaxws http://java.sun.com/xml/ns/jaxws">
+</jaxws:bindings>

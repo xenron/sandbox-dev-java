@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="index.html" x="97" y="300" zoom="true"/>
+        <Node id="jsfpages/connectionPage.xhtml" x="373" y="293" zoom="false"/>
+        <Node id="jsfpages/connectionFailurePage.xhtml" x="178" y="167" zoom="false"/>
+        <Node id="expressionLanguage.xhtml" x="66" y="71" zoom="true"/>
+        <Node id="jsfpages/welcomPage.xhtml" x="650" y="150" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

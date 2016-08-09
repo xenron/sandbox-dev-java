@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		WebLogic build file
+	-->
+<project name="JasperReports" default="deploy" basedir=".">
+	<property name="web.module" value="${basedir}/WebContent" />
+	<property name="weblogic.home" value="C:/Oracle/Middleware/WLS10.3.5" />
+	<property name="weblogic.server" value="${weblogic.home}/wlserver_10.3/server" />
+	<property name="build.dir" value="${basedir}/build" />
+	<property name="weblogic.domain.dir"
+		value="${weblogic.home}/user_projects/domains/base_domain" />
+	<property name="deploy.dir"
+		value="${weblogic.domain.dir}/autodeploy" />
+	<path id="classpath">
+		<fileset dir="${weblogic.home}/modules">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${weblogic.server}/lib">
+			<include name="*.jar" />
+		</fileset>
+       <fileset dir="${weblogic.domain.dir}/lib">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement location="${build.dir}" />
+	</path>
+	
+	<property name="build.classpath" refid="classpath" />
+	<target name="prepare">
+		<mkdir dir="${build.dir}" />
+	</target>
+	
+	<target name="war" depends="prepare">
+		<war warfile="${build.dir}/jasperreports.war">
+			<fileset dir="WebContent">
+				<include name="*.jsp" />
+			</fileset>
+			<fileset dir="WebContent">
+				<include name="config.xml" />
+			</fileset>
+			<fileset dir="WebContent">
+				<include name="WEB-INF/web.xml" />
+			</fileset>
+			<fileset dir="WebContent">
+				<include name="WEB-INF/lib/*.jar" />
+			</fileset>
+		</war>
+	</target>
+	
+	
+	<target name="deploy" depends="war">
+		<copy file="${build.dir}/jasperreports.war" todir="${deploy.dir}" />
+	</target>
+	<target name="clean">
+		
+		<delete file="${build.dir}/jasperreports.war" />
+	</target>
+
+</project>
+
+

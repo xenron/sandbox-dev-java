@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd      
+http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	<bean id="spring.catalog" class="spring.catalog.Catalog">
+		<constructor-arg index="0" value="Oracle Magazine" />
+		<constructor-arg index="1" value="Oracle Publishing" />
+		<constructor-arg index="2" value="November-December 2010" />
+		<constructor-arg index="3" value="Agile Architecture" />
+		<constructor-arg index="4" value="Bob Rhubart" />
+	</bean>
+	<bean id="interceptor" class="spring.catalog.CatalogInterceptor"></bean>
+
+	<bean id="proxyBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<value>spring.catalog.CatalogInterface</value>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>interceptor</value>
+			</list>
+		</property>
+
+		<property name="target">
+			<ref local="spring.catalog"></ref>
+		</property>
+		<property name="proxyTargetClass">
+			<value>true</value>
+		</property>
+	</bean>
+</beans>

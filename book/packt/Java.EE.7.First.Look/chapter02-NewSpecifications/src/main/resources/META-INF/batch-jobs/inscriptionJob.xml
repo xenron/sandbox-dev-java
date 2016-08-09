@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job id="inscription-validator-Job" version="1.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee">
+    <properties>
+          <property name="LEVEL1" value="25" />
+          <property name="LEVEL2" value="28" />
+          <property name="LEVEL3" value="31" />
+          <property name="FEES" value="50000" />
+     </properties>
+    <step id="validate-notify" >        
+        <chunk item-count="15" checkpoint-policy="item" 
+               skip-limit="30">
+            <reader ref="InscriptionReader" />
+            <processor ref="InscriptionProcessor" />
+            <writer ref="StudentNotifier" />
+        </chunk>     
+    </step>    
+</job>

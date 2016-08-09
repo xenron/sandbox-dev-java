@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pta="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:pte="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <!-- Pass through attributes 1 -->
+                <h:inputText pta:type="image" pta:src="img_submit.gif" 
+                             value="image1" pta:width="58" pta:height="58" />
+                
+                <!-- Pass through attributes 2 -->
+                <h:inputText value="image2" >
+                    <f:passThroughAttribute name="type" value="image" />
+                    <f:passThroughAttribute name="src" value="img_submit.gif" />
+                    <f:passThroughAttribute name="width" value="68" />
+                    <f:passThroughAttribute name="height" value="68" />
+                </h:inputText>
+                
+                <!-- Pass through attributes 2 -->
+                <h:inputText value="image3" >
+                    <f:passThroughAttributes value="#{html5Bean.mapOfParameters}" />                   
+                </h:inputText>
+                
+                <!-- Pass through element -->
+                <input type="submit" value="myButton" pte:actionListener="#{html5Bean.submitListener}"/>
+            </h:form>
+        </f:view>
+    </h:body>
+</html>
+

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" hostname="PAGWKL-2P0P2R1" name="com.baselogic.chapter05.utils.StringUtilitiesTest" tests="27" time="0.109" timestamp="2011-09-04T20:34:36">
+  <properties />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testBlankIfNull" time="0.0060" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testSampleDataSet" time="0.022" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testBlankIfNullWithBlank" time="0.0" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testBlankIfNullWithNull" time="0.0" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testBlankIfNullWithValue" time="0.0010" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testValueIfBlank" time="0.0020" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testValueIfBlankWithSpace" time="0.0" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testValueIfBlankWithNull" time="0.0" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testValueIfBlankWithValue" time="0.0" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testNullIfBlank" time="0.0020" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testNullIfBlankWithBlank" time="0.0" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testNullIfBlankWithSpace" time="0.0" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testNullIfBlankWithNull" time="0.0010" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testHtmlEncode" time="0.028" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testReturnValidAlphaNumericCharacters" time="0.0060" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testReturnValidDigitCharacters" time="0.0030" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testToBooleanTrue" time="0.0050" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testToBooleanTrue2" time="0.0" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testToBooleanT" time="0.0" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testToBooleant" time="0.0010" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testToBooleanFalse" time="0.0010" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testToBooleanFalse2" time="0.0010" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testToBooleanYes" time="0.0010" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testToBooleanY" time="0.0010" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testToBooleanNull" time="0.0010" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testToYesNo" time="0.0010" />
+  <testcase classname="com.baselogic.chapter05.utils.StringUtilitiesTest" name="testToYesNo2" time="0.0" />
+  <system-out><![CDATA[testSample: [test]
+expected: [test]
+actual: [test]
+testSample: []
+expected: []
+actual: []
+testSample: [ ]
+expected: [ ]
+actual: [ ]
+&lt;vxml version=&quot;2.1&quot;&gt;&lt;form id='init'&gt;Test &amp; Verify&lt;/form&gt;&lt;/vxml&gt;
+abcdefghijklmnopqrstuvwxyz1234567890
+1234567890
+true
+true
+true
+true
+false
+false
+true
+true
+false
+Yes
+No
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

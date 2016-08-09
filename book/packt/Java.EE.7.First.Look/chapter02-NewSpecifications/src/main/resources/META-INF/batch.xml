@@ -1,0 +1,10 @@
+<batch-artifacts xmlns="http://xmlns.jcp.org/xml/ns/javaee"> 
+   <ref id="InscriptionReader" 
+     class="com.packt.ch02.batchprocessing.chunk.InscriptionReader" /> 
+   <ref id="StudentNotifier" 
+     class="com.packt.ch02.batchprocessing.chunk.StudentNotifier" /> 
+   <ref id="InscriptionProcessor" 
+     class="com.packt.ch02.batchprocessing.chunk.InscriptionProcessor" /> 
+   <ref id="StudentInformation" 
+     class="com.packt.ch02.batchprocessing.batchlet.StudentInformation" />
+</batch-artifacts>
