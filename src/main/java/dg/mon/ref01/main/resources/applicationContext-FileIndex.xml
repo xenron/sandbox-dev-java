@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<bean id="myFileIndex" class="ch5.FileIndexTask">
+		<property name="dir" value="/git/ccms-monitor/" />
+		<property name="indexFile" value="file-index.txt" />
+	</bean>
+
+	<bean id="myCliHandler" class="ch5.CliHandler">
+		<property name="dir" value="file-index.txt" />
+	</bean>
+
+	<bean id="fileIndexTask" class="ch9.fileviewer.IndexFileTask">
+		<constructor-arg name="filePath" value="/home/student/logs/"></constructor-arg>
+	</bean>
+
+	<bean id="fileIndexTask2" class="ch10.fileviewer.IndexFileTask">
+		<constructor-arg name="filePath" value="/home/student/logs/"></constructor-arg>
+	</bean>
+
+	<bean id="fileIndexTask3" class="ch11.fileviewer.IndexFileTask">
+		<constructor-arg name="filePath" value="/home/student/logs/"></constructor-arg>
+	</bean>
+
+
+</beans>
